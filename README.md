@@ -30,7 +30,7 @@ link<br />
 link<br /> 
 
 콘솔아크 미오츠쿠시 / 타라이마와시편:<br /> 
-link<br /> 
+[link](https://github.com/s485lee/Miot_Omot_Korean/releases/tag/Release)<br /> 
 
 # 설치 방법
 07th모드 통합패치이기 때문에 따로 07th 모드를 다운로드 할 필요는 없습니다. <br />
