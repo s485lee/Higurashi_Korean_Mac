@@ -33,7 +33,7 @@ link<br />
 link<br /> 
 
 # 설치 방법
-자동패치 (권장):례:<br /> 
+자동패치 (권장):<br /> 
 <img width="712" alt="image" src="https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/4c933404-6fea-44db-a629-b528e73077ff"><br /> 
 
 수동패치 방법은 동봉된 설명서를 봐주세요.
