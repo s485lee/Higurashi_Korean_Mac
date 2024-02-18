@@ -33,6 +33,8 @@ link<br />
 link<br /> 
 
 # 설치 방법
+07th모드 통합패치이기 때문에 따로 07th 모드를 다운로드 할 필요는 없습니다. <br />
+
 자동패치 (권장):<br /> 
 <img width="712" alt="image" src="https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/4c933404-6fea-44db-a629-b528e73077ff"><br /> 
 
