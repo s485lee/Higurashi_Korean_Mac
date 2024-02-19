@@ -7,6 +7,8 @@ macOS용 한글패치는 2024년 2월 기준 가장 최신 버전의 07th-Mod를
 
 macOS용 한글패치는 Steam판을 지원합니다.<br />
 
+Retina 디스플레이를 지원하기 위해 라이브러리 파일이 포함되었습니다. [higurashi-retinizer](https://github.com/TellowKrinkle/higurashi-retinaizer)<br />
+
 # 다운로드
 오니카쿠시편:<br /> 
 [다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)<br /> 
