@@ -1,0 +1,408 @@
+void main()
+{
+
+
+//■前原屋敷
+
+
+//*Sub_Tips_003
+//gosub *tip_s
+//gosub *data_tati
+
+	EnableJumpingOfReturnIcon();
+
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	DisableWindow();
+	DrawScene("black", 1000 );
+
+	PlayBGM( 1, "msys02", 56, 0 );
+	ModSetLayerFilter(1, 256, "none");
+	ModDrawCharacterWithFiltering(1, 3, "sprite/me1a_wink_a1_", "1", "left", 1, -240, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawScene("background/gk3", 1000 );
+
+
+//「...圭ちゃんってさ、すごいお金持ちってわけでもないの？＠
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 3, "ps3/s20/03/440300016", 256, TRUE);
+	OutputLine(NULL, "「…圭ちゃんってさ、すごいお金持ちってわけでもないの？」",
+		   NULL, "\"...케이쨩 말야, 혹시 굉장한 부자 아냐?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「何だよ、突然＠...俺がいつリムジンで登校したよ？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s20/01/440100023", 256, TRUE);
+	OutputLine(NULL, "「何だよ、突然。",
+		   NULL, "\"뭐야, 갑자기. ", Line_Continue);
+	Wait( 1200 );
+	OutputLine(NULL, "…俺がいつリムジンで登校したよ？」",
+		   NULL, "내가 언제 리무진 등교라도 했나?\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacter(1, 3, "sprite/me1b_wink_a1_", "1", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+//「月の小遣いはいくらもらってる？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 3, "ps3/s20/03/440300017", 256, TRUE);
+	OutputLine(NULL, "「月の小遣いはいくらもらってる？」",
+		   NULL, "\"한달 용돈은 얼마나 받아?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「１０００円。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s20/01/440100024", 256, TRUE);
+	OutputLine(NULL, "「１０００円。」",
+		   NULL, "\"1000엔.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacterWithFiltering(3, 4, "sprite/sa1a_akuwarai_a1_", "1", "right", 1, 240, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+//「あら。結構、小市民的ですのねぇ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 4, "ps3/s20/04/440400008", 256, TRUE);
+	OutputLine(NULL, "「あら。結構、小市民的ですのねぇ。」",
+		   NULL, "\"어머, 상당히 소시민적이와요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacter(2, 5, "sprite/ri1_def_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 400, TRUE );
+
+//「......お弁当のおかずも普通ですよ＠お金持ちじゃないです。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 5, "ps3/s20/05/440500001", 256, TRUE);
+	OutputLine(NULL, "「……お弁当のおかずも普通ですよ。",
+		   NULL, "\"...도시락 반찬도 보통이에요. ", Line_Continue);
+	Wait( 1800 );
+	OutputLine(NULL, "お金持ちじゃないです。」",
+		   NULL, "부자가 아닙니다에요.\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("background/gk3", "left", 0, 0, 300 );
+
+//　一体の何の話だ？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　一体の何の話だ？！",
+		   NULL, "도대체 무슨 이야기야!? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　いきなり小遣いの額を聞かれ、それで小市民だの金持ちじゃないだの￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いきなり小遣いの額を聞かれ、それで小市民だの金持ちじゃないだの！",
+		   NULL, "갑자기 용돈을 얼마 받는지 묻질 않나, 부자가 아니라고 하질 않나! ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacterWithFiltering(3, 2, "sprite/re1a_warai_a1_", "2", "right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+//「あはははは。ごめんねごめんね！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 2, "ps3/s20/02/440200030", 256, TRUE);
+	OutputLine(NULL, "「あはははは。ごめんねごめんね！」",
+		   NULL, "\"아하하하하. 미안 미안!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　俺の怪訝な表情を悟ったらしく、レナがカラカラと笑った＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　俺の怪訝な表情を悟ったらしく、レナがカラカラと笑った。",
+		   NULL, "내 의아스러운 표정을 깨달았는지, 레나가 깔깔 웃었다. ", GetGlobalFlag(GLinemodeSp));
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(2, 3, "sprite/me1a_warai_a1_", "1", "left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//「圭ちゃん家ってさ、すっごく大きいでしょ＠　だから建築中から雛見沢中で前原屋敷って呼ばれて注目の的だったんだよ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 3, "ps3/s20/03/440300018", 256, TRUE);
+	OutputLine(NULL, "「圭ちゃん家ってさ、すっごく大きいでしょ？",
+		   NULL, "\"케이쨩네 집은 굉장히 크잖아? ", Line_Continue);
+	Wait( 1800 );
+	OutputLine(NULL, "　だから建築中から雛見沢中で前原屋敷って呼ばれて注目の的だったんだよ。」",
+		   NULL, "그러니까 지을 때부터 히나미자와에선 마에바라 저택이라고 부르면서 모두들 주목했어.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　ま、前原屋敷ぃ～？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ま、前原屋敷ぃ〜？！",
+		   NULL, "마, 마에바라 저택~!? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacter(3, 2, "sprite/re1a_def_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//「あんなに大きいお家だから、どんなお金持ちなのかなって、みんなで噂し合ってたの。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 2, "ps3/s20/02/440200031", 256, TRUE);
+	OutputLine(NULL, "「あんなに大きいお家だから、どんなお金持ちなのかなって、みんなで噂し合ってたの。」",
+		   NULL, "\"그렇게 큰 집이니까 어떤 부자인가 하고, 다들 수군댔어.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　あぁなるほど＠納得＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あぁなるほど。",
+		   NULL, "아아 과연. ", Line_WaitForInput);
+	OutputLine(NULL, "納得。",
+		   NULL, "납득했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　......確かに家は図体だけはでかいからな＠そういう誤解もありえるな￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……確かに家は図体だけはでかいからな。",
+		   NULL, "...확실히 크긴 큰 집이니까. ", Line_WaitForInput);
+	OutputLine(NULL, "そういう誤解もありえるな。",
+		   NULL, "그렇게 오해할 수도 있겠다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 4, "sprite/sa1b_akuwarai_b1_", "1", "left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask("background/gk3", "right", 0, 0, 300 );
+
+//「私の推理では、お家を建てるのにお金をかけ過ぎて、貧乏になってしまったと考えてますのよ～！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 4, "ps3/s20/04/440400009", 256, TRUE);
+	OutputLine(NULL, "「私の推理では、お家を建てるのにお金をかけ過ぎて、貧乏になってしまったと考えてますのよ〜！」",
+		   NULL, "\"제 추리로는, 집을 짓는데 돈을 너무 많이 들여서 가난해졌다고 생각해요~!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(3, 5, "sprite/ri1_warai_a1_", "1", "right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+//「......貧乏でかわいそかわいそです。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 5, "ps3/s20/05/440500002", 256, TRUE);
+	OutputLine(NULL, "「……貧乏でかわいそかわいそです。」",
+		   NULL, "\"...가난해서 불쌍해 불쌍해에요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　...梨花ちゃんが哀れみながら俺の頭をなでなでしてくれる＠金持ち扱いから瞬時に貧乏人扱いかよ...￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…梨花ちゃんが哀れみながら俺の頭をなでなでしてくれる。",
+		   NULL, "...리카쨩이 불쌍히 여기면서 내 머리를 쓰다듬는다. ", Line_WaitForInput);
+	OutputLine(NULL, "金持ち扱いから瞬時に貧乏人扱いかよ…。",
+		   NULL, "부자 취급에서 이제는 갑자기 거지 취급인가.... ", Line_Normal);
+	ClearMessage();
+
+//「あー、諸君らの楽しい想像をぶち壊すようで悪いが、うちは金持ちでも貧乏でもないぞ＠極めて平均的な普通の家庭だ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s20/01/440100025", 256, TRUE);
+	OutputLine(NULL, "「あー、諸君らの楽しい想像をぶち壊すようで悪いが、うちは金持ちでも貧乏でもないぞ。",
+		   NULL, "\"아 - 제군들의 즐거운 상상을 박살내는 것 같아서 미안하지만, 우리 집은 부자도 가난뱅이도 아냐. ", Line_Continue);
+	Wait( 4200 );
+	OutputLine(NULL, "極めて平均的な普通の家庭だ。」",
+		   NULL, "지극히 평균적인 보통 가정집이야.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	FadeBustshotWithFiltering( 1, "left", 1, FALSE, 0, 0, 300, TRUE );
+	ModDrawCharacterWithFiltering(1, 3, "sprite/me1b_tokui_a1_", "2", "left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+//「あれだけ大きな家は普通とは言わないって＠　しかも玄関は立派で、門は大型車も入れるようになってるし！＠　絶対、普通じゃないって！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 3, "ps3/s20/03/440300019", 256, TRUE);
+	OutputLine(NULL, "「あれだけ大きな家は普通とは言わないって！",
+		   NULL, "\"그렇게 큰 집은 보통 가정집이라고는 안 해! ", Line_Continue);
+	Wait( 2800 );
+	OutputLine(NULL, "　しかも玄関は立派で、門は大型車も入れるようになってるし！！",
+		   NULL, "게다가 현관은 훌륭하고, 대문은 대형 차도 들어갈 수 있게 되어있고!! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 3, "ps3/s20/03/440300020", 256, TRUE);
+	OutputLine(NULL, "　絶対、普通じゃないって！」",
+		   NULL, "절대 보통이 아냐!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　家のでかさが裕福さの尺度だとでも言わんばかりだな￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　家のでかさが裕福さの尺度だとでも言わんばかりだな。",
+		   NULL, "집이 큰 만큼 부유하다는 말인가. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("background/ma3", 1000 );
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　我が家がやたらとでかいのは、親父のアトリエを含むからだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　我が家がやたらとでかいのは、親父のアトリエを含むからだ。",
+		   NULL, "우리 집이 쓸데없이 커진건 아버지의 아틀리에 때문이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　作業場はいくつもあるし、過去の作品があちこちに飾られ...＠しかもサイズはどれもデカイ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　作業場はいくつもあるし、過去の作品があちこちに飾られ…。",
+		   NULL, "작업실이 몇 개나 있는데다가, 예전 작품도 여기저기 장식되어 있고... ", Line_WaitForInput);
+	OutputLine(NULL, "しかもサイズはどれもデカイ。",
+		   NULL, "게다가 크기도 모두 크다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　そんなこんなで、家族が生活する部分はせいぜい全体の三分の一ってところか￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんなこんなで、家族が生活する部分はせいぜい全体の三分の一ってところか。",
+		   NULL, "그래서 실제로 가족이 생활하는 부분은 대략 전체의 3분의 1 정도다. ", Line_Normal);
+	ClearMessage();
+
+//　将来、自宅で個展を開くことも考えての設計なので、人や車の出入りに気遣ったものになっているのだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　将来、自宅で個展を開くことも考えての設計なので、人や車の出入りに気遣ったものになっているのだ。",
+		   NULL, "미래에 자택에서 개인전을 여는 것도 생각한 설계라서, 사람이나 차의 출입에도 신경을 썼다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　......ちなみに魅音が立派な玄関と言ってるのはこのアトリエ側の玄関で、普段は締め切られている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……ちなみに魅音が立派な玄関と言ってるのはこのアトリエ側の玄関で、普段は締め切られている。",
+		   NULL, "...덧붙여 미온이 훌륭하다고 말한 현관은 이 아틀리에쪽 현관으로 평소에는 닫혀 있다. ", Line_Normal);
+
+//　実際に前原家が使用している玄関はごくごく平均的な、ささやかなものなのだ＠
+	OutputLine(NULL, "　実際に前原家が使用している玄関はごくごく平均的な、ささやかなものなのだ。",
+		   NULL, "실제로 우리 가족이 드나들 때 사용하는 현관은 지극히 평범한, 조그만 현관이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　見かけと中身は大違い、ってことだな￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　見かけと中身は大違い、ってことだな。",
+		   NULL, "요컨데 겉과 속이 크게 다르다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 3, "sprite/me1a_def_a1_", "0", "left", 1, -240, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawScene("background/gk1", 400 );
+
+//「ぜひ今度、圭ちゃんの家を探検してみたいよなぁ＠...お金持ちじゃないと主張しながらもあの邸宅！＠　一体何が隠されているのか！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 3, "ps3/s20/03/440300021", 256, TRUE);
+	OutputLine(NULL, "「ぜひ今度、圭ちゃんの家を探検してみたいよなぁ。",
+		   NULL, "\"꼭 이번에 케이쨩의 집을 탐험해 보고 싶어. ", Line_Continue);
+	Wait( 1600 );
+	OutputLine(NULL, "…お金持ちじゃないと主張しながらもあの邸宅！！",
+		   NULL, "부자가 아니라고 말하면서도 그런 저택이라니!! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 3, "ps3/s20/03/440300022", 256, TRUE);
+	OutputLine(NULL, "　一体何が隠されているのか！！」",
+		   NULL, "도대체 어떤 비밀이 숨겨져 있을까!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(3, 2, "sprite/re1a_hau_a1_", "1", "right", 1, 240, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+//「か、かぁいいものが隠されてるといいなぁ！　はぅ～！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 2, "ps3/s20/02/440200032", 256, TRUE);
+	OutputLine(NULL, "「か、かぁいいものが隠されてるといいなぁ！　はぅ〜！」",
+		   NULL, "\"기, 기여운 게 숨겨져 있으면 좋겠어! 하우~!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	FadeBustshotWithFiltering( 1, "right", 1, FALSE, 0, 0, 300, TRUE );
+	ModDrawCharacterWithFiltering(1, 4, "sprite/sa1b_akuwarai_b1_", "1", "left", 1, -240, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+//「きっと家具を買うお金もなくなってて、殺風景な部屋がいっぱいなのですわ！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 4, "ps3/s20/04/440400010", 256, TRUE);
+	OutputLine(NULL, "「きっと家具を買うお金もなくなってて、殺風景な部屋がいっぱいなのですわ！」",
+		   NULL, "\"분명히 가구를 살 돈도 없어서, 살풍경한 방이 가득할 거예요!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacter(2, 5, "sprite/ri1_warai_a1_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 400, TRUE );
+
+//「......絨毯のお部屋なら、ぜひごろごろしてみたいですよ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 5, "ps3/s20/05/440500003", 256, TRUE);
+	OutputLine(NULL, "「……絨毯のお部屋なら、ぜひごろごろしてみたいですよ。」",
+		   NULL, "\"...융단이 깔린 방이 있으면 꼭 뒹굴뒹굴 해보고 싶어요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「わぁぁ～！　それいいねそれいいね！　レナもごろごろしたい～！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 2, "ps3/s20/02/440200033", 256, TRUE);
+	OutputLine(NULL, "「わぁぁ〜！　それいいねそれいいね！　レナもごろごろしたい〜！」",
+		   NULL, "\"와아아~! 그거 좋아 그거 좋아! 레나도 뒹굴뒹굴 거리고 싶어~!\" ", Line_Normal);
+	ClearMessage();
+
+//　...なんか楽しそうに想像が膨らんでいってるな...＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…なんか楽しそうに想像が膨らんでいってるな…。",
+		   NULL, "...어쩐지 즐겁게 상상을 부풀리고 있는데.... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　でもまぁ。...遠くない将来、みんなを自宅に招待してもいいかもな＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でもまぁ。…遠くない将来、みんなを自宅に招待してもいいかもな。",
+		   NULL, "그래도 어쨌든. 가까운 시일 내로 모두를 집에 초대해도 괜찮을 것 같다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　...親父は女の子には甘いから、アトリエの見学を許してくれるかもしれない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…親父は女の子には甘いから、アトリエの見学を許してくれるかもしれない。",
+		   NULL, "...아버지도 여자아이에게는 약하니까, 아틀리에를 견학하게 해 줄지도 모른다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("background/g1", 1000 );
+	PlayBGM( 2, "lsys12", 56, 0 );
+
+//　セミの声はいよいよにぎやかで、空はどこまでも高い＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　セミの声はいよいよ賑やかで、空はどこまでも高い。",
+		   NULL, "매미 소리는 점점 소란스러워지고 하늘은 끝없이 높다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　暑いけど澄んだ、初夏の匂いがした￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　暑いけど澄んだ、初夏の匂いがした。",
+		   NULL, "덥지만 맑은, 초여름의 냄새가 났다. ", Line_Normal);
+	ClearMessage();
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+//gosub *tip_e
+//return
+
+
+}

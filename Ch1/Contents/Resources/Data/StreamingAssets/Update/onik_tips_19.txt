@@ -1,0 +1,190 @@
+void main()
+{
+
+
+//■二重人格？？？
+
+//*Sub_Tips_019
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("background/ke5", 400 );
+	PlayBGM( 1, "msys09", 56, 0 );
+
+
+//「よく映画などに登場しますが、簡単にいうとどのようなものでしょうか。＠
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>リポーター</color>", NULL, "<color=#f5e6d3>리포터</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44001", 256, TRUE);
+	OutputLine(NULL, "「よく映画などに登場しますが、簡単にいうとどのようなものでしょうか。」",
+		   NULL, "\"자주 영화에 등장합니다만, 간단히 말하면 어떤 것입니까.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「複数の人格を持つことによる逃避と考えられています。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>教授</color>", NULL, "<color=#f5e6d3>교수</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/profa44001", 256, TRUE);
+	OutputLine(NULL, "「複数の人格を持つことによる逃避と考えられています。」",
+		   NULL, "\"다중인격은 일종의 도피행동입니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「多重人格は逃避のひとつなのですか？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>リポーター</color>", NULL, "<color=#f5e6d3>리포터</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44002", 256, TRUE);
+	OutputLine(NULL, "「多重人格は逃避のひとつなのですか？」",
+		   NULL, "\"다중인격은 도피 방식의 하나라는 겁니까?\" ", Line_Normal);
+	ClearMessage();
+
+//「左様です＠そのメカニズムは完全には解明されていませんが、精神を守るために脳が行なう防御行動のひとつではないかと考えられています。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>教授</color>", NULL, "<color=#f5e6d3>교수</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/profa44002", 256, TRUE);
+	OutputLine(NULL, "「左様です。",
+		   NULL, "\"그렇습니다. ", Line_Continue);
+	Wait (1000);
+	OutputLine(NULL, "そのメカニズムは完全には解明されていませんが、精神を守るために脳が行なう防御行動のひとつではないかと考えられています。」",
+		   NULL, "그 메커니즘은 완벽히 해명되지 않았지만, 정신을 지키기 위해 뇌가 행하는 방어기제 중 하나로 간주됩니다.\" ", Line_Normal);
+	ClearMessage();
+
+//「例えば、貧乏な人がお金持ちになった自分を想像するという現実逃避ってありますよね＠　これも多重人格なわけですか？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>リポーター</color>", NULL, "<color=#f5e6d3>리포터</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44003", 256, TRUE);
+	OutputLine(NULL, "「例えば、貧乏な人がお金持ちになった自分を想像するという現実逃避ってありますよね？",
+		   NULL, "\"예를 들면, 가난한 사람이 부자가 된 자신을 상상한다던가 하는 현실 도피가 있지 않습니까? ", Line_Continue);
+	Wait (3800);
+	OutputLine(NULL, "　これも多重人格なわけですか？」",
+		   NULL, "이것도 다중인격입니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「極論はできませんが、広義的にはそう解釈できます＠つまり誰にでもありえる現象なのです。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>教授</color>", NULL, "<color=#f5e6d3>교수</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/profa44003", 256, TRUE);
+	OutputLine(NULL, "「極論はできませんが、広義的にはそう解釈できます。",
+		   NULL, "\"엄밀히 말하자면 그렇지 않습니다만, 넓은 의미로는 그렇게 해석할 수 있습니다. ", Line_Continue);
+	Wait (3000);
+	OutputLine(NULL, "つまり誰にでもありえる現象なのです。」",
+		   NULL, "그러니까 누구에게나 일어날 수 있는 현상이지요.\" ", Line_Normal);
+	ClearMessage();
+
+//「その現実逃避の見境がなくなると二重人格になるのですか？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>リポーター</color>", NULL, "<color=#f5e6d3>리포터</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44004", 256, TRUE);
+	OutputLine(NULL, "「その現実逃避の見境がなくなると二重人格になるのですか？」",
+		   NULL, "\"그 현실도피를 현실과 구분할 수 없게 되면, 이중인격이 되는 겁니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「...ちょっと難しいですね＠...そう提唱する説もありますし、否定する説もあります＠諸説紛々です。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>教授</color>", NULL, "<color=#f5e6d3>교수</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/profa44004", 256, TRUE);
+	OutputLine(NULL, "「…ちょっと難しいですね。",
+		   NULL, "\"...조금 어렵네요. ", Line_Continue);
+	Wait (2200);
+	OutputLine(NULL, "…そう提唱する説もありますし、否定する説もあります。",
+		   NULL, "그렇게 주장하는 설도 있고, 부정하는 설도 있습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/profa44005", 256, TRUE);
+	OutputLine(NULL, "諸説紛々です。」",
+		   NULL, "주장이 다분합니다.\" ", Line_Normal);
+	ClearMessage();
+
+//「では精神医学の世界ではまだ、多重人格というのは未知の解明されていない現象なんですか？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>リポーター</color>", NULL, "<color=#f5e6d3>리포터</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44005", 256, TRUE);
+	OutputLine(NULL, "「では精神医学の世界ではまだ、多重人格というのは未知の解明されていない現象なんですか？」",
+		   NULL, "\"그럼 정신의학계에서는 아직 다중인격이 해명되지 않은 미지의 영역입니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「残念ながらそうなります＠今後の研究が期待されます。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>教授</color>", NULL, "<color=#f5e6d3>교수</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/profa44006", 256, TRUE);
+	OutputLine(NULL, "「残念ながらそうなります。",
+		   NULL, "\"유감스럽지만 그렇습니다. ", Line_Continue);
+	Wait (1600);
+	OutputLine(NULL, "今後の研究が期待されます。」",
+		   NULL, "향후의 연구가 기대됩니다.\" ", Line_Normal);
+	ClearMessage();
+
+//「でもでも～、二重人格なんて何だかカッコイイですよね～＠　どういう人が二重人格になれるんですかぁ？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>リポーター</color>", NULL, "<color=#f5e6d3>리포터</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44006", 256, TRUE);
+	OutputLine(NULL, "「でもでも〜、二重人格なんて何だかカッコイイですよね〜！",
+		   NULL, "\"그래도 그래도~ 이중인격이란 건 뭔가 멋지군요~! ", Line_Continue);
+	Wait (3000);
+	OutputLine(NULL, "　どういう人が二重人格になれるんですかぁ？」",
+		   NULL, "어떤 사람이 이중인격이 되는 겁니까?\" ", Line_Normal);
+	ClearMessage();
+
+//「なれるといいますか...、なりやすいといいますか...＠最近の研究では、遺伝と心因が複雑に絡み合い...＠中でも幼少期の虐待が大きく作用するのではないかと言われています。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>教授</color>", NULL, "<color=#f5e6d3>교수</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/profa44007", 256, TRUE);
+	OutputLine(NULL, "「なれるといいますか…、なりやすいといいますか…。",
+		   NULL, "\"익숙해진달까, 되기 쉽다고 할까..., ", Line_Continue);
+	Wait (1800);
+	OutputLine(NULL, "最近の研究では、遺伝と心因が複雑に絡み合い…。",
+		   NULL, "최근 연구에서는 유전적 요인과 심리적 요인이 복잡하게 뒤엉켜 있고... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>教授</color>", NULL, "<color=#f5e6d3>교수</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/profa44008", 256, TRUE);
+	OutputLine(NULL, "中でも幼少期の虐待が大きく作用するのではないかと言われています。」",
+		   NULL, "그 중에서 유아기의 학대가 크게 작용한다는 설이 다수설입니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「そう言えば、このＡ君も幼児虐待を受けてるんですよね～。カワイソ～...。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>リポーター</color>", NULL, "<color=#f5e6d3>리포터</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44007", 256, TRUE);
+	OutputLine(NULL, "「そう言えば、このＡ君も幼児虐待を受けてるんですよね〜。カワイソ〜…。」",
+		   NULL, "\"그렇다면 이 A군도 유아기에 학대당했다는 거네요~. 불쌍해라~...\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//「７つの人格を持つ青年Ａ＠ではＶＴＲの続きをどうぞ＠/
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>リポーター</color>", NULL, "<color=#f5e6d3>리포터</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44008", 256, TRUE);
+	OutputLine(NULL, "「７つの人格を持つ青年Ａ。",
+		   NULL, "\"7개의 인격을 가진 청년 A. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44009", 256, TRUE);
+	OutputLine(NULL, "ではＶＴＲの続きをどうぞ。",
+		   NULL, "그럼 이어지는 VTR을 부탁합니다. ", Line_WaitForInput);
+
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+	PlaySE( 4, "wa_011", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 400 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 4, "wa_010", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 400 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 4, "wa_029", 56, 64 );
+
+//...ですがその前にコマーシャル！！￥
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/repoa44010", 256, TRUE);
+	OutputLine(NULL, "…ですがその前にコマーシャル！！」",
+		   NULL, "...하지만 그 전에 광고!!\" ", Line_Normal);
+	ClearMessage();
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+}

@@ -1,0 +1,2356 @@
+void main()
+{
+
+//*Keiiti_Last
+
+
+//setcursor 0,":l/3,160,2;Bmp\Efe\cursor0.bmp",0,0
+//setcursor 1,":l/3,160,2;Bmp\Efe\cursor1.bmp",0,0
+//rmode on
+////setwindow 31,16,22,16,26,26,0,2,20,1,1,#999999,0,0,639,479
+//!sd
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	DisableWindow();
+	PlayBGM( 2, "lsys12", 56, 0 );
+	DrawScene("background/ke_ky2", 3000 );
+
+//　喫煙スペースには紫煙が立ち込めていた￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　喫煙スペースには紫煙が立ち込めていた。",
+		   NULL, "흡연실은 담배연기로 자욱했다. ", Line_Normal);
+	ClearMessage();
+
+//高額備品扱いの分煙機も、チリチリという何だか電気のはぜるみたいな音がうるさいだけで、ちっとも役に立っているようには見えない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　高額備品扱いの分煙機も、チリチリという何だか電気のはぜるみたいな音がうるさいだけで、ちっとも役に立っているようには見えない。",
+		   NULL, "고액비품인 공기청정기는 치직거리는 전기 소리만 시끄러울 뿐, 제대로 작동하지 않았다. ", Line_Normal);
+	ClearMessage();
+
+//どうしてこんな日当たりの悪い廊下の奥に、喫煙家が押し込まれなければならないのか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どうしてこんな日当たりの悪い廊下の奥に、喫煙家が押し込まれなければならないのか？",
+		   NULL, "왜 이런 햇볕도 잘 안 드는 복도 안쪽에 흡연실을 만들었을까. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　…たばこの税収ってのは確か、自治体の税収の１割くらいはあるって聞いたことがあるような…＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…たばこの税収ってのは確か、自治体の税収の１割くらいはあるって聞いたことがあるような…。",
+		   NULL, "...분명 담배 세금수입이 지방 세금의 10퍼센트 정도 되지 않던가... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　私たちは地方自治体を支える高額納税者なんですから、もう少しいい待遇にはならんもんですかねぇ…￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私たちは地方自治体を支える高額納税者なんですから、もう少しいい待遇にはならんもんですかねぇ…。",
+		   NULL, "우리는 지방자치단체를 먹여살리는 고액납세자니까, 좀 더 좋은 대우를 해달라구요.... ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+//	DrawSceneWithMask( "black", "left", 0, 0, 1300 );
+//	DrawSceneWithMask( "bg_112", "left", 0, 0, 1300 );
+
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacterWithFiltering(3, 19, "sprite/kuma_komaru_", "0", "right", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+
+//「……うーん、どうしてこれが五萬切りなんすか＠　待ちが狭くなっちゃうっすよ？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100001", 256, TRUE);
+	OutputLine(NULL, "「……うーん、どうしてこれが五萬切りなんすか？",
+		   NULL, "\"...으-음, 어째서 여기서 5만(*마작패 중 하나)을 버려야 함까? ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100002", 256, TRUE);
+	OutputLine(NULL, "　待ちが狭くなっちゃうっすよ？」",
+		   NULL, "기다릴 수 있는 패가 줄어들잖슴까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　後輩の青年が麻雀雑誌の「次の一手」のコーナーとにらめっこをしている￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　後輩の青年が麻雀雑誌の「次の一手」のコーナーとにらめっこをしている。",
+		   NULL, "후배인 청년이 마작 잡지에 실린 \"다음 한수\" 코너와 씨름중이다. ", Line_Normal);
+	ClearMessage();
+
+//「五萬切ってもテンパイ崩れませんから。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 19, "ps2/19/123100003", 540, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_Continue); }
+	OutputLine(NULL, "「五萬切ってもテンパイ崩れませんから。」",
+		   NULL, "\"5만을 버려도 텐파이(* 패 완성 직전인 상황)는 살잖아요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「ハイテーに賭けるなら、両面で受けた方がチャンスあるんじゃないすか？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100004", 256, TRUE);
+	OutputLine(NULL, "「ハイテーに賭けるなら、両面で受けた方がチャンスあるんじゃないすか？」",
+		   NULL, "\"마지막 패에 다 걸기보다는, 가능성을 열어두고 기다리는 편이 찬스가 있잖슴까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+//	DrawSceneWithMask( "bg_112", "left", 0, 0, 1300 );
+//	DrawBustshot( 2, "oi_si_wa_a1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacterWithFiltering(2, 11, "sprite/oisi1_2_", "0", "left", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+//	DrawBustshot( 1, "kuma_def", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//「熊ちゃん、河を見て下さい＠五萬は全員切ってますから安牌なんですよ＠終盤で形テンに走った誰かがダマで待ってたら嫌でしょ。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700516", 256, TRUE);
+	OutputLine(NULL, "「熊ちゃん、河を見て下さい。",
+		   NULL, "\"쿠마쨩, 버림패를 봐주세요. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700517", 256, TRUE);
+	OutputLine(NULL, "五萬は全員切ってますから安牌なんですよ。",
+		   NULL, "5만은 전원이 버리는 걸 보면 안전패에요. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700518", 256, TRUE);
+	OutputLine(NULL, "終盤で形テンに走った誰かがダマで待ってたら嫌でしょ。」",
+		   NULL, "마지막에 누군가 적당히 노려서 속일 수 있는 패는 싫잖아요.\" ", Line_Normal);
+	ClearMessage();
+
+//　青年はうーんと唸りながら、タバコを捻り、もう一本を取り出す￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　青年はうーんと唸りながら、タバコを捻り、もう一本を取り出す。",
+		   NULL, "청년은 이해가 가지 않는다는 듯, 끙끙대는 소리를 내며 담배를 한 개피 꺼낸다. ", Line_Normal);
+	ClearMessage();
+
+
+//「…納得いかないっすねぇ…＠わざわざ自分で当たり牌減らすなんて。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100005", 256, TRUE);
+	OutputLine(NULL, "「…納得いかないっすねぇ…。",
+		   NULL, "\"...이해할 수 없네요... ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100006", 256, TRUE);
+	OutputLine(NULL, "わざわざ自分で当たり牌減らすなんて。」",
+		   NULL, "일부러 자신의 오름패를 줄이다니.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 11, "sprite/oisi1_1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+
+
+//「ちなみに、ハイテーで当たり牌出てもロンしちゃダメですよ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700519", 256, TRUE);
+	OutputLine(NULL, "「ちなみに、ハイテーで当たり牌出してもロンしちゃダメですよ。」",
+		   NULL, "\"그리고, 혹시 마지막에 오름패를 누가 버려도 론 (*상대의 버림패로 이김) 하면 안 됩니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「え？！　どうしてっすか？！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100007", 256, TRUE);
+	OutputLine(NULL, "「え？！　どうしてっすか？！」",
+		   NULL, "\"에?! 어째서임까?!\" ", Line_Normal);
+	ClearMessage();
+
+//その時、廊下の向こうから声が聞こえてきた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その時、廊下の向こうから声が聞こえてきた。",
+		   NULL, "그때, 복도 저 편에서 목소리가 들렸다. ", Line_Normal);
+	ClearMessage();
+
+//「大石さん、いますかー＠　一般の方から外線でーす。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s01/00/dek02001", 256, TRUE);
+	OutputLine(NULL, "「大石さん、いますかー？",
+		   NULL, "\"오오이시 씨, 있습니까 - ? ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s01/00/dek02002", 256, TRUE);
+	OutputLine(NULL, "　一般の方から外線でーす。」",
+		   NULL, "일반에서 외선입니다 - .\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacter(2, 11, "sprite/oisi1_2_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+//「ありゃ、こりゃどうも。それじゃ、ちょいと失礼！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700520", 256, TRUE);
+	OutputLine(NULL, "「ありゃ、こりゃどうも。それじゃ、ちょいと失礼！」",
+		   NULL, "\"어라, 이거 참. 그럼, 조금 실례!\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("black", "left", 0, 0, 1300 );
+
+//「ど、どうしてロンしちゃダメなんすかぁ？＠　あ、待ってくださいよ大石さぁん！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100008", 256, TRUE);
+	OutputLine(NULL, "「ど、どうしてロンしちゃダメなんすかぁ？！",
+		   NULL, "\"어, 어째서 주워 쓰면 안 되는 검까?! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100009", 256, TRUE);
+	OutputLine(NULL, "　あ、待ってくださいよ大石さぁん！」",
+		   NULL, "기, 기다려주십쇼 오오이시 씨!\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+	PlaySE( 4, "wa_020", 56, 64 );
+	DrawSceneWithMask("background/ke_s2", "left", 0, 0, 200 );
+
+//　大石の向かいの席の男が受話器を振っている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石の向かいの席の男が受話器を振っている。",
+		   NULL, "오오이시 건너편 자리의 남자가 수화기를 들고 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「外線です＠公衆から。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s01/00/dek02003", 256, TRUE);
+	OutputLine(NULL, "「外線です。",
+		   NULL, "\"외선입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s01/00/dek02004", 256, TRUE);
+	OutputLine(NULL, "公衆から。」",
+		   NULL, "공중전화에서.\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("background/denwa", "left", 0, 0, 300 );
+
+//「あーどうもすみません＠　……お待たせしました、大石です＠もしもし？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700521", 256, TRUE);
+	OutputLine(NULL, "「あーどうもすみません！",
+		   NULL, "\"아-, 정말 죄송합니다! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700522", 256, TRUE);
+	OutputLine(NULL, "　……お待たせしました、大石です。",
+		   NULL, "...기다리셨겠네요, 오오이시입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700523", 256, TRUE);
+	OutputLine(NULL, "もしもし？」",
+		   NULL, "여보세요?\" ", Line_Normal);
+	ClearMessage();
+
+//「お、大石さんですか？＠　もしもし？！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100808", 256, TRUE);
+	OutputLine(NULL, "「お、大石さんですか？！",
+		   NULL, "\"오, 오오이시 씨입니까?! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100809", 256, TRUE);
+	OutputLine(NULL, "　もしもし？！」",
+		   NULL, "여보세요?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「前原さんじゃありませんか＠どうもどうもこんにちは…！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700524", 256, TRUE);
+	OutputLine(NULL, "「前原さんじゃありませんか。",
+		   NULL, "\"마에바라 씨 아닙니까. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700525", 256, TRUE);
+	OutputLine(NULL, "どうもどうもこんにちは…！」",
+		   NULL, "이거 안녕하세요...!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　前原くんの声色から、すぐに異常事態を察する￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　前原くんの声色から、すぐに異常事態を察する。",
+		   NULL, "마에바라 군의 음색에서 곧바로 이변을 깨닫는다. ", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 2, "lsys15", 56, 0 );
+
+//　…前原くんからこちらに電話をかけてくるのは始めて＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…前原くんからこちらに電話をかけてくるのは初めて。",
+		   NULL, "...마에바라 군이 이쪽에 전화를 한 건 처음이었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　そしてかけてきたのは公衆電話￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そしてかけてきたのは公衆電話。",
+		   NULL, "그리고 건 곳은 공중전화. ", Line_Normal);
+	ClearMessage();
+
+//「落ち着いて下さい＠何がありました？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700526", 256, TRUE);
+	OutputLine(NULL, "「落ち着いて下さい。",
+		   NULL, "\"침착하세요. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700527", 256, TRUE);
+	OutputLine(NULL, "何がありました？」",
+		   NULL, "무슨 일입니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「えっと、!w800その、!w1000……あぁぁ…ッ！！！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100810", 256, TRUE);
+	OutputLine(NULL, "「えっと、",
+		   NULL, "\"그러니까, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 800 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "その、",
+		   NULL, "그, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "……あぁぁ…ッ！！！」",
+		   NULL, "...아아아...앗!!!\" ", Line_Normal);
+	ClearMessage();
+
+//　電話口の声は混乱し、完全に冷静さを失っていた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　電話口の声は混乱し、完全に冷静さを失っていた。",
+		   NULL, "수화기에서 들려오는 소리는 혼란스럽고, 침착함이라곤 찾아볼 수 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　他の連中に聞かれないか確認してから、受話器の口元をかばい小声で先を促す￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　他の連中に聞かれないか確認してから、受話器の口元をかばい小声で先を促す。",
+		   NULL, "듣는 사람이 없나 주위를 확인하고 나서, 수화기를 감싸고 작은 소리로 재촉한다. ", Line_Normal);
+	ClearMessage();
+
+//「何があったんです？！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700528", 256, TRUE);
+	OutputLine(NULL, "「何があったんです？！」",
+		   NULL, "\"무슨 일입니까?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「あぁぁあぁあの…お、…ぉぉ……俺……、＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100811", 256, TRUE);
+	OutputLine(NULL, "「あぁぁあぁあの…お、…ぉぉ……俺……、」",
+		   NULL, "\"저저저저저저기... 나... 나... 나...,\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「…落ち着いて前原さん＠　今そこに近場の警官を行かせます＠私もすぐそっちに行きますよ！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700529", 256, TRUE);
+	OutputLine(NULL, "「…落ち着いて前原さん！",
+		   NULL, "\"...침착하세요, 마에바라 씨! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700530", 256, TRUE);
+	OutputLine(NULL, "　今そこに近場の警官を行かせます。",
+		   NULL, "지금 그곳으로 근처의 경관을 보내겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700531", 256, TRUE);
+	OutputLine(NULL, "私もすぐそっちに行きますよ！」",
+		   NULL, "저도 곧 그쪽으로 가겠습니다!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「………あ、その!s300……!sd多分!w1000……無理です。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100812", 256, TRUE);
+	OutputLine(NULL, "「………あ、その",
+		   NULL, "\"......아, 그, ", Line_Continue);
+//!s300
+	SetSpeedOfMessage( TRUE, 0, );
+	OutputLine(NULL, "……",
+		   NULL, "... ", Line_Continue);
+// !sd
+	SetSpeedOfMessage( FALSE, 0, );
+
+	OutputLine(NULL, "多分",
+		   NULL, "아마, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "……無理です。」",
+		   NULL, "...무리에요.\" ", Line_Normal);
+	ClearMessage();
+
+//　声に怯えと達観…＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　声に怯えと達観…。",
+		   NULL, "목소리에 가득한 공포와 체념. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 4, "wa_023", 56, 64 );
+
+//　……まさか、電話をかけながら、すでに何者かに囲まれている？！!w3000
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……まさか、電話をかけながら、すでに何者かに囲まれている？！",
+		   NULL, "...설마 전화를 걸면서, 벌써 누군가에 둘러싸였나?! ", Line_ContinueAfterTyping);
+
+	SetValidityOfInput( FALSE );
+	Wait( 3000 );
+	SetValidityOfInput( TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("background/ke_s2", "right", 0, 0, 300 );
+
+//「前原さんは今、公衆電話からかけてますよね＠　どこの公衆電話ですか？！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700532", 256, TRUE);
+	OutputLine(NULL, "「前原さんは今、公衆電話からかけてますよね？",
+		   NULL, "\"마에바라 씨는 지금 공중전화죠? ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700533", 256, TRUE);
+	OutputLine(NULL, "　どこの公衆電話ですか？！」",
+		   NULL, "어디에 있는 공중전화입니까?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　前原くんの声以外の環境音がまったくない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　前原くんの声以外の環境音がまったくない。",
+		   NULL, "마에바라 군의 소리 이외에는 주변음이 전혀 들리지 않는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　電話ボックスからか￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　電話ボックスからか。",
+		   NULL, "전화부스 때문인가. ", Line_Normal);
+	ClearMessage();
+
+//メモに殴り書きをし、対面の同僚に突きつける＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　メモに殴り書きをし、対面の同僚に突きつける。",
+		   NULL, "메모지에 급히 휘갈겨 써서, 옆의 동료에게 들이민다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//（ヒナミザワ、デンワボックス！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（ヒナミザワ、デンワボックス！！）",
+		   NULL, "(히나미자와, 전화부스!!) ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　同僚がすぐに事態を飲み込み、慌しく内線を回す￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　同僚がすぐに事態を呑み込み、慌しく内線を回す。",
+		   NULL, "동료가 곧바로 사태를 알아채고 분주하게 내선을 돌린다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("background/denwa", "left", 0, 0, 300 );
+
+	StopSE( 4 );
+
+//「…落ち着いて前原さん＠　今はどういう状況なんです…？！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700534", 256, TRUE);
+	OutputLine(NULL, "「…落ち着いて前原さん！",
+		   NULL, "\"...침착해요, 마에바라 씨! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700535", 256, TRUE);
+	OutputLine(NULL, "　今はどういう状況なんです…？！」",
+		   NULL, "지금은 어떤 상황입니까...?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　混乱した相手に余計あおるような言い方はよくないのだが…、今回はそういうケースじゃない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　混乱した相手に余計あおるような言い方はよくないのだが…、今回はそういうケースじゃない。",
+		   NULL, "혼란한 상대에게 당면한 위험을 상기시키는 말은 좋지 않지만... 그런 걸 따질 상황이 아니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　…前原くんは危機に襲われ、逃げて電話をかけてるんじゃない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…前原くんは危機に襲われ、逃げて電話をかけてるんじゃない。",
+		   NULL, "...마에바라 군은 위기에서 도망쳐 전화를 건 게 아니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　……今この瞬間も何らかの危機にさらされている…￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……今この瞬間も何らかの危機にさらされている…！",
+		   NULL, "...지금 이 순간도 어떤 위기에 노출되어 있다...! ", Line_Normal);
+	ClearMessage();
+
+//だが…こっちがまくしたてたって、前原くんは余計に焦るだけなのだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが…こっちがまくしたてたって、前原くんは余計に焦るだけなのだ。",
+		   NULL, "이쪽이 뭐라고 하든 마에바라 군은 초조해질 뿐이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　前原くんは助けを求めるためだけに電話をしてきたんじゃない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　前原くんは助けを求めるためだけに電話をしてきたんじゃない。",
+		   NULL, "이 전화는 도움을 요청하는 전화가 아니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　…それ以上の何かを伝えたくて電話をしてきてるのだ＠br
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…それ以上の何かを伝えたくて電話をしてきてるのだ。",
+		   NULL, "...그 이상으로 뭔가를 알리려는 전화다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+
+//　そしてその何かは＠……この電話の機会を逃すと、もう二度と伝えられないという確信に基づいている…￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そしてその何かは、",
+		   NULL, "그리고 지금 케이이치 군은... ", Line_WaitForInput);
+	OutputLine(NULL, "……この電話の機会を逃すと、もう二度と伝えられないという確信に基づいている…！",
+		   NULL, "이번 기회를 놓치면, 이제 두 번 다시 그 뭔가를 전할 수 없다고 확신했다! ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("background/ke_s2", "right", 0, 0, 300 );
+
+//　同僚がメモを回してきた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　同僚がメモを回してきた。",
+		   NULL, "동료가 메모를 돌려줬다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//（雛見沢にボックスは１ヶ所＠パトを向かわせました＠５分です。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（雛見沢にボックスは１ヶ所。",
+		   NULL, "(히나미자와에 전화부스는 1개. ", Line_WaitForInput);
+	OutputLine(NULL, "パトを向かわせました。",
+		   NULL, "차를 보냈습니다. ", Line_WaitForInput);
+	OutputLine(NULL, "５分です。）",
+		   NULL, "5분입니다.) ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「かかり過ぎです＠警邏には何人乗ってます？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700536", 256, TRUE);
+	OutputLine(NULL, "「かかり過ぎです。",
+		   NULL, "\"너무 늦어요. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700537", 256, TRUE);
+	OutputLine(NULL, "警邏には何人乗ってます？」",
+		   NULL, "차에는 몇 명 탔습니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「２人です。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s01/00/dek02005", 256, TRUE);
+	OutputLine(NULL, "「２人です。」",
+		   NULL, "\"두 명입니다.\" ", Line_Normal);
+	ClearMessage();
+
+//足りない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　足りない。",
+		   NULL, "부족하다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　……もしも私の想像通りなら…前原くんは多人数に囲まれている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……もしも私の想像通りなら…前原くんは多人数に囲まれている。",
+		   NULL, "...만약 내 상상대로라면, 마에바라 군은 많은 사람에게 둘러싸여 있을 것이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　それに５分じゃ遅すぎる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それに５分じゃ遅すぎる！",
+		   NULL, "5분은 너무 늦어! ", Line_Normal);
+	ClearMessage();
+
+//「雛見沢の駐在さんには電話しました？！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700538", 256, TRUE);
+	OutputLine(NULL, "「雛見沢の駐在さんには電話しました？！」",
+		   NULL, "\"히나미자와 파출소에는 연락했습니까?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「定時巡回の時間です＠家人は留守で連絡不能。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s01/00/dek02006", 256, TRUE);
+	OutputLine(NULL, "「定時巡回の時間です。",
+		   NULL, "\"정시순찰 시간입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s01/00/dek02007", 256, TRUE);
+	OutputLine(NULL, "家人は留守で連絡不能。」",
+		   NULL, "가족들은 부재중으로 연락불가.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「くそッ！＠　熊ちゃん、車を回して下さい。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700539", 256, TRUE);
+	OutputLine(NULL, "「くそッ！！",
+		   NULL, "\"제길! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700540", 256, TRUE);
+	OutputLine(NULL, "　熊ちゃん、車を回して下さい。」",
+		   NULL, "쿠마쨩, 차를 준비해주세요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModSetLayerFilter(1, 256, "none");
+	ModDrawCharacterWithFiltering(1, 19, "sprite/kuma_def_", "0", "right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+
+//「了解っす！！！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100010", 256, TRUE);
+	OutputLine(NULL, "「了解っす！！！」",
+		   NULL, "\"알겠습니다!!!\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	DrawSceneWithMask("background/ke_s2", "right", 0, 0, 300 );
+
+
+//「…もしもし＠　大石さん…＠　ごほっごぼッ！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100813", 256, TRUE);
+	OutputLine(NULL, "「…もしもし？",
+		   NULL, "\"...여보세요? ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100814", 256, TRUE);
+	OutputLine(NULL, "　大石さん…？",
+		   NULL, "오오이시 씨...? ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100815", 256, TRUE);
+	OutputLine(NULL, "　ごほっごぼッ！！」",
+		   NULL, "쿨럭쿨럭!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「もしもし＠　大丈夫です＠ちゃんと聞こえてますよ！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700541", 256, TRUE);
+	OutputLine(NULL, "「もしもし！",
+		   NULL, "\"여보세요! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700542", 256, TRUE);
+	OutputLine(NULL, "　大丈夫です。",
+		   NULL, "괜찮아요. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700543", 256, TRUE);
+	OutputLine(NULL, "ちゃんと聞こえてますよ！」",
+		   NULL, "잘 들립니다!\" ", Line_Normal);
+	ClearMessage();
+
+//　前原くんの様子がおかしい…＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　前原くんの様子がおかしい…。",
+		   NULL, "마에바라 군의 상태가 이상하다.... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　今の咳の音は普通じゃない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今の咳の音は普通じゃない。",
+		   NULL, "지금 기침소리는 보통이 아니었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　……嘔吐＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……嘔吐？",
+		   NULL, "...구토? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　それともまさか…血？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それともまさか…血？！",
+		   NULL, "아니면 설마... 피?! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　すでに襲われ負傷している？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　すでに襲われ負傷している？！",
+		   NULL, "벌써 습격당해 부상을 입었나?! ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("background/denwa", "left", 0, 0, 300 );
+
+//「前原さん、今そこに警官が向かってます＠２～３分で到着しますから何とか持ちこたえて下さい＠　もしもし？＠　聞こえてますか？＠　前原さん？！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700544", 256, TRUE);
+	OutputLine(NULL, "「前原さん、今そこに警官が向かってます。",
+		   NULL, "\"마에바라 씨, 지금 그곳에 경관이 가고 있습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700545", 256, TRUE);
+	OutputLine(NULL, "２〜３分で到着しますから何とか持ちこたえて下さい！",
+		   NULL, "2~3 분 안에 도착하니까 어떻게든 버티세요! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700546", 256, TRUE);
+	OutputLine(NULL, "　もしもし？！",
+		   NULL, "여보세요?! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700547", 256, TRUE);
+	OutputLine(NULL, "　聞こえてますか？！",
+		   NULL, "들립니까?! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700548", 256, TRUE);
+	OutputLine(NULL, "　前原さん？！」",
+		   NULL, "마에바라 씨?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　受話器の向こうで咳き込むのが聞こえた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　受話器の向こうで咳き込むのが聞こえた。",
+		   NULL, "수화기 너머에서 심한 기침소리가 들렸다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+	PlayBGM( 1, "msys08", 56, 0 );
+
+//　……脳裏に最悪の予感が過ぎる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……脳裏に最悪の予感が過ぎる。",
+		   NULL, "...뇌리에 최악의 예감이 스친다. ", Line_Normal);
+	ClearMessage();
+
+//「前原さん！＠　犯人は誰です？＠　何人なんですッ？！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700549", 256, TRUE);
+	OutputLine(NULL, "「前原さん！！",
+		   NULL, "\"마에바라 씨!! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700550", 256, TRUE);
+	OutputLine(NULL, "　犯人は誰です？！",
+		   NULL, "범인은 누구입니까?! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700551", 256, TRUE);
+	OutputLine(NULL, "　何人なんですッ？！」",
+		   NULL, "몇명입니까?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「……お、!w1500…俺も!w1000……最初はニンゲンが犯人なんだと思いまし……!w1000げぼッ！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100816", 256, TRUE);
+	OutputLine(NULL, "「……お、",
+		   NULL, "\"...저, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1500 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "…俺も",
+		   NULL, "...저도, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "……最初はニンゲンが犯人なんだと思いまし……",
+		   NULL, "처음엔 인간이 범인이라고 생각했... ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "げぼッ！！」",
+		   NULL, "케헥!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　咳とも嘔吐ともつかない呻き￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　咳とも嘔吐ともつかない呻き。",
+		   NULL, "기침도 구토도 아닌 신음. ", Line_Normal);
+	ClearMessage();
+
+//「大丈夫ですか！！　前原さん！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700552", 256, TRUE);
+	OutputLine(NULL, "「大丈夫ですか！！　前原さん！！」",
+		   NULL, "\"괜찮습니까!! 마에바라 씨!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「犯人はニンゲンなんだって、!w1000オヤシロさまの祟りなんかないんだって、!w1000そう思ってました…＠ついさっきまで＠……だけど!s400……!sdやっぱり…、!w1000げほげほ…ッ！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100817", 256, TRUE);
+	OutputLine(NULL, "「犯人はニンゲンなんだって、",
+		   NULL, "\"범인은 인간이라고. ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "オヤシロさまの祟りなんかないんだって、",
+		   NULL, "오야시로님의 저주 같은 건 없다고, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "そう思ってました…。",
+		   NULL, "그렇게 생각했습니다... ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100818", 256, TRUE);
+	OutputLine(NULL, "ついさっきまで。",
+		   NULL, "바로 조금 전까지. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100819", 256, TRUE);
+	OutputLine(NULL, "……だけど",
+		   NULL, "...하지만 ", Line_Continue);
+//!s400
+	SetSpeedOfMessage( TRUE, 0, );
+	OutputLine(NULL, "……",
+		   NULL, "... ", Line_Continue);
+	SetSpeedOfMessage( FALSE, 0, );
+	// (backup) SetValidityOfInput( FALSE );
+
+//!sd//
+
+
+	OutputLine(NULL, "やっぱり…、",
+		   NULL, "역시... ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "げほげほ…ッ！！」",
+		   NULL, "쿨럭쿨럭...!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　激しい咳＠それに続いて嘔吐￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　激しい咳。",
+		   NULL, "격렬한 기침. ", Line_WaitForInput);
+	OutputLine(NULL, "それに続いて嘔吐。",
+		   NULL, "계속되는 구토. ", Line_Normal);
+	ClearMessage();
+
+//「……でも!w800…やっぱり!w800…オヤシロさまってのは!w800……いるんだと思います……＠いや、います＠今。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100820", 256, TRUE);
+	OutputLine(NULL, "「……でも",
+		   NULL, "\"하지만... ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 300 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "…やっぱり",
+		   NULL, "역시... ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 800 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "…オヤシロさまってのは",
+		   NULL, "오야시로님은... ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "……いるんだと思います……。",
+		   NULL, "있는 것 같습니다... ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100821", 256, TRUE);
+	OutputLine(NULL, "いや、います。",
+		   NULL, "아니, 있습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100822", 256, TRUE);
+	OutputLine(NULL, "今。」",
+		   NULL, "지금.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「前原さん、どうか、どうか落ち着いて…、＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700553", 256, TRUE);
+	OutputLine(NULL, "「前原さん、どうか、どうか落ち着いて…、」",
+		   NULL, "\"마에바라 씨, 제발, 제발 침착해 주...\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「なんかさっきからおかしいと思ってたんです…＠ずーっとつけてくるんですよ…！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100823", 256, TRUE);
+	OutputLine(NULL, "「なんかさっきからおかしいと思ってたんです…。",
+		   NULL, "\"조금 전부터 뭔가 이상하다고 생각했습니다... ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100824", 256, TRUE);
+	OutputLine(NULL, "ずーっとつけてくるんですよ…！！",
+		   NULL, "계속 따라옵니다...!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　走っても走っても、走っても走っても…！！＠　影みたいにぴったりくっついて！＠　だけども少しずつ…少しずつ…＠俺の背中ににじり寄ってくるんです……。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100825", 256, TRUE);
+	OutputLine(NULL, "　走っても走っても、走っても走っても…！！！",
+		   NULL, "달려도 달려도, 달려도 달려도...!!! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100826", 256, TRUE);
+	OutputLine(NULL, "　影みたいにぴったりくっついて！！",
+		   NULL, "그림자처럼 딱 달라붙어서!! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100827", 256, TRUE);
+	OutputLine(NULL, "　だけども少しずつ…少しずつ…。",
+		   NULL, "하지만 조금씩... 조금씩... ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100828", 256, TRUE);
+	OutputLine(NULL, "俺の背中ににじり寄ってくるんです……。」",
+		   NULL, "제 등뒤로 천천히 다가옵니다...\" ", Line_Normal);
+	ClearMessage();
+
+//「……前原さん、!w1000…そいつは!s300………今!sd、ひょっとして…、!w1000………前原さんの…後ろに？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700554", 256, TRUE);
+	OutputLine(NULL, "「……前原さん、",
+		   NULL, "\"...마에바라 씨, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	SetSpeedOfMessage( TRUE, 0, );
+
+	OutputLine(NULL, "…そいつは",
+		   NULL, "그 녀석은...... ", Line_Continue);
+
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 300 );
+	// (backup) SetValidityOfInput( TRUE );
+
+
+	OutputLine(NULL, "………今",
+		   NULL, "지금, ", Line_Continue);
+//!sd
+
+	SetSpeedOfMessage( FALSE, 0, );
+
+	OutputLine(NULL, "、ひょっとして…、",
+		   NULL, "혹시, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "………前原さんの…後ろに？」",
+		   NULL, "마에바라 씨의...... 바로 뒤에?\" ", Line_Normal);
+	ClearMessage();
+
+//「……………後ろに＠……すぐ、……後ろに………。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100829", 256, TRUE);
+	OutputLine(NULL, "「……………後ろに。",
+		   NULL, "\"...뒤에, ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100830", 256, TRUE);
+	OutputLine(NULL, "……すぐ、……後ろに………。」",
+		   NULL, "바로... 뒤에....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「お願いです前原さん＠……怖いのはわかります＠ですがお願いです！＠　……あなたの後ろに……誰がいるんですッ？！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700555", 256, TRUE);
+	OutputLine(NULL, "「お願いです前原さん。",
+		   NULL, "\"부탁입니다, 마에바라 씨. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700556", 256, TRUE);
+	OutputLine(NULL, "……怖いのはわかります。",
+		   NULL, "...두려움은 이해합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700557", 256, TRUE);
+	OutputLine(NULL, "ですがお願いです！！",
+		   NULL, "그래도 부탁드립니다!! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700558", 256, TRUE);
+	OutputLine(NULL, "　……あなたの後ろに……誰がいるんですッ？！」",
+		   NULL, "당신의 뒤에... 누가 있습니까?!\" ", Line_Normal);
+	ClearMessage();
+
+//「振り向けるわけ…ないじゃないですか…＠振り向いたら……俺!w800……俺…、＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100831", 256, TRUE);
+	OutputLine(NULL, "「振り向けるわけ…ないじゃないですか…。",
+		   NULL, "\"뒤돌아볼 수... 없습니다... ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100832", 256, TRUE);
+	OutputLine(NULL, "振り向いたら……俺",
+		   NULL, "뒤돌아보면... 저는, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 800 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "……俺…、」",
+		   NULL, "저는....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「怖いのはわかります！＠　でも教えて欲しい！＠　ちょっと振り返るだけでいいんです！＠　前原さんの後ろに……!w1000誰がいるんですッ？！？！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700559", 256, TRUE);
+	OutputLine(NULL, "「怖いのはわかります！！",
+		   NULL, "\"무서운 건 압니다!! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700560", 256, TRUE);
+	OutputLine(NULL, "　でも教えて欲しい！！",
+		   NULL, "하지만 가르쳐주세요!! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700561", 256, TRUE);
+	OutputLine(NULL, "　ちょっと振り返るだけでいいんです！！",
+		   NULL, "조금만 돌아보면 됩니다!! ", Line_WaitForInput);
+	OutputLine(NULL, "　前原さんの後ろに……",
+		   NULL, "마에바라 씨의 뒤에... ", Line_ContinueAfterTyping);
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700562", 256, TRUE);
+	OutputLine(NULL, "誰がいるんですッ？！？！」",
+		   NULL, "누가 있습니까?!?!\" ", Line_Normal);
+	ClearMessage();
+
+//　直後に激しい嘔吐が聞こえる＠それから何か嫌な音￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　直後に激しい嘔吐が聞こえる。",
+		   NULL, "직후에 격렬한 구토소리가 들려왔다. ", Line_WaitForInput);
+	OutputLine(NULL, "それから何か嫌な音。",
+		   NULL, "그리고 뭔가 듣기 싫은 소리. ", Line_Normal);
+	ClearMessage();
+
+//「…前原さん＠……あんたまさか＠…喉を引っ掻いてたりは…しないでしょうね…？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700563", 256, TRUE);
+	OutputLine(NULL, "「…前原さん、",
+		   NULL, "\"...마에바라 씨, ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700564", 256, TRUE);
+	OutputLine(NULL, "……あんたまさか、",
+		   NULL, "...당신 설마, ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700565", 256, TRUE);
+	OutputLine(NULL, "…喉を引っ掻いてたりは…しないでしょうね…？」",
+		   NULL, "목을 세게 긁고 있다던지... 그런 건 아니죠...?\" ", Line_Normal);
+	ClearMessage();
+
+//　返事はない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　返事はない。",
+		   NULL, "대답은 없었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　…ばりばりと…掻きむしるような音……￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…ばりばりと…掻きむしるような音……。",
+		   NULL, "힘껏... 긁어내는 소리....... ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("black", 400 );
+
+//　ガタンガシャン！　とぶつかり合う音がした￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ガタンガシャン！　とぶつかり合う音がした。",
+		   NULL, "덜커덩 덜커덩! 뭔가가 부딪치는 소리가 났다. ", Line_Normal);
+	ClearMessage();
+
+//　…前原くんが受話器を落としたのだろう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…前原くんが受話器を落としたのだろう。",
+		   NULL, "...마에바라 군이 수화기를 떨어뜨린 소리일 것이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　電話の向こうからは唸りと嘔吐、そして繰り返される……異音￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　電話の向こうからは唸りと嘔吐、そして繰り返される……異音。",
+		   NULL, "수화기 너머에서는 신음소리와 구토, 그리고 반복되는...... 이상한 소리. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene("background/denwa", 400 );
+
+//「もしもし＠　もしもし？＠　前原さん？＠　もしもーしッ？！？！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700566", 256, TRUE);
+	OutputLine(NULL, "「もしもし！",
+		   NULL, "\"여보세요! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700567", 256, TRUE);
+	OutputLine(NULL, "　もしもし？！",
+		   NULL, "여보세요?! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700568", 256, TRUE);
+	OutputLine(NULL, "　前原さん？！",
+		   NULL, "마에바라 씨?! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700569", 256, TRUE);
+	OutputLine(NULL, "　もしもーしッ？！？！」",
+		   NULL, "여보세요?!?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　離された受話器の声がどんなに遠いかよくわかってる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　離された受話器の声がどんなに遠いかよくわかってる。",
+		   NULL, "스스로의 목소리가 그에게 얼마나 멀게 느껴질지 잘 안다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　でも…叫ばずにはいられないのだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも…叫ばずにはいられないのだ。",
+		   NULL, "하지만 소리치지 않고서는 견딜 수 없었다. ", Line_Normal);
+	ClearMessage();
+
+//　その時、受話器の向こうから…つぶやきが聞こえた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その時、受話器の向こうから…つぶやきが聞こえた。",
+		   NULL, "그때 수화기 너머에서 중얼거리는 소리가 들렸다. ", Line_Normal);
+	ClearMessage();
+
+//　何を言っているのかはわからない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何を言っているのかはわからない。",
+		   NULL, "무슨 말을 하는지는 알 수 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　……口調からして…独り言＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……口調からして…独り言？",
+		   NULL, "말투로 봐서는... 혼잣말? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　それとも…そこにいる誰かに言っているのか￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それとも…そこにいる誰かに言っているのか？",
+		   NULL, "아니면 거기 있는 누군가에게? ", Line_Normal);
+	ClearMessage();
+
+
+//「もしもし…＠　………………………前原…さん…？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700570", 256, TRUE);
+	OutputLine(NULL, "「もしもし…？",
+		   NULL, "\"여보세요...? ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700571", 256, TRUE);
+	OutputLine(NULL, "　………………………前原…さん…？」",
+		   NULL, "......마에바라...씨...?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　それはつぶやきというより……お経みたいな、単調な何かの繰り返しだった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それはつぶやきというより……お経みたいな、単調な何かの繰り返しだった。",
+		   NULL, "그건 중얼거림이라기보다... 마치 불경 같은, 단조로운 문장의 반복이었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　その何かを聞き取ろうと…神経を研ぎ澄ます…＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その何かを聞き取ろうと…神経を研ぎ澄ます…。",
+		   NULL, "그 문장을 알아듣기 위해 정신을 집중한다... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　何を繰り返してるんだ彼は……＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何を繰り返してるんだ彼は……。",
+		   NULL, "무슨 말을 반복하는 것일까... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　一体……何を………！！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　一体……何を………！！！",
+		   NULL, "도대체... 무슨 말을...!!! ", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DrawScene("black", 50 );
+
+//　ぶつん￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ぶつん！",
+		   NULL, "철컥! ", Line_Normal);
+	ClearMessage();
+
+//　あまりに唐突に切れた＠……１０円が切れたのか？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あまりに唐突に切れた。",
+		   NULL, "너무 갑작스럽게 끊어졌다. ", Line_WaitForInput);
+	OutputLine(NULL, "……１０円が切れたのか？！",
+		   NULL, "...동전이 다 된 건가?! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　公衆電話だったから…！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　公衆電話だったから…！！",
+		   NULL, "공중전화였으니...!! ", Line_Normal);
+	ClearMessage();
+
+//「…………あ。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700572", 256, TRUE);
+	OutputLine(NULL, "「…………あ。」",
+		   NULL, "\"......아.\" ", Line_Normal);
+	ClearMessage();
+
+//　唐突に切られたから＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　唐突に切られたから。",
+		   NULL, "갑작스럽게 끊어졌기 때문에. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　…むしろ最後の一言は鮮明に脳裏に戻った￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…むしろ最後の一言は鮮明に脳裏に戻った。",
+		   NULL, "...오히려 마지막 한마디가, 선명하게 뇌리에 남았다. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene("background/ke_s2", 1000 );
+	ModDrawCharacter(3, 19, "sprite/kuma_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+
+//「大石さん、車はＯＫっす！！＠　大石さん…？！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100011", 256, TRUE);
+	OutputLine(NULL, "「大石さん、車はＯＫっす！！！",
+		   NULL, "\"오오이시 씨, 차는 OK입니다!!! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100012", 256, TRUE);
+	OutputLine(NULL, "　大石さん…？！」",
+		   NULL, "오오이시 씨...?!\" ", Line_Normal);
+	ClearMessage();
+
+//「……ごめんなさい、だ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s01/11/120700573", 256, TRUE);
+	OutputLine(NULL, "「……ごめんなさい、だ。」",
+		   NULL, "\"...미안해, 다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「大石さん……？？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 19, "ps3/s01/19/123100013", 256, TRUE);
+	OutputLine(NULL, "「大石さん……？？」",
+		   NULL, "\"오오이시 씨...??\" ", Line_Normal);
+	ClearMessage();
+
+//　前原くんはずっと繰り返してたんだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　前原くんはずっと繰り返してたんだ。",
+		   NULL, "마에바라 군은 계속 반복하고 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　…ごめんなさい、って………￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…ごめんなさい、って………。",
+		   NULL, "...미안해, 라고...... ", Line_Normal);
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　その時、直感した＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その時、直感した。",
+		   NULL, "그 순간 직감했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　…………もう、そんなに急ぐことがないことに￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…………もう、そんなに急ぐことがないことに。",
+		   NULL, "...이제 그렇게 서두를 필요는 없다. ", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 1, "msys11", 56, 0 );
+
+//　……その時、開け放たれた窓の向こうから…ひぐらしの声が聞こえてきた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……その時、開け放たれた窓の向こうから…ひぐらしの声が聞こえてきた。",
+		   NULL, "...그때 열려진 창 저편으로부터... 쓰르라미 소리가 들려왔다. ", Line_Normal);
+	ClearMessage();
+
+//　カナカナカナカナカナ……￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　カナカナカナカナカナ……。",
+		   NULL, "쓰르쓰르쓰르쓰르쓰르... ", Line_Normal);
+	ClearMessage();
+
+//　ずっと聞こえていたはずだった＠…特に気にも留めず＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ずっと聞こえていたはずだった。",
+		   NULL, "계속 들려왔을 것이다. ", Line_WaitForInput);
+	OutputLine(NULL, "…特に気にも留めず。",
+		   NULL, "...특별히 신경 쓰지도 않았었는데. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　どうして今になって急に気になったのか￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どうして今になって急に気になったのか。",
+		   NULL, "어째서 갑자기 이렇게 신경이 쓰일까. ", Line_Normal);
+	ClearMessage();
+
+//　カナカナカナカナカナ……￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　カナカナカナカナカナ……。",
+		   NULL, "쓰르쓰르쓰르쓰르쓰르... ", Line_Normal);
+	ClearMessage();
+
+//　何か、伝えようとしている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何か、伝えようとしている？",
+		   NULL, "뭔가 전하려 하는 걸까? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　ひぐらしだけが知っている＠……そんな気がした￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ひぐらしだけが知っている。",
+		   NULL, "쓰르라미만이 알고 있다. ", Line_WaitForInput);
+	OutputLine(NULL, "……そんな気がした。",
+		   NULL, "......그런 느낌이 들었다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("white", 3000 );
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+//if %kaisou_mode = 1 goto *kaisou_mode
+//gosub *Sub_Tips_099
+//*Sub_Tips_099
+//容疑者のメモ
+
+	DisableWindow();
+	DrawScene("black", 3000 );
+
+
+	PlayBGM( 1, "msys12", 56, 0 );
+//!s100
+//locate 7,4
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 4 ); }
+	SetStyleOfMessageSwinging( 1 );
+	SetValidityOfTextFade( FALSE );
+	PlayBGM( 2, "lsys24", 56, 0 );
+//昭和５８年６月。/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "昭和５８年６月。",
+		   NULL, "쇼와 58(1983)년 6월 ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	SetStyleOfMessageSwinging( 0 );
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　某県鹿骨市の寒村、雛見沢で女子生徒殺人事件が起こった。/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　某県鹿骨市の寒村、雛見沢で女子生徒殺人事件が起こった。",
+		   NULL, "모 현 시시보네시의 작은 마을, 히나미자와에서 여학생 살인사건이 일어났다. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　容疑者は、前原圭一（１Ｘ歳）/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　容疑者は、前原圭一（１Ｘ歳）",
+		   NULL, "용의자는 마에바라 케이이치 (1x세) ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("background/ma3", "left", 0, 0, 1300 );
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　容疑者は自宅にクラスメートの女子２名/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　容疑者は自宅にクラスメートの女子２名",
+		   NULL, "용의자는 집에 같은 반 여학생 2명 ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//（竜宮礼奈・園崎魅音）を呼び寄せ、金属バットで撲殺。
+	OutputLine(NULL, "（竜宮礼奈・園崎魅音）を呼び寄せ、金属バットで撲殺。",
+		   NULL, "(류구 레나, 소노자키 미온)을 불러들여, 금속배트로 살해. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("black", "left", 0, 0, 1300 );
+	DrawSceneWithMask("background/ma_j3", "left", 0, 0, 1300 );
+
+//locate 0,2
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
+	SetStyleOfMessageSwinging( 0 );
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　犯行現場は自宅２階の容疑者の自室だった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　犯行現場は自宅２階の容疑者の自室だった。",
+		   NULL, "범행 현장은 자택 2층 용의자의 방이었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　室内は凄まじい返り血に彩られ、被害者ともみ合った形跡が認められた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　室内は凄まじい返り血に彩られ、被害者ともみ合った形跡が認められた。",
+		   NULL, "방 안에는 상당한 양의 피가 흩뿌려져 있었고, 피해자들과 다툰 흔적이 발견되었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　また、犯行現場とは別に、玄関、居間、台所でも荒らされた形跡が認められた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　また、犯行現場とは別に、玄関、居間、台所でも荒らされた形跡が認められた。",
+		   NULL, "또 범행 현장과는 별도로 현관, 거실, 부엌에서도 몸싸움 흔적이 있었다. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+//locate 0,2
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
+	DisableWindow();
+	DrawSceneWithMask("background/ma_g3_01", "left", 0, 0, 1300 );
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　玄関では、靴箱と壁に激しい打撲の痕跡。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　玄関では、靴箱と壁に激しい打撲の痕跡。",
+		   NULL, "현관에는 신발장과 벽에 둔기로 강한 충격이 가해진 흔적. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　凶器のバットによるものと断定。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　凶器のバットによるものと断定。",
+		   NULL, "흉기인 배트에 의한 것으로 단정. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　痕跡に血液反応が出なかったことから、犯行以前に破壊したものと推定。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　痕跡に血液反応が出なかったことから、犯行以前に破壊したものと推定。",
+		   NULL, "흔적에 혈액반응이 나오지 않은 점을 볼 때, 범행 이전 파괴된 것으로 추정. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　被害者の逃走を阻止するため、容疑者が威圧行為を行なった可能性がある。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　被害者の逃走を阻止するため、容疑者が威圧行為を行なった可能性がある。",
+		   NULL, "피해자의 도주를 막기 위해 용의자가 위협했을 가능성이 있다. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask("background/ma_d1", "right", 0, 0, 1300 );
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//locate 0,2
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
+
+//　居間では絨毯が剥がされ、投げ捨てられていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　居間では絨毯が剥がされ、投げ捨てられていた。",
+		   NULL, "거실은 카펫을 들춰 내동댕이쳤다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　これは被害者ともみ合った際のものとは考え難く、その真意は不明。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これは被害者ともみ合った際のものとは考え難く、その真意は不明。",
+		   NULL, "피해자와 함께 있을 때 일어난 일이라고 생각하기 어렵고, 그 의도도 불명. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("background/ma_s1", "right", 0, 0, 1300 );
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//locate 0,2
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
+
+//　台所ではゴミ袋が破かれ、その中身が床にばら撒かれていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　台所ではゴミ袋が破かれ、その中身が床にばら撒かれていた。",
+		   NULL, "부엌에서는 쓰레기 봉투가 찢어진 채 내용물이 바닥에 널브려져 있었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　ゴミは周囲に飛散し、容疑者のものと思われる手形も発見された。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ゴミは周囲に飛散し、容疑者のものと思われる手形も発見された。",
+		   NULL, "주변에는 흩어진 쓰레기에서는 용의자의 것으로 추정되는 손자국이 발견되었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　容疑者は何らかの理由でゴミを出し、それを掌で叩いたものと考えられる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　容疑者は何らかの理由でゴミを出し、それを掌で叩いたものと考えられる。",
+		   NULL, "용의자는 무슨 이유에서인지 쓰레기를 꺼내 손으로 휘저은 것으로 추정된다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　その真意は不明。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その真意は不明。",
+		   NULL, "그 의도는 불명. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+//locate 0,4
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 4 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　また、冷蔵庫に貼り付けられていたメモには「針がなかった？」と記されていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　また、冷蔵庫に貼り付けられていたメモには「針がなかった？」と記されていた。",
+		   NULL, "냉장고에 붙여진 메모에는 '바늘 없었어?'라고 쓰여져 있다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　意味不明。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　意味不明。",
+		   NULL, "의미불명. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　念のためゴミを探すが、針は発見できなかった。
+	OutputLine(NULL, "　念のためゴミを探すが、針は発見できなかった。",
+		   NULL, "만약을 위해 쓰레기를 조사했지만, 바늘은 발견할 수 없었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("black", 1000 );
+
+//locate 0,3
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 3 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　荒らされてはいなかったが、引越し以来、開放したままになっているガレージのシャッターが閉じられていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　荒らされてはいなかったが、引越し以来、開放したままになっているガレージのシャッターが閉じられていた。",
+		   NULL, "망가지지는 않았지만, 이사 온 이래로 열려 있던 차고의 셔터가 닫혀 있었다. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　シャッターからは容疑者の指紋を検出。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　シャッターからは容疑者の指紋を検出。",
+		   NULL, "셔터에서는 용의자의 지문이 검출. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　その真意は不明。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その真意は不明。",
+		   NULL, "의도는 불명. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　容疑者は犯行現場から逃走したが、/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　容疑者は犯行現場から逃走したが、",
+		   NULL, "용의자는 범행현장에서 도주했지만, ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//警邏中の警察官（雛見沢駐在所）が電話ボックス内で倒れているのを発見する。/
+	OutputLine(NULL, "警邏中の警察官（雛見沢駐在所）が電話ボックス内で倒れているのを発見する。",
+		   NULL, "순찰 중이던 경찰관(히나미자와 파출소 소속)이 전화부스 안에서 쓰러져 있는 것을 발견했다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+//locate 0,5
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 5 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　発見時、容疑者は意識不明の重体。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　発見時、容疑者は意識不明の重体。",
+		   NULL, "발견 당시 용의자는 의식불명의 중태. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　直ちに村内の診療所に搬送し手当てをしたが、意識は戻らず２４時間後に死亡した。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　直ちに村内の診療所に搬送し手当てをしたが、意識は戻らず２４時間後に死亡した。",
+		   NULL, "즉시 마을 진료소로 이송해 치료했지만, 의식은 돌아오지 않고 24시간 후에 사망했다. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("background/sinryou_soto3", 1000 );
+
+//locate 0,4
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 4 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　検死の結果、直接の死因は出血性ショック死。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　検死の結果、直接の死因は出血性ショック死。",
+		   NULL, "검시 결과, 직접적인 사인은 출혈성 쇼크사. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　自らの爪で喉を引き裂き、その結果の出血で死に至ったと断定した。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　自らの爪で喉を引き裂き、その結果の出血で死に至ったと断定した。",
+		   NULL, "자신의 손톱으로 목을 찢어 발생한 출혈로 사망에 이르렀다고 단정했다. ", Line_ContinueAfterTyping);
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+//locate 0,3
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 3 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　先週に発生した富竹氏事件の異常な死に方との酷似に、警察は関連性があるものとして捜査を開始する。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　先週に発生した富竹氏事件の異常な死に方との酷似に、警察は関連性があるものとして捜査を開始する。",
+		   NULL, "지난 주에 발생한 토미타케 사건의 비정상적인 죽음과 흡사한 점이 많아, 경찰은 연관성에 주목해 수사를 개시했다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//（ただし、地元からの強い要望により非公開捜査）
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（ただし、地元からの強い要望により非公開捜査）",
+		   NULL, "(현지에서의 강한 요청으로 비공개수사로 진행됨.) ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　異常な死に方に何らかの薬物の使用を疑うが、富竹氏事件と同様に一切検出されない。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　異常な死に方に何らかの薬物の使用を疑うが、富竹氏事件と同様に一切検出されない。",
+		   NULL, "비정상적인 죽음에 약물 사용을 의심했지만, 토미타케 사건처럼 전혀 검출되지 않았다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+//locate 0,5
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 5 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　当初はあまりの不可解さに、衝動的な突発的犯行と断定していた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　当初はあまりの不可解さに、衝動的な突発的犯行と断定していた。",
+		   NULL, "너무나 불가사의한 사건이었기에, 처음에는 충동적인 우발범행으로 의심되었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　だが、容疑者の犯行直前までの奇行が次々と露呈するに従い、その方針は変更されることとなる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、容疑者の犯行直前までの奇行が次々と露呈するに従い、その方針は変更されることとなる。",
+		   NULL, "그러나 범행 직전까지 용의자가 보인 이상한 행동이 차례차례 드러나, 그 방침은 변경되었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+//locate 0,2
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　親しかったグループとの離縁。孤立。意味不明の言動。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　親しかったグループとの離縁。孤立。意味不明の言動。",
+		   NULL, "친했던 그룹과의 절교, 고립, 의미불명의 언동. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　犯行の数日前からは金属バットを持ち歩くようになっていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　犯行の数日前からは金属バットを持ち歩くようになっていた。",
+		   NULL, "범행 며칠 전부터는 금속배트를 휴대했다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　攻撃的な言動、独り言は学校でもしばしば見られ、クラスメートが実際にその一部を聞いている。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　攻撃的な言動、独り言は学校でもしばしば見られ、クラスメートが実際にその一部を聞いている。",
+		   NULL, "공격적인 언행, 혼잣말이 학교에서 자주 목격되었으며, 급우가 실제로 그 일부를 들었다고 진술했다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+//locate 0,3
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 3 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　犯行の前々日には、両親に自らの死をほのめかす発言もしていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　犯行の前々日には、両親に自らの死をほのめかす発言もしていた。",
+		   NULL, "범행 이틀 전날에는 부모에게 자신의 죽음을 암시하는 발언을 했다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　警察は、これらの状況から、この事件が突発的なものでなく、数日前から予定された計画的犯行の可能性があるとして捜査を開始する。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　警察は、これらの状況から、この事件が突発的なものでなく、数日前から予定された計画的犯行の可能性があるとして捜査を開始する。",
+		   NULL, "경찰은 이러한 정황으로부터, 이 사건이 우발적 범행이 아니라 계획 범행일 가능성에 초점을 두고 수사를 진행했다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("background/tegami1", 1000 );
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//locate 0,4
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 4 ); }
+
+//　その後、
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その後、",
+		   NULL, "그 후, ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　容疑者の自室から直筆のメモが発見された。
+	OutputLine(NULL, "　容疑者の自室から直筆のメモが発見された。",
+		   NULL, "용의자의 방에서 직접 쓴 메모가 발견됐다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　メモはＢ５の大学ノートを半分に裂いたもの２枚で構成され、!s200まるで隠蔽するかのように、!s100壁時計の裏に貼られ、隠されていた。/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　メモはＢ５の大学ノートを半分に裂いたもの２枚で構成され、",
+		   NULL, "메모는 B5 대학노트를 반으로 찢은 2장으로 구성되어, ", Line_ContinueAfterTyping);
+//!s200
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "まるで隠蔽するかのように、",
+		   NULL, "마치 감추려 했던 것처럼, ", Line_ContinueAfterTyping);
+
+// !s100
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+	OutputLine(NULL, "壁時計の裏に貼られ、隠されていた。",
+		   NULL, "벽시계 뒤에 붙여진 채 숨겨져 있었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　内容は別添の通り。/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　内容は別添の通り。",
+		   NULL, "내용은 별첨. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("background/sora5", 1000 );
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+//　警察は事件と密接に関係するものとして重視。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　警察は事件と密接に関係するものとして重視。",
+		   NULL, "경찰은 사건과 밀접히 관계되었다고 판단. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　容疑者が、何らかの事件に巻き込まれていた可能性があるとして再び捜査方針を転換した。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　容疑者が、何らかの事件に巻き込まれていた可能性があるとして再び捜査方針を転換した。",
+		   NULL, "용의자가 어떤 사건에 말려들었을 가능성에 주목해 다시 수사방침을 전환했다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　だが、その後なんの手がかりも掴めず、メモそのものの信憑性も疑われるようになる。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、その後なんの手がかりも掴めず、メモそのものの信憑性も疑われるようになる。",
+		   NULL, "하지만 그 뒤 어떤 단서도 잡지 못하고, 메모 그 자체의 신빙성도 의심받게 되었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　この事件は突発的なものなのか、計画的なものなのか。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この事件は突発的なものなのか、計画的なものなのか。",
+		   NULL, "우발적 범행인가? 계획 범행인가? ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　真相もわからず進展もなく、事件は文字通り迷宮入りの様相となった。/
+	OutputLine(NULL, "　真相もわからず進展もなく、事件は文字通り迷宮入りの様相となった。",
+		   NULL, "진상도 알 수 없고 진전도 없어서, 사건은 문자 그대로 미궁에 빠진 양상이 되었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	PlayBGM( 1, "msys11", 56, 0 );
+	DrawScene("black", 1000 );
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//locate 0,5
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 5 ); }
+
+//　だが……後年。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが……後年。",
+		   NULL, "하지만... 후년, ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　そのメモにひとつの不審が浮上した。/
+	OutputLine(NULL, "　そのメモにひとつの不審が浮上した。",
+		   NULL, "메모에 한 의문이 제기되었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//locate 0,2
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
+
+//　２枚のメモは、Ｂ５のページを半分にしたものが１枚ずつではなく…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　２枚のメモは、Ｂ５のページを半分にしたものが１枚ずつではなく…。",
+		   NULL, "2장의 메모는 의도적으로 B5 1장을 반으로 찢은 게 아니라... ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　元はＢ５の１ページに書かれたものを…何者かが、
+	OutputLine(NULL, "　元はＢ５の１ページに書かれたものを…何者かが、",
+		   NULL, "원래는 B5 1장에 쓰여졌던 것을... 누군가가,. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　"真ん中の数行を削除するために"/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　“真ん中の数行を削除するために”",
+		   NULL, "'한가운데의 몇 줄을 삭제하기 위해서' ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//破り捨てたのではないか…というのだ。/
+	OutputLine(NULL, "破り捨てたのではないか…というのだ。",
+		   NULL, "찢어버린 건 아닌가...하는 주장이었다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	PlayBGM( 2, "lsys24", 56, 0 );
+//locate 0,2
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
+
+//　文字の大きさと、破かれた部分から推定して、削除されたのは２～３行。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　文字の大きさと、破かれた部分から推定して、削除されたのは２〜３行。",
+		   NULL, "가설에 따르자면 문자의 크기와 찢어진 부분으로부터 추정해, 삭제된 문장은 2~3줄로 추정된다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　削除した人物は容疑者以外である可能性が高い。/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　削除した人物は容疑者以外である可能性が高い。",
+		   NULL, "삭제한 인물은 용의자 이외일 가능성이 높다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　また、時計裏に付着していた大量のセロテープ跡から、/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　また、時計裏に付着していた大量のセロテープ跡から、",
+		   NULL, "또 시계 뒤에 붙어있던 대량의 셀로판테이프 흔적으로부터, ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//"メモ以外にも何かが貼り付けられていたのではないか"との憶測も出た。
+	OutputLine(NULL, "“メモ以外にも何かが貼り付けられていたのではないか”との憶測も出た。",
+		   NULL, "메모 이외에도 뭔가가 붙어있던 게 아니냐는 억측도 나왔다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+//locate 0,4
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 4 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　第一発見者は、かねてから事件との関係を噂される疑惑の刑事。大石蔵人。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　第一発見者は、かねてから事件との関係を噂される疑惑の刑事。大石蔵人。",
+		   NULL, "제1발견자는 평소부터 사건과의 연관성을 의심받던 오오이시 쿠라우도 형사. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　任意で事情聴取をしたが、メモの破損については否定する………。/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　任意で事情聴取をしたが、メモの破損については否定する………。",
+		   NULL, "임의로 사정청취를 했지만, 메모를 파손하였냐는 질문에 대해서는 부정했다... ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	DisableWindow();
+	DrawScene("background/tegami2", 1000 );
+	ClearMessage();
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 10, TRUE );
+
+	PlayBGM( 0, "lsys15", 56, 0 );
+//dwaveplayloop 9
+	PlayBGM( 2, "lsys24", 56, 0 );
+//locate 4,6
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	SetStyleOfMessageSwinging( 1 );
+//容疑者のメモ
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "容疑者のメモ",
+		   NULL, "용의자의 메모 ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　私、前原圭一は命を狙われています
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私、前原圭一は命を狙われています",
+		   NULL, "저, 마에바라 케이이치는 목숨을 위협받고 있습니다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　なぜ、誰に、命を狙われているのかはわかりません。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なぜ、誰に、命を狙われているのかはわかりません。",
+		   NULL, "누가, 왜 목숨을 노리는지는 모릅니다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　ただひとつ判る事は、オヤシロさまの祟りと関係があるということです。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ただひとつ判る事は、オヤシロさまの祟りと関係があるということです。",
+		   NULL, "오야시로님의 저주와 관계된 것만은 알고 있습니다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　レナと魅音は犯人の一味。/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レナと魅音は犯人の一味。",
+		   NULL, "레나와 미온은 범인과 한 패. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//他にも大人が４～５人以上。/
+	OutputLine(NULL, "他にも大人が４〜５人以上。",
+		   NULL, "그 밖에도 어른이 4~5명 이상. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//白いワゴン車を所有。
+	OutputLine(NULL, "白いワゴン車を所有。",
+		   NULL, "흰색 승합차 소유. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//（ここまでが１枚目。ここから下は真横に破られている。）
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（ここまでが１枚目。ここから下は真横に破られている。）",
+		   NULL, "(여기까지가 1장째. 여기부터 아래는 가로로 찢어져 있다.) ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("background/tegami3", 1000 );
+
+//locate 0,2
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 2 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//（ここからが２枚目。ここから上が真横に破られている。）
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（ここからが２枚目。ここから上が真横に破られている。）",
+		   NULL, "(여기서부터 2장째. 여기부터 위가 가로로 찢어져 있다.) ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　どうしてこんなことになったのか、私にはわかりません。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "どうしてこんなことになったのか、私にはわかりません。",
+		   NULL, "어째서 이렇게 되었는지 저도 모르겠습니다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+
+//　これをあなたが読んだなら、その時、私は死んでいるでしょう。/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "これをあなたが読んだなら、その時、私は死んでいるでしょう。",
+		   NULL, "이걸 당신이 읽었다면, 그때 저는 죽어있겠죠. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　…死体があるか、ないかの違いはあるでしょうが。
+	OutputLine(NULL, "…死体があるか、ないかの違いはあるでしょうが。",
+		   NULL, "...시체가 있는가, 없는가의 차이는 있겠지만. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+
+//locate 0,6
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//　これを読んだあなた。どうか真相を暴いてください。/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "これを読んだあなた。どうか真相を暴いてください。",
+		   NULL, "이걸 읽은 당신. 부디 진상을 밝혀 주세요. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//それだけが私の望みです。
+	OutputLine(NULL, "それだけが私の望みです。",
+		   NULL, "제 소망은 그것뿐입니다. ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+
+//locate 15,12
+//	SetDrawingPointOfMessage( 0, 12 );
+//	SetStyleOfMessageSwinging( 2 );
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//　前原圭一/
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n\n\n\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "前原圭一",
+		   NULL, "마에바라 케이이치 ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 0, 1000, TRUE );
+	SetValidityOfInput( FALSE );
+	Wait( 2000 );
+	SetValidityOfInput( TRUE );
+
+	DisableWindow();
+	DrawScene("white", 100 );
+	PlaySE( 4, "wa_036", 56, 64 );
+	DrawScene("end_1", 100 );
+//	DrawScene( "end_2", 200 );
+	DrawScene("end_3", 4000 );
+//lsph 20,":c;bmp\Efe\End_1.bmp",0,0
+//lsph 21,":c;bmp\Efe\End_2.bmp",0,0
+//lsph 22,":c;bmp\Efe\End_3.bmp",0,0
+
+//vsp 20,1
+//vsp 21,1
+//vsp 22,1
+
+//setwindow 8,16,23,16,26,26,0,2,20,1,1,#ffffff,0,0,639,479
+////print 10,4000
+//csp 20
+////print 10,500
+//csp 21
+////print 10,300
+
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 4000, TRUE );
+	SetStyleOfMessageSwinging( 0 );
+
+//mov %Omake,1
+//mov %NEW_bg,1
+//mov %Onikakusi_END,1
+//csp -1
+	DrawScene("black", 400 );
+
+//setwindow 31,16,22,16,26,26,0,2,20,1,1,#ffffff,0,0,639,479
+
+//	DrawSceneWithMask( "s_jump_back", "4", 0, 0, 1000 );
+	PlaySE( 4, "wa_041", 56, 64 );
+	DrawSceneWithMask("ex_otsu", "5", 0, 0, 1000 );
+	Wait( 10000 );
+//	DrawSceneWithMask( "s_jump_back", "4", 0, 0, 1000 );
+//	PlaySE( 4, "wa_041", 56, 64 );
+//	DrawSceneWithMask( "ex_Tips", "5", 0, 0, 1000 );
+//	Wait( 10000 );
+//	DrawSceneWithMask( "s_jump_back", "4", 0, 0, 1000 );
+//	PlaySE( 4, "wa_041", 56, 64 );
+//	DrawSceneWithMask( "ex_jump", "5", 0, 0, 1000 );
+//	Wait( 10000 );
+
+
+	SetValidityOfTextFade( TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+
+//reset
+
+}

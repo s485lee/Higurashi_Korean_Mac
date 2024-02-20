@@ -1,0 +1,131 @@
+void main()
+{
+
+
+//*Sub_Tips_012
+//■無線記録
+
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	DisableWindow();
+	DrawScene("black", 1000 );
+	DrawScene("background/m_y4", 1000 );
+	PlayBGM( 1, "msys13", 56, 0 );
+
+//「興宮ＳＴより、３号どうぞ＠３号どうぞ。＠
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps2/00/keijic44001", 540, TRUE);
+	OutputLine(NULL, "「興宮ＳＴより、３号どうぞ。",
+		   NULL, "\"오키노미야 서로부터, 3호 응답바람. ", Line_Continue);
+	Wait( 900 );
+	OutputLine(NULL, "３号どうぞ。」",
+		   NULL, "3호 응답바람.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「３号です＠感度良好ー。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700001", 256, TRUE);
+	OutputLine(NULL, "「３号です。",
+		   NULL, "\"3호 수신완료. ", Line_Continue);
+	Wait( 800 );
+	OutputLine(NULL, "感度良好ー。」",
+		   NULL, "감명도 이상없음 - .\" ", Line_Normal);
+	ClearMessage();
+
+//「応援が向かいました＠別命あるまで維持で願いします＠どうぞー。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/keijic44002", 256, TRUE);
+	OutputLine(NULL, "「応援が向かいました。",
+		   NULL, "\"백업팀이 출발했습니다. ", Line_Continue);
+	Wait( 500 );
+	OutputLine(NULL, "別命あるまで維持で願いします。",
+		   NULL, "별도의 명령이 있을 때까지 위치를 유지하시기 바랍니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/keijic44003", 256, TRUE);
+	OutputLine(NULL, "どうぞー。」",
+		   NULL, "이상.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「はいー、３号了解。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700002", 256, TRUE);
+	OutputLine(NULL, "「はいー、３号了解。」",
+		   NULL, "\"네 -, 3호 입감완료.\" ", Line_Normal);
+	ClearMessage();
+
+//「それから回転灯は付けないでお願いします＠静か静かで願います。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/keijic44004", 256, TRUE);
+	OutputLine(NULL, "「それから回転灯は付けないでお願いします。",
+		   NULL, "\"그리고 헤드라이트는 이용하지 말아주십시오. ", Line_Continue);
+	Wait( 1500 );
+	OutputLine(NULL, "静か静かで願います。」",
+		   NULL, "아무쪼록 조용조용히 해주시길 부탁드립니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「ＳＴー、今、先生が到着しました＠運びたいそうですがどうしますか＠どうぞ。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700003", 256, TRUE);
+	OutputLine(NULL, "「ＳＴー、今、先生が到着しました。",
+		   NULL, "\"오키노미야 서, 지금 선생님이 도착했습니다. ", Line_Continue);
+	Wait( 1400 );
+	OutputLine(NULL, "運びたいそうですがどうしますか。",
+		   NULL, "피해자를 옮기고 싶다고 하십니다만 어떻게 할까요? ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700004", 256, TRUE);
+	OutputLine(NULL, "どうぞ。」",
+		   NULL, "이상.\" ", Line_Normal);
+	ClearMessage();
+
+//「了解しました＠先生に任せてください。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/keijic44005", 256, TRUE);
+	OutputLine(NULL, "「了解しました。",
+		   NULL, "\"입감완료입니다. ", Line_Continue);
+	Wait( 400 );
+	OutputLine(NULL, "先生に任せてください。」",
+		   NULL, "선생님께 맡겨 주세요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「はいー＠了解です＠......あ、応援も到着しました＠先に写真取らせた方がいいんじゃないですか＠...ガイ者、もームダだと思いますしー。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700005", 256, TRUE);
+	OutputLine(NULL, "「はいー。",
+		   NULL, "\"네. ", Line_Continue);
+	Wait( 300 );
+	OutputLine(NULL, "了解です。",
+		   NULL, "입감완료. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700006", 256, TRUE);
+	OutputLine(NULL, "……あ、応援も到着しました。",
+		   NULL, "...아, 백업도 도착했습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700007", 256, TRUE);
+	OutputLine(NULL, "先に写真取らせた方がいいんじゃないですか？",
+		   NULL, "그런데 먼저 사진부터 찍는 게 좋지 않습니까? ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700008", 256, TRUE);
+	OutputLine(NULL, "…ガイ者、もームダだと思いますしー。」",
+		   NULL, "...피해자, 이제 - , 틀렸다고 생각합니다만....\" ", Line_Normal);
+	ClearMessage();
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+}

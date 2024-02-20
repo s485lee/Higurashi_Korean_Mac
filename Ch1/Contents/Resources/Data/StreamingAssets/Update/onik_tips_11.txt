@@ -1,0 +1,42 @@
+void main()
+{
+
+
+//*Sub_Tips_011
+//■主婦殺人事件
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	DisableWindow();
+	DrawScene("black", 1000 );
+	DrawScene("background/simen3", 1000 );
+	PlayBGM( 1, "msys13", 56, 0 );
+
+//locate 2,7
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 7 ); }
+	SetStyleOfMessageSwinging( 1 );
+
+//（新聞には掲載されなかった......￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（新聞には掲載されなかった……）",
+		   NULL, "(신문에는 실리지 않았다....) ", Line_Normal);
+	ClearMessage();
+	SetStyleOfMessageSwinging( 0 );
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+}

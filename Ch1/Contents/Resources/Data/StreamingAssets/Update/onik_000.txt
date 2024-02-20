@@ -1,0 +1,438 @@
+void main()
+{
+
+//■オープニング（車中の白昼夢）
+//if %RenaPan_Lv3_read=1 gosub *Dark_mode_start
+//if %RenaPan_clr=1 gosub *Tomi_Kura_mord_start
+//setwindow 31,16,22,16,26,26,0,2,20,1,1,#ffffff,0,0,639,479
+//setwindow 31,16,22,16,26,26,0,2,20,1,1,#999999,0,0,639,479
+//gosub //*Opening
+//mov %NEW_TIPS,0
+//rmode on
+//caption"ひぐらしのなく頃に　「鬼隠し編」"
+//mov %TIP_START,1
+
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	PlayBGM( 2, "lsys21", 56, 0 );
+//dwaveloop 1, "wav\Densya.wav"
+//!sd
+//locate 1,7
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	SetStyleOfMessageSwinging( 1 );
+
+//　...誰かが、ずっと謝っている気がした￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…誰かが、ずっと謝っている気がした。",
+		   NULL, "누군가가, 계속 사과하는 듯한 기분이 든다. ", Line_Normal);
+	ClearMessage();
+
+//　彼女は何を謝っているのだろう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女は何を謝っているのだろう。",
+		   NULL, "그녀는 무엇을 그리 사죄하고 있는 걸까? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　それに聞き耳を立てるのは悪い気がしたので、意識的に聞かないようにした￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それに聞き耳を立てるのは悪い気がしたので、意識的に聞かないようにした。",
+		   NULL, "거기에 귀를 기울이자니 조금 미안해서, 의도적으로 듣지 않으려고 했다. ", Line_Normal);
+	ClearMessage();
+
+//　親類の葬儀のために戻った、久しぶりの都会だった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　親類の葬儀のために戻った、久しぶりの都会だった。",
+		   NULL, "친척의 장례식 때문에 모처럼 다시 들린 도시였다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　つい先月まで住んでいたにも関わらず、都会の賑やかさに圧倒された＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　つい先月まで住んでいたにも関わらず、都会の賑やかさに圧倒された。",
+		   NULL, "바로 지난 달까지 살던 곳이었는데도, 새삼스레 도시의 풍경과 분주함에 압도당했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　高層ビルに何車線もの道路＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　高層ビルに何車線もの道路。",
+		   NULL, "고층빌딩에 넓은 도로. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　歌うように騒がしい横断歩道のメロディ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　歌うように騒がしい横断歩道のメロディ。",
+		   NULL, "노래하는 것처럼 소란스러운 횡단보도의 멜로디. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　駅前での騒々しい選挙演説すらも今では懐かしかった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　駅前での騒々しい選挙演説すらも今では懐かしかった。",
+		   NULL, "역 앞에서의 떠들썩한 선거 연설조차도 묘하게 그리웠다. ", Line_Normal);
+	ClearMessage();
+
+//　今、住んでいる土地にはそんな賑やかなものはない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今、住んでいる土地にはそんな賑やかなものはない。",
+		   NULL, "지금 내가 살고 있는 곳에는 그런 떠들썩함이 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　あるのはセミの声と清流のせせらぎ＠そして、ひぐらしの声＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あるのはセミの声と清流のせせらぎ。",
+		   NULL, "오직 매미가 우는 소리와 맑게 흐르는 시냇물 소리. ", Line_WaitForInput);
+	OutputLine(NULL, "そして、ひぐらしの声。",
+		   NULL, "그리고, 쓰르라미 우는 소리 뿐. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　そんな静けさに寂しさでなく、安らぎを感じ始めたのは最近だ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんな静けさに寂しさでなく、安らぎを感じ始めたのは最近だ。",
+		   NULL, "얼마 전부터, 그 고요함에 외로움이 아니라 평온함을 느끼게 되었다. ", Line_Normal);
+	ClearMessage();
+
+//　確かに今住む土地には何もない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　確かに今住む土地には何もない。",
+		   NULL, "분명 지금 사는 곳에는 아무것도 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　気の利いたハンバーガー屋はおろか、自動販売機すらない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　気の利いたハンバーガー屋はおろか、自動販売機すらない。",
+		   NULL, "마음에 드는 햄버거 가게는 커녕 자동판매기도 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　レコード屋もないし、レストランもないし＠ゲームセンターもない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レコード屋もないし、レストランもないし、",
+		   NULL, "레코드샵도, 레스토랑도 없고, ", Line_WaitForInput);
+	OutputLine(NULL, "ゲームセンターもない。",
+		   NULL, "오락실조차 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　アイスクリーム屋なんてもってのほかだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　アイスクリーム屋なんてもってのほかだ。",
+		   NULL, "아이스크림 가게는 말할 필요도 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　最寄りの町まで行けばあるにはあるが、自転車で１時間もかかる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　最寄りの町まで行けばあるにはあるが、自転車で１時間もかかる。",
+		   NULL, "근처의 시내까지 나가면 있긴 하지만, 자전거로도 1시간이나 걸리는 거리다. ", Line_Normal);
+	ClearMessage();
+
+//　だが、考えてみればそれに不便を感じる必要はなかった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、考えてみればそれに不便を感じる必要はなかった。",
+		   NULL, "그래도 생각해보면 사실 크게 불편하지는 않았다. ", Line_Normal);
+	ClearMessage();
+
+//　前の町には確かにレコード屋もゲームセンターもアイスクリーム屋もあったが、別にそれらを頻繁に利用していたわけじゃない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　前の町には確かにレコード屋もゲームセンターもアイスクリーム屋もあったが、別にそれらを頻繁に利用していたわけじゃない。",
+		   NULL, "전에 살던 마을에는 레코드샵도 오락실도 아이스크림 가게도 있었지만, 사실 별로 자주 들린 건 아니었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　アイスクリーム屋に至っては、１０年も住みながらついに一度も入ることはなかったのだから＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　アイスクリーム屋に至っては、１０年も住みながらついに一度も入ることはなかったのだから。",
+		   NULL, "아이스크림 가게만 해도, 10년이나 살면서 한 번도 들리지 않았으니까. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　...一度くらいは食べに行けばよかった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…一度くらいは食べに行けばよかった。",
+		   NULL, "...한 번쯤은 먹으러 가면 좋았을 텐데. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　今更ながらちょっと後悔￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今更ながらちょっと後悔。",
+		   NULL, "새삼스럽지만 조금은 후회된다. ", Line_Normal);
+	ClearMessage();
+
+//locate 3,7
+//　...誰かが、まだ謝り続けている￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…誰かが、まだ謝り続けている。",
+		   NULL, "...누군가가, 아직도 계속 사과하고 있다. ", Line_Normal);
+	ClearMessage();
+
+//click
+//	ClearMessage();
+
+//　彼女は誰に謝っているのだろう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女は誰に謝っているのだろう。",
+		   NULL, "그녀는 누구에게 사과하는 걸까? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　これだけ謝っているのだから、もう許してやればいいのに＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これだけ謝っているのだから、もう許してやればいいのに。",
+		   NULL, "이만큼 사과했으면 이제 용서해줘도 괜찮을 텐데. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　彼女だって、こんなにも謝り続けることはないはずだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女だって、こんなにも謝り続けることはないはずだ。",
+		   NULL, "그녀도 이렇게까지 계속 사과할 필요는 없을 것이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　いつまでも彼女を許そうとしない誰かに、俺は少し苛立ちを覚えた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いつまでも彼女を許そうとしない誰かに、俺は少し苛立ちを覚えた。",
+		   NULL, "언제까지고 그녀를 용서하지 않으려는 누군가에게, 나는 조금 화를 냈다. ", Line_Normal);
+	ClearMessage();
+
+//　どんな過ちだって、許されないことはないはずだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どんな過ちだって、許されないことはないはずだ。",
+		   NULL, "어떤 잘못이든 용서받지 못할 일은 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　取り返せないミスなんかない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　取り返せないミスなんかない。",
+		   NULL, "돌이킬 수 없는 실수는 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　次から気をつければいい￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　次から気をつければいい。",
+		   NULL, "다음부터 조심하면 된다. ", Line_Normal);
+	ClearMessage();
+
+//　...それでも彼女は謝り続けている￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…それでも彼女は謝り続けている。",
+		   NULL, "...그런데도 그녀는 계속 사과하고 있다. ", Line_Normal);
+	ClearMessage();
+
+//　では...取り返しのつかない過ちを犯してしまったのだろうか￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　では…取り返しのつかない過ちを犯してしまったのだろうか？",
+		   NULL, "그럼... 돌이킬 수 없는 잘못을 저지른 걸까? ", Line_Normal);
+	ClearMessage();
+
+//　一体彼女が何を犯したのか知らないが、取り返しがつかないものなら、なおのこと許してやるべきだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　一体彼女が何を犯したのか知らないが、取り返しがつかないものなら、なおのこと許してやるべきだ。",
+		   NULL, "도대체 그녀가 뭘 잘못했는지는 몰라도, 돌이킬 수 없는 일이었다면 더더욱 용서해줘야만 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　彼女がいくら謝ったって、どうにもならないのだから￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女がいくら謝ったって、どうにもならないのだから。",
+		   NULL, "그녀가 아무리 사과한다 한들 바뀌지 않을 테니까. ", Line_Normal);
+	ClearMessage();
+
+//　それでも彼女は、こんなにもみじめな声で謝り続けている...￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それでも彼女は、こんなにもみじめな声で謝り続けている…。",
+		   NULL, "그런데도 그녀는, 이렇게도 비참한 목소리로 계속 사과하고 있다... ", Line_Normal);
+	ClearMessage();
+
+//　なあ、彼女に謝られている誰かさんよ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なあ、彼女に謝られている誰かさんよ。",
+		   NULL, "이봐, 그녀가 용서를 구하는 누군가여. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　もういい加減に彼女を許してやれよ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もういい加減に彼女を許してやれよ。",
+		   NULL, "이제 적당히 하고 그녀를 용서해 줘. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　こんなにも...みじめな声で謝っているんだから......￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　こんなにも…みじめな声で謝っているんだから……。",
+		   NULL, "이렇게... 비참한 목소리로 사과하고 있잖아... ", Line_Normal);
+	ClearMessage();
+
+//「圭一、そろそろ着くぞ＠起きなさい。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>圭一の父</color>", NULL, "<color=#f5e6d3>아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s19/00/992600001", 256, TRUE);
+	OutputLine(NULL, "「圭一、そろそろ着くぞ。",
+		   NULL, "\"케이이치, 이제 다 왔다. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s19/00/992600002", 256, TRUE);
+	OutputLine(NULL, "起きなさい。」",
+		   NULL, "일어 나거라.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　親父に小突かれようやくまどろみから目を覚ました＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　親父に小突かれようやくまどろみから目を覚ました。",
+		   NULL, "아버지가 손가락으로 나를 찔러, 간신히 졸린 눈을 떴다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	DrawScene("white", 400 );
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	DisableWindow();
+	DrawSceneWithMask("background/eki", "c", 0, 0, 1300 );
+
+//　ようやく列車が終点に着いたようだった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ようやく列車が終点に着いたようだった。",
+		   NULL, "이제야 겨우 열차가 종점에 도착한 모양이었다. ", Line_Normal);
+	ClearMessage();
+	PlayBGM( 2, "lsys20", 56, 0 );
+
+//　新幹線やら電車やらを乗り継ぎ数時間＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　新幹線やら電車やらを乗り継ぎ数時間。",
+		   NULL, "신칸센과 전철을 몇 번이나 갈아타고 수시간. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　窓の外の風景は、半日前までいた都会と同じ国であることを＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　窓の外の風景は、半日前までいた都会と同じ国であることを、",
+		   NULL, "창 밖의 풍경은, 반나절 전까지 있던 도시와 같은 나라인지, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　いや、同じ時代であることすら疑わせる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いや、同じ時代であることすら疑わせる。",
+		   NULL, "아니, 같은 시대인지조차 의심스럽다. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	DrawSceneWithMask("background/mati2", "right", 0, 0, 1300 );
+
+
+//　ここからさらに車で山道を走る￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ここからさらに車で山道を走る。",
+		   NULL, "여기서부터는 한 번 더 차를 갈아타고 산길을 달려야 한다. ", Line_Normal);
+	ClearMessage();
+
+//*******************************************************
+
+//setwindow 31,16,22,16,26,26,0,2,20,1,1,#ffffff,0,0,639,479
+
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawSceneWithMask("background/oki_g3", "right", 0, 0, 1300 );
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+
+	DisableWindow();
+	DrawSceneWithMask("background/m_hi5", "right", 0, 0, 1300 );
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+//setwindow 31,16,22,16,26,26,0,2,20,1,1,#999999,0,0,639,479
+//*******************************************************
+
+	DisableWindow();
+	DrawSceneWithMask("background/m_hi1", "right", 0, 0, 1300 );
+	PlayBGM( 1, "msys12", 56, 0 );
+//!sd
+
+//　うっそうと木々が茂る山道が急に開けるとそこが...￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　うっそうと木々が茂る山道が急に開けるとそこが…、",
+		   NULL, "울창한 나무들이 우거지던 산길이, 갑자기 넓게 트이는 장소... ", Line_Normal);
+	ClearMessage();
+
+//setwindow 31,16,22,16,26,26,0,2,20,1,1,#ffffff,0,0,639,479
+	DisableWindow();
+	DrawScene("white", 400 );
+//	DrawScene( "bg_216", 3000 );
+
+	//draw and move big background
+	SetValidityOfInterface(FALSE);
+	SetValidityOfSaving(FALSE);
+	DrawBustshot(4, "overview/hina1_1", 0, -230, -480, FALSE, 0, 0, 0, 0, 0, 0, 0, 1, 200, FALSE );
+	DrawBustshot(3, "overview/hina1_2", 0, -230, -480, FALSE, 0, 0, 0, 0, 0, 0, 0, 2, 200, FALSE );
+	DrawBustshot(2, "overview/hina1_3", 0, -230, -480, FALSE, 0, 0, 0, 0, 0, 0, 0, 3, 200, FALSE );
+	DrawBustshot(1, "overview/hina1_4", 0, -230, -480, FALSE, 0, 0, 0, 0, 0, 0, 0, 4, 200, TRUE );
+	MoveBustshot( 1, NULL, 0, 290, -480, 1, 10000, FALSE );
+	MoveBustshot( 2, NULL, 0, 280, -480, 2, 10000, FALSE );
+	MoveBustshot( 3, NULL, 0, 230, -480, 3, 10000, FALSE );
+	MoveBustshot( 4, NULL, 0, 200, -480, 4, 10000, TRUE );
+	//set end position for skip
+	MoveBustshot( 1, NULL, 0, 290, -480, 1, 0, FALSE );
+	MoveBustshot( 2, NULL, 0, 280, -480, 2, 0, FALSE );
+	MoveBustshot( 3, NULL, 0, 230, -480, 3, 0, FALSE );
+	MoveBustshot( 4, NULL, 0, 200, -480, 4, 0, TRUE );
+
+//setwindow 31,16,22,16,26,26,0,2,20,1,1,#999999,0,0,639,479
+//!sd
+
+//　そこが今の俺の住む土地、雛見沢（ひなみざわ）だ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そこが今の俺の住む土地、雛見沢（ひなみざわ）だ。",
+		   NULL, "그 곳이 지금 내가 사는 마을, '히나미자와'다. ", Line_Normal);
+	ClearMessage();
+
+
+//mov %CAMP_MUGIC,0
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+//	Wait( 1000 );
+	DrawBustshotWithFiltering(6, "cinema", "x", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 3000 );
+	SetValidityOfInput( TRUE );
+
+	//reset big background layer
+	DrawBustshot(1, "alphaimage", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot(2, "alphaimage", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot(3, "alphaimage", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot(4, "alphaimage", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot(5, "alphaimage", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot(6, "alphaimage", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot(7, "alphaimage", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot( 1, "", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot( 2, "", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot( 3, "", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot( 4, "", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot( 5, "", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot( 6, "", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	DrawBustshot( 7, "", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, TRUE );
+	SetValidityOfInterface(TRUE);
+	SetValidityOfSaving(TRUE);
+
+}

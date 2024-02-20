@@ -1,0 +1,53 @@
+void main()
+{
+}
+
+void dialog000()
+{
+	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei33830_01", 256, TRUE);
+	OutputLine(NULL, "ちびっ子！",
+		   NULL, "꼬마애!! ", Line_Continue);
+}
+
+void dialog001()
+{
+//「な、…なぁんだ…＠　てっきりおじさんは圭一のかぁいいオットセイかと～！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 3, "ps3/s19/03/500300731", 256, TRUE);
+	OutputLine(NULL, "「な、…なぁんだ…！",
+		   NULL, "\"뭐... 뭐야...! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 3, "ps3/s19/03/500300732", 256, TRUE);
+	OutputLine(NULL, "　てっきりおじさんは圭ちゃんの・・・　あははははっはぁ〜！！」",
+		   NULL, "아저씨는 틀림없이 케이이치의 귀여운 물개인 줄 알았지~!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog002()
+{
+//「身包み剥いでッ！＠　ケツの毛までひん剥いてやるぜぇえぇえッ！！！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei34010", 256, TRUE);
+	OutputLine(NULL, "「身包み剥いでッ！！",
+		   NULL, "\"가죽을 벗기고!! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei34020", 256, TRUE);
+	OutputLine(NULL, "　地獄の底に叩き落としてやるぜぇえぇえッ！！！！」",
+		   NULL, "엉덩이 털까지 뽑아주겠어어어엇!!!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog003()
+{
+//「…凡カレーに…緊張蚊取線香…オロ波ンＣぃッ！！！!w200　どうッ？！？！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 3, "ps3/s19/03/500300718", 256, TRUE);
+	OutputLine(NULL, "「…カレーに…蚊取線香…昔なつかしのブリキ看板だっ！！！",
+		   NULL, "\"... 일반 카레에... 모기향... 오로나민C!!! ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 400 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "　どうッ？！？！」",
+		   NULL, "어때?!?!\" ", Line_Normal);
+	ClearMessage();
+}

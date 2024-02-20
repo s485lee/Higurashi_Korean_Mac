@@ -1,0 +1,19 @@
+void main()
+{
+}
+
+void dialog000()
+{
+//「…県立大島が強いらしいよ＠左腕の亀田くんがすごいんだって＠…頑張ってね！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 3, "ps3/s01/03/120300137", 256, TRUE);
+	OutputLine(NULL, "「…県立大島が強いらしいよ。",
+		   NULL, "\"...현립 오오시마 고교가 강한 것 같아. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 3, "ps3/s01/03/120300138", 256, TRUE);
+	OutputLine(NULL, "左腕の亀田くんがすごいんだって。",
+		   NULL, "왼손 투수인 카메다 군이 대단하대. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 3, "ps3/s01/03/120300139", 256, TRUE);
+	OutputLine(NULL, "…頑張ってね！」",
+		   NULL, "힘내!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}

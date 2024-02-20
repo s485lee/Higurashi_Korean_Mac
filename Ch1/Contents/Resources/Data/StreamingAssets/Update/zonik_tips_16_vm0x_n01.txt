@@ -1,0 +1,222 @@
+void main()
+{
+}
+
+void dialog000()
+{
+//「例えば重度の躁鬱病患者だが＠一般に鬱状態から躁状態に転じる時にもっとも自殺が多いと言われちょる。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200022", 256, TRUE);
+	OutputLine(NULL, "「たとえば一般的な心理学見地から言えばじゃが、",
+		   NULL, "\"일반적인 심리학 견지에서 예를 들어 말해보자면, ", Line_Continue);
+	Wait ( 3500 );
+	OutputLine(NULL, "心理面が内向状態から外向状態に転じる時にもっとも自殺が多いと言われちょる」",
+		   NULL, "인간의 심리가 내향적인 상태에서 외향적인 상태로 전환될 때 가장 자살이 많다고들 하지.\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("black", "down", 0, 0, 1300 );
+}
+
+void dialog001()
+{
+//「鬱状態の患者は自信を喪失し非常に悲観的だ＠だが自殺もせん＠自殺をする気力すらないからだ＠...躁の状態もまた自殺をせん＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200023", 256, TRUE);
+	OutputLine(NULL, "「内向状態のときは自信を喪失し非常に悲観的だ。",
+		   NULL, "\"내향 상태의 개인은 자심감을 상실해 매우 비관적이지. ", Line_Continue);
+	Wait ( 3600 );
+	OutputLine(NULL, "だが自殺もせん。",
+		   NULL, "하지만 자살도 할 수 없어. ", Line_WaitForInput);
+
+//　今度は逆に、非常に自信過剰で行動的なので、自らを順風満帆と思う＠だから自殺などせんのだ。＠
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200024", 256, TRUE);
+	OutputLine(NULL, "自殺をする気力すらないからだ。",
+		   NULL, "자살을 할 기력조차 없기 때문이지. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200025", 256, TRUE);
+	OutputLine(NULL, "…逆の状態もまた自殺をせん",
+		   NULL, "반대 상태도 마찬가지로 자살하지 않아. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200026", 256, TRUE);
+	OutputLine(NULL, "　今度は逆に、非常に自信過剰で行動的なので、自らを順風満帆と思う。",
+		   NULL, "이번엔 반대로 매우 자신감 넘치고 행동적이니까, 스스로는 모든게 순조롭다고 생각하고 있지. ", Line_Continue);
+	Wait ( 5600 );
+	OutputLine(NULL, "だから自殺などせんのだ。」",
+		   NULL, "그러니까 자살 같은 건 못 하는 거지.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	//「...面白いですねぇ＠どっちの状態でも自殺をしないのに、状態が入れ替わる時に自殺するんですか。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700021", 256, TRUE);
+	OutputLine(NULL, "「…なるほどねぇ。",
+		   NULL, "\"...그렇군요. ", Line_Continue);
+	Wait ( 1500 );
+	OutputLine(NULL, "どっちの状態でも自殺をしないのに、状態が入れ替わる時に自殺するんですか。」",
+		   NULL, "어떤 상태에서도 자살하지 않지만, 상태가 바뀔 때엔 자살한다는 겁니까.\" ", Line_Normal);
+	ClearMessage();
+
+//「鬱状態には自殺願望はあるが、自殺という大仕事をげる気力すらもない＠だが躁状態が始まると徐々に気力が充実し、体の自由が利くようになってくる。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200027", 256, TRUE);
+	OutputLine(NULL, "「内向状態には自殺願望はあるが、自殺という大仕事を遂げる気力すらもない。",
+		   NULL, "\"내향적인 상태일 때엔 자살 욕구가 있지만, 자살같은 큰 일을 할 기력조차 없어. ", Line_Continue);
+	Wait ( 5200 );
+	OutputLine(NULL, "だが外向状態が始まると徐々に気力が充実し、体の自由が利くようになってくる」",
+		   NULL, "하지만 외향적인 상태가 시작되면 서서히 기력이 생겨서 몸에 자유가 돌아오게 되지.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+//「なぁるほど＠　つまり自殺する気力が回復するわけですね。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700022", 256, TRUE);
+	OutputLine(NULL, "「なぁるほど！",
+		   NULL, "\"과연! ", Line_Continue);
+	Wait ( 1200 );
+	OutputLine(NULL, "　つまり自殺する気力が回復するわけですね。」",
+		   NULL, "즉 자살할 기력이 회복되는 거군요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「そういうことじゃの＠だからこの時期に変な気を起こさんように、向精神薬をたっぷりと処方するわけじゃな。
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200028", 256, TRUE);
+	OutputLine(NULL, "「そういうことじゃの。",
+		   NULL, "\"그런 거라네. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200028a", 256, TRUE);
+	OutputLine(NULL, "だからこの時期に変な気を起こさんように、処方せんを施すわけじゃな。」",
+		   NULL, "그래서 이 시기 환자들이 충동적으로 행동하는 걸 막고자 약을 처방한다네.\" ", Line_Normal);
+	ClearMessage();
+
+//「...では富竹氏はこの躁鬱病患者だったんですかねぇ？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700023", 256, TRUE);
+	OutputLine(NULL, "「…では富竹氏はこの心理状態だったんですかねぇ？」",
+		   NULL, "\"...그럼 토미타케 씨는 이런 정신적 상태였다는 겁니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「躁鬱病患者の自殺はちゃんとした文化的な自殺だ＠飛び降りとか首吊りとか＠ヤクの禁断症状のような自虐行動とはまったく違うぞい！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200029", 256, TRUE);
+	OutputLine(NULL, "「一般的に自殺はちゃんとした文化的な手法で行われる。",
+		   NULL, "\"보통 사람들은 특정한 '문화적인' 방식으로 자살하지. ", Line_Continue);
+	Wait ( 4000 );
+	OutputLine(NULL, "道具を使用してな。",
+		   NULL, "도구를 사용해서. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200030", 256, TRUE);
+	OutputLine(NULL, "自虐行動とはまったく違うぞい！」",
+		   NULL, "자학 행동과는 전혀 다르다네!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「富竹氏の自殺は文化的じゃないですよねぇ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700024", 256, TRUE);
+	OutputLine(NULL, "「富竹氏の自殺は文化的じゃないですよねぇ。",
+		   NULL, "\"토미타케 씨의 자살은 문화적인 방식이 아녔군요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　......ではやっぱり薬物中毒と考えるのが自然ですか＠最初に言った、自殺したくなる精神状態を起こす薬ってのを教えてください。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700025", 256, TRUE);
+	OutputLine(NULL, "　……ではやっぱりなにかの中毒と考えるのが自然ですか。",
+		   NULL, "...그럼 역시 뭔가에 중독되었다는 게 자연스럽다는 건가요? ", Line_Continue);
+	Wait ( 3500 );
+	OutputLine(NULL, "最初に言った、自殺したくなる精神状態を起こす薬ってのを教えてください。」",
+		   NULL, "앞서 말했던, 자살하고 싶어지는 정신상태를 유발하는 약을 알려주세요.\" ", Line_Normal);
+	ClearMessage();
+
+
+//「メトアンフェタミン中毒は躁鬱病に近い症状を起こすと報告されとる＠覚醒剤のことだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200031", 256, TRUE);
+	OutputLine(NULL, "「鎮痛薬の一部には、心理を内向から外向に過剰転換させる効果があると報告されとる。",
+		   NULL, "\"진통제 일부는 심리상태를 내향적인 상태에서 외향적인 상태로 과잉 전환시키는 효과가 있다고 보고되더군. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　......それからバルビツール酸誘導体中毒にも異常行為が報告されとるがあまり一般的ではないのう＠こっちは睡眠薬のことだ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200032", 256, TRUE);
+	OutputLine(NULL, "　……それから、催眠作用を持つ薬を異常摂取した場合にも異常行為が報告されとるが、あまり一般的ではないのう。",
+		   NULL, "...그리고 최면 작용을 하는 약을 이상 섭취했을 경우에도 이상 행동이 보고되고 있지만, 그다지 일반적인 경우는 아닐세.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「覚醒剤反応、出なかったんですよねぇ＠...他の可能性は？
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700026", 256, TRUE);
+	OutputLine(NULL, "「その二つは、検死の報告だと違うみたいですね。",
+		   NULL, "\"그 두 가지는 검시 결과에는 없군요. ", Line_Continue);
+	Wait ( 2400 );
+	OutputLine(NULL, "…他の可能性は？」",
+		   NULL, "...다른 가능성은?\" ", Line_Normal);
+	ClearMessage();
+
+
+//「あとは病気しか考えられん＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200033", 256, TRUE);
+	OutputLine(NULL, "「あとは病気しか考えられん。",
+		   NULL, "\"나머지는 질병밖에 생각할 수 없네. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　バセドー病等の甲状腺異常を引き起こす病気にしばしば躁鬱病に似た症状が報告されとる＠だがバセドー病は特徴的な症状が多い＠仏は違うの。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200034", 256, TRUE);
+	OutputLine(NULL, "　甲状腺異常を引き起こす病気にしばしばそれに似た症状が報告されとる。",
+		   NULL, "갑상선 이상을 일으키는 병에 종종 유사한 증상이 보고되지. ", Line_Continue);
+	Wait ( 4400 );
+	OutputLine(NULL, "だがそれらは概して特徴的な症状が多い。",
+		   NULL, "하지만 그런 병들은 대체로 특징적인 증상이 많아. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200035", 256, TRUE);
+	OutputLine(NULL, "仏は違うの。」",
+		   NULL, "이번 사망자는 아닐세.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「もっと突発的に発生するものはありませんかねぇ＠今回のケースと合うような、突発性で自殺したくなるようなヤツです。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700027", 256, TRUE);
+	OutputLine(NULL, "「もっと突発的に発生するものはありませんかねぇ。",
+		   NULL, "\"좀 더 돌발적으로 발생하는 건 없습니까? ", Line_Continue);
+	Wait ( 2800 );
+	OutputLine(NULL, "今回のケースと合うような、突発性で自殺したくなるようなヤツです。」",
+		   NULL, "이번 케이스와 비슷한, 돌발성으로 자살하고 싶어지는 병변 말입니다.\" ", Line_Normal);
+	ClearMessage();
+
+
+//「急性器質性精神病、っちゅうのを知っとるかの＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200036", 256, TRUE);
+	OutputLine(NULL, "「他には、……そうじゃな。",
+		   NULL, "\"어디 보자, ...그렇지. ", Line_Continue);
+	Wait ( 3200 );
+//　早い話が、脳障害によって精神がとんちんかんになる状態じゃな＠これは薬物中毒でも起こるが、脳の外傷や脳炎、脳卒中、脳腫瘍なんかでも起こる。＠
+	OutputLine(NULL, "　脳障害によって精神に異常を発生する状態じゃな。",
+		   NULL, "뇌장애로 인해 정신에 이상이 생기는 경우일까. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200037", 256, TRUE);
+	OutputLine(NULL, "これは薬物中毒でも起こるが、脳の外傷や一部の病気なんかでも起こる。」",
+		   NULL, "약물 중독에 의해서도 일어날 수 있지만, 뇌의 외상이나 일부 질병에서도 발생한다네.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog002()
+{
+//「かっかっか＠　つまり、乱闘中に豆腐の角に頭ぶつけて、それでとんちんかんになったんじゃないかと言っとるんだ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200040", 256, TRUE);
+	OutputLine(NULL, "「かっかっか！",
+		   NULL, "\"핫핫핫! ", Line_Continue);
+	Wait ( 1200 );
+	OutputLine(NULL, "　つまり、乱闘中に豆腐の角に頭ぶつけて、それで異常が発生したと言っとるんだ。」",
+		   NULL, "즉, 난투 중에 머리를 모서리에 부딪쳐서 이상이 생긴게 아닐까 하는 걸세.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}

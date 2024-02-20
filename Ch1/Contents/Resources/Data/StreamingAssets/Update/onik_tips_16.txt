@@ -1,0 +1,245 @@
+void main()
+{
+
+//■自殺を誘発するクスリは？
+
+//*Sub_Tips_016
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 1, "msys12", 56, 0 );
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacter(2, 11, "sprite/oisi1_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawScene("background/ke_ky1", 400 );
+
+
+//「単刀直入に...自殺させる薬ってないんですか？＠
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700018", 256, TRUE);
+	OutputLine(NULL, "「単刀直入に…自殺させる薬ってないんですか？」",
+		   NULL, "\"단도직입적으로 묻겠습니다... 자살시키는 약은 없습니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「直接的にはない。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200020", 256, TRUE);
+	OutputLine(NULL, "「直接的にはない。」",
+		   NULL, "\"직접적으로는 없어.\" ", Line_Normal);
+	ClearMessage();
+
+//「遠回しですねぇ＠...では間接的にはあるってことですか？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700019", 256, TRUE);
+	OutputLine(NULL, "「遠回しですねぇ。",
+		   NULL, "\"조심스러운 말씀이네요.... ", Line_Continue);
+	Wait ( 1800 );
+	OutputLine(NULL, "…では間接的にはあるってことですか？」",
+		   NULL, "그럼 간접적으로는 있다는 겁니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「自殺したくなる精神状態を誘発することはできる、!w1000っちゅうことだ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200021", 256, TRUE);
+	OutputLine(NULL, "「自殺したくなる精神状態を誘発することはできる、",
+		   NULL, "\"자살하고 싶어지는 정신상태를 유발 시키는 건 가능하다, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1400 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "っちゅうことだ。」",
+		   NULL, "는 걸세.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacter(2, 11, "sprite/oisi1_2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+//「...難しい言い方になりましたねぇ＠何ですかその、自殺したくなる精神状態ってのは。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700020", 256, TRUE);
+	OutputLine(NULL, "「…難しい言い方になりましたねぇ。",
+		   NULL, "\"...조금 어려운 말이 됐네요. ", Line_Continue);
+	Wait ( 1500 );
+	OutputLine(NULL, "何ですかその、自殺したくなる精神状態ってのは。」",
+		   NULL, "그 '자살하고 싶어지는 정신상태'라는 건 뭡니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	//VoiceMatching
+	if(GetGlobalFlag(GCensor) >= 3){ModCallScriptSection("zonik_tips_16_vm0x_n01","dialog000");}
+	if(GetGlobalFlag(GCensor) <= 2){ModCallScriptSection("zonik_tips_16_vm00_n01","dialog000");}
+	//VoiceMatchingEnd
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　躁鬱（そううつ）病というのは鬱（うつ）病とは異なる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　躁鬱（そううつ）病というのは鬱（うつ）病とは異なる。",
+		   NULL, "조울증과 우울증은 다르다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　鬱病は鬱状態という非常にネガティブな精神状態のみを引き起こすが＠躁鬱病は、このネガティブな鬱状態と交互に、非常にアクティブな躁状態を引き起こす￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鬱病は鬱状態という非常にネガティブな精神状態のみを引き起こすが、",
+		   NULL, "우울증은 매우 부정적인 정신상태만을 일으키지만, ", Line_WaitForInput);
+	OutputLine(NULL, "躁鬱病は、このネガティブな鬱状態と交互に、非常にアクティブな躁状態を引き起こす。",
+		   NULL, "조울증은 부정적인 정신상태와 교대로 매우 긍정적인 조증 상태를 유발한다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("background/ke_ky1", 400 );
+
+	//VoiceMatching
+	if(GetGlobalFlag(GCensor) >= 3){ModCallScriptSection("zonik_tips_16_vm0x_n01","dialog001");}
+	if(GetGlobalFlag(GCensor) <= 2){ModCallScriptSection("zonik_tips_16_vm00_n01","dialog001");}
+	//VoiceMatchingEnd
+
+
+//「つまり、薬によらなくても異常な精神状態に陥る可能性があると。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700028", 256, TRUE);
+	OutputLine(NULL, "「つまり、薬によらなくても異常な精神状態に陥る可能性があると。」",
+		   NULL, "\"즉, 약물 복용이 아니더라도 이상한 정신 상태에 빠졌을 가능성이 있군요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「仏は犯人に囲まれて命に危険が迫っとったんじゃろ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200038", 256, TRUE);
+	OutputLine(NULL, "「仏は犯人に囲まれて命に危険が迫っとったんじゃろ？",
+		   NULL, "\"사망자는 범인들에게 둘러싸여 생명이 위험해지지 않았나? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　極度の緊張が続いて、それに分泌異常が重なって、さらに打ち所が悪くて脳に障害が起こり自虐行動に走った...可能性もあるかもしれんの。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200039", 256, TRUE);
+	OutputLine(NULL, "　極度の緊張が続いて、それに分泌異常が重なって、さらに打ち所が悪くて脳に障害が起こり自虐行動に走った…可能性もあるかもしれんの。」",
+		   NULL, "극도의 긴장이 계속 된데다가 분비 이상이 겹쳤고, 거기에 위험한 부분을 부딪혀 뇌에 장해가 일어나, 결국 자학 행동에 이르렀다...는 가능성도 배제할 순 없지.\" ", Line_Normal);
+	ClearMessage();
+
+
+//「...............もうちょっと省略して言ってくれませんかねぇ...。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700029", 256, TRUE);
+	OutputLine(NULL, "「……………もうちょっと省略して言ってくれませんかねぇ…。」",
+		   NULL, "\"...좀 더 간략하게 말해주시지 않겠습니까...?\" ", Line_Normal);
+	ClearMessage();
+
+
+	//VoiceMatching
+	if(GetGlobalFlag(GCensor) >= 3){ModCallScriptSection("zonik_tips_16_vm0x_n01","dialog002");}
+	if(GetGlobalFlag(GCensor) <= 2){ModCallScriptSection("zonik_tips_16_vm00_n01","dialog002");}
+	//VoiceMatchingEnd
+
+
+//「なっはっはっはっはっはっは！！＠　じゃあホシには殺意はなかったってことですかねぇ＠ちょいと小銭を巻き上げようと殴ったら、たまたま殴り所が悪かったと！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700030", 256, TRUE);
+	OutputLine(NULL, "「なっはっはっはっはっはっは！！！",
+		   NULL, "\"하하하!!! ", Line_Continue);
+	Wait ( 2000 );
+	OutputLine(NULL, "　じゃあホシには殺意はなかったってことですかねぇ。",
+		   NULL, "그럼 범인에게 살의는 없었다는 겁니까. ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700031", 256, TRUE);
+	OutputLine(NULL, "ちょいと小銭を巻き上げようと殴ったら、たまたま殴り所が悪かったと！」",
+		   NULL, "조금 푼돈이나 뺏어보려고 때렸는데, 우연히 때린 곳이 안 좋았다!\" ", Line_Normal);
+	ClearMessage();
+
+//　でっぷりした中年が二人してげらげらと下品に笑い合う￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でっぷりした中年が二人してげらげらと下品に笑い合う。",
+		   NULL, "뚱뚱한 중년 두명이 껄껄 하고 천박하게 웃는다. ", Line_Normal);
+	ClearMessage();
+
+//「.........なんてわけはありませんねぇ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700032", 256, TRUE);
+	OutputLine(NULL, "「………なんてわけはありませんねぇ。」",
+		   NULL, "\"...그럴 리가 없겠죠.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「こほん＠...いかにも。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200041", 256, TRUE);
+	OutputLine(NULL, "「こほん。",
+		   NULL, "\"쿨럭. ", Line_Continue);
+	Wait ( 1000 );
+	OutputLine(NULL, "…いかにも。」",
+		   NULL, "...그 말대로라네.\" ", Line_Normal);
+	ClearMessage();
+
+//「薬物の常用にせよ、精神的なものにせよ、仏の身元がカギを握っとるぞい＠そっちはどうなっとるんじゃ？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200042", 256, TRUE);
+	OutputLine(NULL, "「薬物の常用にせよ、精神的なものにせよ、仏の身元がカギを握っとるぞい。",
+		   NULL, "\"약물 상습복용이던 정신적인 문제건, 사망자의 신원이 열쇠를 쥐고 있겠군. ", Line_Continue);
+	Wait ( 4600 );
+	OutputLine(NULL, "そっちはどうなっとるんじゃ？」",
+		   NULL, "그쪽은 어떻게 돼가나?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「ありゃぁこんな時間＠　そろそろ戻らないと熊ちゃん、怒っちゃいますねぇ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700033", 256, TRUE);
+	OutputLine(NULL, "「ありゃぁこんな時間！",
+		   NULL, "\"어라 벌써 시간이! ", Line_Continue);
+	OutputLine(NULL, "　そろそろ戻らないと熊ちゃん、怒っちゃいますねぇ。」",
+		   NULL, "슬슬 돌아가지 않으면 쿠마쨩이 화내겠어요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「おう＠　頑張れよ＠　いいお年をの！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>鑑識</color>", NULL, "<color=#f5e6d3>부검의</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200043", 256, TRUE);
+	OutputLine(NULL, "「おう！",
+		   NULL, "\"오! ", Line_Continue);
+	OutputLine(NULL, "　頑張れよ！",
+		   NULL, "힘내게! ", Line_WaitForInput);
+	ModPlayVoiceLS(3, 0, "ps3/s20/00/443200044", 256, TRUE);
+	OutputLine(NULL, "　いいお年をの！」",
+		   NULL, "좋은 한 해 보내게나!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「いいお年を！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(3, 11, "ps3/s20/11/440700034", 256, TRUE);
+	OutputLine(NULL, "「いいお年を！」",
+		   NULL, "\"좋은 한 해를!\" ", Line_Normal);
+	ClearMessage();
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+
+}
