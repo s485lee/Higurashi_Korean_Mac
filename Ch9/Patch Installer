@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Define the source directory (inside mounted dmg volume)
+SOURCE="/Volumes/Higu_Rei_Kor/Contents"
+# Define the destination directory
+DESTINATION="$HOME/Library/Application Support/Steam/steamapps/common/Higurashi When They Cry Hou - Rei/HigurashiEp09.app/Contents"
+
+# Ensure trailing slash for rsync behavior consistency
+SOURCE="${SOURCE}/"
+DESTINATION="${DESTINATION}/"
+
+# Check if the source directory exists
+if [ -d "$SOURCE" ]; then
+    # Using rsync to copy and replace files without deleting anything in the destination
+    rsync -av "$SOURCE" "$DESTINATION"
+    echo "Operation completed successfully. Files have been updated."
+else
+    echo "Source directory does not exist. Please make sure the dmg is mounted correctly."
+fi

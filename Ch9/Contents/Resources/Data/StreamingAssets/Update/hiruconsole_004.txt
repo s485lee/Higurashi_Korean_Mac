@@ -1,0 +1,542 @@
+void main()
+{
+
+
+//*Hirukowashi Day 4
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+
+//#4 発見できず
+
+	DrawScene("bg/moon", 1000 );
+	PlayBGM( 1, "yoru", 128, 0 );
+	Wait( 2000 );
+	ModSetLayerFilter(4, 256, "night");
+	ModDrawCharacter(4, 4, "sprite/sa2b_yareyare_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawSceneWithMask( "bg/mo_yg2", "effect/up", 0, 0, 1000 );
+
+//沙都子rvS07/04/330400030.「…もうすっかり暗くなってしまいましたわね」
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400030", 256, TRUE);
+	OutputLine(NULL, "「…もうすっかり暗くなってしまいましたわね」",
+			NULL, "\"...벌써 완전히 깜깜해졌네요.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 4, "sprite/sa2b_akireru_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//沙都子rvS07/04/330400031.「梨花ぁ、これ以上は明日にしませんか？kvS07/04/330400032.　村の大人の方に見られては、こんな時間に子どもがこんなところで遊ぶなんて危ない、ってうちに帰されてしまいますわ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400031", 256, TRUE);
+	OutputLine(NULL, "「梨花ぁ、これ以上は明日にしませんか？",
+			NULL, "\"리카아, 이 이상은 내일 하지 않을래요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400032", 256, TRUE);
+	OutputLine(NULL, "　村の大人の方に見られては、こんな時間に子どもがこんなところで遊ぶなんて危ない、ってうちに帰されてしまいますわ」",
+			NULL, "마을 어른들에게 들키면 이런 시간에 어린애가 이런 데서 노는 건 위험하다면서 집에 가라고 한다고요.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 4, "sprite/sa2b_def_b1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//沙都子rvS07/04/330400033.「…まぁ梨花と一緒なら、叱られたりするようなことはないかもしれませんでしょうけど」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400033", 256, TRUE);
+	OutputLine(NULL, "「…まぁ梨花と一緒なら、叱られたりするようなことはないかもしれませんでしょうけど」",
+			NULL, "\"...뭐, 리카와 함께라면 혼나지는 않을지도 모르지만요.\" ", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModSetLayerFilter(5, 256, "night");
+	ModDrawCharacter(5, 5, "sprite/ri2_komaru_a2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModSetLayerFilter(3, 256, "night");
+	ModDrawCharacter(3, 4, "sprite/sa2b_def_b1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//梨花rvS07/05/330500023.「みぃ…駄目なのです。kvS07/05/330500024.一刻も早く見つけないと、とても悪い予感がするのですよ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500023", 256, TRUE);
+	OutputLine(NULL, "「みぃ…駄目なのです。",
+			NULL, "\"미이... 안 되는 거예요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500024", 256, TRUE);
+	OutputLine(NULL, "一刻も早く見つけないと、とても悪い予感がするのですよ」",
+			NULL, "한시라도 빨리 찾아야 해요, 아주 나쁜 예감이 드는 거예요.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene("white", 250 );
+	PlaySE(3, "suzu_1", 256, 64);
+	ModDrawCharacter(5, 5, "sprite/ri2_komaru_a2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(3, 4, "sprite/sa2b_def_b1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("bg/mo_yg2", 500 );
+	Wait( 250 );
+	ModDrawCharacter(5, 5, "sprite/ri2_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500025.「…みぃ！kvS07/05/330500026.　封印された宝の波動を感じますのです…。kvS07/05/330500027.間違いなくこの近くなのです。kvS07/05/330500028.みぃみぃ、みぃ…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500025", 256, TRUE);
+	OutputLine(NULL, "「…みぃ！",
+			NULL, "\"미이! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500026", 256, TRUE);
+	OutputLine(NULL, "　封印された宝の波動を感じますのです…。",
+			NULL, "봉인된 보물의 파동이 느껴지는 거예요... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500027", 256, TRUE);
+	OutputLine(NULL, "間違いなくこの近くなのです。",
+			NULL, "분명히 이 근처인 거예요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500028", 256, TRUE);
+	OutputLine(NULL, "みぃみぃ、みぃ…」",
+			NULL, "미이미이, 미이...\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2b_akireru_b1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400034.「その、梨花の持ってきた妖気探知機…ですか？kvS07/04/330400035.　その精度がもう少し高ければ役に立つのでしょうけど。kvS07/04/330400036.なんだかその名の通りアヤシイ形ですわねぇ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400034", 256, TRUE);
+	OutputLine(NULL, "「その、梨花の持ってきた妖気探知機…ですか？",
+			NULL, "\"그, 리카가 가져온 요기 탐지기... 던가요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400035", 256, TRUE);
+	OutputLine(NULL, "　その精度がもう少し高ければ役に立つのでしょうけど。",
+			NULL, "그 정밀도가 조금만 더 높았으면 도움이 되었을 텐데. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400036", 256, TRUE);
+	OutputLine(NULL, "なんだかその名の通りアヤシイ形ですわねぇ」",
+			NULL, "왠지 이름처럼 수상하게 생겼네요.\" ", Line_Normal);
+	ClearMessage();
+
+//rというより、どう見てもただの方位磁石のようにしか思えないのだが…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "というより、どう見てもただの方位磁石のようにしか思えないのだが…。",
+			NULL, "아니, 아무리 봐도 평범한 나침반인 것 같은데... ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2b_yareyare_b1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400037.「それにしても、さっきから村のあちこちを行ったり来たりで、疲れましたわ。kvS07/04/330400038.詩音さんには気の毒なことをしてしまいましたし…ふああぁあぁぁぁ…。kvS07/04/330400039.むにゃむにゃ、そろそろ眠くなってきましたわぁぁ…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400037", 256, TRUE);
+	OutputLine(NULL, "「それにしても、さっきから村のあちこちを行ったり来たりで、疲れましたわ。",
+			NULL, "\"그건 그렇고 아까부터 마을의 여기저기를 왔다 갔다 해서 지쳤어요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400038", 256, TRUE);
+	OutputLine(NULL, "詩音さんには気の毒なことをしてしまいましたし…ふああぁあぁぁぁ…。",
+			NULL, "시온 씨에게는 미안한 짓을 해버렸고요... 후아아아아암... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400039", 256, TRUE);
+	OutputLine(NULL, "むにゃむにゃ、そろそろ眠くなってきましたわぁぁ…」",
+			NULL, "음냐 음냐, 슬슬 졸리기 시작했사와요오...\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 5, "sprite/ri2_fuman_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500029.「みぃ…沙都子はフワラズの勾玉の恐ろしい力を知らないから、そうのん気に構えていられるのです。kvS07/05/330500030.その恐ろしさを知れば、ボクがどうしてこんなに慌てているのかがわかってもらえると思うのですが…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500029", 256, TRUE);
+	OutputLine(NULL, "「みぃ…沙都子はフワラズの勾玉の恐ろしい力を知らないから、そうのん気に構えていられるのです。",
+			NULL, "\"미이... 사토코는 후와라즈의 곡옥의 무서운 힘을 모르니까 그렇게 태평하게 있을 수 있는 거예요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500030", 256, TRUE);
+	OutputLine(NULL, "その恐ろしさを知れば、ボクがどうしてこんなに慌てているのかがわかってもらえると思うのですが…」",
+			NULL, "그 무서움을 알면 제가 왜 이렇게 허둥대는지 이해할 거예요...\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2a_hau_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400040.「縁結びの勾玉でございましょう？kvS07/04/330400041.　紅白一組の勾玉を意中の人と持ち合うと相思相愛になれる。kvS07/04/330400042.素敵じゃありませんの」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400040", 256, TRUE);
+	OutputLine(NULL, "「縁結びの勾玉でございましょう？",
+			NULL, "\"인연을 맺어주는 곡옥이잖아요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400041", 256, TRUE);
+	OutputLine(NULL, "　紅白一組の勾玉を意中の人と持ち合うと相思相愛になれる。",
+			NULL, "홍백 한 쌍의 곡옥을 마음에 둔 사람과 나눠 가지면 서로 사랑하게 된다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400042", 256, TRUE);
+	OutputLine(NULL, "素敵じゃありませんの」",
+			NULL, "멋지잖아요.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 5, "sprite/ri2_komaru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500031.「…だからこそ危険なのです。kvS07/05/330500032.それを巡って村中の若者が血みどろの争いを繰り広げてしまうかもしれませんのです。kvS07/05/330500033.ひとりの乙女を巡って、男たちが殺し合いをしたという話も古文書には書いてありましたのですよ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500031", 256, TRUE);
+	OutputLine(NULL, "「…だからこそ危険なのです。",
+			NULL, "\"...그러니까 더욱 위험한 거예요! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500032", 256, TRUE);
+	OutputLine(NULL, "それを巡って村中の若者が血みどろの争いを繰り広げてしまうかもしれませんのです。",
+			NULL, "그걸 둘러싸고 온 마을의 젊은이들이 피투성이가 되도록 싸우게 될 지도 모르는 거예요!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500033", 256, TRUE);
+	OutputLine(NULL, "ひとりの乙女を巡って、男たちが殺し合いをしたという話も古文書には書いてありましたのですよ」",
+			NULL, "한 명의 여자를 놓고 남자들이 서로 죽였다는 이야기도 고문서에 쓰여 있었습니다에요!\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2b_yareyare_b1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400043.「…そこまで想いの強い方なら、もっと別の努力をしたほうが上手くいきそうなものでしょうけど。kvS07/04/330400044.まぁ確かに、道端に転がっていていいものではありませんわね」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400043", 256, TRUE);
+	OutputLine(NULL, "「…そこまで想いの強い方なら、もっと別の努力をしたほうが上手くいきそうなものでしょうけど。",
+			NULL, "\"그 정도로 깊은 마음을 품은 분이라면, 좀 다른 쪽으로 노력하는 편이 더 잘 될 것 같은데 말이죠. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400044", 256, TRUE);
+	OutputLine(NULL, "まぁ確かに、道端に転がっていていいものではありませんわね」",
+			NULL, "뭐, 확실히 길가에 아무렇게나 굴러다녀도 괜찮은 물건은 아니네요.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2b_warai_b1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400045.「あ、そうそう！kvS07/04/330400046.　せっかくだから私と梨花で取り返して、その天にお返しする前にちょっと遊ばせてもらうってのも悪くはありませんわねぇ？kvS07/04/330400047.　をーっほっほっほっ！kvS07/04/330400048.　…ふわぁぁ…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400045", 256, TRUE);
+	OutputLine(NULL, "「あ、そうそう！",
+			NULL, "\"아, 그렇지! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400046", 256, TRUE);
+	OutputLine(NULL, "　せっかくだから私と梨花で取り返して、その天にお返しする前にちょっと遊ばせてもらうってのも悪くはありませんわねぇ？",
+			NULL, "모처럼이니까 저와 리카가 되찾아서 하늘로 돌려보내기 전에 잠깐 놀아보는 것도 나쁘지는 않겠네요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400047", 256, TRUE);
+	OutputLine(NULL, "　をーっほっほっほっ！",
+			NULL, "오홋홋홋! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400048", 256, TRUE);
+	OutputLine(NULL, "　…ふわぁぁ…」",
+			NULL, "...후와아암...\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 5, "sprite/ri2_fuman_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500034.「それもいいかもしれませんですが、まずは探し当ててからなのです」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500034", 256, TRUE);
+	OutputLine(NULL, "「それもいいかもしれませんですが、まずは探し当ててからなのです」",
+			NULL, "\"그것도 좋겠지만 먼저 찾아내는 것부터인 거예요.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 5, "sprite/ri2_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500035.「みぃ？　…近付いているのです近付いているのです…！kvS07/05/330500036.　みぃ、…みみみみみ、みぃぃっっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500035", 256, TRUE);
+	OutputLine(NULL, "「みぃ？　…近付いているのです近付いているのです…！",
+			NULL, "\"미이? ...가까워지고 있는 거예요. 가까워지고 있는 거예요...! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500036", 256, TRUE);
+	OutputLine(NULL, "　みぃ、…みみみみみ、みぃぃっっ！！」",
+			NULL, "미이... 미미미미미, 미이이!!\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene("white", 100 );
+	FadeOutBGM( 1, 300, FALSE  );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(3, "kaminari2", 256, 64);
+	DrawScene("black", 2000 );
+	PlayBGM( 2, "suzu", 128, 0 );
+
+//r真っ暗な夜道に何かが光ったような気がして、沙都子は目を向ける。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "真っ暗な夜道に何かが光ったような気がして、沙都子は目を向ける。",
+			NULL, "깜깜한 밤길에서 무언가가 빛난 것 같아 사토코는 눈을 돌렸다. ", Line_Normal);
+	ClearMessage();
+
+//rそれはまるで夜光塗料のように、しばらくの間その光を弱々しく灯らせていた…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それはまるで夜光塗料のように、しばらくの間その光を弱々しく灯らせていた…。",
+			NULL, "마치 야광도료처럼 잠시 동안 희미하게 빛나는 것이 있었다..... ", Line_Normal);
+	ClearMessage();
+
+	DrawScene("black", 50 );
+	ModDrawCharacter(4, 4, "sprite/sa2a_odoroki_a1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/mo_yg1", 1000 );
+
+//沙都子rvS07/04/330400049.「あれでございますか？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400049", 256, TRUE);
+	OutputLine(NULL, "「あれでございますか？！」",
+			NULL, "\"저건가요?!\" ", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+
+//rその光を懐中電灯で照らすと、そこには口の開いた小箱が転がっていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "その光を懐中電灯で照らすと、そこには口の開いた小箱が転がっていた。",
+			NULL, "그 빛을 손전등으로 비추자 거기에는 뚜껑이 열린 작은 상자가 떨어져 있었다. ", Line_Normal);
+	ClearMessage();
+
+//r小箱ではあるが凝った意匠がされており、なるほど、古手神社の至宝と言われれば納得できるものだった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "小箱ではあるが凝った意匠がされており、なるほど、古手神社の至宝と言われれば納得できるものだった。",
+			NULL, "작은 상자지만 공들여서 장식되어 있어, 후루데 신사의 보물이라고 납득할 만한 물건이었다. ", Line_Normal);
+	ClearMessage();
+
+//rでも外側はどうでもいい。大切なのは中身だ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "でも外側はどうでもいい。大切なのは中身だ。",
+			NULL, "하지만 겉은 어떻든 상관없다. 중요한 건 안에 든 물건이다. ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 5, "sprite/ri2_fuman_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//梨花rvS07/05/330500037.「あ！kvS07/05/330500038.　…みぃ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500037", 256, TRUE);
+	OutputLine(NULL, "「あ！",
+			NULL, "\"아! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500038", 256, TRUE);
+	OutputLine(NULL, "　…みぃ」",
+			NULL, "...미이.\" ", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(5, 5, "sprite/ri2_fuman_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 4, "sprite/sa2b_yareyare_b1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400050.「…空箱ですわね。kvS07/04/330400051.なるほど、この窪みに、紅白２つの勾玉が納められていたというわけでございますか」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400050", 256, TRUE);
+	OutputLine(NULL, "「…空箱ですわね。",
+			NULL, "\"빈 상자네요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400051", 256, TRUE);
+	OutputLine(NULL, "なるほど、この窪みに、紅白２つの勾玉が納められていたというわけでございますか」",
+			NULL, "그렇군요, 이 움푹한 곳에 붉은색과 하얀색 곡옥 두 개가 들어있었다는 건가요.\" ", Line_Normal);
+	ClearMessage();
+
+//r箱の中は宝石箱のようになっていて、２つの勾玉を収めたであろう窪みが残されていた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "箱の中は宝石箱のようになっていて、２つの勾玉を収めたであろう窪みが残されていた。",
+			NULL, "상자의 안은 보석 상자처럼 되어 있어서 두 개의 곡옥이 들어갈 만한 자리가 남아있었다. ", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 2, 300, FALSE  );
+	PlayBGM( 1, "yoru", 128, 0 );
+	ModDrawCharacter(5, 5, "sprite/ri2_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500039.「みぃ、この近くに落ちているのかもしれませんのです。kvS07/05/330500040.もうちょっと探してみましょうなのです」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500039", 256, TRUE);
+	OutputLine(NULL, "「みぃ、この近くに落ちているのかもしれませんのです。",
+			NULL, "\"미이, 이 근처에 떨어져 있을지도 모르는 거예요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500040", 256, TRUE);
+	OutputLine(NULL, "もうちょっと探してみましょうなのです」",
+			NULL, "조금 더 찾아보자는 거예요.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2b_def_b1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400052.「梨花の妖気探知機で探し出すことはできませんの？kvS07/04/330400053.　こんな暗闇で落ちている勾玉を探すなんて、私たちにはとても無理でございますわ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400052", 256, TRUE);
+	OutputLine(NULL, "「梨花の妖気探知機で探し出すことはできませんの？",
+			NULL, "\"리카의 요기 탐지기로 찾을 수는 없나요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400053", 256, TRUE);
+	OutputLine(NULL, "　こんな暗闇で落ちている勾玉を探すなんて、私たちにはとても無理でございますわ」",
+			NULL, "이런 깜깜한 곳에 떨어진 곡옥을 찾는다니, 저희에게는 도저히 무리인 것이어요.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 5, "sprite/ri2_komaru_a2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500041.「それが…、みぃ。kvS07/05/330500042.妖気発信機は箱の方に取り付けられているらしいので…、kvS07/05/330500043.箱の中に入ってないと探せないのですよ、…みぃ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500041", 256, TRUE);
+	OutputLine(NULL, "「それが…、みぃ。",
+			NULL, "\"그게... 미이. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500042", 256, TRUE);
+	OutputLine(NULL, "妖気発信機は箱の方に取り付けられているらしいので…、",
+			NULL, "요기 발신기는 상자에 붙어있어서... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500043", 256, TRUE);
+	OutputLine(NULL, "箱の中に入ってないと探せないのですよ、…みぃ」",
+			NULL, "상자 안에 없으면 찾을 수 없는 거예요... 미이.\" ", Line_Normal);
+	ClearMessage();
+
+//r梨花の話によると、もっと強力な探知機なら勾玉自身の所在もなんとか調べることができるらしい。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "梨花の話によると、もっと強力な探知機なら勾玉自身の所在もなんとか調べることができるらしい。",
+			NULL, "리카의 말에 의하면, 더 강력한 탐지기라면 곡옥 자체의 위치도 어떻게든 알아낼 수 있다고 한다. ", Line_Normal);
+	ClearMessage();
+
+//rただ、それは祭具殿の奥の方にあって取り出しが面倒のため、今回は置いてきてしまったとのことだった。……使えない話だ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ただ、それは祭具殿の奥の方にあって取り出しが面倒のため、今回は置いてきてしまったとのことだった。……使えない話だ。",
+			NULL, "하지만 그건 제구전 깊은 곳에 있으니까 꺼내기 귀찮아서 이번에는 두고 왔다고 한다. ...글러먹은 이유다. ", Line_Normal);
+	ClearMessage();
+
+//rというか『発信機』だの、古い秘宝を探す道具が『探知機』だのって名前は何だかヘンじゃないか。どう見ても方位磁石だし。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "というか『発信機』だの、古い秘宝を探す道具が『探知機』だのって名前は何だかヘンじゃないか。どう見ても方位磁石だし。",
+			NULL, "그보다 발신기니, 오래된 비보를 찾는 도구가 탐지기라느니, 이름이 뭔가 이상하지 않은가. 어딜 봐도 나침반이고. ", Line_Normal);
+	ClearMessage();
+
+//r二人は懐中電灯で辺りを探すが、砂利や雑草の茂みなど、たとえ昼間でも簡単には見つけられるとも思いがたい。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "二人は懐中電灯で辺りを探すが、砂利や雑草の茂みなど、たとえ昼間でも簡単には見つけられるとも思いがたい。",
+			NULL, "두 사람은 손전등으로 근처를 찾아보지만 자갈이나 잡초 더미 등 때문에 설령 낮에 찾는다고 해도 쉽게 찾아낼 수 없을 것 같았다. ", Line_Normal);
+	ClearMessage();
+
+//rしかも小箱の窪みの大きさから察するに、多分、飴玉程度の大きさだろうからなおさらだ。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "しかも小箱の窪みの大きさから察するに、多分、飴玉程度の大きさだろうからなおさらだ。",
+			NULL, "게다가 상자 속의 물건이 들어있던 곳의 크기로 추측하건대 아마 알사탕 정도의 크기일 테니 더더욱이다. ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2a_yareyare_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400054.「多分、空から落っこちてきた時、地面にぶつかった拍子に中身が飛び出してしまったのかもしれませんわね」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400054", 256, TRUE);
+	OutputLine(NULL, "「多分、空から落っこちてきた時、地面にぶつかった拍子に中身が飛び出してしまったのかもしれませんわね」",
+			NULL, "\"아마 하늘에서 떨어졌을 때 지면에 부딪혀서 내용물이 튀어나온 걸지도 모르겠네요.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2a_akireru_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400055.「…しかも、よりによってゴミ山の近くで？kvS07/04/330400056.　この斜面を転がってあの中に混じった日には…、無理ですわね。kvS07/04/330400057.探せっこありませんわ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400055", 256, TRUE);
+	OutputLine(NULL, "「…しかも、よりによってゴミ山の近くで？",
+			NULL, "\"...하필이면 쓰레기 산 근처에서? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400056", 256, TRUE);
+	OutputLine(NULL, "　この斜面を転がってあの中に混じった日には…、無理ですわね。",
+			NULL, "이 비탈길을 굴러서 저 안에 들어가 버리기라도 했다가는... 무리네요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400057", 256, TRUE);
+	OutputLine(NULL, "探せっこありませんわ」",
+			NULL, "찾을 수 있을 리 없사와요.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 5, "sprite/ri2_komaru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500044.「…みぃ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500044", 256, TRUE);
+	OutputLine(NULL, "「…みぃ」",
+			NULL, "\"...미이.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene("white", 100 );
+	PlaySE(3, "kyupirn", 256, 64);
+	ModDrawCharacter(5, 5, "sprite/ri2_def_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	ModDrawCharacter(3, 4, "sprite/sa2a_akireru_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene("bg/mo_yg1", 1000 );
+
+//r…その時はたと、梨花の頭にひらめく。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…その時はたと、梨花の頭にひらめく。",
+			NULL, "...그때 문득 리카는 번뜩였다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "jakinimititahaikyo", 256, 64);
+	ModDrawCharacter(5, 5, "sprite/ri2_niyari_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//r普通の人なら無理でも、…ゴミ山の主、レナならどうだろう。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "普通の人なら無理でも、…ゴミ山の主、レナならどうだろう。",
+			NULL, "보통 사람이라면 불가능해도... 이 쓰레기 산의 주인, 레나라면 어떨까. ", Line_Normal);
+	ClearMessage();
+
+//r紅白の勾玉は、勾玉なんて名前こそついているが、巻物のイラストによるとその形状はまるで、オットセイのキーホルダーそのものだ。はっきり言って、レナの食指は動きまくりだと思う。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "紅白の勾玉は、勾玉なんて名前こそついているが、巻物のイラストによるとその形状はまるで、オットセイのキーホルダーそのものだ。はっきり言って、レナの食指は動きまくりだと思う。",
+			NULL, "홍백의 곡옥은 곡옥이라는 이름이 붙어있지만, 두루마리의 일러스트에 의하면 그 모습은 마치 물개 모양 키홀더 그 자체다. 솔직히 말해서 레나라면 환장할 것 같다. ", Line_Normal);
+	ClearMessage();
+
+//rそれを沙都子に伝えると、彼女もなるほど、と頷いた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "それを沙都子に伝えると、彼女もなるほど、と頷いた。",
+			NULL, "그 생각을 전하니 사토코도 일리 있다며 고개를 끄덕였다. ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2a_hau_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400058.「そう言えば、レナさんは…今日、ゴミ山に寄っていくとかおっしゃっておりましたわね。kvS07/04/330400059.新しいゴミ山が出来ていたから、宝探しに行きたいとか言って」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400058", 256, TRUE);
+	OutputLine(NULL, "「そう言えば、レナさんは…今日、ゴミ山に寄っていくとかおっしゃっておりましたわね。",
+			NULL, "\"그러고 보니 레나 씨는... 오늘 쓰레기 산에 들른다고 말했죠. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400059", 256, TRUE);
+	OutputLine(NULL, "新しいゴミ山が出来ていたから、宝探しに行きたいとか言って」",
+			NULL, "새로운 쓰레기 산이 생겼으니까 보물찾기하러 가고 싶다고.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 5, "sprite/ri2_fuman_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500045.「レナが拾ってしまいましたのでしょうか…？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500045", 256, TRUE);
+	OutputLine(NULL, "「レナが拾ってしまいましたのでしょうか…？」",
+			NULL, "\"레나가 주워 버린 걸까요...?\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2b_def_b1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400060.「そこまではわかりませんわ。kvS07/04/330400061.明日、学校で聞いてみてはいかがです？kvS07/04/330400062.　さすがにこの時間に、お電話をさしあげるのは失礼でしょうし」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400060", 256, TRUE);
+	OutputLine(NULL, "「そこまではわかりませんわ。",
+			NULL, "\"거기까지는 몰라요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400061", 256, TRUE);
+	OutputLine(NULL, "明日、学校で聞いてみてはいかがです？",
+			NULL, "내일 학교에서 물어보면 어때요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400062", 256, TRUE);
+	OutputLine(NULL, "　さすがにこの時間に、お電話をさしあげるのは失礼でしょうし」",
+			NULL, "아무래도 이 시간에 전화하는 건 실례일 테니.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 5, "sprite/ri2_komaru_a2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500046.「……みぃ…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500046", 256, TRUE);
+	OutputLine(NULL, "「……みぃ…」",
+			NULL, "\"...미이...\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 4, "sprite/sa2b_yareyare_b1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//沙都子rvS07/04/330400063.「梨花、とにかく今日は引き返しましょう。kvS07/04/330400064.これ以上暗くなると、夜道も危険ですわ。kvS07/04/330400065.それに、例の巻物をもう少しくわしく読めば、何かヒントが見つかるかもしれませんでしてよ？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400063", 256, TRUE);
+	OutputLine(NULL, "「梨花、とにかく今日は引き返しましょう。",
+			NULL, "\"리카, 어쨌든 오늘은 돌아가요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400064", 256, TRUE);
+	OutputLine(NULL, "これ以上暗くなると、夜道も危険ですわ。",
+			NULL, "이 이상 깜깜해지면 밤길도 위험해요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400065", 256, TRUE);
+	OutputLine(NULL, "それに、例の巻物をもう少しくわしく読めば、何かヒントが見つかるかもしれませんでしてよ？」",
+			NULL, "게다가 그 두루마리를 좀 더 자세히 읽으면 뭔가 힌트를 발견할 수 있을지도 모르잖아요?\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 5, "sprite/ri2_fuman_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500046_1.「…仕方ないのです」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500046_1", 256, TRUE);
+	OutputLine(NULL, "「…仕方ないのです」",
+			NULL, "\"...어쩔 수 없는 거예요.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene("black", 1000 );
+
+//rやれやれ。面倒なマジックアイテムが雛見沢に紛れ込んだものだ…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "やれやれ。面倒なマジックアイテムが雛見沢に紛れ込んだものだ…。",
+			NULL, "이런 이런. 귀찮은 매직 아이템이 히나미자와에 흘러들어왔군.... ", Line_Normal);
+	ClearMessage();
+
+//r…というか、ホントにそんな効用を持つ宝なんてあるんだろうか？
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…というか、ホントにそんな効用を持つ宝なんてあるんだろうか？",
+			NULL, "...그런데 정말로 그런 효험이 있는 보물이 있는 걸까? ", Line_Normal);
+	ClearMessage();
+
+//r沙都子にとっては実際にその目で見たわけではないので、梨花がこれだけ深刻になっていてもまだ半信半疑だった…。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "沙都子にとっては実際にその目で見たわけではないので、梨花がこれだけ深刻になっていてもまだ半信半疑だった…。",
+			NULL, "사토코는 실제로 직접 본 게 아니라서 리카가 이렇게 심각하더라도 아직 반신반의였다... ", Line_Normal);
+	ClearMessage();
+
+	DrawScene("black", 50 );
+	ModDrawCharacter(4, 4, "sprite/sa2b_yareyare_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/m_y7", 1000 );
+
+//沙都子rvS07/04/330400067.「あぁ、ホント！kvS07/04/330400068.　やれやれですわ～…」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400067", 256, TRUE);
+	OutputLine(NULL, "「あぁ、ホント！",
+			NULL, "\"아아, 정말! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400068", 256, TRUE);
+	OutputLine(NULL, "　やれやれですわ～…」",
+			NULL, "곤란곤란이어요~...\" ", Line_Normal);
+	ClearMessage();
+
+	CallScript("&eye");
+
+}

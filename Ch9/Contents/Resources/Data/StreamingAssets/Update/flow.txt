@@ -1,0 +1,451 @@
+
+void main()
+{
+	SetValidityOfSaving( FALSE );
+
+	//ModGenericCall("ShowSetupMenuIfRequired", "");
+
+	CallSection("BrandLogo");
+	JumpSection("Title");
+}
+
+void BrandLogo()
+{
+	DrawScene("black", 0);
+
+	if(GetGlobalFlag(GFlag_FirstPlay) == 0)
+	{
+		LanguagePrompt();
+		Wait(500);
+	}
+
+	SetGlobalFlag(GFlag_FirstPlay, 1);
+
+	DrawBG( "title/07thlogo", 1000, TRUE );
+	Wait( 2000 );
+	DrawSceneWithMask( "title/mangagamer", "effect/logomask", 0, 0, 1000 );
+	Wait( 2000 );
+	DrawSceneWithMask( "title/07th-mod", "effect/logomask", 0, 0, 1000 );
+	Wait( 2000 );
+	DrawSceneWithMask( "black", "effect/logomask", 0, 0, 1000 );
+}
+
+void Title()
+{
+	SetValidityOfSaving( FALSE );
+
+	//DrawScene("black", 1000);
+
+	DrawScene("white", 1000);
+
+	Wait(100);
+
+	DrawSprite( 10, "title/logo", NULL, 0, 0, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 10, 0, FALSE );
+
+	DrawSceneWithMask("black", "effect/maskc", 0, 0, 700);
+
+	Wait(500);
+
+	PlayBGM( 2, "higurashi", 128, 0 );
+
+	Wait(1000);
+
+	DrawScene("white", 1000);
+
+	DrawBustshot( 9, "white", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 10, TRUE );
+
+	DrawSprite( 8, "title/rika_wine", NULL, -426, -900, -133, 0, 0, 0, FALSE, FALSE, 0, 0, 8, 10, TRUE );
+	MoveSprite( 8, -426, -600, -133, 0, 0, 0, 0, 5500, FALSE );
+	FadeBustshot( 9, FALSE, 0, 0, 0, 0, 5500, FALSE );
+
+	DrawSprite( 10, "title/rogo_sp", NULL, 0, 0, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 10, 1500, TRUE );
+
+	Wait(2000);
+
+	LoadTitleScreen();
+
+	Wait(2000);
+
+	StoreValueToLocalWork( LOCALWORK_NO_RESULT, 0 );
+	StoreValueToLocalWork(s_jump, 0);
+
+	SetColorOfMessage( TRUE, 0xff, 0xff, 0xff );
+
+	TitleScreen();
+
+	CallSection("ChapterPreview");
+
+	JumpSection("Title");
+}
+
+void ChapterPreview()
+{
+	Wait( 200 );
+	FadeOutBGM( 1, 300, FALSE );
+	FadeOutBGM( 2, 300, FALSE );
+	DisableWindow();
+
+	PlayBGM( 0, "yoru", 56, 0 );
+	DrawSceneWithMask("black", "effect/mask2", 0, 0, 1200 );
+	Wait( 1500 );
+
+	DrawScene("title/chapterbg", 1000);
+
+	DrawSpriteWithFiltering( 01, "title/chapteroverlay1", "effect/mask6", 0, 0, 0, TRUE, TRUE, 0, 0, 09, 1000, TRUE );
+
+	ShowChapterPreview();
+
+	if(GetLocalFlag( LOCALWORK_NO_RESULT ) > 0)
+	{
+		StopBGM( 0 );
+		PlaySE( 1, "wa_037", 128, 64 );
+
+		DrawScene( "black", 1000 );
+		CallSection("ResetScene");
+
+		if(GetLocalFlag( LOCALWORK_NO_RESULT ) == 1)
+			CallSection("Saikoroshi");
+		if(GetLocalFlag( LOCALWORK_NO_RESULT ) == 2)
+			CallSection("HiruChooseVersion");
+		if(GetLocalFlag( LOCALWORK_NO_RESULT ) == 3)
+			CallSection("Batsukoishi");
+	}
+
+	FadeOutBGM( 0, 1000, FALSE );
+
+	DrawScene("black", 1000);
+
+	CallSection("Title");
+}
+
+
+void ViewTipsDisplay()
+{
+	//uses local flag TipsMode to determine what happens
+	//0 - Leave, 1 - Show Extras Menu, 2 - Show Mid Chapter Screen, 3 - Show New Tips, 4 - Show All Tips (Local), 5 - Show All Tips (Global)
+
+	SetValidityOfSaving( TRUE );
+
+	DisableWindow();
+
+	if(GetLocalFlag( TipsMode ) < 3)
+		DrawScene("black", 0);
+
+	if(GetLocalFlag( TipsMode ) == 1)
+		ShowExtras();
+
+	if(GetLocalFlag( LOCALWORK_NO_RESULT ) > 0)
+		CallSection("ViewTipsDisplay");
+}
+
+void Saikoroshi()
+{
+	CallScript( "saikoroshi00" );
+	CallScript( "saikoroshi01" );
+	CallScript( "saikoroshi02" );
+	CallScript( "saikoroshi02_2" );
+	CallScript( "saikoroshi02_3" );
+	CallScript( "saikoroshi03" );
+	CallScript( "saikoroshi04" );
+
+	SetGlobalFlag(GSaikoroshi, TRUE);
+
+	JumpSection("ReturnToTitle");
+}
+
+void Hirukowashi()
+{
+	CallScript( "hirukowashi00" );
+	CallScript( "hirukowashi01" );
+	CallScript( "hirukowashi02" );
+	CallScript( "hirukowashi02_2" );
+	CallScript( "hirukowashi02_3" );
+	CallScript( "hirukowashi03" );
+	CallScript( "hirukowashi04" );
+
+	SetGlobalFlag(GHirukowashi, TRUE);
+	SetGlobalFlag(GOmakeUnlock, TRUE);
+
+	JumpSection("ReturnToTitle");
+}
+
+void HiruChooseVersion()
+{
+	ModEnableNVLModeInADVMode();
+	DrawScene("black", 1000 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「昼壊し編」コンシューマー版は、同人PC版とは大きく異なります。ほとんど新しい話になっています。どっちの方をプレイしたいですか？",
+			NULL, "콘솔판의 히루코와시 편은 메아카시 편과 츠미호로보시 편 사이에 배치되어서 스포일러 방지를 위해 동인판 원작에서 많은 대사와 등장인물이 대체되었으며 중반 이후부터는 서로 다른 이벤트가 일어납니다. 이러한 사항은 원작자가 쓴 동인판에 비해 위화감을 줄 수 있으나 성우 더빙은 콘솔 버전에만 있습니다.  어떤 버전을 플레이하시겠습니까?", Line_Normal);
+	ClearMessage();
+
+	DrawBustshotWithFiltering( 6, "effect/2choices", "effect/left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+	char HiruChoice0[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		HiruChoice0[0] = "동인판 원작을 플레이한다";
+		HiruChoice0[1] = "콘솔 버전을 플레이한다";
+	}
+	else
+	{
+		HiruChoice0[0] = "同人PC版";
+		HiruChoice0[1] = "異本コンシューマー版";
+	}
+
+	Select( 2, HiruChoice0 );
+
+	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+	DisableWindow();
+	ModDisableNVLModeInADVMode();
+	DrawScene("black", 250 );
+	if (LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallSection("Hirukowashi");
+	}
+	else
+	{
+		CallSection("HiruConsole");
+	}
+}
+
+void HiruConsole()
+{
+	CallScript( "hiruconsole_001" );
+	CallScript( "hiruconsole_002" );
+	CallScript( "hiruconsole_003" );
+	CallScript( "hiruconsole_004" );
+	CallScript( "hiruconsole_005" );
+	CallScript( "hiruconsole_006" );
+	CallScript( "hiruconsole_007" );
+	CallScript( "hiruconsole_008" );
+	CallScript( "hiruconsole_009" );
+	CallScript( "hiruconsole_010" );
+	CallScript( "hiruconsole_011" );
+
+	DrawBustshotWithFiltering( 6, "effect/2choices", "effect/left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+	char HiruChoice1[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		HiruChoice1[0] = "똑바로 휘두른다";
+		HiruChoice1[1] = "잘 보고 신중을 기한다";
+	}
+	else
+	{
+		HiruChoice1[0] = "まっすぐ振り抜く";
+		HiruChoice1[1] = "よく見て慎重に";
+	}
+
+	Select( 2, HiruChoice1 );
+	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+	DisableWindow();
+	if (LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallSection("HiruConsoleChoice1a");
+	}
+	else
+	{
+		CallSection("HiruConsoleChoice1b");
+	}
+
+}
+
+void HiruConsoleChoice1a()
+{
+	CallScript( "hiruconsole_011_choice1a" );
+
+	CallSection("HiruConsoleDay11Part2");
+}
+
+void HiruConsoleChoice1b()
+{
+	CallScript( "hiruconsole_011_choice1b" );
+
+	CallSection("HiruConsoleDay11Part2");
+}
+
+void HiruConsoleDay11Part2()
+{
+	CallScript( "hiruconsole_011_2" );
+
+	DrawBustshotWithFiltering( 6, "effect/2choices", "effect/left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+	char HiruChoice2[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		HiruChoice2[0] = "전력을 다해 친다";
+		HiruChoice2[1] = "배트에 맞추는 것에 유의한다";
+	}
+	else
+	{
+		HiruChoice2[0] = "力一杯振りぬく";
+		HiruChoice2[1] = "ミートを心がける";
+	}
+
+	Select( 2, HiruChoice2 );
+	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+	DisableWindow();
+	if (LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallSection("HiruConsoleChoice2a");
+	}
+	else
+	{
+		CallSection("HiruConsoleChoice2b");
+	}
+}
+
+void HiruConsoleChoice2a()
+{
+	CallScript( "hiruconsole_011_choice2a" );
+
+	CallSection("HiruConsoleDay11Part3");
+}
+
+void HiruConsoleChoice2b()
+{
+	CallScript( "hiruconsole_011_choice2b" );
+
+	CallSection("HiruConsoleDay11Part3");
+}
+
+void HiruConsoleDay11Part3()
+{
+	CallScript( "hiruconsole_011_3" );
+
+	DrawBustshotWithFiltering( 6, "effect/2choices", "effect/left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+	char HiruChoice3[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		HiruChoice3[0] = "같은 코스를 노린다!";
+		HiruChoice3[1] = "한방을 노린다!";
+	}
+	else
+	{
+		HiruChoice3[0] = "同じコース狙いで！";
+		HiruChoice3[1] = "ヤマを張って！";
+	}
+
+	Select( 2, HiruChoice3 );
+	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+	DisableWindow();
+	if (LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallSection("HiruConsoleChoice3a");
+	}
+	else
+	{
+		CallSection("HiruConsoleChoice3b");
+	}
+}
+
+void HiruConsoleChoice3a()
+{
+	CallScript( "hiruconsole_011_choice3a" );
+
+	CallSection("HiruConsoleBadEnd");
+}
+
+void HiruConsoleChoice3b()
+{
+	CallScript( "hiruconsole_011_choice3b" );
+
+	DrawBustshotWithFiltering( 6, "effect/2choices", "effect/left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+	char HiruChoice4[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		HiruChoice4[0] = "사토코에게 맡긴다";
+		HiruChoice4[1] = "내가 알아서 한다";
+	}
+	else
+	{
+		HiruChoice4[0] = "任せる";
+		HiruChoice4[1] = "自分で打つ";
+	}
+
+	Select( 2, HiruChoice4 );
+	FadeBustshot( 6, FALSE, 0, 0, 0, 0, 200, TRUE );
+	DisableWindow();
+	if (LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		CallSection("HiruConsoleGoodEnd");
+	}
+	else
+	{
+		CallSection("HiruConsoleBadEnd");
+	}
+}
+
+void HiruConsoleGoodEnd()
+{
+	CallScript( "hiruconsole_011_4" );
+	CallScript( "hiruconsole_012" );
+	CallScript( "hiruconsole_013" );
+	CallScript( "hiruconsole_tips_01" );
+
+	SetGlobalFlag(GHirukowashi, TRUE);
+	SetGlobalFlag(GOmakeUnlock, TRUE);
+
+	JumpSection("ReturnToTitle");
+
+}
+
+void HiruConsoleBadEnd()
+{
+	CallScript( "hiruconsole_011_tobadend" );
+	CallScript( "hiruconsole_badend" );
+
+	JumpScript( "flow" );
+}
+
+void Batsukoishi()
+{
+	CallScript( "batsukoishi01" );
+
+	SetGlobalFlag(GBatsukoishi, TRUE);
+
+	JumpSection("ReturnToTitle");
+}
+
+void ResetScene()
+{
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, FALSE );
+	FadeOutBGM( 3, 1000, TRUE );
+
+	StoreValueToLocalWork(NewTipsStart , 0);
+	StoreValueToLocalWork(NewTipsCount , 0);
+	StoreValueToLocalWork(TipsCount , 0);
+
+	SetValidityOfSaving( TRUE );
+	SetValidityOfInput( TRUE );
+
+	SetColorOfMessage( TRUE, 0xff, 0xff, 0xff );
+
+	DrawScene( "black", 0 );
+}
+
+void ReturnToTitle()
+{
+	CallSection("ResetScene");
+
+	if(GetGlobalFlag( GSaikoroshi ) + GetGlobalFlag( GHirukowashi ) + GetGlobalFlag( GBatsukoishi ) == 3)
+	{
+		SetGlobalFlag( GFlag_GameClear, TRUE );
+	}
+
+	StoreValueToLocalWork(NewTipsStart , 0);
+	StoreValueToLocalWork(NewTipsCount , 0);
+	StoreValueToLocalWork(TipsCount , 0);
+
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, FALSE );
+	FadeOutBGM( 3, 1000, TRUE );
+
+	JumpSection("Title");
+}

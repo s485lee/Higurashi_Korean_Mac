@@ -1,0 +1,373 @@
+void main()
+{
+
+
+//*Hirukowashi Bad End
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+
+	FadeOutBGM( 0, 1000, FALSE  );
+	FadeOutBGM( 1, 1000, FALSE  );
+	FadeOutBGM( 2, 1000, FALSE  );
+	FadeOutBGM( 3, 1000, TRUE );
+
+//BADEND (敗退)
+
+	PlaySE(3, "rena-swing", 256, 64);
+	DrawSceneWithMask( "white", "effect/left", 0, 0, 250 );
+	PlaySE(3, "vse_hit", 256, 64);
+	ModSetLayerFilter(5, 256, "none");
+	ModDrawCharacter(5, 2, "sprite/re2a_hig_okoru_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 0, FALSE );
+	DrawScene("bg/oki_g3", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlayBGM(2, "hm02_13", 128, 0);
+
+//rカキィィィ――ンンッッ！！！
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "カキィィィ——ンンッッ！！！",
+			NULL, "까아아아앙!!! ", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(5, FALSE, 0, 0, 0, 0, 50, TRUE);
+	PlaySE(3, "daidageki", 256, 64);
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 23, "sprite/kameda2b_odoroki_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 50, TRUE );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//亀田rvS07/23/VT2A_kameda1021.「ば、ばかなぁ…っ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5a5e5e>亀田</color>", NULL, "<color=#5a5e5e>카메다</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 23, "ps3/s07/23/vt2a_kameda1021", 256, TRUE);
+	OutputLine(NULL, "「ば、ばかなぁ…っ？！」",
+			NULL, "\"마, 말도 안 돼...?!\" ", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "down2", 256, 64);
+	FadeBustshot(3, FALSE, 0, 0, 0, 0, 200, TRUE);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//r今度はマウンド上で、がっくりと膝をつき崩れ落ちる亀田くん。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "今度はマウンド上で、がっくりと膝をつき崩れ落ちる亀田くん。",
+			NULL, "이번엔 마운드에서 털썩 무릎을 꿇고 무너지는 카메다 군. ", Line_Normal);
+	ClearMessage();
+
+//rレナのこの日３本目のアーチが、センター方向のゾーンへと消えていった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "レナのこの日３本目のアーチが、センター方向のゾーンへと消えていった。",
+			NULL, "오늘 레나가 세 번째로 쳐낸 홈런이 센터 쪽 존을 향해 사라져갔다. ", Line_Normal);
+	ClearMessage();
+
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacter(4, 4, "sprite/sa2a_odoroki_a1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//沙都子rvS07/04/330400254.「け、圭一さん…？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400254", 256, TRUE);
+	OutputLine(NULL, "「け、圭一さん…？」",
+			NULL, "\"케, 케이이치 씨...?\" ", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100337.「心配するな！kvS07/01/330100338.　俺の真の力をとくと見せてやるぜぇぇっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100337", 256, TRUE);
+	OutputLine(NULL, "「心配するな！",
+			NULL, "\"걱정하지 마! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100338", 256, TRUE);
+	OutputLine(NULL, "　俺の真の力をとくと見せてやるぜぇぇっ！！」",
+			NULL, "내 진정한 힘을 확실히 보여주지이이!!\" ", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+
+//rそして俺は、打席に入るとグリップを握り締め、気迫を込めてバットを構えた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そして俺は、打席に入るとグリップを握り締め、気迫を込めてバットを構えた。",
+			NULL, "그리고 나는 타석에 들어가 그립을 꽉 쥐며 기백을 담아 배트를 세웠다. ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 2, "sprite/re2b_okoru_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//圭一rvS07/01/330100339.「さぁ、どっからでもきやがれぇぇッッ！！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100339", 256, TRUE);
+	OutputLine(NULL, "「さぁ、どっからでもきやがれぇぇッッ！！！」",
+			NULL, "\"자, 얼마든지 덤벼봐아아!!!\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE(3, "nageru", 256, 64);
+	DrawSceneWithMask( "black", "effect/right", 0, 0, 250 );
+	PlaySE(0, "k1-swing", 256, 64);
+	DrawSceneWithMask( "white", "effect/left", 0, 0, 250 );
+	PlaySE(3, "tataku", 256, 64);
+	DrawScene("bg/oki_g3", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(0, "nageru", 256, 64);
+	DrawSceneWithMask( "black", "effect/right", 0, 0, 250 );
+	PlaySE(3, "rena-swing", 256, 64);
+	DrawSceneWithMask( "white", "effect/left", 0, 0, 250 );
+	PlaySE(0, "finish", 256, 64);
+	DrawScene("bg/oki_g3", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(3, "nageru", 256, 64);
+	DrawSceneWithMask( "black", "effect/right", 0, 0, 250 );
+	PlaySE(0, "k1-swing", 256, 64);
+	DrawSceneWithMask( "white", "effect/left", 0, 0, 250 );
+	PlaySE(3, "tataku", 256, 64);
+	DrawScene("bg/oki_g3", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(0, "nageru", 256, 64);
+	DrawSceneWithMask( "black", "effect/right", 0, 0, 250 );
+	PlaySE(3, "rena-swing", 256, 64);
+	DrawSceneWithMask( "white", "effect/left", 0, 0, 250 );
+	PlaySE(0, "finish", 256, 64);
+	DrawScene("bg/oki_g3", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	FadeOutBGM(2, 1000, FALSE);
+	DrawSceneWithMask( "black", "effect/down", 0, 0, 1000 );
+	Wait( 1000 );
+	PlayBGM( 1, "semi", 128, 0 );
+	Wait( 1000 );
+	PlaySE(3, "nageru", 256, 64);
+	Wait( 250 );
+	PlaySE(0, "rena-swing", 256, 64);
+	DrawSceneWithMask( "white", "effect/left", 0, 0, 500 );
+	DrawSceneWithMask( "black", "effect/left", 0, 0, 500 );
+	PlaySE(3, "finish", 256, 64);
+	DrawScene("bg/sora", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	DrawSceneWithMask( "white", "effect/maskc", 0, 0, 1000 );
+	ModDrawCharacter(4, 4, "sprite/sa2a_odoroki_a1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 0, FALSE );
+	DrawScene("bg/oki_g3", 1000 );
+
+//沙都子rvS07/04/330400255.「だから申し上げましたのに～～！！kvS07/04/330400256.　あれだけ大口叩いて７球連続空振りって、どういうことなんですの～～！！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400255", 256, TRUE);
+	OutputLine(NULL, "「だから申し上げましたのに～～！！",
+			NULL, "\"그러게 말씀드렸는데~!!' ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400256", 256, TRUE);
+	OutputLine(NULL, "　あれだけ大口叩いて７球連続空振りって、どういうことなんですの～～！！！」",
+			NULL, "그렇게 큰소리를 치고 7연속 헛스윙이라니 어떻게 된 거죠~~?!!\" ", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "dageki", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//圭一rvS07/01/330100340.「す、すまっ、…がはっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100340", 256, TRUE);
+	OutputLine(NULL, "「す、すまっ、…がはっ？！」",
+			NULL, "\"미, 미안, ...커헉?!\" ", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "down", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//圭一rvS07/01/330100341.「い、いやこんなはずじゃ、ぼげっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100341", 256, TRUE);
+	OutputLine(NULL, "「い、いやこんなはずじゃ、ぼげっ？！」",
+			NULL, "\"아, 아니 이게 아닌데, 오웩?!\" ", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "down3", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//圭一rvS07/01/330100342.「だ、だから俺の話を、ふぐっ？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100342", 256, TRUE);
+	OutputLine(NULL, "「だ、だから俺の話を、ふぐっ？！」",
+			NULL, "\"그, 그러니까 내 얘기를, 우윽?!\" ", Line_Normal);
+	ClearMessage();
+
+	FadeBustshot(4, FALSE, 0, 0, 0, 0, 200, TRUE);
+	ModDrawCharacter(5, 4, "sprite/sa2a_odoroki_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 5, "sprite/ri2_warai_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//梨花rvS07/05/330500179.「…お仕置きなのです。kvS07/05/330500180.ボクたちの期待を裏切った愚か者には、思いっきりおしおきなのですよ～！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500179", 256, TRUE);
+	OutputLine(NULL, "「…お仕置きなのです。",
+			NULL, "\"...벌인 거예요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500180", 256, TRUE);
+	OutputLine(NULL, "ボクたちの期待を裏切った愚か者には、思いっきりおしおきなのですよ～！！」",
+			NULL, "우리의 기대를 배신한 어리석은 자에게는 마음껏 벌인 거예요~!!\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(5, 4, "sprite/sa2a_akireru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 5, "sprite/ri2_niyari_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	Wait( 500 );
+	FadeAllBustshots( 200, TRUE );
+	FadeOutBGM(1, 200, FALSE);
+	PlaySE(3, "dageki", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(0, "down3", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(3, "down", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(0, "down2", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+	PlaySE(3, "finish", 256, 64);
+	DrawScene("effect/furiker_a", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(0, "finish", 256, 64);
+	DrawScene("effect/furiker_b", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	DrawScene("bg/oki_g3", 500 );
+	PlayBGM(2, "hm01_06", 128, 0);
+
+//圭一rvS07/01/330100343.「ごへっ！　ごはっ！　ひげっ！　へごっ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100343", 256, TRUE);
+	OutputLine(NULL, "「ごへっ！　ごはっ！　ひげっ！　へごっ！！」",
+			NULL, "\"크헥! 크학! 커헉! 키햣!!\" ", Line_Normal);
+	ClearMessage();
+
+//r本気のレナに無策で立ち向かった俺に待っていたのは、まさに鎧袖一触の惨敗。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "本気のレナに無策で立ち向かった俺に待っていたのは、まさに鎧袖一触の惨敗。",
+			NULL, "진심인 레나에게 생각 없이 달려든 나에게 남은 것은, 그야말로 처참한 참패. ", Line_Normal);
+	ClearMessage();
+
+//rそして、部活メンバーからのお仕置きという名の『タコ殴り』だった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そして、部活メンバーからのお仕置きという名の『タコ殴り』だった。",
+			NULL, "그리고 부활 멤버들이 내리는 벌이라는 이름의 \"난타\"였다. ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 6, "sprite/si1b_wink_b1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//詩音rvS07/06/330600107.「ほら、…サヨナラホームランを打った打者を出迎えるときに他の選手がやる、手荒い祝福ってやつ？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>시온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600107", 256, TRUE);
+	OutputLine(NULL, "「ほら、…サヨナラホームランを打った打者を出迎えるときに他の選手がやる、手荒い祝福ってやつ？」",
+			NULL, "\"그 왜, 끝내기 홈런을 친 타자를 맞이할 때 다른 선수가 해주는 거친 축복이란 거?\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 6, "sprite/si1b_akuwarai_b1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//詩音rvS07/06/330600108.「…あれの正反対の意味合いで、『憎しみ』『怒り』が入ったと考えてくださいな」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>시온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600108", 256, TRUE);
+	OutputLine(NULL, "「…あれの正反対の意味合いで、『憎しみ』『怒り』が入ったと考えてくださいな」",
+			NULL, "\"...그거의 정반대 버전으로 '증오', '분노'가 담겼다고 생각해 주세요.\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 3, "sprite/me2_akuwarai_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//魅音rvS07/03/330300177.「それにしては、なんか変な凶器混ざってない？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300177", 256, TRUE);
+	OutputLine(NULL, "「それにしては、なんか変な凶器混ざってない？」",
+			NULL, "\"그런 거치곤 뭔가 이상한 흉기가 섞이지 않았어?\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene("black", 1000 );
+
+//r…とりあえず、その後沙都子と梨花の『必殺泣き落とし戦法』で監督を説得し、レナの勾玉の呪いは解決することができた。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…とりあえず、その後沙都子と梨花の『必殺泣き落とし戦法』で監督を説得し、レナの勾玉の呪いは解決することができた。",
+			NULL, "...우선 그 뒤 사토코와 리카의 \"필살 눈물로 애원 전법\"으로 감독을 설득하여 레나의 곡옥의 저주는 해결할 수 있었다. ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(5, 4, "sprite/sa6_yareyare_a2_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 5, "sprite/ri6_komaru_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//rただ、その交換条件として『沙都子と梨花ちゃんがメイド姿でご奉仕』を泣く泣く飲むしかなく、その実害が直撃した二人は特に恨みつらみで俺に報復を、
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "ただ、その交換条件として『沙都子と梨花ちゃんがメイド姿でご奉仕』を泣く泣く飲むしかなく、その実害が直撃した二人は特に恨みつらみで俺に報復を、",
+			NULL, "그저 그 교환 조건으로 \"사토코와 리카쨩의 메이드 차림으로 봉사\"를 울며 겨자 먹기로 받아들일 수밖에 없었고, 그 불똥을 직격으로 맞은 둘은 특히나 원망이 가득 쌓여서 나에게 복수를, ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(5, 4, "sprite/sa6_akireru_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, FALSE );
+	ModDrawCharacter(3, 5, "sprite/ri6_fuman_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	Wait( 500 );
+	FadeAllBustshots( 200, TRUE );
+	PlaySE(3, "dageki", 256, 64);
+	Wait( 200 );
+	PlaySE(0, "down3", 256, 64);
+	Wait( 200 );
+	PlaySE(3, "down", 256, 64);
+	Wait( 200 );
+	PlaySE(0, "down2", 256, 64);
+	Wait( 200 );
+	PlaySE(3, "finish", 256, 64);
+	DrawScene("effect/furiker_a", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(0, "finish", 256, 64);
+	DrawScene("effect/furiker_b", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	PlaySE(3, "finish", 256, 64);
+	DrawScene("white", 50 );
+	DrawScene("bg/fure1", 50 );
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+	DrawScene("white", 250 );
+	DrawScene("bg/oki_g3", 250 );
+
+//r――痛っ！　痛っ、痛っ、痛ぁッッ？！
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "——痛っ！　痛っ、痛っ、痛ぁッッ？！",
+			NULL, "...아야! 아야, 아야, 아야아앗?! ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(3, 3, "sprite/me2_wink_a1_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+//魅音rvS07/03/330300178.「まぁ、ひとまずは一件落着ってことで…いいよね？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300178", 256, TRUE);
+	OutputLine(NULL, "「まぁ、ひとまずは一件落着ってことで…いいよね？」",
+			NULL, "\"뭐, 일단은 한 건 해결이란 걸로... 괜찮지?\" ", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100344.「お、俺は全然良くねぇぞ！kvS07/01/330100345.　だ、誰か助けてくれぇ～～！！kvS07/01/330100346.　レナぁぁ～～！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100344", 256, TRUE);
+	OutputLine(NULL, "「お、俺は全然良くねぇぞ！",
+			NULL, "\"나, 나는 전혀 괜찮지 않다고! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100345", 256, TRUE);
+	OutputLine(NULL, "　だ、誰か助けてくれぇ～～！！",
+			NULL, "누, 누가 살려줘~~!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100346", 256, TRUE);
+	OutputLine(NULL, "　レナぁぁ～～！！」",
+			NULL, "레나아아~~!!\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(4, 2, "sprite/re2a_hau_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//レナrvS07/02/330200312.「…はう？kvS07/02/330200313.　圭一くん、何か悪いことしたのかな？　かな？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200312", 256, TRUE);
+	OutputLine(NULL, "「…はう？",
+			NULL, "\"...하우? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s07/02/330200313", 256, TRUE);
+	OutputLine(NULL, "　圭一くん、何か悪いことしたのかな？　かな？」",
+			NULL, "케이이치 군, 뭔가 나쁜 짓 한 걸까나? 까나?\" ", Line_Normal);
+	ClearMessage();
+
+	CallScript("&eye");
+
+}

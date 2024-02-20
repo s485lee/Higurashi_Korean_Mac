@@ -1,0 +1,330 @@
+void main()
+{
+
+
+//*Hirukowashi Day 9
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+//＜＞＜＞＜＞＜＞＜＞＜＞＜＞＜＞
+
+//#9 レナ暴走
+
+	DrawSceneWithMask( "bg/ma2", "effect/up", 0, 0, 1000 );
+	PlayBGM( 1, "denwa", 128, 0 );
+	Wait( 3000 );
+	DrawSceneWithMask( "black", "effect/left", 0, 0, 500 );
+	FadeOutBGM(1, 200, TRUE);
+	DrawSceneWithMask( "bg/ma_g3_01", "effect/left", 0, 0, 500 );
+	PlayBGM( 1, "yoru", 128, 0 );
+
+//r夜になり、俺たちが夕食を食べかけていたところに、電話がかかってきた。
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "夜になり、俺たちが夕食を食べかけていたところに、電話がかかってきた。",
+			NULL, "밤이 되고 가족과 저녁 식사를 하려던 차에 전화가 왔다. ", Line_Normal);
+	ClearMessage();
+
+//r準備をひと通り終えたばかりのおふくろが、玄関口へと駆けだしてゆく。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "準備をひと通り終えたばかりのおふくろが、玄関口へと駆けだしてゆく。",
+			NULL, "준비를 막 마친 어머니가 현관문으로 달려갔다. ", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100211.「うん？kvS07/01/330100213.　誰からだろう。kvS07/01/330100214.まさかレナ絡みか？！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100211", 256, TRUE);
+	OutputLine(NULL, "「うん？",
+			NULL, "\"응? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100213", 256, TRUE);
+	OutputLine(NULL, "　誰からだろう。",
+			NULL, "누구한테서지? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100214", 256, TRUE);
+	OutputLine(NULL, "まさかレナ絡みか？！」",
+			NULL, "설마 레나 관련인가?!\" ", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM(1, 500, FALSE);
+	DrawScene("black", 500 );
+	PlaySE(3, "semi_r", 256, 64);
+
+//rまさにその予感通り、電話はレナのお父さんからだった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "まさにその予感通り、電話はレナのお父さんからだった。",
+			NULL, "바로 그 예상대로 전화는 레나의 아버지가 거신 거였다. ", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100217.「も、もしもし！kvS07/01/330100218.　どうも、こんばんは！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100217", 256, TRUE);
+	OutputLine(NULL, "「も、もしもし！",
+			NULL, "\"여, 여보세요! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100218", 256, TRUE);
+	OutputLine(NULL, "　どうも、こんばんは！」",
+			NULL, "아, 예, 안녕하세요!\" ", Line_Normal);
+	ClearMessage();
+
+//レナの父rvS07/00/VT2A_renaF1001.「夜分遅くにすみませんね。kvS07/00/VT2A_renaF1002.そちらにウチの礼奈がおうかがいしていませんか。kvS07/00/VT2A_renaF1003.夕方頃に急に家を飛び出したっきりまだ帰ってこないんです」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レナの父</color>", NULL, "<color=#f5e6d3>레나의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s07/00/vt2a_renaf1001", 256, TRUE);
+	OutputLine(NULL, "「夜分遅くにすみませんね。",
+			NULL, "\"늦은 시간에 죄송합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s07/00/vt2a_renaf1002", 256, TRUE);
+	OutputLine(NULL, "そちらにウチの礼奈がおうかがいしていませんか。",
+			NULL, "그쪽에 우리 레이나가 가지 않았습니까? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s07/00/vt2a_renaf1003", 256, TRUE);
+	OutputLine(NULL, "夕方頃に急に家を飛び出したっきりまだ帰ってこないんです」",
+			NULL, "저녁 무렵에 갑자기 집에서 뛰쳐나가서는 아직도 돌아오질 않아서요.\" ", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100219.「急に家を飛び出した？！kvS07/01/330100220.　あの、どんな様子でしたか」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100219", 256, TRUE);
+	OutputLine(NULL, "「急に家を飛び出した？！",
+			NULL, "\"갑자기 집을 뛰쳐나갔다?! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100220", 256, TRUE);
+	OutputLine(NULL, "　あの、どんな様子でしたか」",
+			NULL, "저기, 어떤 분위기였습니까?\" ", Line_Normal);
+	ClearMessage();
+
+//レナの父rvS07/00/VT2A_renaF1004.「礼奈が悪ふざけをする時のような、猪突猛進な感じでね。kvS07/00/VT2A_renaF1005.てっきり、誰かお友達の家かと思ったんだが……」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>レナの父</color>", NULL, "<color=#f5e6d3>레나의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s07/00/vt2a_renaf1004", 256, TRUE);
+	OutputLine(NULL, "「礼奈が悪ふざけをする時のような、猪突猛進な感じでね。",
+			NULL, "\"레이나가 장난을 칠 때 같은 저돌적인 느낌이었어요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s07/00/vt2a_renaf1005", 256, TRUE);
+	OutputLine(NULL, "てっきり、誰かお友達の家かと思ったんだが……」",
+			NULL, "그래서 어디 친구 집에라도 가는가 보다 했는데....\" ", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100221.「……間違いない。kvS07/01/330100222.誰かが白の勾玉を拾ったんだッ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100221", 256, TRUE);
+	OutputLine(NULL, "「……間違いない。",
+			NULL, "\"...틀림없어. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100222", 256, TRUE);
+	OutputLine(NULL, "誰かが白の勾玉を拾ったんだッ！！」",
+			NULL, "누군가가 하얀 곡옥을 주운 거야!!\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene("bg/moon", 1000 );
+	PlayBGM(2, "hm02_12", 128, 0);
+	StopSE( 3 );
+	Wait( 2000 );
+	DrawSceneWithMask( "bg/re_s4_01", "effect/up", 0, 0, 1000 );
+	Wait( 2000 );
+	DrawSceneWithMask( "black", "effect/maskc", 0, 0, 500 );
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 4, "sprite/sa2a_odoroki_a1_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawSceneWithMask( "bg/re_h3", "effect/left", 0, 0, 500 );
+
+//沙都子rvS07/04/330400170.「遅れてごめんなさいですわー！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400170", 256, TRUE);
+	OutputLine(NULL, "「遅れてごめんなさいですわー！！」",
+			NULL, "\"늦어서 죄송해요!!\" ", Line_Normal);
+	ClearMessage();
+
+	ModSetLayerFilter(5, 256, "none");
+	ModDrawCharacter(5, 5, "sprite/ri2_majime_a1_", "2", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 18, 200, TRUE );
+
+//梨花rvS07/05/330500139.「……どんな状況なのですか」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s07/05/330500139", 256, TRUE);
+	OutputLine(NULL, "「……どんな状況なのですか」",
+			NULL, "\"...어떤 상황인 거예요?\" ", Line_Normal);
+	ClearMessage();
+
+	ModSetLayerFilter(4, 256, "none");
+	ModDrawCharacter(4, 3, "sprite/me2_majime_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 19, 200, TRUE );
+
+//魅音rvS07/03/330300105.「うん、今からレナの部屋に入れてもらうところ。kvS07/03/330300106.学校での傾向から見るに、きっと室内に何らかの痕跡が残されてるよ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300105", 256, TRUE);
+	OutputLine(NULL, "「うん、今からレナの部屋に入れてもらうところ。",
+			NULL, "\"응, 지금 막 레나 방에 들어가 보려던 참. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300106", 256, TRUE);
+	OutputLine(NULL, "学校での傾向から見るに、きっと室内に何らかの痕跡が残されてるよ」",
+			NULL, "학교에서의 경향을 보건대 분명 방 안에 뭔가 흔적이 남아있을 거야.\" ", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100223.「だなぁ。kvS07/01/330100224.そう言えば俺、レナの部屋に入るのって初めてだよ。kvS07/01/330100225.…何だか緊張するなぁ！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100223", 256, TRUE);
+	OutputLine(NULL, "「だなぁ。",
+			NULL, "\"그렇겠지. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100224", 256, TRUE);
+	OutputLine(NULL, "そう言えば俺、レナの部屋に入るのって初めてだよ。",
+			NULL, "그러고 보니 나, 레나 방에 들어가는 거 처음이야. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100225", 256, TRUE);
+	OutputLine(NULL, "…何だか緊張するなぁ！」",
+			NULL, "...왠지 긴장된다!\" ", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 2, 300, FALSE );
+	DrawSceneWithMask( "black", "effect/right", 0, 0, 500 );
+	PlayBGM(2, "hm03_14", 128, 0);
+
+//部活メンバーro55.vS07/01/330100226|S07/03/330300107|S07/04/330400171|S07/05/330500140|S07/06/330600070.「「うっわぁあぁぁ……」」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>部活メンバー</color>", NULL, "<color=#f5e6d3>부활 멤버들</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100226", 256, TRUE);
+	ModPlayVoiceLS(5, 3, "ps3/s07/03/330300107", 256, TRUE);
+	ModPlayVoiceLS(6, 4, "ps3/s07/04/330400171", 256, TRUE);
+	ModPlayVoiceLS(7, 5, "ps3/s07/05/330500140", 256, TRUE);
+	ModPlayVoiceLS(8, 6, "ps3/s07/06/330600070", 256, TRUE);
+	OutputLine(NULL, "「「うっわぁあぁぁ……」」",
+			NULL, "\"\"우와아아아아....\"\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "bg/si_h2", "effect/up", 0, 0, 1000 );
+
+//圭一rvS07/01/330100227.「何となく想像はついちゃいたが…、すっげえ部屋だなぁ。kvS07/01/330100227_1.散らかっているのか小物だらけで満載なのか区別がつかないぞ！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100227", 256, TRUE);
+	OutputLine(NULL, "「何となく想像はついちゃいたが…、すっげえ部屋だなぁ。",
+			NULL, "\"대충 짐작은 했지만... 엄청난 방이네. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100227_1", 256, TRUE);
+	OutputLine(NULL, "散らかっているのか小物だらけで満載なのか区別がつかないぞ！」",
+			NULL, "어질러진 건지 자질구레한 물건들로 가득한 건지 구별이 안 가!\" ", Line_Normal);
+	ClearMessage();
+
+//詩音rvS07/06/330600071.「……それでいて本人にはどこに何があるのか、ちゃんとわかっていたりするんですけどね」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>시온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600071", 256, TRUE);
+	OutputLine(NULL, "「……それでいて本人にはどこに何があるのか、ちゃんとわかっていたりするんですけどね」",
+			NULL, "\"...그래도 본인은 어디에 뭐가 있는지 정확히 알고 있는 법이지만요.\" ", Line_Normal);
+	ClearMessage();
+
+//魅音rvS07/03/330300108.「相変わらずすごいなぁ。kvS07/03/330300109.よくもこれだけ色々溜め込むもんだよねぇ…。kvS07/03/330300110.レナの前世は犬だね！kvS07/03/330300111.　きっと靴とかを大量に集めてたに違いないよ」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300108", 256, TRUE);
+	OutputLine(NULL, "「相変わらずすごいなぁ。",
+			NULL, "\"여전히 굉장하구만. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300109", 256, TRUE);
+	OutputLine(NULL, "よくもこれだけ色々溜め込むもんだよねぇ…。",
+			NULL, "잘도 이만큼 이것저것 모아놨네.... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300110", 256, TRUE);
+	OutputLine(NULL, "レナの前世は犬だね！",
+			NULL, "레나의 전생은 개였을 거야! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300111", 256, TRUE);
+	OutputLine(NULL, "　きっと靴とかを大量に集めてたに違いないよ」",
+			NULL, "분명 구두 같은 걸 대량으로 모았을 게 틀림없어.\" ", Line_Normal);
+	ClearMessage();
+
+//圭一rvS07/01/330100228.「俺さぁ、女の子の部屋ってもっと片付いてて、女の子らしいきゃぴきゃぴした部屋なんだって思ってたんだが、kvS07/01/330100229.あれって男の幻想なのかなぁ？kvS07/01/330100230.　レナの部屋もこんなだし、魅音の部屋だって漫画だらけでこんな感じだったぜ？」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100228", 256, TRUE);
+	OutputLine(NULL, "「俺さぁ、女の子の部屋ってもっと片付いてて、女の子らしいきゃぴきゃぴした部屋なんだって思ってたんだが、",
+			NULL, "\"나 말야, 여자애의 방은 좀 더 정돈되고 여자애다운 아기자기한 방일 거라고 생각했는데, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100229", 256, TRUE);
+	OutputLine(NULL, "あれって男の幻想なのかなぁ？",
+			NULL, "그건 남자의 환상일까? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100230", 256, TRUE);
+	OutputLine(NULL, "　レナの部屋もこんなだし、魅音の部屋だって漫画だらけでこんな感じだったぜ？」",
+			NULL, "레나 방도 이렇고 미온 방도 만화책투성이라 이런 느낌이었잖아?\" ", Line_Normal);
+	ClearMessage();
+
+//魅音rvS07/03/330300112.「あははははは、おじさんは女の子じゃないからねぇ～！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300112", 256, TRUE);
+	OutputLine(NULL, "「あははははは、おじさんは女の子じゃないからねぇ～！」",
+			NULL, "\"아하하하하하, 아저씨는 여자애가 아니니까~!\" ", Line_Normal);
+	ClearMessage();
+
+//詩音rvS07/06/330600072.「…あれぇ？kvS07/06/330600073.　多分それはお姉の漫画部屋の方ですよ？kvS07/06/330600074.　圭ちゃんはお姉の本当の部屋に入ったことはないんですか？kvS07/06/330600075.　母屋じゃなくて離れにある…、むがッ！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>시온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600072", 256, TRUE);
+	OutputLine(NULL, "「…あれぇ？",
+			NULL, "\"...어라아? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600073", 256, TRUE);
+	OutputLine(NULL, "　多分それはお姉の漫画部屋の方ですよ？",
+			NULL, "그건 아마 언니의 만화방일걸요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600074", 256, TRUE);
+	OutputLine(NULL, "　圭ちゃんはお姉の本当の部屋に入ったことはないんですか？",
+			NULL, "케이쨩은 언니의 진짜 방에는 가본 적 없어요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 6, "ps3/s07/06/330600075", 256, TRUE);
+	OutputLine(NULL, "　母屋じゃなくて離れにある…、むがッ！！」",
+			NULL, "안채가 아니라 떨어져 있는... 읍!!\" ", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "boyoon", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 2*2, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 2*2, TRUE );
+
+//魅音rvS07/03/330300113.「し、詩音！！kvS07/03/330300114.　シーーー！！　シーーーッ！！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300113", 256, TRUE);
+	OutputLine(NULL, "「し、詩音！！",
+			NULL, "\"시, 시온!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s07/03/330300114", 256, TRUE);
+	OutputLine(NULL, "　シーーー！！　シーーーッ！！！」",
+			NULL, "쉬이이잇! 쉬이이이잇!!!\" ", Line_Normal);
+	ClearMessage();
+
+//沙都子rvS07/04/330400172.「あー、見てくださいな！kvS07/04/330400173.　ほら、レナさんの机の上にこんなにも本が！！」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400172", 256, TRUE);
+	OutputLine(NULL, "「あー、見てくださいな！",
+			NULL, "\"아, 여기 보세요!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s07/04/330400173", 256, TRUE);
+	OutputLine(NULL, "　ほら、レナさんの机の上にこんなにも本が！！」",
+			NULL, "봐요, 레나 씨의 책상 위에 이렇게나 책이!!\" ", Line_Normal);
+	ClearMessage();
+
+//r沙都子が指差す先には、レナの学習机。そこには読み散らして積み上げた本の山があった。
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "沙都子が指差す先には、レナの学習机。そこには読み散らして積み上げた本の山があった。",
+			NULL, "사토코가 가리킨 건 레나의 공부 책상. 거기에는 닥치는 대로 읽고 쌓아둔 책 무더기가 있었다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "effect/down", 0, 0, 500 );
+
+//圭一rvS07/01/330100231.「今度は何の本だ？！kvS07/01/330100232.　ん～？kvS07/01/330100233.　なんかのハードカバー本か？kvS07/01/330100234.　図書館で借りてきたのかな。kvS07/01/330100235.何々、『現代メイド理論』『メイドの道は一日にして成らず』『美しきご奉仕とは』。kvS07/01/330100236.…何だ、みんなメイドの本じゃないか」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100231", 256, TRUE);
+	OutputLine(NULL, "「今度は何の本だ？！",
+			NULL, "\"이번엔 무슨 책이지?! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100232", 256, TRUE);
+	OutputLine(NULL, "　ん～？",
+			NULL, "음~? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100233", 256, TRUE);
+	OutputLine(NULL, "　なんかのハードカバー本か？",
+			NULL, "뭔가의 하드커버 책인가? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100234", 256, TRUE);
+	OutputLine(NULL, "　図書館で借りてきたのかな。",
+			NULL, "도서관에서 빌려왔나. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100235", 256, TRUE);
+	OutputLine(NULL, "何々、『現代メイド理論』『メイドの道は一日にして成らず』『美しきご奉仕とは』。",
+			NULL, "어디어디, 『현대 메이드의 이론』 『메이드의 길은 하루에 완성되지 않는다』 『아름다운 봉사란』. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100236", 256, TRUE);
+	OutputLine(NULL, "…何だ、みんなメイドの本じゃないか」",
+			NULL, "...뭐야, 전부 메이드 책이잖아?\" ", Line_Normal);
+	ClearMessage();
+
+//r……ん？
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "……ん？",
+			NULL, "...응? ", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "daidageki", 256, 64);
+	StartShakingOfWindow( 278, 30, 0, 4, 3*3, FALSE );
+	StartShakingOfAllObjects( 278, 30, 0, 4, 3*3, TRUE );
+
+//部活メンバーro55.vS07/01/330100237|S07/03/330300115|S07/04/330400174|S07/05/330500141|S07/06/330600076.「「な、なんだとおぉおおぉおぉ？！」」
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>部活メンバー</color>", NULL, "<color=#f5e6d3>부활 멤버들</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s07/01/330100237", 256, TRUE);
+	ModPlayVoiceLS(5, 3, "ps3/s07/03/330300115", 256, TRUE);
+	ModPlayVoiceLS(6, 4, "ps3/s07/04/330400174", 256, TRUE);
+	ModPlayVoiceLS(7, 5, "ps3/s07/05/330500141", 256, TRUE);
+	ModPlayVoiceLS(8, 6, "ps3/s07/06/330600076", 256, TRUE);
+	OutputLine(NULL, "「「な、なんだとおぉおおぉおぉ？！」」",
+			NULL, "\"\"뭐, 뭐라고오오오오오?!\"\" ", Line_Normal);
+	ClearMessage();
+
+	PlaySE(3, "bb", 256, 64);
+	DrawScene( "white", 1000 );
+
+	CallScript("&eye");
+
+}
