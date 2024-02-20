@@ -1,0 +1,63 @@
+void main()
+{
+	EnableJumpingOfReturnIcon();
+
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, TRUE );
+
+	Wait( 100 );
+
+	DrawSceneWithMask( "background/sora2", "maskleft", 1, 0, 300 );
+
+	PlayBGM( 1, "Mati", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	SetSpeedOfMessage( TRUE, 128 );
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "☆リナ☆",
+		   NULL, "☆리나☆ ", Line_ContinueAfterTyping);
+
+	OutputLine(NULL, "身長１６８ｃｍ　Ｂ８９Ｗ６０Ｈ８７",
+		   NULL, "신장 168cm, B89 W60 H87 ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "趣味：最近は室内ガーデニングに興味があって、目標は手作りハーブで紅茶を飲むこと☆",
+		   NULL, "취미 : 요즘은 실내 정원 가꾸기에 빠져서, 수제 허브로 홍차를 마시는 것을 목표로 하는 중☆ ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「いっつも楽しくて為になるお話をいっぱい聞かせてくれてありがと〜☆",
+		   NULL, "\"항상 즐겁고 유익한 이야기를 많이 들려줘서 고마워~☆ ", Line_WaitForInput);
+	OutputLine(NULL, "　今度お店に内緒で一緒にどっか遊びに行こうね☆」",
+		   NULL, "기회가 되면 가게에는 비밀로 어딘가 함께 놀러 가자☆.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 13 ); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "紳士倶楽部　ブルー・マーメイド",
+		   NULL, "신사 클럽 - 블루 머메이드 (Blue Mermaid) ", Line_ContinueAfterTyping);
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 14 ); }
+
+	OutputLine(NULL, "専属マネージャー　間宮リナ",
+		   NULL, "전속 매니저, 마미야 리나 ", Line_Normal);
+	ClearMessage();
+	SetSpeedOfMessage( FALSE, 0 );
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+
+}

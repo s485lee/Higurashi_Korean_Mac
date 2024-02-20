@@ -1,0 +1,1413 @@
+void main()
+{
+	EnableJumpingOfReturnIcon();
+
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, TRUE );
+	Wait( 100 );
+
+	PlayBGM( 1, "Mati", 56, 0 );
+
+	DrawScene( "black", 1000 );
+	Wait( 1000 );
+	DrawScene( "white", 1000 );
+	DrawSceneWithMask( "background/kuruma6", "maskm1", 1, 0, 1300 );
+
+	ClearMessage();
+	StartShakingOfWindow( 248, 40, 0, 2, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 2*2, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　舗装道路が終わり、砂利道がガタンガタンと車を揺らし始める。",
+		   NULL, "포장도로가 끝나고, 자갈길에 들어오자 차가 덜컹덜컹 흔들린다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　セミの声が窓をぴったり閉めていても車内に滲んでくるのだった。",
+		   NULL, "창문을 꼭 닫고 있었는데도 매미 소리가 차 안으로 스며들어온다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　本当なら、こんなにもいい天気なら、窓を全開に開けてセミの声を浴びながらというのも悪くない。",
+		   NULL, "이렇게 좋은 날씨니 창문을 열고, 매미의 울음소리를 듬뿍 맛봐도 좋을 텐데. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、…贅沢になれるというのは恐ろしい。",
+		   NULL, "하지만...그건 너무 사치스럽다고 생각했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　窓を開けてセミの声を浴びたいという健全な欲求は、夏バテ気味の体にカーエアコンの方がいいと却下される。",
+		   NULL, "창문을 열어 매미의 울음소리를 맛본다는 건전한 욕구는, 자동차 에어컨을 즐기고 싶었던 더위 먹은 몸이 멋대로 거절했다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/Sora", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今年は空梅雨だった。",
+		   NULL, "올해는 장마철인데도 비가 오지 않았다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しっとりと雨を楽しめるはずの６月からもう真夏日が訪れている。",
+		   NULL, "촉촉한 비를 즐겨야 할 터인 6월에 벌써 한여름이 찾아왔다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……２０年以上も前のあの年も、こんな空梅雨の夏だったことを思い出していた。",
+		   NULL, "......벌써 20년 이상 지난 그해에도, 올해처럼 일찍 한여름이 시작되었지. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "white", 400 );
+	DrawScene( "background/kuruma2", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300008", 256, TRUE);
+	OutputLine(NULL, "「ここはやっぱり空気のいいところだよな。」",
+		   NULL, "\"이곳은 역시 공기가 좋구나.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44001", 256, TRUE);
+	OutputLine(NULL, "「えぇ。",
+		   NULL, "\"네. ", Line_Continue);
+	Wait( 1600 ); // autofix multiline voice
+	OutputLine(NULL, "風光明媚ないい土地です。",
+		   NULL, "경치가 아름다운 토지입니다. ", Line_Continue);
+	Wait( 2400 );
+	OutputLine(NULL, "ひょっとしたら岐阜の村みたいに、世界文化遺産に指定されることもあったかもしれないのに、惜しいですね。」",
+		   NULL, "어쩌면 기후의 마을처럼 세계문화 유산으로 지정될 수도 있었는데, 아깝습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300009", 256, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "「そのお陰で観光客がいない。",
+		   NULL, "\"그 덕분에 관광객이 없어서 ", Line_Continue);
+	Wait( 3300 ); // autofix multiline voice
+	OutputLine(NULL, "実に快適じゃないか。",
+		   NULL, "정말 쾌적하잖아. ", Line_Continue);
+	Wait( 3700 );
+	OutputLine(NULL, "……どうして旅行者ってのは田舎じゃ交通法規を忘れられるんだ？",
+		   NULL, "......어째서 여행자들은 시골에서 교통법규를 잊어버리는 걸까? ", Line_Continue);
+	Wait( 5000 );
+	OutputLine(NULL, "　道路いっぱいに横になりやがって。」",
+		   NULL, "도로에 가로로 눕기나 하고 말이야.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44002", 256, TRUE);
+	OutputLine(NULL, "「あっはっはっは。",
+		   NULL, "\"앗하하하. ", Line_Continue);
+	Wait( 2800 ); // autofix multiline voice
+	OutputLine(NULL, "赤坂先輩はアウトドアは今も？」",
+		   NULL, "아카사카 선배님은 여전히 자주 여행을?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300010", 256, TRUE);
+	OutputLine(NULL, "「最近はさっぱりだな。",
+		   NULL, "\"최근엔 전혀. ", Line_Continue);
+	Wait( 2400 ); // autofix multiline voice
+	OutputLine(NULL, "何しろ暇のない稼業だからな。」",
+		   NULL, "무엇보다 여유가 없는 직업이니까 말이야.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44003", 256, TRUE);
+	OutputLine(NULL, "「あっはっはっはっは。",
+		   NULL, "\"앗핫하하하. ", Line_Continue);
+	Wait( 2500 ); // autofix multiline voice
+	OutputLine(NULL, "それはお互い様です。",
+		   NULL, "그건 피차일반입니다. ", Line_Continue);
+	Wait( 2900 );
+	OutputLine(NULL, "………………お、いたいた。",
+		   NULL, "..................오, 왔다 왔어. ", Line_Continue);
+	Wait( 1300 );
+	OutputLine(NULL, "早いな。」",
+		   NULL, "빠르군.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "white", 400 );
+	DrawSceneWithMask( "background/m_hi4", "maskc", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　クラクションを鳴らすよりも早く、相手はこちらに気付き手を振った。",
+		   NULL, "경적을 울리기도 전에, 상대가 이쪽을 알아채고 손을 흔들었다. ", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 300, FALSE );
+	PlayBGM( 0, "semi", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　荒地を走破できそうなバイクに、そのままキャンプができそうなリュックサックを背負った若者だった。",
+		   NULL, "험지 주행용 오토바이 옆에, 지금이라도 바로 캠핑할 수 있을법한 배낭을 등에 짊어진 젊은이가 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　赤坂たちは車を降りると、その若者と握手を交わす。",
+		   NULL, "아카사카 일행은 차에서 내려 그 젊은이와 악수를 나누었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>隊員</color>", NULL, "<color=#f5e6d3>대원</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/menba44001", 256, TRUE);
+	OutputLine(NULL, "「小隊長殿！",
+		   NULL, "\"소대장님! ", Line_Continue);
+	Wait( 1400 ); // autofix multiline voice
+	OutputLine(NULL, "　ご無沙汰いたしております。」",
+		   NULL, "오랜만에 뵙겠습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44004", 256, TRUE);
+	OutputLine(NULL, "「おう！",
+		   NULL, "\"그래! ", Line_Continue);
+	Wait( 1600 ); // autofix multiline voice
+	OutputLine(NULL, "　今のとこはどうだ。元気にやってるか！",
+		   NULL, "요즘은 어떤가? 잘 지내고 있나. ", Line_Continue);
+	Wait( 3000 );
+	OutputLine(NULL, "　今日は楽にしてくれていいぞ。",
+		   NULL, "오늘은 편하게 행동해도 괜찮아. ", Line_Continue);
+	Wait( 2400 );
+	OutputLine(NULL, "こちらは俺が大学時代に大変お世話になった赤坂先輩だ。」",
+		   NULL, "이분은 내가 대학 시절에 크게 신세를 진 아카사카 선배님이시다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300011", 256, TRUE);
+	OutputLine(NULL, "「どうも、赤坂です。",
+		   NULL, "\"잘 부탁해요, 아카사카입니다. ", Line_Continue);
+	Wait( 2800 ); // autofix multiline voice
+	OutputLine(NULL, "今日はもう１人、大石という者とご一緒するお約束でしたが、直前に検査入院が入ってしまいまして同行できませんでした。",
+		   NULL, "오늘은 또 한 명, 오오이시라는 분도 함께할 예정이었지만 급히 입원하시는 바람에 동행하지 못했습니다. ", Line_Continue);
+	Wait( 10000 );
+	OutputLine(NULL, "この度はお世話になりますが、よろしく。」",
+		   NULL, "이번에 신세를 지게 되었습니다만, 잘 부탁합니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>隊員</color>", NULL, "<color=#f5e6d3>대원</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/menba44002", 256, TRUE);
+	OutputLine(NULL, "「よろしくお願いします！」",
+		   NULL, "\"잘 부탁드리겠습니다!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44005", 256, TRUE);
+	OutputLine(NULL, "「さて、赤坂先輩、どこから回りますか？」",
+		   NULL, "\"자 그럼, 아카사카 선배님, 어디부터 돌아보시겠습니까?\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼の名は赤坂衛。",
+		   NULL, "그의 이름은 아카사카 마모루. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　東京の警視庁に勤めるベテランの刑事だった。",
+		   NULL, "도쿄 경시청에 근무하는 베테랑 형사다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　定年までの残り年数が見えてきたにもかかわらず、精悍なカミソリのような眼差しは消えることがない。",
+		   NULL, "정년까지 이제 얼마 남지 않았지만, 면도날 같은 날카로운 눈빛은 아직도 건재하다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　数々の修羅場で育んだ経験と自信はその表情に滲み出し、筋骨隆々な肉体はいかなる暴力に対しても怯まない頼もしさを感じさせた。",
+		   NULL, "무수한 아수라장에서 기른 경험과 자신감이 표정에 배어있고, 튼튼한 몸에는 어떤 폭력 앞에서도 기죽지 않을 믿음직함이 있다. ", Line_Normal);
+	ClearMessage();
+
+	DrawFilm( 2, 200, 200, 200, 256, 0, 0, FALSE );
+
+	DrawSceneWithMask( "background/hi1", "maskc", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼と雛見沢の縁は、遠く３０年近く前の昭和５３年に遡る。",
+		   NULL, "그와 히나미자와의 인연은 근 30년 이전의 과거, 쇼와 53(1978)년으로 거슬러 올라간다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　当時の彼は警視庁公安部に所属し、犬飼建設大臣の孫の誘拐事件に臨み、この雛見沢を訪れたのだった。",
+		   NULL, "당시 경시청 공안부에 소속되어 있던 그는, '이누카이 건설부 장관 손자 유괴 사건'에 관련되어 히나미자와를 방문했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そこで大石と出会い、",
+		   NULL, "거기서 오오이시와 만나고 ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……そして古手梨花と出会った。",
+		   NULL, "......그리고 후루데 리카를 만났다. ", Line_Normal);
+	ClearMessage();
+	DrawScene( "scene/011f", 1000 );
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　古手梨花が予言した自らの死の運命。",
+		   NULL, "후루데 리카가 예언했던 자신의 죽음. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…赤坂にとっては、この少女を運命から救い出せなかったことは、今になってもなお忘れられない痛恨の悔やみだった。",
+		   NULL, "...아카사카에게는, 소녀를 죽음으로부터 구해내지 못했다는 후회가 가슴 한구석에 깊숙이 박혀 있었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　やがて彼は雛見沢大災害をテレビで知り、当時世話になった大石と再会。",
+		   NULL, "마침내 그는 히나미자와 대재해를 텔레비전으로 접하고 당시 신세를 졌던 오오이시와 재회하여, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　少女を襲った惨劇を、雛見沢村連続怪死事件の謎を、例え今からであっても暴こうと誓い合ったのである。",
+		   NULL, "소녀를 덮친 참극을, 히나미자와 연속 괴사 사건의 수수께끼를, 지금이라도 밝혀내자고 서로 맹세했다. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+	DrawSceneWithMask( "background/hi1", "maskc", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが雛見沢は気が遠くなるほど長い時間に渡り封鎖され続けていた。",
+		   NULL, "하지만 히나미자와는 아득할 만큼 오랜 시간 봉쇄되었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　よって赤坂たちはこの２０年間の間、自分たちの持つ情報を手記にまとめて発表し、",
+		   NULL, "결국 둘은 20년간 자신들이 모은 정보를 기록하고 모아 발표해, ", Line_WaitForInput);
+	OutputLine(NULL, "読んだ読者に当時の記憶を辿ってもらって情報を寄せてもらう以上のことはできずにいた。",
+		   NULL, "독자들이 기억을 더듬어 제보한 정보를 모으는 정도밖에 할 수 없었다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかし、ようやく雛見沢村の封鎖は解かれた…。",
+		   NULL, "...세월이 흘러, 겨우 히나미자와의 봉쇄가 해제되었다.... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、激務を極める赤坂と、体調を崩し気味な大石の足並みがなかなか揃わず、ようやく今日になって雛見沢を訪れることができたのだった。",
+		   NULL, "하지만 격무에 시달리는 아카사카와 몸 상태가 좋지 않은 오오이시가 서로 시간을 맞추기 어려웠기에, 오늘에야 비로소 히나미자와를 방문 할 수 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　本当なら大石と来る予定だったのだが、大石の検査入院が急に決まり、赤坂は１人で訪れることとなった。",
+		   NULL, "본래라면 오오이시 씨도 함께 올 예정이었지만... 오오이시가 급하게 입원하게 되었기에, 결국 아카사카 혼자서 방문하게 되었다. ", Line_Normal);
+	ClearMessage();
+
+	FadeFilm( 0, FALSE );
+
+	DrawSceneWithMask( "background/m_hi4", "maskc", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "　同伴している２人は、赤坂の大学時代の後輩で、現在は陸上自衛隊に務める男と、その元部下で、雛見沢の封鎖中、その任務に関わり村内を熟知する男だった。",
+		   NULL, "함께 온 두 명은 아카사카의 대학 시절 후배로, 히나미자와 봉쇄 임무를 수행해 마을 안에 익숙한 전직 자위대원이었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　赤坂は自分の荷物の中から、スクラップ帖を取り出す。",
+		   NULL, "아카사카는 자신의 짐 속에서 스크랩 북을 꺼낸다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…角はよれよれになり、相当の劣化がうかがえた。",
+		   NULL, "...모서리가 너덜너덜해진 모습을 보면, 대체 얼마나 오래된 노트일까. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 500 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　スクラップ帖をバラバラとめくり、しばし黙考した赤坂は最初の行き先を口にした。",
+		   NULL, "스크랩 북을 천천히 넘기며 잠시 고심하던 아카사카가 최초의 행선지를 말했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300012", 256, TRUE);
+	Wait( 2000 );
+	OutputLine(NULL, "「……では、鬼ヶ淵沼をお願いします。」",
+		   NULL, "\"......그럼 오니가후치 늪으로 부탁드리겠습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>隊員</color>", NULL, "<color=#f5e6d3>대원</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/menba44003", 256, TRUE);
+	OutputLine(NULL, "「了解いたしました。",
+		   NULL, "\"알겠습니다. ", Line_Continue);
+	Wait( 1500 ); // autofix multiline voice
+	OutputLine(NULL, "それではご案内いたします！」",
+		   NULL, "그럼 안내해 드리도록 하겠습니다!\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　若者はバイクに跨り、赤坂たちが車に戻るのを待つ。",
+		   NULL, "젊은이는 오토바이에 걸터앉아 아카사카 일행이 차에 타기를 기다린다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それから互いにクラクションで応えあった後、バイクの先導で鬼ヶ淵沼に向かった…。",
+		   NULL, "서로 경적을 울려 준비를 확인한 후, 오토바이를 선두로 일행은 오니가후치 늪으로 향했다.... ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "white", 400 );
+	FadeOutBGM( 0, 300, FALSE );
+	DrawSceneWithMask( "background/Sora", "maskc", 1, 0, 300 );
+	PlayBGM( 0, "Nazo", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　森が開けると、大地をコンクリートで固められたとても不自然な土地が姿を現す。",
+		   NULL, "숲에 들어가자, 대지를 콘크리트로 굳히기라도 한 듯한 부자연스러운 토지가 모습을 드러냈다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　沼どころか、水一滴もない。",
+		   NULL, "늪은커녕 물 한 방울도 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　水の代わりにコンクリートで満たしたのだ。",
+		   NULL, "물 대신에 콘크리트가 가득 채워져 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……そう、ここが鬼ヶ淵沼跡だった。",
+		   NULL, "......그래, 이곳이 오니가후치 늪이었던 장소다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300013", 256, TRUE);
+	OutputLine(NULL, "「はははは、沼どころか、水溜りもないな。」",
+		   NULL, "\"하하하하, 늪은커녕 웅덩이 하나 없군.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44006", 256, TRUE);
+	OutputLine(NULL, "「大災害後のだいぶ初期に埋め立てられたと聞いています。",
+		   NULL, "\"대재해 후 조기에 매립했다고 들었습니다. ", Line_Continue);
+	Wait( 4600 ); // autofix multiline voice
+	OutputLine(NULL, "自分がここへ着任した時はすでに埋め立てられていました。」",
+		   NULL, "제가 이곳에 임무를 맡고 왔을 때는 이미 매립된 상태였습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300014", 256, TRUE);
+	OutputLine(NULL, "「ちょっと降りてみよう。」",
+		   NULL, "\"조금 내려가서 둘러보지.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　赤坂は車を降りると、コンクリートで固められた死んだ沼の中央に歩いていく。",
+		   NULL, "아카사카는 차에서 내려, 콘크리트로 뒤덮인, 죽은 늪의 중앙으로 걸어갔다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　駐車場にするわけでもなければ、ヘリポートがあるわけでもない。",
+		   NULL, "주차장도 헬기 착륙장도 아니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……ただただ、広大な森の空き地に現れたコンクリートの巨大な大地。",
+		   NULL, "......그저 광대한 숲의 한가운데 나타난 거대한 콘크리트 대지. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300015", 256, TRUE);
+	OutputLine(NULL, "「……なるほど、これがネットでよくいうＵＦＯの着陸場というやつか。」",
+		   NULL, "\"......과연, 이게 인터넷상에서 떠도는 UFO 착륙장인가.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44007", 256, TRUE);
+	OutputLine(NULL, "「そんなこと言われてるんですか。」",
+		   NULL, "\"그런 말이 나돌고 있습니까?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300016", 256, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "「ここの写真がよくミステリー系のサイトに紹介されてるよ。",
+		   NULL, "\"지금 이곳의 사진이 꽤나 미스터리 계열 사이트에 소개되어 있어. ", Line_Continue);
+	Wait( 4900 ); // autofix multiline voice
+	OutputLine(NULL, "ここで政府と宇宙人が交流してたって言うんだ。",
+		   NULL, "이곳에서 정부와 우주인이 교류했다던가. ", Line_Continue);
+	Wait( 5000 );
+	OutputLine(NULL, "確かに、こんな森の中に、ポカンとこんなコンクリートの空き地があれば、不審に思うよな。」",
+		   NULL, "확실히 숲속에 떡하니 이런 콘크리트 공터가 깔려 있으면, 수상하게 생각할 수도 있겠지.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44008", 256, TRUE);
+	OutputLine(NULL, "「わっはっはっはっはっは。」",
+		   NULL, "\"와하하하하.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+	DrawFilm( 2, 200, 200, 200, 256, 0, 0, FALSE );
+
+	DrawSceneWithMask( "background/oni1", "maskc", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この沼は、昭和５８年の６月末に突如湧き出した火山性ガスの発生場所だ。",
+		   NULL, "이 늪은 쇼와 58(1983)년 6월 말에 갑작스레 화산성 가스가 용출한 장소다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　致死性の極めて高い、硫化水素と二酸化炭素の混合ガスは深夜の内に村を丸ごと飲み込み、",
+		   NULL, "치사성이 매우 높은, 황화수소와 이산화탄소가 혼합된 가스가 심야에 마을을 집어삼켜, ", Line_WaitForInput);
+	OutputLine(NULL, "雛見沢という村を一夜にして滅ぼしたのである。",
+		   NULL, "히나미자와라는 마을을 하룻밤 만에 전멸시켰다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、封鎖された後、ここを管理していた自衛隊によって沼は埋め立てられた。",
+		   NULL, "그리고 봉쇄 후, 자위대에 의해 늪은 매립되었다. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300017", 256, TRUE);
+	OutputLine(NULL, "「ネットで騒いでる連中にも、連中なりの根拠があるらしい。",
+		   NULL, "\"인터넷상에서 떠들어 대는 녀석들에게도, 나름대로 근거가 있다더군. ", Line_Continue);
+	Wait( 5700 ); // autofix multiline voice
+	OutputLine(NULL, "地質学的に言って、ガスの発生源を塞ぐために沼をコンクリートで固めるなんてのは、何の意味もないかららしいんだ。」",
+		   NULL, "지질학적으로 볼 때, 가스의 발생원을 막기 위해 늪을 콘크리트로 덮어버리는 것 따윈 아무런 의미도 없는 행동이라나?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44009", 256, TRUE);
+	OutputLine(NULL, "「なるほど、確かに活火山の火口をコンクリートで埋めたという話は聞かないですね。",
+		   NULL, "\"확실히 활화산의 분화구를 콘크리트로 묻었다는 이야기는 들어본 적이 없습니다. ", Line_Continue);
+	Wait( 7100 ); // autofix multiline voice
+	OutputLine(NULL, "でもまぁ、税金での無駄な工事は我が国の伝統ですから。」",
+		   NULL, "하지만 뭐어, 세금으로 쓸데없는 공사를 하는 건 일본의 전통이니까요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ネット上で、怪現象やＵＦＯなどをこよなく愛するミステリーマニアたちの間で近年、話題になっているのが、この雛見沢大災害なのだ。",
+		   NULL, "인터넷상에서 괴현상이나 UFO 등을 찾아 헤매는 미스터리 마니아들 사이에서 최근 히나미자와 대재해가 화제로 떠올랐다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢大災害は、マグマ溜りから噴出した火山ガスが湧き出して発生したことがすでに確認されている。",
+		   NULL, "히나미자와 대재해는 마그마가 모여 있는 곳에서 화산 가스가 방출되어 발생한 사건으로 이미 확인되었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "　昭和６１年にはアフリカのカメルーンにあるニオス湖でも同様の災害があったこともあり、地球規模でどこにでも起こり得る不幸な災害ということで決着した。",
+		   NULL, "쇼와 61(1986)년에는 아프리카 카메룬에 있는 니오스 호수에서도 같은 재해가 일어나, 지구 규모로 볼 때 어디에서든 일어날 수 있는 불행한 재해로 결론 내려졌다. ", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 300, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、近年になって、ネット上である風説が流れるようになっていた。",
+		   NULL, "하지만 최근 인터넷상에서 한 소문이 떠돌아다니고 있다. ", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 0, "z2_hig1", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それは、この雛見沢大災害が実は、政府が事実を隠蔽するために作ったカバーストーリーで、その実態は宇宙人による細菌テロだった…というのだ。",
+		   NULL, "히나미자와 대재해는 실은 정부가 사실을 은폐하기 위해 만들어낸 조작극으로서, 그 실체는 우주인에 의한 세균 테러였다...는 소문이다. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/aka2", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なぜ近年になってこんな話が…？",
+		   NULL, "왜 최근에 들어 갑자기 그런 이야기가...? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ミステリーマニアたちが根拠とするのは「３４号文書」と呼ばれるある秘密ファイルの存在だった。",
+		   NULL, "미스터리 마니아들의 근거는 \"34호 문서\"라고 불리는 비밀 파일이었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この「３４号文書」という名称はネット上である個人が便宜的に付けた名称だったが、国家陰謀をイメージさせるネーミングが受けたのか、瞬く間に広がり定着した。",
+		   NULL, "이 \"34호 문서\"라는 명칭은 인터넷의 누군가가 편의상 붙인 명칭이었으나, 음모론과 잘 맞는 이름이었는지 순식간에 널리 퍼져 정착되었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼らはどこそこで入手したと称しては、その画像や内容を転載したが、どれも出自不明ないい加減な内容だった。",
+		   NULL, "그들은 이곳저곳에서 입수했다며, 사진이나 내용을 주장했지만, 어느 것도 출처 불명, 엉망진창인 내용이었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　捏造が相次ぎ、その存在さえ疑われている。",
+		   NULL, "조작이 잇따르면서 그 존재조차 의심된다. ", Line_Normal);
+	ClearMessage();
+
+	FadeFilm( 1800, FALSE );
+	DrawScene( "background/file", 1000 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ここで、彼らが言う「３４号文書」について説明しなければならない。",
+		   NULL, "이쯤에서 그들이 말하는\"34호 문서\"에 대해 설명하겠다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ただしインターネットの世界でのこと、風説が入り混じり、もはや都市伝説と化した感もあるため、",
+		   NULL, "그저 인터넷 세계에서 떠도는 소문일 뿐이고, 속설이 뒤섞여 이미 도시 전설이 되어버린 느낌이라, ", Line_WaitForInput);
+	OutputLine(NULL, "諸説に別れ、諸派が互いを否定しあっている状況にあるのだが、概ね以下の内容であることを前提にしている。",
+		   NULL, "여러 가지 설을 지지하는 파로 나뉘어 서로 상대의 주장을 부정하는 상황이지만, 대략 아래의 내용을 전제로 하고 있다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　「３４号文書」は、雛見沢の診療所に勤務していた鷹野三四という看護婦が残した手記である。",
+		   NULL, "\"34호 문서\"는 히나미자와 진료소에 근무하던 타카노 미요라는 간호사가 남긴 수기다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　３４号とは、連番を示すものではなく、この女性の名前をもじったものらしい。",
+		   NULL, "34호란 번호가 아니라 그녀의 이름을 따온 것이라고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この女性は、雛見沢に伝わる奇妙な鬼伝説の歴史を追い、その伝説が何を意味するかを解き明かそうとする個人研究者であったと伝えられる。",
+		   NULL, "그 여성은 히나미자와에 전해지는 기묘한 귀신 전설의 역사를 쫓아, 그 전설이 무엇을 의미하는지를 파헤치려고 한 개인 연구자였다고 전해진다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その内容によれば、昭和５８年の雛見沢大災害は事前に予見されていた、というのである。",
+		   NULL, "문서의 내용에 의하면, 쇼와 58년의 히나미자와 대재해는 사전에 예견되어있었다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女の研究によるならば、雛見沢には太古の昔、宇宙から飛来したＵＦＯが墜落し、鬼ヶ淵沼に沈んだという。",
+		   NULL, "그녀의 연구에서는 태고의 히나미자와에, 우주로부터 날아온 UFO가 추락해 오니가후치 늪에 가라앉았다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そのＵＦＯには、地球には存在しない、宇宙の寄生細菌が漂着しており、村人たちは次々感染したという。",
+		   NULL, "그 UFO에서 지구에 존재하지 않는 우주의 기생충이 내려와, 마을 사람들은 차례차례 감염되었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この細菌に寄生された人間は凶暴化し、「鬼」と呼ばれるに相応しい存在と化したという。",
+		   NULL, "기생충에 감염된 인간은 흉포화되어 \"귀신\"이라 불릴만한 존재로 변했다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野三四はこれこそが、沼から湧き出した鬼の正体だとしている。",
+		   NULL, "타카노 미요는 이것이야말로 늪에서 솟아오른 귀신의 정체라고 생각했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　墜落したＵＦＯに乗っていた宇宙人は、地球人たちが自分の持ち込んだ宇宙からの細菌に感染して大変なことになっていることを知り、その姿を村人の前に現す決意をした。",
+		   NULL, "추락한 UFO에 타고 있었던 우주인들은, 우주 기생충에 감염되어 곤경에 처한 지구인들의 모습을 보고 자신들을 마을 사람들 앞에 나타내기로 결의했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "…これがオヤシロさまの降臨であるという。",
+		   NULL, "...이 사건이 오야시로님의 강림이었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　宇宙人は、地球外文明の高度な方法で村人を治療したが、対症療法にしかならなかった。",
+		   NULL, "우주인은 지구의 문명을 뛰어넘는 고도의 기술로 마을 사람들을 치료했지만, 대증요법 수준에 불과했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その為、宗教的シンボルとして、オヤシロさまの名で崇められていた宇宙人は、症状を悪化させないためにルールを作り村に課したという。",
+		   NULL, "그 때문에 종교적인 우상으로서, 오야시로님의 이름으로 숭배받던 우주인들은, 증상을 악화시키지 않기 위해 규칙을 만들어 마을에 부과했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　細菌たちは、雛見沢の風土にのみ馴染んでいたため、宿主が雛見沢を離れると症状を悪化させてしまうのだった。",
+		   NULL, "기생충은 히나미자와의 풍토에 적응해, 숙주가 히나미자와를 떠나려 하면 증상을 악화시켰다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その為、村から離れるなという規則を作ったのだ。",
+		   NULL, "그 때문에 우주인들은 마을에서 떠나지 말라는 규칙을 만들어냈다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これがその後の鬼ヶ淵村の仙人を巡る伝説につながっていく。",
+		   NULL, "이 규칙으로부터, 그 후 오니가후치 마을의 선조를 둘러싼 전설이 이어졌다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　つまり、仙人たちが持っていたという仙術や奇跡の技は、全て宇宙人がもたらした地球外文明の英知だったのだ。",
+		   NULL, "즉 선인들이 가지고 있었다는 선술이나 기적의 기술은, 전부 우주인이 가져온 지구 외 문명의 선물이었다. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "white", 400 );
+	DrawSceneWithMask( "background/Sora", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44010", 256, TRUE);
+	OutputLine(NULL, "「わっはっはっはっは。",
+		   NULL, "\"와하하하하. ", Line_Continue);
+	Wait( 2500 ); // autofix multiline voice
+	OutputLine(NULL, "そういうののマニアな人たちは、つくづくそういうのが好きですよね。",
+		   NULL, "마니아들은 정말 그런 이야기를 좋아하네요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44011", 256, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "ノストラダムスの大予言だって、９９年にはあんなに騒いだのに、７月が過ぎたら何事もなかったかのようにみんな過ごしてる。",
+		   NULL, "노스트라다무스의 대예언만 해도, 99년에는 그렇게나 떠들어 댔는데 7월이 지나도 아무 일이 일어나지 않자 모두 흘려보냈죠. ", Line_Continue);
+	Wait( 9500 );
+	OutputLine(NULL, "民放もあれだけ煽っておいて無責任ったらありゃしない。」",
+		   NULL, "케이블 TV도 그렇게나 부추겼으면서, 무책임하기 짝이 없습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300018", 256, TRUE);
+	OutputLine(NULL, "「でも、鷹野三四は雛見沢大災害を予見したらしい。",
+		   NULL, "\"하지만 타카노 미요는 히나미자와 대재해를 예견했다는 것 같아. ", Line_Continue);
+	Wait( 6300 ); // autofix multiline voice
+	OutputLine(NULL, "それは嘘じゃない。",
+		   NULL, "그건 거짓말이 아니야. ", Line_Continue);
+	Wait( 2400 );
+	OutputLine(NULL, "確かにこのスクラップ帖に書いてある。」",
+		   NULL, "분명히 그 스크랩 북에 쓰여 있었어.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44012", 256, TRUE);
+	OutputLine(NULL, "「そんなまさか。",
+		   NULL, "\"설마 그럴 리가. ", Line_Continue);
+	Wait( 2000 ); // autofix multiline voice
+	OutputLine(NULL, "あっはっはっは……、……。",
+		   NULL, "아하하하...... ", Line_Continue);
+	Wait( 6000 );
+	OutputLine(NULL, "…赤坂先輩、それ本当に…？」",
+		   NULL, "아카사카 선배님, 혹시 진짜로...?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　仙人たちの時代から長い時間を経る内に、人々に寄生した細菌は非常に安定したものになり、人体に無害なものとなった。",
+		   NULL, "선조들의 시대로부터 무수한 시간이 흐르고, 기생충들은 매우 안정되어 인체에 무해해졌다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　宇宙人も細菌も、人々の記憶から薄れていく…。",
+		   NULL, "우주인도 기생충도 사람들의 기억으로부터 사라졌다.... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、宇宙人たちは御三家に守られながら何百年もの間、生き続けてきたというのである。",
+		   NULL, "하지만 우주인들은 3대 가문에게 보호받으며 수백 년 동안이나 계속해서 살아왔다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　古手神社の秘密神殿の中で代々、ご神体として崇められながら生きてきたのである。",
+		   NULL, "후루데 신사의 비밀 신전 안에서 대대로 신으로 숭배받으며 살아온 것이다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その宇宙人は、寄生している細菌たちを操り、その結果、村人たちを何百年にも渡って支配していた。",
+		   NULL, "그 우주인들은 기생충을 이용해 마을 사람들을 수백 년에 걸쳐 지배했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そしてその支配を取り戻すため、彼らは再び寄生細菌の太古の力を取り戻すべく、研究を初め、……うんぬんかんぬん。",
+		   NULL, "그리고 그 지배력을 되찾기 위해서, 그들은 다시 기생충의 태곳적 힘을 되찾기 위한 연구를 시작......어쩌구 저쩌구.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ここで諸説が入り混じり、つまりは、寄生細菌を地球規模でバラ撒き地球支配を目論もうとした宇宙人の地球侵略計画こそが雛見沢大災害の正体である、というらしい。",
+		   NULL, "이렇게 여러 가지 가설이 뒤섞여, 기생충을 지구 전체에 살포하여 지구를 지배하려는 우주인의 지구 침략 계획이 히나미자와 대재해의 정체...라던가. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それで、実は日本政府内には宇宙人の侵略と戦うための秘密部門があって、",
+		   NULL, "게다가 일본 정부 내에는 우주인의 침략과 싸우기 위한 비밀 부서가 있고, ", Line_WaitForInput);
+	OutputLine(NULL, "彼らはアメリカの秘密基地、エリア５１で訓練を受けていてうんぬんかんぬん。",
+		   NULL, "그들은 미국의 비밀 기지, 51구역에서 훈련을 받고 있다나 어쨌다나. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして彼らが動き出し、この宇宙人の地球侵略を食い止めるため、村を全て封鎖して毒ガス攻撃で完全に封殺した…というのである。",
+		   NULL, "그리고 우주인의 지구 침략을 멈추기 위해 그들이 마을을 전부 봉쇄하고, 독가스 공격으로 완전히 전멸시켰다고 한다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44013", 256, TRUE);
+	OutputLine(NULL, "「わっはっはっはっは！！",
+		   NULL, "\"왓하하하!! ", Line_Continue);
+	Wait( 2000 ); // autofix multiline voice
+	OutputLine(NULL, "　映画でそんなのありましたね。",
+		   NULL, "그런 영화도 있었어요. ", Line_Continue);
+	Wait( 2900 );
+	OutputLine(NULL, "ほら、黒人の俳優が主演の。何て言ったっけなぁ。",
+		   NULL, "그렇죠?, 흑인 배우가 주연이었던. 뭐였더라~? ", Line_Continue);
+	Wait( 2400 );
+	OutputLine(NULL, "ＭＩ…なんだっけ！」",
+		   NULL, "MI...였었나.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300019", 256, TRUE);
+	OutputLine(NULL, "「この辺まで来ると俺もそろそろ滅茶苦茶だなとは思う。",
+		   NULL, "\"이 정도는 나도 슬슬 무리수라고 생각해. ", Line_Continue);
+	Wait( 6300 ); // autofix multiline voice
+	OutputLine(NULL, "ただ、この滅茶苦茶を書いた鷹野三四は昭和５８年の６月中旬。",
+		   NULL, "하지만 이런 엉망진창인 내용을 적은 타카노 미요는 쇼와 58년 6월 중순. ", Line_Continue);
+	Wait( 6100 );
+	OutputLine(NULL, "正体不明の怪死を遂げる。",
+		   NULL, "의문사한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300020", 256, TRUE);
+	OutputLine(NULL, "そしてその死の直前に、自らの死を悟ったかのように、村の１人の少女にこのスクラップ帖を預けて意思を託したというんだ。」",
+		   NULL, "그리고 그 죽음 직전에, 마치 자기가 죽을 걸 안다는 듯이 마을의 한 소녀에게 이 스크랩 북을 건네, 자신의 의지를 맡겼다는 거야.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その少女の名は「少女Ａ」。",
+		   NULL, "그 소녀의 이름은\"소녀 A\". ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……ネット上で諸説が飛び交っているが、当時の事件を詳細に調べた人間が「竜宮礼奈」という個人名を特定したとされ、最近は「竜宮礼奈説」でほぼ定着しているようだ。",
+		   NULL, "......인터넷 상에서는 여러 가지 설이 난무했지만, 당시 사건을 자세히 조사한 사람이 \"류구 레이나\"라는 이름을 특정했기에 최근엔 \"류구 레이나 설\"로 거의 정착되었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　竜宮礼奈は鷹野三四の意思を継ぎ、宇宙人たちの侵略計画を打ち砕くため、学校を占拠して、警察に陰謀を暴くよう要求したらしい。",
+		   NULL, "류구 레이나는 타카노 미요의 의지를 이어, 우주인들의 침략계획을 물리치기 위해 학교를 점거하고 경찰에게 음모를 폭로하려 했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん、当時は誰もがそれを世迷言だと笑い捨てたし、彼女が正常な心理状態にあったのかどうかも疑った。",
+		   NULL, "물론 당시에는 다들 말도 안 되는 소리라며 웃어넘겼고, 그녀가 정상적인 심리 상태인지 아닌지조차 의심했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　結局、竜宮礼奈は、鷹野三四というミステリーマニアの妄想を真に受け、稚拙な犯行に走ってしまったのではないかというのが当時の見解だったのだが。",
+		   NULL, "결국 류구 레이나는 타카노 미요라는 미스터리 마니아의 망상을 진지하게 받아들여, 흉악한 범행을 저질렀다는 것이 당시의 견해였지만. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「竜宮礼奈は学校占拠時から警察に対し、宇宙人に支配された御三家が、細菌テロを行なおうとしていると訴えていた。",
+		   NULL, "\"류구 레이나는 학교를 점거했을 때, 경찰에게 외계인의 지배를 받는 3대 가문이 세균 테러를 저지르려 한다고 호소했다. ", Line_WaitForInput);
+
+	PlaySE( 0, "s_Z02_Kyousou", 56, 64 );
+
+	OutputLine(NULL, "そしてその翌日なんだ。",
+		   NULL, "그리고 그 다음 날이었지. ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "雛見沢大災害が起こるのは。」",
+		   NULL, "히나미자와 대재해가 일어난 것은.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DrawSceneWithMask( "background/Sora", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44014", 256, TRUE);
+	OutputLine(NULL, "「まさか！",
+		   NULL, "\"설마! ", Line_Continue);
+	Wait( 1300 ); // autofix multiline voice
+	OutputLine(NULL, "　そりゃ偶然じゃないんですか。」",
+		   NULL, "그건 그저 우연 아닙니까?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300021", 256, TRUE);
+	OutputLine(NULL, "「わからない。",
+		   NULL, "\"모르겠어. ", Line_Continue);
+	Wait( 2100 ); // autofix multiline voice
+	OutputLine(NULL, "偶然ではないと思う連中に言わせると、その後の自衛隊による封鎖はおかしなことだらけらしい。",
+		   NULL, "우연이 아니라고 생각하는 사람들의 말로는, 그 후 자위대에 의한 봉쇄가 이상한 점 투성이라는 거야. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300022", 256, TRUE);
+	OutputLine(NULL, "例えばこの沼の埋め立てが一例だ。",
+		   NULL, "예를 들면 이 늪을 묻은 것도 그렇지. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300023", 256, TRUE);
+	OutputLine(NULL, "そして埋め立てる前に、明らかに通常の地質調査とは異なる秘密の調査を行なっていたとされていて、当時、ここの封鎖に関わっていた自衛隊員たちがそれを何人も証言している。",
+		   NULL, "매립하기 전에 일반적인 지질 조사와는 다른 비밀 조사가 이뤄졌다고 하고, 당시 봉쇄에 참여했던 자위대원들도 수차례 이를 증언했어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300024", 256, TRUE);
+	OutputLine(NULL, "……否定派はそれを、単にガスの発生地なので、危険に備えて立入を制限していただけだと主張するんだがね。」",
+		   NULL, "......가설을 부정하는 측은 단지 가스의 발생지이기 때문에, 위험에 대비하여 접근을 제한하고 있었을 뿐이다... 라고 주장하지만 말이야.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44015", 256, TRUE);
+	OutputLine(NULL, "「それは多分、…否定派の言うのが正しいんじゃないかと思いますね。」",
+		   NULL, "\"그건 아마...부정파의 말이 맞지 않을까요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300025", 256, TRUE);
+	OutputLine(NULL, "「他にも、異常に長かった封鎖期間も疑惑の目が向けられている。",
+		   NULL, "\"그 밖에도 이상하리만치 긴 봉쇄 기간에도 의혹이 있어. ", Line_Continue);
+	Wait( 6700 ); // autofix multiline voice
+	OutputLine(NULL, "近年の東京都三宅島の火山ガス災害の例を見てもわかるように、４〜５年で立入禁止を解いている。",
+		   NULL, "최근 도쿄 미야케 섬 화산가스 재해의 예를 보면, 4~5년 만에 출입금지가 풀렸어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300026", 256, TRUE);
+	OutputLine(NULL, "雛見沢のケースは例外中の例外のケースのはずなのに、封鎖は極めて長期に及んだ。」",
+		   NULL, "히나미자와의 케이스는 (독가스 사건에서) 예외 중의 예외인데도, 봉쇄는 지극히 장기간이었지.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44016", 256, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-5>", Line_Continue); }
+	OutputLine(NULL, "「三宅島のケースは島民が帰島を強く希望したからと聞いています。",
+		   NULL, "\"미야케 섬의 케이스는, 도민들이 섬으로 복귀하길 강력하게 원했기 때문이라고 들었습니다. ", Line_Continue);
+	Wait( 6100 ); // autofix multiline voice
+	OutputLine(NULL, "雛見沢には帰る人がそもそもいないんだから、充分安全が確認できるまでたっぷり期間を置いただけなのでは？」",
+		   NULL, "히나미자와에는 애초에 돌아갈 사람이 없었으니까, 안전이 확인될 때까지 충분한 기간을 둔 건 아닐까요?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300027", 256, TRUE);
+	OutputLine(NULL, "「ふむ。",
+		   NULL, "\"흠. ", Line_Continue);
+	Wait( 3500 ); // autofix multiline voice
+	OutputLine(NULL, "あとこんな話もあるぞ。",
+		   NULL, "또 이런 이야기도 있어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300028", 256, TRUE);
+	OutputLine(NULL, "雛見沢を封鎖していた自衛隊員たちは定期的に血を抜かれての厳密な検査を受けていたといい、何らかの結果によって、自他ともに理解できない理由で任務を解かれることがあったという。",
+		   NULL, "히나미자와를 봉쇄했던 자위대원들은, 모두 정기적으로 혈액을 채취해 엄밀한 검사를 받았고, 어떤 결과가 나오자 이해할 수 없는 이유로 임무에서 제외되었다고 들었어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300029", 256, TRUE);
+	OutputLine(NULL, "それは実は、細菌感染の陽性反応を見るもので、自衛隊員たちを留まらせることによる何らかの人体実験だったと囁かれているらしい。」",
+		   NULL, "그건 실은 감염 여부를 알아내기 위한 검사로, 자위대 대원들을 히나미자와에 머물게 하며 관찰하는 인체 실험이었다는 말이 있어.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44017", 256, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "「それは、やはりガスが湧き出す危険性があっただけに健康管理には気を遣ったということでしょう。",
+		   NULL, "\"그것 또한 가스가 솟아 나올 위험성이 있으니, 건강 관리에 신경을 썼다는 이야기지요. ", Line_Continue);
+	Wait( 7900 ); // autofix multiline voice
+	OutputLine(NULL, "それに、普通のサラリーマンだって、年に一度は健康診断を受け、その時に血を抜かれてるはずです。」",
+		   NULL, "게다가 평범한 샐러리맨도, 1년에 1번 정도는 건강진단을 받고 피를 뽑을 텐데요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300030", 256, TRUE);
+	OutputLine(NULL, "「まぁ、君の言うことももっともだと思う。",
+		   NULL, "\"뭐, 자네가 하는 이야기도 틀린 말은 아니라고 생각해. ", Line_Continue);
+	Wait( 5500 ); // autofix multiline voice
+	OutputLine(NULL, "あともっと面白い話もあるぞ。",
+		   NULL, "그리고 더 재미있는 이야기도 있어. ", Line_Continue);
+	Wait( 4000 );
+	OutputLine(NULL, "雛見沢大災害時に火山ガスは発生していないと主張する連中がいる。」",
+		   NULL, "히나미자와 대재해 때 화산 가스가 발생하지 않았다고 주장하는 무리가 있어.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44018", 256, TRUE);
+	OutputLine(NULL, "「火山ガスは発生していない？",
+		   NULL, "\"화산 가스가 발생하지 않았다? ", Line_Continue);
+	Wait( 2700 ); // autofix multiline voice
+	OutputLine(NULL, "　どういう意味ですか。」",
+		   NULL, "무슨 말입니까?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300031", 256, TRUE);
+	OutputLine(NULL, "「つまり、元々火山ガスなんか噴出してなくて、ガス災害というのが政府の嘘であると主張してるらしい。",
+		   NULL, "\"즉 애초에 화산 가스 따윈 분출되지 않았고, 가스 재해는 정부의 거짓말이었다고 주장하는 거지. ", Line_Continue);
+	Wait( 10300 ); // autofix multiline voice
+	OutputLine(NULL, "ほら、スピルバーグの人類とＵＦＯがコンタクトする某映画でも、同じ設定だったじゃないか。」",
+		   NULL, "왜 있잖아? 스필버그 감독의, 인류와 UFO가 접촉하는 모 영화(미지와의 조우)에서도 같은 설정이 있었지?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44019", 256, TRUE);
+	OutputLine(NULL, "「それこそミステリー狂のこじつけだと思いますね。",
+		   NULL, "\"그거야말로 미스터리 광들의 억지네요. ", Line_Continue);
+	Wait( 5200 ); // autofix multiline voice
+	OutputLine(NULL, "で、その連中は何を根拠に火山ガスが発生しなかったと言っているんです？」",
+		   NULL, "그래서 그 패거리들은 무슨 근거로 화산 가스가 발생하지 않았다고 주장하는 건가요?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300032", 256, TRUE);
+	OutputLine(NULL, "「封鎖解除後、ミステリーマニアがどっと押し寄せて、ＵＦＯ説を補強するためにいろいろ調べたらしい。",
+		   NULL, "\"봉쇄가 해제되고, UFO 설을 지지하던 미스터리 마니아들이 우르르 몰려와 조사했다나 봐. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300033", 256, TRUE);
+	OutputLine(NULL, "で、連中の主張はこうだ。",
+		   NULL, "그들의 주장은 이래. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300034", 256, TRUE);
+	OutputLine(NULL, "政府発表の火山ガス成分によるならば、硫化水素によって金属が腐食されたり、自然体系に大きなダメージが残るはずだ。",
+		   NULL, "정부가 발표한 화산가스 성분에 의하면, 황화수소에 의해 금속이 부식되고, 생태계에도 크나큰 손상을 남겼어야 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300035", 256, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "にも関わらず雛見沢にはそういう痕跡が残っておらず、よって、火山ガスが噴出したとはとうてい思えない、とか何とか言ってる。",
+		   NULL, "하지만 히나미자와에는 그런 흔적이 남아있지 않으며, 따라서 화산가스가 분출했다고는 도저히 생각할 수 없다... 라던가 뭐라던가. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300036", 256, TRUE);
+	OutputLine(NULL, "……もっともあれから２０年も放置された村なんだ。",
+		   NULL, "......하긴 그 후로 20년이나 방치된 마을이야. ", Line_Continue);
+	Wait( 6600 );
+	OutputLine(NULL, "そんな痕跡を発見できたかどうかは疑わしいな。」",
+		   NULL, "그런 흔적을 발견할 수 있을지부터가 의심되긴 하지만 말이야.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44020", 256, TRUE);
+	OutputLine(NULL, "「はっはっは、やはりつくづくインターネットというのは信用できませんねぇ。",
+		   NULL, "\"하하하, 역시 인터넷이라는 건 믿을 게 못 되네요. ", Line_Continue);
+	Wait( 7900 ); // autofix multiline voice
+	OutputLine(NULL, "……で、まさか赤坂先輩は、その怪しげな話を信じてるわけですか？」",
+		   NULL, "......그런데 설마 아카사카 선배님은, 그 괴상한 이야기를 믿는 겁니까?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300037", 256, TRUE);
+	OutputLine(NULL, "「最初は信じなかったが、最近は俺もわからない。",
+		   NULL, "\"처음엔 믿지 않았지만, 요즘 들어선 나도 잘 모르겠어. ", Line_Continue);
+	Wait( 5400 ); // autofix multiline voice
+	OutputLine(NULL, "何割かは真実が含まれているかもしれないと思うようになっている。」",
+		   NULL, "몇 할 정도는 진실이 포함되어 있을지도 모른다고 생각해.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44021", 256, TRUE);
+	OutputLine(NULL, "「赤坂先輩ともあろうお方がＵＦＯ話を信じるんですか？」",
+		   NULL, "\"아카사카 선배님 같은 분께서 UFO 이야기를 믿는다고요?\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/file", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300038", 256, TRUE);
+	OutputLine(NULL, "「このスクラップ帖。",
+		   NULL, "\"이 스크랩 북. ", Line_Continue);
+	Wait( 2900 ); // autofix multiline voice
+	OutputLine(NULL, "これが本物の『３４号文書』だとしたら？」",
+		   NULL, "이게 진짜 \"34호 문서\"라고 한다면?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44022", 256, TRUE);
+	OutputLine(NULL, "「え？」",
+		   NULL, "\"예?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300039", 256, TRUE);
+	OutputLine(NULL, "「昭和５８年６月２５日に雛見沢営林署に人質を取って篭城した、竜宮礼奈が所持していた、正真正銘、本物の『３４号文書』だ。",
+		   NULL, "\"쇼와 58년 6월 25일, 히나미자와 산림청에서 인질을 붙잡고 농성을 벌이던 류구 레이나가 소지하고 있던, 진짜 \"34호 문서\" 라네. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300040", 256, TRUE);
+	OutputLine(NULL, "雛見沢大災害の混乱で長いこと行方不明だったが、近年、大石さんの古い友人が県警の保存庫で発見したらしい。」",
+		   NULL, "히나미자와 대재해의 혼란 속에서 장시간 행방불명이었지만, 최근 오오이시 씨의 오랜 친구가 현경의 보존창고에서 발견했지.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　当時は妄想と思った大石ですら、…雛見沢大災害の後に読み直すと、決して笑い捨てられる内容ではなかった。",
+		   NULL, "오오이시 씨도 당시에는 망상이라고 넘겼지만...히나미자와 대재해 이후 다시 읽어보자 결코 웃어넘길 만한 내용이 아니었다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　宇宙人の部分ではなく、雛見沢に土着の寄生細菌による風土病が「オヤシロさまの祟り」であったという部分だ。",
+		   NULL, "우주인 이야기가 아니라, 히나미자와에 토착한 기생충에 의한 풍토병이 \"오야시로 님의 저주\"였다는 부분이 말이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん、病原体は発見されていないので仮説の域を出ない。",
+		   NULL, "물론 병원체는 발견되지 않았으므로 가설의 영역에서는 벗어나지 못했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300041", 256, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "「大石さんの仮説なんだが、御三家が過去の信仰心を村に取り戻すために、大昔の毒性の強い病原体を研究していたのは本当じゃないか、って言うんだ。",
+		   NULL, "\"오오이시 씨는, 3대 가문이 마을에 과거의 신앙심을 되살리기 위해, 먼 옛날의 독성이 강한 병원체를 연구했던 것은 사실일지 모른다, ", Line_Continue);
+	Wait( 13400 ); // autofix multiline voice
+	OutputLine(NULL, "雛見沢大災害は、実はその結果の失敗じゃないかってな。」",
+		   NULL, "히나미자와 대재해는 그 연구가 실패한 결과는 아닐까 하는 가설을 세웠어.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろんこの辺りには、ネット上の仮説や珍説も入り混じる。",
+		   NULL, "물론 이 부분에는 인터넷상의 가설이나 가십(gossip)도 포함되어 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢大災害の直前に謎の死を遂げた診療所長。",
+		   NULL, "히나미자와 대재해 직전에 의문사한 진료소장. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、篭城事件の夜に惨殺された古手梨花という少女の謎…。",
+		   NULL, "그리고 농성 사건이 벌어진 밤에 참살된 후루데 리카라는 소녀에 대한 의혹.... ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　診療所の地下に秘密の研究施設があり、そこで入江は細菌の研究をさせられていたが、罪の意識に耐えかねて自殺。",
+		   NULL, "진료소 지하의 비밀 연구시설에서 이리에는 세균 연구를 강요당했고, 죄의식을 견디지 못하고 자살. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……オヤシロさまの復活という宗教的セレモニーの何らかの意味のため、梨花は宗教的儀式で惨殺されて生贄に…。",
+		   NULL, "......오야시로님의 부활이라는 종교적 세리머니의 의미로서, 리카는 산 제물로 참살... ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、彼らが研究した細菌は失敗作だった。",
+		   NULL, "하지만 그들이 연구했던 세균은 실패작이었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……それは村人たちに寄生するどころか、そのまま死に至らしめてしまう殺人ウィルスだったのだ。",
+		   NULL, "......마을 사람들에게 기생하기는커녕, 바로 죽게 만드는 살인 바이러스였다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　かくして村は、一夜にして滅びてしまうことになる…。",
+		   NULL, "이리하여 마을은 하룻밤 만에 멸망해 버리고 만다.... ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "white", 400 );
+	DrawSceneWithMask( "background/Sora", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300042", 256, TRUE);
+	OutputLine(NULL, "「ただのガス災害じゃないことは明白なんだ。",
+		   NULL, "\"단순한 가스 재해가 아니라는 사실만은 명백해. ", Line_Continue);
+	Wait( 3800 ); // autofix multiline voice
+	OutputLine(NULL, "ガスが湧く直前に、１人の少女が細菌テロを予告し、数人の村人が怪死を遂げている。",
+		   NULL, "가스가 발생하기 직전에 한 소녀가 세균 테러를 예고했고, 여러 명의 마을 사람들이 괴사를 당한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300043", 256, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "それをスクラップ帖にまとめた鷹野三四本人も含めてね。",
+		   NULL, "스크랩 북에 정리한 타카노 미요 본인도 포함해서 말이지. ", Line_Continue);
+	Wait( 6000 );
+	OutputLine(NULL, "あれを偶然の予見不可能な災害だとするには、どうも腑に落ちない要素が少なくない。",
+		   NULL, "이게 모두 우연한, 예측 불가능한 재해라고 하기에는 아무래도 납득할 수 없는 부분이 너무 많아. ", Line_Continue);
+	Wait( 8600 );
+	OutputLine(NULL, "この『３４号文書』を読めば、それらは明らかにはっきりしてくる。」",
+		   NULL, "이 \"34호 문서\"를 읽으면 그 사실은 분명해져.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44023", 256, TRUE);
+	OutputLine(NULL, "「じゃあ…、雛見沢大災害は自然災害ではなく、カルト集団による細菌テロ？」",
+		   NULL, "\"그렇다면... 히나미자와 대재해는 자연재해가 아닌, 컬트 집단에 의한 세균 테러?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　某サリン事件で知られるカルト集団が、毒ガスや危険なウィルスを研究し散布していたらしいという話は、この平成の時代には誰もが知ることだった。",
+		   NULL, "헤이세이(* 89년~ 2019년)를 살아간 사람이라면 누구나, 컬트 집단이 독가스나 위험한 바이러스를 연구해 살포한 사건을 알고 있다. (* 옴진리교의 사린 가스 테러. 실존 사건.) ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが昭和の時代なら、カルト集団が細菌テロに及ぶ…などとは誰も想像できなかった。",
+		   NULL, "하지만 쇼와 시대에는 달랐다. 컬트 집단이 생화학 테러를 일으킨다니, 아무도 상상할 수 없는 이야기였다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300044", 256, TRUE);
+	OutputLine(NULL, "「その後の自衛隊の長い封鎖は、その殺人ウィルスを調査するためではないかと囁かれているんだが、すっきりしないな。」",
+		   NULL, "\"사건 후 자위대의 오랜 봉쇄는 살인 바이러스를 조사하기 위한 목적이었다는 소문도 있지만, 확실치는 않아.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44024", 256, TRUE);
+	OutputLine(NULL, "「はははははは。",
+		   NULL, "\"하하하하. ", Line_Continue);
+	Wait( 2600 ); // autofix multiline voice
+	OutputLine(NULL, "ＵＦＯに乗った宇宙人がって話よりは、カルト集団がって方が近年は信憑性がありますからね。」",
+		   NULL, "요새는 UFO에 타고 있는 우주인 이야기보다는, 컬트 집단이 신빙성이 있으니까요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300045", 256, TRUE);
+	OutputLine(NULL, "「本当にＵＦＯが墜落した可能性もあるかもしれないな。",
+		   NULL, "\"정말로 UFO가 추락했을지도 몰라. ", Line_Continue);
+	Wait( 6000 ); // autofix multiline voice
+	OutputLine(NULL, "……竜宮礼奈が人質篭城時に出した要求の筆頭は、鬼ヶ淵沼の底には墜落したＵＦＯの残骸があるから引き上げろ、というものだったらしい。」",
+		   NULL, "......류구 레이나가 인질 농성 시에 내걸었던 첫 번째 요구가, 오니가후치 늪 밑바닥에 추락한 UFO의 잔해가 있으니 건져 올려달라, 였어.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44025", 256, TRUE);
+	OutputLine(NULL, "「馬鹿馬鹿しい…。」",
+		   NULL, "\"터무니없네요....\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300046", 256, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "「それが馬鹿馬鹿しいか調べたくても、見ろ。",
+		   NULL, "\"정말 터무니없는지 조사해보고 싶어도.... 봐. ", Line_Continue);
+	Wait( 5500 ); // autofix multiline voice
+	OutputLine(NULL, "沼はコンクリートで数メートルの厚さで固められ、確かめる術もない。",
+		   NULL, "늪은 수 미터의 콘크리트에 묻혀, 확인해볼 방법도 없지. ", Line_Continue);
+	Wait( 6500 );
+	OutputLine(NULL, "地質学的にはガスを防ぐ効果は何も期待できないはずの馬鹿馬鹿しい工事によってだ。」",
+		   NULL, "지질학적으로 가스 분출에 아무런 방어 효과도 기대할 수 없는, 터무니없는 공사로 인해서 말이야.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44026", 256, TRUE);
+	OutputLine(NULL, "「赤坂先輩がそれを立証するには、あとはここの住民の生き残りを見つけて、体内からその特殊な病原体ってやつを見付け出す他、ないんじゃないですか。」",
+		   NULL, "\"아카사카 선배님이 그걸 입증하려면, 앞으로 생존한 주민을 찾아내서 체내로부터 그 특수한 병원체를 검출해낼 수밖에 없지 않습니까?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300047", 256, TRUE);
+	OutputLine(NULL, "「…それも致命的だ。",
+		   NULL, "\"...그것도 불가능해. ", Line_Continue);
+	Wait( 2800 ); // autofix multiline voice
+	OutputLine(NULL, "雛見沢大災害後の雛見沢出身者に対する魔女狩りのせいで今や出身者の存在は不明だ。",
+		   NULL, "히나미자와 대재해 후, 히나미자와 출신자들에 대한 마녀사냥으로 지금에 와서는 히나미자와 출신을 찾기는 어려워. ", Line_Continue);
+	Wait( 8000 );
+	OutputLine(NULL, "彼らは名乗りなどあげまい。」",
+		   NULL, "그들이 자신을 밝힐 리가 없지.\" ", Line_Normal);
+	ClearMessage();
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+	DrawScene( "background/simen3", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢大災害の直後から、雛見沢出身者たちの間に、オヤシロさまの祟りと称して奇行に走る人間が現れた。",
+		   NULL, "히나미자와 대재해 직후, 히나미자와 출신인 사람들 사이에서 오야시로님의 저주라 칭하며 기행을 저지르는 사람들이 나타났다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その一部が、猟奇事件や奇怪な方法での自殺を遂げ始めると、全国で近所の雛見沢出身者を排斥する一種の魔女狩りが発生した。",
+		   NULL, "그들 중 일부가 엽기사건이나 기괴한 방법으로 자살을 하기 시작하자, 전국적으로 히나미자와 출신인 사람들을 배척하는 일종의 마녀사냥이 일어났다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この当時の政府のプライバシー保護の甘さもあり、今や雛見沢出身者は頑なに口を閉ざし、自らの出身を隠し続けているという。",
+		   NULL, "당시 정부의 허술한 사생활 보호도 한몫해서, 오늘날 히나미자와 출신인 사람들은 완강히 입을 다물고 계속해 자신들의 출신을 숨기고 있다. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+	DrawSceneWithMask( "background/Sora", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44027", 256, TRUE);
+	OutputLine(NULL, "「じゃあ、お手上げじゃないですか。」",
+		   NULL, "\"그럼 어찌할 방도가 없지 않습니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300048", 256, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "「それでも諦めないのが刑事魂ってもんだよ。",
+		   NULL, "\"그래도 포기하지 않는 게 형사의 마음가짐이야. ", Line_Continue);
+	Wait( 4700 ); // autofix multiline voice
+	OutputLine(NULL, "……あれが自然災害じゃなかったっていう状況証拠はいくらでもあるんだ。",
+		   NULL, "......자연 재해가 아니었다는 상황증거는 얼마든지 있어. ", Line_Continue);
+	Wait( 5800 );
+	OutputLine(NULL, "何か１つの具体的証拠が見付かれば、芋づる式に全てを白日の下に晒せるかもしれない。」",
+		   NULL, "뭔가 하나라도 구체적인 증거만 잡힌다면, 그걸 계기로 모든 진상을 백일하에 드러낼 수 있을지도 몰라.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>士官</color>", NULL, "<color=#f5e6d3>장교</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/officera44028", 256, TRUE);
+	OutputLine(NULL, "「まぁ、あれから２０年経過してますからね。",
+		   NULL, "\"뭐어, 그 후로 20년이나 지났으니까요. ", Line_Continue);
+	Wait( 5200 ); // autofix multiline voice
+	OutputLine(NULL, "真相はあまりに遠い闇の中かもしれません。」",
+		   NULL, "진상은 깊은 어둠 속에 잠겼을지도 모르겠습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300049", 256, TRUE);
+	OutputLine(NULL, "「そうだな。………２１世紀の今頃になってここを訪れても、何もわかりはしないのかもな。」",
+		   NULL, "\"그래......지금 21세기에 이곳을 방문해봤자 아무것도 알아낼 수 없으려나.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　昭和５８年の６月に。",
+		   NULL, "쇼와 58년 6월에. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　一体、雛見沢で何があったと言うんだ。",
+		   NULL, "대체 히나미자와에서는 무슨 일이 일어났는가. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　確実にわかっていることは、鷹野三四が細菌テロを予見して怪死を遂げて。",
+		   NULL, "확실하게 알 수 있는 사실은, 타카노 미요가 세균 테러를 예견한 뒤 괴사하였고. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それを主張した少女が学校を占拠してまで訴えたが誰も耳を貸さず。",
+		   NULL, "사건을 예견한 소녀가 학교를 점거하면서까지 호소했지만, 누구도 귀 기울여 주지 않았으며. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　診療所の所長が怪死を遂げ、オヤシロさまの生まれ変わりと村人たちに信じられていた古手梨花という少女が、惨殺されたという事実のみ。",
+		   NULL, "진료소의 소장도 괴사하고, 오야시로님의 환생이라며 마을 사람들에게 신봉 받던 후루데 리카라는 소녀가 참살당했다는 사실 뿐. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　このスクラップ帖は一体何なのか。",
+		   NULL, "이 스크랩 북은 대체 무엇이란 말인가? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　内容が示すとおり、それは壮大な陰謀を暴いた一大告発書なのか。",
+		   NULL, "내용 그대로, 장대한 음모를 폭로한 일대의 고발서인가? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　当時、誰もが思ったように、これは偏執的マニアによる妄想のでっち上げなのか。",
+		   NULL, "혹은 당시 사람들의 생각처럼, 편집증 마니아들의 망상, 날조에 불과한가? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これが事実なら、我々は１人の少女の訴えに耳を貸すことであの大災害を免れた。",
+		   NULL, "이 글이 사실이라면, 우리들이 한 소녀의 호소에 귀를 기울이기만 했어도 그 대재해를 막을 수 있었다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これが虚実なら、じゃあ誰がこのスクラップ帖に沿うように災害を引き起こしたんだ。",
+		   NULL, "이 글이 허구라면, 누가 이 스크랩 북의 내용 그대로 재해를 일으켰을까? ", Line_ContinueAfterTyping);
+	OutputLine(NULL, "　あの某サリン事件のカルト集団以降、世間に流行った言葉に「マインドコントロール」というものがある。",
+		   NULL, "모 컬트 집단의 사린가스 사건(* 옴진리교 사린가스 테러 사건) 이후, 세간에 \"마인드 컨트롤\"이라는 말이 유행했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　「洗脳」が短絡的手段によって短期間の間に強制的に行なわれることに対して、",
+		   NULL, "\"세뇌\"가 강제적으로 단기간에 행해지는 행위라면, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "「マインドコントロール」はより時間をかけてじわじわと行い、本人がそれを正義と信じて自発的に行なうようになる点で、洗脳よりも格段に恐ろしい人格侵食であると言われている。",
+		   NULL, "\"마인드 컨트롤\"은 보다 긴 시간을 투자해, 피세뇌자에게 그릇된 신념을 불어넣어 자발적으로 행동하게 만드는 세뇌보다 더 위험한 인격 침식이다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "　カルト集団は終末思想で信者たちに常に不安と恐怖を植え付け、それから救済される方法として何かを命じられ、それに自発的に従わせようとする。",
+		   NULL, "컬트 집단은 종말 사상으로 신자들에게 항상 불안과 공포를 심어 넣고, 구원받기 위해선 뭔가를 해야 한다고 명령해 신자들을 조종한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その図式は、どことなく、「３４号文書」に踊らされた竜宮礼奈に似なくもない。",
+		   NULL, "그 방법은 어딘지 모르게 \"34호 문서\"에 놀아난 류구 레이나와 닮았다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　では、竜宮礼奈は何者かに「マインドコントロール」を受けていたのか？",
+		   NULL, "그렇다면 류구 레이나는 누군가에 의해 \"마인드 컨트롤\"을 당했던 걸까? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして彼女をマインドコントロールしたカルト集団は、まさに某カルト集団がそうだと吹聴していたように世界の終末を引き起こして、教義の信憑性を訴えたのか？",
+		   NULL, "그녀를 마인드 컨트롤한 컬트 집단은, 모 컬트 집단이 그러했듯이 교의를 퍼뜨리기 위해 사회를 희생시키려 들었던 걸까? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	DrawSceneWithMask( "background/file", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ならば、この「３４号文書」はカルトにとっての経典なのか？",
+		   NULL, "그렇다면 이\"34호 문서\"는 컬트 집단의 경전인가? ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何が真相かわからなくなる時、…この惨劇を見て誰が楽しんでいるのかを思うときがある。",
+		   NULL, "무엇이 진상인지 알 수 없는 지금...나는 이 참극을 보며 즐거워하는 자는 누구일지를 생각한다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　このスクラップ帖は、そう、脚本なのだ。",
+		   NULL, "이 스크랩 북은...그렇다, 각본이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　数千人もの村人の命を一夜にして奪う、惨劇の舞台脚本。",
+		   NULL, "마을 사람 수천 명의 생명을 하룻밤 만에 빼앗은... 참극의 무대 각본. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　人の死を見て笑う地獄の観劇者のための、悪魔たちの脚本。",
+		   NULL, "타인의 죽음을 보며 웃는 지옥의 관람객들을 위한, 악마들의 각본. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この脚本を誰かが書いた。",
+		   NULL, "이 각본을 누군가가 썼다. ", Line_WaitForInput);
+	OutputLine(NULL, "そして誰かが上演した。",
+		   NULL, "그리고 누군가가 공연했다. ", Line_WaitForInput);
+	OutputLine(NULL, "それを見て誰かが笑った。",
+		   NULL, "그 모습을 보고 누군가가 웃었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　くそ……！！",
+		   NULL, "제길......!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……昭和５８年の６月に雛見沢で、一体何が起こったって言うんだ……！！",
+		   NULL, "......쇼와 58년 6월의 히나미자와에서는, 도대체 무슨 일이 일어났던 것인가......!! ", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 0, 200, FALSE );
+	DrawScene( "white", 50 );
+	PlaySE( 0, "s_daidageki", 56, 64 );
+
+	DrawScene( "End_2", 2000 );
+
+	DrawScene( "End_3", 3000 );
+
+	DrawScene( "black", 4000 );
+}

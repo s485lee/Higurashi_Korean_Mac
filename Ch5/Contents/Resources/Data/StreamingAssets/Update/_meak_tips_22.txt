@@ -1,0 +1,232 @@
+void main()
+{
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, FALSE );
+	ClearMessage();
+
+	DrawScene("background/ke_ky1", 1000 );
+	PlayBGM( 0, "T2", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/tp1_keijia_10001", 256, TRUE);
+	OutputLine(NULL, "「えぇ、葛西氏が踏み込んだ時には室内は無人でベランダへの窓が開きっぱなし。",
+		   NULL, "\"네, 카사이 씨가 들어왔을 때 실내엔 아무도 없고 베란다 창이 열려있었습니다. ", Line_Continue);
+	Wait( 5200 );
+	OutputLine(NULL, "その時が飛び降り時刻です。",
+		   NULL, "그 때가 뛰어내린 시각입니다. ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/tp1_keijia_10002", 256, TRUE);
+	OutputLine(NULL, "それでその真下の５階エレベーターフロアの屋根に一度落ちて脳震盪。",
+		   NULL, "바로 밑의 5층 엘리베이터 플로어 지붕에 한 번 떨어져서 뇌진탕. ", Line_Continue);
+	Wait( 5000 );
+	OutputLine(NULL, "そのしばらく後に横に転がって再落下、死亡。",
+		   NULL, "그리고 잠시 후에 옆으로 굴러 다시 낙하해서, 사망. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/tp1_keijia_10003", 256, TRUE);
+	OutputLine(NULL, "　葛西氏が飛び降りを疑って、地上を調べたときに遺体が見つからなかったのは、この時点ではエレベーターフロアの屋根の上で昏倒中だったからです。",
+		   NULL, "카사이 씨가 뛰어내린 것을 의심해, 지상을 조사했을 때에 사체가 발견되지 않았던 이유는, 이 시점에서는 엘리베이터 플로어의 지붕 위에 있었기 때문입니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/tp1_keijia_10004", 256, TRUE);
+	OutputLine(NULL, "前原圭一が刺されたのは、ほぼ同じ頃。",
+		   NULL, "\"마에바라 케이이치가 찔린 것은, 거의 같은 무렵. ", Line_Continue);
+	Wait( 3800 );
+	OutputLine(NULL, "その頃には園崎詩音はすでに飛び降りていて、屋根の上で脳震盪中…？」",
+		   NULL, "그 때 소노자키 시온은 벌써 뛰어내려서, 지붕 위에서 뇌진탕 중...?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700238", 256, TRUE);
+	OutputLine(NULL, "「…違いますねぇ。",
+		   NULL, "\"...앞뒤가 맞지 않는군요. ", Line_Continue);
+	Wait( 3000 );
+	OutputLine(NULL, "ベランダから抜け出して圭一を刺して。",
+		   NULL, "베란다를 통해 빠져 나가 케이이치를 찌르고. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700239", 256, TRUE);
+	OutputLine(NULL, "ベランダへまた戻る時に誤って落下…、じゃないかなぁ？",
+		   NULL, "베란다를 통해 다시 돌아올 때에 실수해 낙하한 흐름이 아닐까요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700240", 256, TRUE);
+	OutputLine(NULL, "　悪いけど、周辺の部屋のベランダとかも調べ直してください。」",
+		   NULL, "죄송하지만, 붙어 있는 방들 베란다 좀 다시 조사해 주세요.\" ", Line_Normal);
+	ClearMessage();
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacter(2, 19, "sprite/kuma_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask("background/ke_ky2", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100053", 256, TRUE);
+	OutputLine(NULL, "「大石さーーん、３番にお電話です。」",
+		   NULL, "\"오오이시 씨, 3번에 전화임다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700241", 256, TRUE);
+	OutputLine(NULL, "「ハイハイ、どちら様から？」",
+		   NULL, "\"네 네, 누구죠?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100054", 256, TRUE);
+	OutputLine(NULL, "「佐藤と伝えれば分かるとか。",
+		   NULL, "\"사토라고 전하면 안답니다. ", Line_Continue);
+	Wait( 2200 );
+	OutputLine(NULL, "合言葉はロンと言えと。」",
+		   NULL, "암호는 론이라고.\" ", Line_Normal);
+	ClearMessage();
+	DrawSceneWithMask("black", "maskleft", 1, 0, 300 );
+	DrawScene("background/denwa", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700242", 256, TRUE);
+	OutputLine(NULL, "「なっはっは！",
+		   NULL, "\"아하하! ", Line_Continue);
+	Wait( 2200 );
+	OutputLine(NULL, "　もしもし！",
+		   NULL, "여보세요! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700243", 256, TRUE);
+	OutputLine(NULL, "　あーサトさんですか。",
+		   NULL, "아~ 사토 씨입니까. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700244", 256, TRUE);
+	OutputLine(NULL, "こっちへ電話ということは、いい知らせでしょうね？」",
+		   NULL, "여기로 전화한다는 건, 좋은 소식이 있어서겠죠?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…………情報屋の連絡で、裏を取ることができた。やはり、大石の予想通りだった。」",
+		   NULL, "\"...정보원 연락이다. 뒤를 좀 캐냈어. 역시 오오이시의 예상대로였어.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700245", 256, TRUE);
+	OutputLine(NULL, "「ありがとうございます！",
+		   NULL, "\"감사합니다! ", Line_Continue);
+	Wait( 3000 );
+	OutputLine(NULL, "　今度フラワーロードで一杯おごりますよ。」",
+		   NULL, "다음엔 플라워 로드에서 한 잔 쏘겠습니다.\" ", Line_Normal);
+	ClearMessage();
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 19, "sprite/kuma_komaru_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawSceneWithMask("background/ke_s2", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100055", 256, TRUE);
+	OutputLine(NULL, "「何です、今の電話。",
+		   NULL, "\"방금 전화는 뭐임까. ", Line_Continue);
+	Wait( 1600 );
+	OutputLine(NULL, "麻雀の誘いですか？」",
+		   NULL, "마작권유임까?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700246", 256, TRUE);
+	OutputLine(NULL, "「ビンゴ。",
+		   NULL, "\"빙고. ", Line_Continue);
+	Wait( 1800 );
+	OutputLine(NULL, "園崎姉妹は逆なんです。",
+		   NULL, "소노자키 자매는 반대입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700247", 256, TRUE);
+	OutputLine(NULL, "魅音が詩音で、詩音が魅音。",
+		   NULL, "미온이 시온이고, 시온이 미온. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700248", 256, TRUE);
+	OutputLine(NULL, "刺青入れる時に間違って逆にやっちゃって、取り返しがつかなくなったらしい。",
+		   NULL, "문신을 새길때 잘못해서 반대로 해 버려서, 돌이킬 수 없게 된 모양입니다. ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700249", 256, TRUE);
+	OutputLine(NULL, "だからこのノートの魅音と詩音は逆に読むんです。",
+		   NULL, "그러니까 이 노트의 미온과 시온은 반대로 읽어야 합니다. ", Line_Continue);
+	Wait( 3000 );
+	OutputLine(NULL, "それでなら、悟史くんと詩音さん、…いや魅音さん？",
+		   NULL, "그렇다면, 사토시 군과 시온 씨... 아니 미온 씨? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700250", 256, TRUE);
+	OutputLine(NULL, "　ややこしいなぁ！",
+		   NULL, "헷갈리는구만! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700251", 256, TRUE);
+	OutputLine(NULL, "　…の関係が理解できる。」",
+		   NULL, "...이 둘의 관계를 이해할 수 있죠.\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	ModDrawCharacter(3, 19, "sprite/kuma_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100056", 256, TRUE);
+	OutputLine(NULL, "「ノートって、先日のあの、大石さん宛てと書かれて郵便ポストに投函されてたって言う怪ノートのことですか？",
+		   NULL, "\"노트라면, 저번에 오오이시 씨 앞으로 우편함에 보내진 괴상한 노트를 말씀하시는 검까? ", Line_Continue);
+	Wait( 7000 );
+	OutputLine(NULL, "　中身はめちゃくちゃで捜査撹乱の恐れありって言いませんでしたっけ？」",
+		   NULL, "내용이 엉망진창이라 수사교란일 우려가 있다고 말씀하시지 않았음까?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700252", 256, TRUE);
+	OutputLine(NULL, "「もちろん、名前の入れ替えがわかったところで、撹乱の域を出ませんがねぇ。",
+		   NULL, "\"물론 이름이 뒤바뀐 것을 안 시점에서, 교란될 염려는 없지만요. ", Line_Continue);
+	Wait( 6000 );
+	OutputLine(NULL, "……このノート、どこまで信じていいのやら。",
+		   NULL, "......이 노트, 어디까지 믿어도 될지. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700253", 256, TRUE);
+	OutputLine(NULL, "…もし本当なら、古手梨花の死の辺りが怪し過ぎるからなぁ…。」",
+		   NULL, "만약 사실이라해도, 후루데 리카가 죽는 부분이 너무 이상해서 말이지....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100057_01", 256, TRUE);
+	OutputLine(NULL, "「…狂人の日記ですよ。",
+		   NULL, "\"...미친 사람의 일기임다. ", Line_Continue);
+	Wait( 1800 );
+	OutputLine(NULL, "読んでるとこっちまで狂いそうになります。",
+		   NULL, "읽고 있자면 이쪽까지 미칠 것 같슴다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100058", 256, TRUE);
+	OutputLine(NULL, "最後のページの、生まれてきてごめんなさいなんて、…読んでるとこっちまで飛び降りたくなりますよ…。」",
+		   NULL, "마지막 페이지의 태어나서 미안해요, 를 읽으면... 저도 뛰어내리고 싶어짐다....\" ", Line_Normal);
+	ClearMessage();
+	DrawScene("background/sora", 1000 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700254", 256, TRUE);
+	OutputLine(NULL, "「…………でも。",
+		   NULL, "\"......그렇지만. ", Line_Continue);
+	Wait( 800 );
+	OutputLine(NULL, "幸せな日記じゃあないですか。」",
+		   NULL, "행복한 일기지 않습니까.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100059", 256, TRUE);
+	OutputLine(NULL, "「しあわせ、",
+		   NULL, "\"행복, ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1300 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……ですか？」",
+		   NULL, "......말임까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700255", 256, TRUE);
+	OutputLine(NULL, "「この日記だけで、悟史くんって名前、何回くらい出てくると思います？",
+		   NULL, "\"이 일기에서 사토시 군이라는 이름이 몇 번정도 나온다고 생각합니까? ", Line_Continue);
+	Wait( 5000 );
+	OutputLine(NULL, "　………詩音さんは本当に悟史くんのことが好きだったんだなぁって。",
+		   NULL, "......시온 씨는 정말로 사토시 군을 좋아했었구나 싶어서요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700256", 256, TRUE);
+	OutputLine(NULL, "その好きというのがね、若さゆえの勘違いで、ずれちゃって。」",
+		   NULL, "그 좋아한다는 감정이, 어리숙하게 한 착각때문에, 어긋나 버렸구나 싶어서.\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	Wait( 3000 );
+	SetValidityOfInput( TRUE );
+	DrawScene("black", 6000 );
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	SetSpeedOfMessage( FALSE, 0 );
+}

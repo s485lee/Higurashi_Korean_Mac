@@ -1,0 +1,952 @@
+void main()
+{
+	DrawScene( "black", 400 );
+
+	ModSetLayerFilter(1, 256, "none");
+	ModDrawCharacter(1, 10, "sprite/iri2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 0, FALSE );
+	DrawSceneWithMask( "background/sinryou_matiai1", "maskup", 1, 0, 1300 );
+
+	PlayBGM( 0, "demo_48khz", 120, 0 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1135", 128, TRUE);
+	OutputLine(NULL, "「古手さん、お待たせしました。",
+		   NULL, "\"후루데 씨, 오래 기다리셨습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1136", 128, TRUE);
+	OutputLine(NULL, "今、最後の検査を終えたところです。",
+		   NULL, "지금 막, 마지막 검사를 끝낸 참입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1137", 128, TRUE);
+	OutputLine(NULL, "もうすぐ戻って来ると思います。」",
+		   NULL, "이제 곧 돌아올 겁니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1001", 128, TRUE);
+	OutputLine(NULL, "「娘が村のために役に立てばいいのですが…。」",
+		   NULL, "\"딸아이가 마을을 위해서 도움이 된다면 좋겠습니다만....\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_def2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1138", 128, TRUE);
+	OutputLine(NULL, "「とんでもない！",
+		   NULL, "<size=-4>\"당연하신 말씀을! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1139", 128, TRUE);
+	OutputLine(NULL, "　梨花さんの協力は村を救うことにもなります。",
+		   NULL, "<size=-4>리카 씨의 협력은 마을을 구하는데 큰 도움이 될 겁니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1140", 128, TRUE);
+	OutputLine(NULL, "お陰でようやく治療方法にも目処がついてきたところです。",
+		   NULL, "<size=-4>덕분에 간신히 어떻게 치료할지 전망이 보이게 되었습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1141", 128, TRUE);
+	OutputLine(NULL, "仕組みはまだ調べているところですが、梨花さんの存在がやはり、村人にとってとても大切なものであることがわかってきました。",
+		   NULL, "<size=-4>세부적인 부분은 아직 조사 중입니다만, 리카 씨의 존재가 생각대로, 마을 사람에게 매우 소중하다는 점을 확인했습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1142", 128, TRUE);
+	OutputLine(NULL, "レベルの進んでしまった一般感染者は、自力ではそのレベルを下げて症状を安定させるのが非常に困難です。",
+		   NULL, "<size=-4>한번 레벨이 올라간 일반 감염자가, 자력으로 증상을 안정시키기는 매우 힘듭니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1143", 128, TRUE);
+	OutputLine(NULL, "ですが、女王感染者に接近することで脳内にある種の物質が作られることがわかっています。",
+		   NULL, "<size=-4>하지만 여왕 감염자에게 접근하는 것만으로 뇌 내에서 모종의 물질이 생성된다는 사실을 알게 됐습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1144", 128, TRUE);
+	OutputLine(NULL, "その物質には鎮静効果があり、また、進んでしまった症状のレベルを抑え回復させる力もあるようなのです。",
+		   NULL, "<size=-4>그 물질은 진정효과와 더불어, 심지어는 진행된 증상 레벨을 억제하고 회복시키는 힘까지 엿보입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1145", 128, TRUE);
+	OutputLine(NULL, "この物質を処方できるようになれば、治療の強力な決め手となるでしょう。」",
+		   NULL, "<size=-4>이 물질을 처방할 수 있다면, 치료에 결정적인 수단이 될 겁니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1002", 128, TRUE);
+	OutputLine(NULL, "「そうですか。",
+		   NULL, "\"그렇습니까. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1003", 128, TRUE);
+	OutputLine(NULL, "……梨花にそのような力が。」",
+		   NULL, "......리카에게 그런 힘이.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacterWithFiltering(2, 9, "sprite/ta2_warai_", "2", "maskright", 1, 240, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1105", 128, TRUE);
+	OutputLine(NULL, "「くすくす。",
+		   NULL, "\"쿡쿡. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1106", 128, TRUE);
+	OutputLine(NULL, "驚かれるには値しないのでは？",
+		   NULL, "놀라실 일도 아니에요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1107", 128, TRUE);
+	OutputLine(NULL, "　古手の巫女には荒れた心・鬼を鎮める神通力があると代々伝えられているんではありませんでしたっけ？",
+		   NULL, "후루데 가문의 무녀에게는 흉폭해진 마음과 귀신을 진정시키는 신통력이 있다고, 대대로 전해져 내려오지 않았던가요? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1108", 128, TRUE);
+	OutputLine(NULL, "　私たちが解明しなくても、村の数百年にわたる歴史はすでにそれを知っていたわけですわ。」",
+		   NULL, "우리가 해명하지 않더라도, 마을의 수백 년에 걸친 역사는 이미 그 사실을 알고 있었다는 거예요.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1146", 128, TRUE);
+	OutputLine(NULL, "「そうですね。",
+		   NULL, "\"그렇네요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1147", 128, TRUE);
+	OutputLine(NULL, "……大昔の方の聡明さは、時に現代医学から見ても感心させられます。」",
+		   NULL, "......먼 옛 선조님들의 지혜는, 가끔 현대 의학의 견지에서 봐도 놀랍습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModSetLayerFilter(0, 256, "none");
+	ModDrawCharacterWithFiltering(0, 5, "sprite/ri2_niko_a1_", "2", "maskleft", 1, -240, 0, FALSE, 0, 0, 0, 0, 0, 9, 0, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s20/05/vtk1_rika1045", 128, TRUE);
+	OutputLine(NULL, "「……みー。",
+		   NULL, "\"....미-. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s20/05/vtk1_rika1046", 128, TRUE);
+	OutputLine(NULL, "検査が終わったのです。」",
+		   NULL, "검사가 끝난 거예요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1004", 128, TRUE);
+	OutputLine(NULL, "「梨花、大変だったな。",
+		   NULL, "\"리카, 고생했지. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1005", 128, TRUE);
+	OutputLine(NULL, "疲れただろう。",
+		   NULL, "피곤하겠구나. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1006", 128, TRUE);
+	OutputLine(NULL, "これで自動販売機でジュースを買ってきなさい。」",
+		   NULL, "이걸로 자판기에서 쥬스라도 사오거라.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 5, "sprite/ri2_warai_a1_", "2", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s20/05/vtk1_rika1047", 128, TRUE);
+	OutputLine(NULL, "「……み〜！",
+		   NULL, "\"...미~! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s20/05/vtk1_rika1048", 128, TRUE);
+	OutputLine(NULL, "　血をいっぱい抜かれたから補給なのです。」",
+		   NULL, "피를 잔뜩 뽑았기 때문에 보급인 거예요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	FadeBustshot( 0, FALSE, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　梨花は神主から百円玉をもらうと、廊下へ飛び出していった。",
+		   NULL, "리카는 신주로부터 받은 백엔 동전을 들고 복도로 달려나간다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1148", 128, TRUE);
+	OutputLine(NULL, "「………本当に、梨花さんの協力のお陰です。",
+		   NULL, "\"......정말로 리카 씨의 협력 덕분입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1149", 128, TRUE);
+	OutputLine(NULL, "彼女がこれほどまでに献身的に協力に応じてくれなければ、これほどまでに研究が進むことはありませんでした。」",
+		   NULL, "그녀가 이만큼이나 헌신적으로 협력에 응해 주지 않았다면, 이렇게까지 연구가 진행될 수는 없었을 겁니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1007", 128, TRUE);
+	OutputLine(NULL, "「梨花は、自分の友達もその病気に掛かっているということを気にしていて、友達のためにも協力したいと常に言っていました。",
+		   NULL, "\"리카는 자기 친구도 그 병에 걸렸다는 게 마음에 걸려서, 친구를 위해서라도 협력하고 싶다고 줄곧 말했었습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1008", 128, TRUE);
+	OutputLine(NULL, "……どうか先生方、梨花の心意気を汲んでやってください。」",
+		   NULL, "...아무쪼록 선생님들, 리카의 뜻을 받아들여 주십시오.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_def2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1150", 128, TRUE);
+	OutputLine(NULL, "「もちろんです。",
+		   NULL, "\"물론입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1151", 128, TRUE);
+	OutputLine(NULL, "毎週日曜日に貴重な時間を割いていただいているのです。",
+		   NULL, "매주 일요일마다 귀중한 시간을 할애해 주시니까요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1152", 128, TRUE);
+	OutputLine(NULL, "必ずや成果にして見せます。",
+		   NULL, "반드시 성과를 보이겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1153", 128, TRUE);
+	OutputLine(NULL, "……今後も梨花さんに過酷な実験を強いることがあると思いますが、どうかお許しいただければと思います。」",
+		   NULL, "...앞으로도 리카 씨에게 가혹한 실험을 시키게 될 지 모릅니다만, 부디 허락해주시길 부탁드립니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 9, "sprite/ta2_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1109", 128, TRUE);
+	OutputLine(NULL, "「彼女に危害を加えることは絶対にありませんわ。",
+		   NULL, "\"그녀에게 위해를 주는 일은 절대로 하지 않아요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1110", 128, TRUE);
+	OutputLine(NULL, "彼女はとてもとても大切な身なのです。",
+		   NULL, "그녀는 아주~ 아주 중요한 몸이니까요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1111", 128, TRUE);
+	OutputLine(NULL, "……くす、何しろオヤシロさまの生まれ変わりなんですから。」",
+		   NULL, "...쿡, 무엇보다도 오야시로 님의 환생이니까요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1008a", 128, TRUE);
+	OutputLine(NULL, "「………大昔の村人は、どのようにしてこの病気のことを知り、",
+		   NULL, "\"...먼 옛날 마을 사람들은,어떤 방식으로 이 병을 알았으며, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1008b", 128, TRUE);
+	OutputLine(NULL, "古手家にその女王の血が流れていることを知ったのやら…。",
+		   NULL, "후루데 가에 그 여왕의 피가 흐른다는 사실을 알아냈는지... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1008c", 128, TRUE);
+	OutputLine(NULL, "……ご先祖さまたちにはつくづく頭が下がります。」",
+		   NULL, "선조님들에게는 절로 머리가 숙여집니다.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_majime_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1154", 128, TRUE);
+	OutputLine(NULL, "「……それで、実はまた辛いご協力をお願いしなくてはなりません。",
+		   NULL, "\"......그래서, 실은 또 힘겨운 협력을 부탁드려야 합니다만, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1155", 128, TRUE);
+	OutputLine(NULL, "……彼女の脳脊髄液の採取のご許可をいただきたいのです。",
+		   NULL, "그녀의 뇌척수액 채취를 허가해 주셨으면 합니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1156", 128, TRUE);
+	OutputLine(NULL, "また、…場合によっては彼女の頭蓋に穿孔を空け、直接頭部の中を検査させていただくことになるかもしれません。」",
+		   NULL, "또한, 경우에 따라서는 그녀의 두개골에 구멍을 내서 직접 머릿속을 검사하게 될지도 모릅니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1009", 128, TRUE);
+	OutputLine(NULL, "「ず、頭蓋骨に穴、ですか……。」",
+		   NULL, "\"두, 두개골에 구멍을, 말입니까......?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1157", 128, TRUE);
+	OutputLine(NULL, "「もちろん安全性には最大限注意します。",
+		   NULL, "\"물론 안전에는 최대한 주의하겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1158", 128, TRUE);
+	OutputLine(NULL, "梨花さんはたった１人しかいない女王感染者なのです。",
+		   NULL, "리카 씨는 단 한 명뿐인 여왕 감염자니까요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1159", 128, TRUE);
+	OutputLine(NULL, "間違っても危害を加えることがないよう、私どもでもっとも安全な方法を模索した上で提案させていただいています。」",
+		   NULL, "실수로라도 위해가 가해지지 않도록, 저희들이 가장 안전한 방법을 찾은 다음 제안드리고자 합니다.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(2, 9, "sprite/ta2_warai_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1115", 128, TRUE);
+	OutputLine(NULL, "「もちろん、梨花ちゃんは女の子ですもの。",
+		   NULL, "\"물론 리카쨩은 여자아이니까요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1116", 128, TRUE);
+	OutputLine(NULL, "頭部穿孔周辺の頭髪には気を遣いますので、丸坊主にしてしまうようなことはありません。",
+		   NULL, "수술 부분 주위의 머리카락은 신경을 쓸테니, 삭발할 필요는 없습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1117", 128, TRUE);
+	OutputLine(NULL, "ただ、経過を慎重に見るために、しばらく入院をしてもらうことになりますが。」",
+		   NULL, "다만, 경과를 신중하게 지켜보기 위해서 당분간 입원하게 될 테지만요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_def2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1160", 128, TRUE);
+	OutputLine(NULL, "「もちろん、その間、面会謝絶ということはありません。",
+		   NULL, "\"물론 그동안 면회 금지 같은 규정은 없습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1161", 128, TRUE);
+	OutputLine(NULL, "検査にもぜひ立ち会ってください。",
+		   NULL, "검사할 때도 꼭 참석해 주십시오. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1162", 128, TRUE);
+	OutputLine(NULL, "お父さんが身近におられた方が梨花さんも安心するでしょう。」",
+		   NULL, "아버지께서 가까이에 계시는 편이 리카 씨도 안심이겠지요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1010", 128, TRUE);
+	OutputLine(NULL, "「…………その検査はどうしても必要なもので、",
+		   NULL, "\"......그 검사는 반드시 필요한 일이고, ", Line_Continue);
+	OutputLine(NULL, "…絶対に安全なものなのですか。」",
+		   NULL, "틀림없이 안전한 거겠죠?\" ", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1163", 128, TRUE);
+	OutputLine(NULL, "「脳脊椎液の採取も頭蓋穿孔も、どちらも１００％の安全を保証することはできません。",
+		   NULL, "\"뇌척수액 채취도, 두개골에 구멍을 내는 시술도, 어느쪽이나 100% 안전을 보증할 수는 없습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1164", 128, TRUE);
+	OutputLine(NULL, "常に１％の危険があります。",
+		   NULL, "항상 1%의 위험성이 있습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1165", 128, TRUE);
+	OutputLine(NULL, "また、梨花さんに身体的、あるいは精神的苦痛を与えるでしょう。",
+		   NULL, "마찬가지로, 리카 씨에게 신체적 또는 정신적 고통을 주겠지요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1166", 128, TRUE);
+	OutputLine(NULL, "……いくら重要な検査と言えども、ご家族の同意なしには行なえません。」",
+		   NULL, "...아무리 중요한 검사라고 해도, 가족의 동의 없이는 실행할 수 없습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1011", 128, TRUE);
+	OutputLine(NULL, "「……………………。」",
+		   NULL, "\"...................\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(2, 9, "sprite/ta2_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1118", 128, TRUE);
+	OutputLine(NULL, "「梨花ちゃんには、実はもう同じ話をしていますわ。」",
+		   NULL, "\"리카쨩에게는, 실은 이미 같은 이야기를 했답니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1012", 128, TRUE);
+	OutputLine(NULL, "「……梨花はなんと？」",
+		   NULL, "\"...리카는 뭐라고 하던가요?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 9, "sprite/ta2_warai_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1119", 128, TRUE);
+	OutputLine(NULL, "「自分は構わないと、それはもうあっけらかんと。",
+		   NULL, "\"자신은 상관 없다고, 곧바로 답하더군요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1120", 128, TRUE);
+	OutputLine(NULL, "くすくす。」",
+		   NULL, "쿡쿡.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_majime_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1167", 128, TRUE);
+	OutputLine(NULL, "「…梨花さんには危険や苦痛が伴う可能性があることをもちろん充分に説明しています。",
+		   NULL, "\"..물론 리카 씨에게는 위험이나 고통이  수반할 가능성을 충분히 설명했습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1168", 128, TRUE);
+	OutputLine(NULL, "ですがやはり、保護者の方の承諾をいただかないわけにはいきません。」",
+		   NULL, "하지만 역시, 보호자 분의 승낙을 받아야만 합니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1013", 128, TRUE);
+	OutputLine(NULL, "「………梨花は、自分のことを本当にオヤシロさまの生まれ変わりだと信じている時があります。",
+		   NULL, "\"......리카는 자길 정말로 오야시로님의 환생이라고 믿곤 합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1014", 128, TRUE);
+	OutputLine(NULL, "……だから、村人のために自分の身を捧げるのが、自分の義務だと思っているところがあるのかもしれません。」",
+		   NULL, "그래서, 자신에겐 마을 사람들을 위해 자신의 몸을 바쳐야 할 의무가 있다고 생각할지도 모릅니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1169", 128, TRUE);
+	OutputLine(NULL, "「……立派なお子さんだと思います。」",
+		   NULL, "\"...훌륭한 자녀분이십니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1015", 128, TRUE);
+	OutputLine(NULL, "「一応、家内とも相談させてください。",
+		   NULL, "\"일단 아내하고도 상담 해보겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1016", 128, TRUE);
+	OutputLine(NULL, "納得はしてくれてるのですが、…やはりことがことなので、話をしないわけにもいかない。」",
+		   NULL, "납득이야 해주겠지만, 역시 일이 일이다보니 이야기를 안 할 수도 없으니까요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_def2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1170", 128, TRUE);
+	OutputLine(NULL, "「えぇ、ご家族の同意は不可欠だと思います。",
+		   NULL, "\"예, 가족 분들의 동의는 필수라고 생각합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1171", 128, TRUE);
+	OutputLine(NULL, "よくご相談なさってください。」",
+		   NULL, "잘 상담해 보세요.\" ", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1017", 128, TRUE);
+	OutputLine(NULL, "「その検査は、病気の根絶のために重要な意味があるのですね…？」",
+		   NULL, "\"그 검사란 거, 병을 근절시키기 위해 중요한 과정이죠...?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1172", 128, TRUE);
+	OutputLine(NULL, "「はい。",
+		   NULL, "\"네. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1173", 128, TRUE);
+	OutputLine(NULL, "雛見沢症候群のベールを剥ぐ決定的なものになるでしょう。」",
+		   NULL, "히나미자와 증후군의 베일을 벗기는 결정적인 검사가 되겠지요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 9, "sprite/ta2_def_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1121", 128, TRUE);
+	OutputLine(NULL, "「決定的なものの第一歩に、ですわね。」",
+		   NULL, "\"결정적인 첫 발걸음, 이군요.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_majime_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1174", 128, TRUE);
+	OutputLine(NULL, "「……すでにご説明しておりますように、…女王感染者に万一のことがあった場合、感染コミュニティに致命的な崩壊をもたらす危険性が予見されています。",
+		   NULL, "\"...이미 설명드렸듯, 여왕 감염자에게 만일의 일이 생길 경우 감염 커뮤니티에 치명적인 붕괴를 가져올 위험성이 보입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1175", 128, TRUE);
+	OutputLine(NULL, "…平たく申し上げると、村人全員が突如として末期発症を起こす可能性もあるということです。」",
+		   NULL, "솔직히 말씀드리면, 마을 사람 전원이 갑자기 말기 발병을 일으킬 가능성도 있습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1122", 128, TRUE);
+	OutputLine(NULL, "「えぇ。",
+		   NULL, "\"예. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1123", 128, TRUE);
+	OutputLine(NULL, "急性発症の平均から見て、女王感染者死亡から４８時間以内に全感染者が末期発症を起こします。",
+		   NULL, "평균적인 급성 발병 사례로 미루어 볼 때, 여왕 감염자 사망으로부터 48시간 이내에 모든 감염자가 말기 발병을 일으킵니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1124", 128, TRUE);
+	OutputLine(NULL, "それだけは絶対に防がなくてはなりません。」",
+		   NULL, "그것만큼은 절대로 막아야만 합니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1018", 128, TRUE);
+	OutputLine(NULL, "「………梨花が死ぬようなことがあれば、…村中が発狂し、恐ろしいことに…。」",
+		   NULL, "\"......리카가 죽기라도 하면... 마을 전체가 발광하는, 무서운 일이....\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_majime2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1176", 128, TRUE);
+	OutputLine(NULL, "「はい。",
+		   NULL, "\"네. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1177", 128, TRUE);
+	OutputLine(NULL, "それを防ぐのも私たちの役目です。",
+		   NULL, "그걸 막는 것도 저희의 역할입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1178", 128, TRUE);
+	OutputLine(NULL, "そのために危険を冒さなければならないのはとても皮肉なことですが、",
+		   NULL, "위험을 막기 위해 위험을 무릅쓰지 않으면 안 된다니 몹시도 얄궂은 일입니다만, ", Line_Continue);
+	OutputLine(NULL, "……根絶のためには避けて通れない道だと思っています。」",
+		   NULL, "근절을 위해서는 피할 수 없는 길이라고 생각합니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1019", 128, TRUE);
+	OutputLine(NULL, "「……入江先生。",
+		   NULL, "\"...이리에 선생님. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1020", 128, TRUE);
+	OutputLine(NULL, "……必ず、その検査を成功させていただけますか…？」",
+		   NULL, "그 검사, 반드시 성공시킬 수 있겠습니까...?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 9, "sprite/ta2_warai_", "2", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1125", 128, TRUE);
+	OutputLine(NULL, "「ですから、医学には１００％や絶対などという、」",
+		   NULL, "\"그러니까, 의학에는 100%나 절대라는 말이...\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_majime_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1179", 128, TRUE);
+	OutputLine(NULL, "「えぇ。」",
+		   NULL, "\"예!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　曖昧な言い方をする鷹野を制して、入江が真剣な表情で頷きながら言った。",
+		   NULL, "애매하게 여지를 남기는 타카노를 막아서며, 이리에가 진지한 표정으로 그의 말에 대답했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1180", 128, TRUE);
+	OutputLine(NULL, "「私、入江京介が命をかけて、必ずや。",
+		   NULL, "\"저 이리에 쿄스케가 목숨을 걸고, 반드시. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1181", 128, TRUE);
+	OutputLine(NULL, "梨花さんを救います。",
+		   NULL, "리카 씨를 구하겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1182", 128, TRUE);
+	OutputLine(NULL, "村人も救います。",
+		   NULL, "마을 사람들도 구하겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1183", 128, TRUE);
+	OutputLine(NULL, "絶対にです。」",
+		   NULL, "반드시입니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>梨花の父</color>", NULL, "<color=#f5e6d3>리카의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1021", 128, TRUE);
+	OutputLine(NULL, "「……わかりました。",
+		   NULL, "\"...알겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1022", 128, TRUE);
+	OutputLine(NULL, "家内と相談させてください。",
+		   NULL, "아내와 상담해 보겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_rikaf1023", 128, TRUE);
+	OutputLine(NULL, "…その上で後日、改めてお返事させていただきます。」",
+		   NULL, "...그리고 나중에 재차 답변 드리겠습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, "sprite/iri2_def1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 8, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1184", 128, TRUE);
+	OutputLine(NULL, "「はい。",
+		   NULL, "\"네. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1185", 128, TRUE);
+	OutputLine(NULL, "よろしくお願いいたします。」",
+		   NULL, "잘 부탁드리겠습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 1000 );
+	PlaySE( 0, "s_M_Door8k", 128, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 2000 );
+	SetValidityOfInput( TRUE );
+	ModDrawCharacter(0, 9, "sprite/ta2_akuwarai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 0, FALSE );
+	DrawScene( "background/sinryou_matiai1", 1000 );
+	FadeOutBGM( 0, 300, FALSE );
+	ModPlayBGM( 1, "semi_r", 120, 0, 0 );
+	ModPlayBGM( 1, "semi", 120, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1126", 128, TRUE);
+	OutputLine(NULL, "「くすくすくす、",
+		   NULL, "\"쿡쿡쿡, ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1700 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "あっはははははははははは…。」",
+		   NULL, "아하하하하하하하하.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　梨花たちが帰った後、鷹野は奇妙な声で笑い出した。",
+		   NULL, "리카와 아버지가 돌아간 후, 타카노는 기묘한 소리로 웃기 시작했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1186", 128, TRUE);
+	OutputLine(NULL, "「どうしましたか？",
+		   NULL, "\"무슨 일입니까? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1187", 128, TRUE);
+	OutputLine(NULL, "　何か愉快なことでも…？」",
+		   NULL, "뭔가 유쾌한 일이라도...?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1127", 128, TRUE);
+	OutputLine(NULL, "「くすくす…。",
+		   NULL, "\"쿡쿡... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1128", 128, TRUE);
+	OutputLine(NULL, "いえいえ。",
+		   NULL, "아뇨, 아뇨. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1129", 128, TRUE);
+	OutputLine(NULL, "………患者とご家族に律儀に事前承諾を取られていたのが、何だか可笑しくって。」",
+		   NULL, "...환자와 가족에게 고지식하게 사전 승낙을 받다니, 어쩐지 웃겨서.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1188", 128, TRUE);
+	OutputLine(NULL, "「……梨花ちゃんには、本来無用の苦痛を強いています。",
+		   NULL, "\"...리카쨩에게, 본래 받지 않아도 될 고통을 강요해왔습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1189", 128, TRUE);
+	OutputLine(NULL, "それくらいは最低限の礼儀だと思いまして。",
+		   NULL, "그 정도는 최소한의 예의라고 생각해서요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1190", 128, TRUE);
+	OutputLine(NULL, "…………去年の男も、正常な状態にあれば、事前承諾を取りたかったところです。」",
+		   NULL, "작년의 남자에게도, 정상적인 상태였다면 사전 승낙을 받고 싶었습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1130", 128, TRUE);
+	OutputLine(NULL, "「入江所長は、ここの研究を始められてからずっと、罪の意識に苛まれているのではありません？」",
+		   NULL, "\"이리에 소장은, 여기서 연구를 시작한 뒤부터 쭉 죄의식에 시달리고 있지 않나요?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1191", 128, TRUE);
+	OutputLine(NULL, "「…………それはどういう意味ですか？」",
+		   NULL, "\"......그건 무슨 뜻입니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野がからかうような口調なのはいつものことだが、…少しだけその度が過ぎたように感じ、入江は不快感を示しながら足を止める。",
+		   NULL, "놀리는 듯한 말투는 평소 타카노 그대로였지만, 아무래도 조금 도가 지나치다는 생각이 든 이리에는 불쾌감을 드러내며 발을 멈췄다. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta2_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "org/takano7800", 128, TRUE);
+	OutputLine(NULL, "「雛見沢症候群の研究は、生きた検体を捌くことでしか進められない。",
+		   NULL, "\"히나미자와 증후군 연구는 살아있는 검체를 파헤치는 방법 외엔 다른 선택지가 없어. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "org/takano7801", 128, TRUE);
+	OutputLine(NULL, "それがわかってなお、あなたはこの研究を進めることに罪の意識を感じている。」",
+		   NULL, "그 사실을 알기에, 당신은 이 연구를 진행시키는 것에 죄의식을 느끼지.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1192", 128, TRUE);
+	OutputLine(NULL, "「……罪の意識は必要です。",
+		   NULL, "\"......죄의식은 필요합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1193", 128, TRUE);
+	OutputLine(NULL, "殺人であれ解剖であれ、相手に死を強いる点で変わりません。",
+		   NULL, "살인이든 해부든, 상대를 죽음에 내몬다는 점은 바뀌지 않습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1194", 128, TRUE);
+	OutputLine(NULL, "私たちはその罪を受け止めてなお、その死を無駄にしないために最大限の努力と研究を重ねなくてはなりません。」",
+		   NULL, "우리는 그 죄를 받아들이고, 그 죽음을 허사로 만들지 않기 위해 최대한의 노력과 연구를 거듭해야만 합니다.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeOutBGM( 1, 300, FALSE );
+	ModDrawCharacter(0, 9, "sprite/ta2_akuwarai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+	PlayBGM( 0, "Z02_Kyousou", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "org/takano7802", 128, TRUE);
+	OutputLine(NULL, "「ご高説ですわね。",
+		   NULL, "\"훌륭한 말씀이네요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "org/takano7803", 128, TRUE);
+	OutputLine(NULL, "くすくす。",
+		   NULL, "쿡쿡. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "org/takano7804", 128, TRUE);
+	OutputLine(NULL, "……では入江所長？",
+		   NULL, "......그럼 이리에 소장? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "org/takano7805", 128, TRUE);
+	OutputLine(NULL, "　あなたはこれまで、人の脳を切り取ることに何度の事前承諾を取られたというんですの？」",
+		   NULL, "당신은 지금까지 사람의 뇌를 열어볼 때, 몇 번이나 사전 승낙을 받았나요?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1195", 128, TRUE);
+	OutputLine(NULL, "「………………………ぅ。」",
+		   NULL, "\"............읏.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…それは鷹野には知られていないと思った過去。",
+		   NULL, "...타카노는 모를 거라 여겼던 과거. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "org/takano7806", 128, TRUE);
+	OutputLine(NULL, "「あなたの、人の罪は脳の疾患によるものという独り善がりで、一体何人の患者が事前承諾なく脳を切除されたんですの？",
+		   NULL, "\"당신의, 사람의 죄는 뇌의 질환에서 유발된다는 독선에, 과연 몇 명의 환자가 사전 승낙 없이 뇌가 절제당했을까요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "org/takano7807", 128, TRUE);
+	OutputLine(NULL, "　くすくす。」",
+		   NULL, "쿡쿡쿡.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1196", 128, TRUE);
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_Continue); }
+	OutputLine(NULL, "「……………それは、」",
+		   NULL, "\"......그건,\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta2_warai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1139", 128, TRUE);
+	OutputLine(NULL, "「常識は時代で変わる。",
+		   NULL, "\"상식은 시대에 따라 변해. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1140", 128, TRUE);
+	OutputLine(NULL, "当時は医者が治療をいちいち説明することなどなかったし、事前承諾なんて大したものではなかった。",
+		   NULL, "당시에는 의사가 치료를 일일이 설명하는 일도 없었고, 사전 승낙은 그리 중요하지도 않았지. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1141", 128, TRUE);
+	OutputLine(NULL, "だから、当時のことは気にしなくていいんじゃないですかしら？",
+		   NULL, "그러니 당시의 일은 신경 쓰지 않아도 되지 않을까? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1142", 128, TRUE);
+	OutputLine(NULL, "　今は倫理上問題があっても、当時は問題なかった。",
+		   NULL, "현재는 윤리상 문제지만, 당시엔 문제가 아니었다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1143", 128, TRUE);
+	OutputLine(NULL, "ならばいいじゃありませんの。",
+		   NULL, "그러면 그만이잖아요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1144", 128, TRUE);
+	OutputLine(NULL, "くすくすくす。",
+		   NULL, "쿡쿡쿡. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1145", 128, TRUE);
+	OutputLine(NULL, "……でも、それに罪を感じているから、梨花ちゃんや、あの男にさえも、事前承諾が取りたかった？」",
+		   NULL, "...하지만 그 과거에 죄의식을 느껴서, 리카쨩이나, 그 남자에게조차 사전 승낙을 얻고 싶었던 거죠?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1197", 128, TRUE);
+	OutputLine(NULL, "「それは誤解です…。",
+		   NULL, "\"그건 오해입니다... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1198", 128, TRUE);
+	OutputLine(NULL, "そもそも治療と解剖では患者、」",
+		   NULL, "원래 치료와 해부에는 환자....\" ", Line_Normal);
+	ClearMessage();
+
+	ModPlayBGM( 1, "kaze", 120, 0, 0 );
+	ModPlayBGM( 1, "semi_r", 120, 0, 1 );
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta2_akuwarai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1146", 128, TRUE);
+	OutputLine(NULL, "「ねぇ坊や。",
+		   NULL, "\"있잖아요, 도련님. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1147", 128, TRUE);
+	OutputLine(NULL, "あなたが欲しいのは事前承諾という名の免罪符。",
+		   NULL, "당신이 원하는 건 사전 승낙이라는 이름의 면죄부. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1148", 128, TRUE);
+	OutputLine(NULL, "そうでしょう？",
+		   NULL, "그렇죠? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1149", 128, TRUE);
+	OutputLine(NULL, "　あなたが欲しいのは、過去の罪を贖いたいという心を満たすだけの欺瞞、そのためだけの免罪符。",
+		   NULL, "당신이 원하는 건, 과거의 죄를 씻어내고 싶다는 마음을 충족시키기 위한 기만, 그걸 위한 면죄부. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1150", 128, TRUE);
+	OutputLine(NULL, "後悔しているならば二度と脳に関わらなければいい。",
+		   NULL, "후회한다면 두 번 다시 뇌에 얽히지 않으면 되는데. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1151", 128, TRUE);
+	OutputLine(NULL, "なのに、だらだらと後悔しながらあなたはいつまでも未練がましくこの世界で脳に関わっている。",
+		   NULL, "하지만 계속 후회하면서, 당신은 언제까지고 미련을 버리지 못하고 뇌에 얽매이죠. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1152", 128, TRUE);
+	OutputLine(NULL, "その罪の意識が本物なら、あなたはあの時、所長就任の話を断ればよかったはず。",
+		   NULL, "그 죄의식이 진짜라면, 당신이 그때 소장 취임 이야기를 거절했으면 그만이었을 텐데. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1153", 128, TRUE);
+	OutputLine(NULL, "そうでしょう、坊や？」",
+		   NULL, "그렇죠, 도련님?\" ", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1199", 128, TRUE);
+	OutputLine(NULL, "「………とても不快です。",
+		   NULL, "\".........정말 불쾌하군요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1200", 128, TRUE);
+	OutputLine(NULL, "私は失礼させていただきます。」",
+		   NULL, "저는 실례하겠습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1154", 128, TRUE);
+	OutputLine(NULL, "「聞きなさい。",
+		   NULL, "<size=-4>\"잘 들어요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1155", 128, TRUE);
+	OutputLine(NULL, "医学は常にその時代の倫理や価値観との戦いから勝ち取られるの。",
+		   NULL, "<size=-4>의학은 항상 당대의 윤리나 가치관과의 싸움에서 이겨 쟁취하는 거예요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1156", 128, TRUE);
+	OutputLine(NULL, "かつて高野先生が雛見沢症候群の存在を予見した時、その時代の権威たちは自分たちの無知を棚に上げその先見性を嘲笑った。",
+		   NULL, "<size=-4>일찍이 타카노 선생님이 히나미자와 증후군의 존재를 예견했을 때, 당대의 권위자들은 자신들의 무지를 증명하듯 선생님의 넓은 안목을 조소했어요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1157", 128, TRUE);
+	OutputLine(NULL, "でも病に倒れる直前まで研究を捨てなかったわ。",
+		   NULL, "<size=-4>하지만 병으로 쓰러지기 직전까지 연구를 버리지 않았어요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1158", 128, TRUE);
+	OutputLine(NULL, "必ず自分がいつか評価される日が来ると信じて。",
+		   NULL, "<size=-4>반드시 언젠가 자신이 인정받을 날이 온다고 믿으며. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1159", 128, TRUE);
+	OutputLine(NULL, "そしてその日が自分の死後であったとしても、必ず来ると信じて！",
+		   NULL, "<size=-4>만약 그 날이 자신의 사후라고 하더라도, 반드시 올 거라고 믿으면서! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1160", 128, TRUE);
+	OutputLine(NULL, "　それは強い信念と揺らぎのない鉄の意思があるから成し遂げられること。",
+		   NULL, "<size=-4>강한 신념과 흔들림 없는 철의 의지가 있기에 완수할 수 있었습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1161", 128, TRUE);
+	OutputLine(NULL, "そうでなければ時代の無理解に高野先生は屈していたはず。",
+		   NULL, "<size=-4>그렇지 않았다면 타카노 선생님은 자신을 알아주지 않는 시대에 굴복했을 터. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1162", 128, TRUE);
+	OutputLine(NULL, "　研究はね、意思の力で成し遂げるのよ。",
+		   NULL, "연구는 말이죠, 의지로 이뤄 내는 겁니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1163", 128, TRUE);
+	OutputLine(NULL, "絶対的に強固な意志だけが、結果を紡ぎだす！",
+		   NULL, "절대적으로 강고한 의지만이, 결과를 자아내죠! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1164", 128, TRUE);
+	OutputLine(NULL, "　でもあなたにはそれがない。",
+		   NULL, "하지만 당신에게는 그게 없어. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1165", 128, TRUE);
+	OutputLine(NULL, "あなたは自分の実績を、誇るべきか恥じるべきかすら自分で決めかねている臆病者よ。",
+		   NULL, "당신은 자신의 실적을 자랑해야 할지, 부끄러워해야 할지조차 스스로 결정하지 못하는 겁쟁이에 불과해요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1166", 128, TRUE);
+	OutputLine(NULL, "そんな中途半端な覚悟で、よくこのような研究の所長を引き受けられたものね…！",
+		   NULL, "그렇게 어중간한 각오로, 잘도 이런 연구의 소장을 맡았군요...! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1167", 128, TRUE);
+	OutputLine(NULL, "　血塗られた両手を、さらに血に浸すことでしか明かせぬ研究だと、最初からわかっていたはずなのに！！」",
+		   NULL, "피로 물든 양손을 피에 더 깊숙이 담그지 않고선 규명할 수 없는 연구임을, 처음부터 알았으면서도!!\" ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(0, 9, "sprite/ta2_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 0, FALSE );
+	DrawSceneWithMask( "background/sinryou_matiai1", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1201", 128, TRUE);
+	OutputLine(NULL, "「……………………否定はしません。",
+		   NULL, "\"............부정은 하지 않겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1202", 128, TRUE);
+	OutputLine(NULL, "私は、中途半端かもしれない。」",
+		   NULL, "저는 확실히 어중간할지도 모릅니다.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 9, "sprite/ta2_akuwarai_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 9, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1168", 128, TRUE);
+	OutputLine(NULL, "「ならば所長を辞任なさっては？",
+		   NULL, "\"그러면 소장직을 사임하는 건? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1169", 128, TRUE);
+	OutputLine(NULL, "　守秘義務は残るでしょうけど、あなたはこれ以上、罪の意識に苛まれなくて済むでしょう。",
+		   NULL, "비밀을 지킬 의무는 남겠지만, 당신은 더 이상 죄의식에 시달리지 않고 끝나. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1170", 128, TRUE);
+	OutputLine(NULL, "私にとってあなたはパートナーである以前に、クライアントが要求した人事上の駒でしかない。",
+		   NULL, "나에게 당신은 파트너이기 이전에, 클라이언트가 형식상 요구한 장기말에 불과해. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1171", 128, TRUE);
+	OutputLine(NULL, "こうして研究機関が成立した今、あなたの存在はもう重要ではないの。",
+		   NULL, "이렇게 연구기관이 성립된 지금, 당신은 더이상 중요하지 않아. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1172", 128, TRUE);
+	OutputLine(NULL, "…しかもその上、研究に対する覚悟が足りず、研究のパートナーとしても役立たずなら、あなたは無能の用無しよ。",
+		   NULL, "...게다가 무엇보다, 연구를 대할 각오가 부족해 파트너로써 도움이 되지 않는 사람이라면, 당신은 무능한 존재일 따름이야. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1173", 128, TRUE);
+	OutputLine(NULL, "私は一人でも研究をやめない。",
+		   NULL, "나는 혼자라도 연구를 그만두지 않아. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1174", 128, TRUE);
+	OutputLine(NULL, "どんな罪も後悔も恐れない。",
+		   NULL, "어떤 죄도 후회도 두려워하지 않아. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1175", 128, TRUE);
+	OutputLine(NULL, "強固な意志だけが未来を紡ぐ。",
+		   NULL, "강고한 의지만이 미래를 자아내. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1176", 128, TRUE);
+	OutputLine(NULL, "…かつて高野先生が高潔な精神で成し遂げたように、私もたったひとりでも成し遂げてみせる…！」",
+		   NULL, "...일찍이 타카노 선생님이 고결한 정신으로 완수한 것처럼, 나 혼자서라도 완수하겠어...!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1203", 128, TRUE);
+	OutputLine(NULL, "「………………立派な決意だと思います。",
+		   NULL, "\".........훌륭한 결의라고 생각합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1204", 128, TRUE);
+	OutputLine(NULL, "…ですが、私にもあなたに及ばないにしても、わずかの決意があってここへ来ています。",
+		   NULL, "하지만 저 역시, 당신까지는 아니더라도 조금이나마 결의를 품고 여기까지 왔습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1205", 128, TRUE);
+	OutputLine(NULL, "…そして、あなたの言う通り、私の手はすでに血に塗れています。",
+		   NULL, "...맞아요, 당신의 말대로 제 손은 이미 피투성이입니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1206", 128, TRUE);
+	OutputLine(NULL, "そして雛見沢に来て、さらに血に浸しました。",
+		   NULL, "그리고 히나미자와에 와서, 더더욱 피에 손을 담궜습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1207", 128, TRUE);
+	OutputLine(NULL, "……だから、その責任を全うするまでは、私は逃げることはできません。",
+		   NULL, "...그러니 저는 그 책임을 완수하기 전까지 도망칠 수 없습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1208", 128, TRUE);
+	OutputLine(NULL, "……相変わらず私は罪を清算できず苛まれ続けるでしょう。",
+		   NULL, "...저는 변함없이 씻지 못한 죄에 계속 시달리겠지요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1209", 128, TRUE);
+	OutputLine(NULL, "でも、逃げない。",
+		   NULL, "하지만, 도망치지 않습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1210", 128, TRUE);
+	OutputLine(NULL, "…必ず雛見沢症候群の研究を決着させます。",
+		   NULL, "반드시 히나미자와 증후군의 연구를 끝낼 겁니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1211", 128, TRUE);
+	OutputLine(NULL, "それだけが、この研究に命を捧げてくださった方、",
+		   NULL, "그것만이 이 연구에 생명을 바쳐 주신 분들과, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1212", 128, TRUE);
+	OutputLine(NULL, "そしてこれから捧げることになるかもしれない方への最後の誠意だと思っています。」",
+		   NULL, "그리고 지금부터 바치게 될지도 모르는 분들에게 전하는, 마지막 성의라고 생각하니까요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いつの間にか入江の表情にはある種の決意が浮かんでいた。",
+		   NULL, "어느새인가 이리에의 표정에는 모종의 결의가 떠올라 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ほんの少し前まで、鷹野に思い出したくない過去を指摘されていた時のうろたえた様子とは違う。",
+		   NULL, "조금 전, 타카노가 떠올리고 싶지 않은 과거를 추궁할 때 당황하던 모습과는 달랐다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しばらくの間、その意思の強さを目で示した後、入江は踵を返す。",
+		   NULL, "이리에는 잠시 강한 의지를 눈으로 내비치며 타카노를 바라보고는, 이내 다시 발걸음을 옮겼다. ", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1213", 128, TRUE);
+	OutputLine(NULL, "「……恐らく、梨花ちゃんの検査は承諾が取れるでしょう。",
+		   NULL, "\"......아마 리카짱의 검사는 승낙받겠죠. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1214", 128, TRUE);
+	OutputLine(NULL, "準備をお願いします。」",
+		   NULL, "준비를 부탁합니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1177", 128, TRUE);
+	OutputLine(NULL, "「えぇ、心得ましたわ。",
+		   NULL, "\"예, 알았습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 9, "ps3/s20/09/vtk1_takano1178", 128, TRUE);
+	OutputLine(NULL, "………所長。」",
+		   NULL, ".........소장님.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　翌週、その承諾は得られた。",
+		   NULL, "다음 주, 승낙한다는 말이 전해졌다. ", Line_Normal);
+	ClearMessage();
+
+	CallScript( "&eye" );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	DrawScene( "black", 1000 );
+
+}

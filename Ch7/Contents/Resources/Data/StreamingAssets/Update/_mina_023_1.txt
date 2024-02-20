@@ -1,0 +1,717 @@
+void main()
+{
+
+	ModPlayBGM( 1, "semi", 56, 0, 0 );
+	ModPlayBGM( 2, "suzume", 56, 0, 0 );
+	ModPlayBGM( 1, "semi", 28, 0, 1 );
+	DrawSceneWithMask( "white", "maskm1", 1, 0, 1300 );
+	DrawSceneWithMask( "background/kuruma2", "maskup", 1, 0, 1300 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　綿流しの翌日。",
+		   NULL, "와타나가시 다음날. ", Line_WaitForInput);
+	OutputLine(NULL, "大石が学校にやって来た。",
+		   NULL, "오오이시가 학교에 와있었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石がこの日に学校にやって来ることは、実は結構多い。",
+		   NULL, "이 날에 오오이시가 학교에 오는 건 꽤 자주 있는 일이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして皮肉にも、その世界のキーパーソンを呼ぶのだ。",
+		   NULL, "그리고 얄궂게도 그 세계의 중심 인물을 부르곤 했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　圭一が発症する世界では圭一を。",
+		   NULL, "케이이치가 발병하는 세계에서는 케이이치를. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レナが発症する世界ではレナを。",
+		   NULL, "레나가 발병하는 세계에서는 레나를. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、この世界では大石は私を呼んだ。",
+		   NULL, "그리고 이 세계에서 오오이시는 나를 불렀다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskleft", 1, 0, 300 );
+	DrawSceneWithMask( "background/ji2", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500070", 256, TRUE);
+	OutputLine(NULL, "「………富竹が、",
+		   NULL, "\"......토미타케가, ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1200 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…死にましたか…。」",
+		   NULL, "죽었나요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModSetLayerFilter(0, 256, "none");
+	ModDrawCharacterWithFiltering(0, 11, "sprite/oisi1_1_", "0", "maskleft", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 5, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700077", 256, TRUE);
+	OutputLine(NULL, "「えぇ。",
+		   NULL, "\"네. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700078", 256, TRUE);
+	OutputLine(NULL, "……ちょっと尋常じゃない死に方でしてね。",
+		   NULL, "...죽은 과정이 조금 심상치 않아서 말이죠. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700079", 256, TRUE);
+	OutputLine(NULL, "薬物か何かで錯乱状態だったんじゃないかと思います。",
+		   NULL, "약물인가 무언가로 인한 착란 상태였던 것은 아닐까 생각합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700080", 256, TRUE);
+	OutputLine(NULL, "自分で自分の喉を掻き破るというショッキングな亡くなり方でした。」",
+		   NULL, "충격적이게도 스스로 자신의 목을 찢어 사망했습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500071", 256, TRUE);
+	OutputLine(NULL, "「……やはり抗えないのか。」",
+		   NULL, "\"...역시 저항 할 수 없는 것인가.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どうにもならない。",
+		   NULL, "어쩔 도리가 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　わかってはいたことだった。",
+		   NULL, "알고는 있었다. ", Line_WaitForInput);
+	OutputLine(NULL, "…恐らく鷹野もだろう。",
+		   NULL, "...아마 타카노도 그렇겠지. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500072", 256, TRUE);
+	OutputLine(NULL, "「……鷹野は？」",
+		   NULL, "\"...타카노는?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_4_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "org/ooishi6112", 256, TRUE);
+	OutputLine(NULL, "「彼女についても残念なご連絡があります。",
+		   NULL, "\"그녀에 대해서도 유감스러운 소식이 있습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "org/ooishi6113", 256, TRUE);
+	OutputLine(NULL, "岐阜の山中で焼死体で発見されました。",
+		   NULL, "기후의 산중에서 소사체로 발견되었습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "org/ooishi6114", 256, TRUE);
+	OutputLine(NULL, "死体の状況から、多分、絞殺された後に焼かれたんじゃないかと思っているのですが。",
+		   NULL, "시체의 상황으로 보아, 아마 교살된 후에 불에 탄 건 아닐까 생각합니다만. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "org/ooishi6115", 256, TRUE);
+	OutputLine(NULL, "どちらにせよ気の毒な話です。」",
+		   NULL, "어찌되었든 딱한 이야기입니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500073", 256, TRUE);
+	OutputLine(NULL, "「……大石の考えはわかってますです。",
+		   NULL, "\"오오이시의 생각은 알고 있는 거예요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500074", 256, TRUE);
+	OutputLine(NULL, "ボクが何か知っていると思っているんでしょう。」",
+		   NULL, "내가 뭔가 안다고 생각하는 거죠.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700085", 256, TRUE);
+	OutputLine(NULL, "「いやいやまさかまさか。",
+		   NULL, "\"아니아니, 설마. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700086", 256, TRUE);
+	OutputLine(NULL, "疑うとしたらこの一点だけです。",
+		   NULL, "의심한다면 한 가지뿐입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700087", 256, TRUE);
+	OutputLine(NULL, "あの人ごみの中で、小耳に挟めるようなところでこんな物騒な話をする人がいるわけがない。」",
+		   NULL, "누군가가 언뜻 들을 지 모르는 그 인파 속에서, 그런 뒤숭숭한 이야기를 할 사람이 있을 리 없다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500075", 256, TRUE);
+	OutputLine(NULL, "「……ボクが、何かの陰謀の片棒を担いでると思っていますですか。」",
+		   NULL, "\"...내가 어떠한 음모의 한 축을 담당한다고 생각하나요?\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_4_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700088", 256, TRUE);
+	OutputLine(NULL, "「と、思い込みたいところですが、それも引っ込めました。",
+		   NULL, "\"그렇게 생각하고 싶습니다만, 그 생각도 무르겠습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700089", 256, TRUE);
+	OutputLine(NULL, "……本当にその気なら、あなたは私にあんな入れ知恵をすることはなかったんですからね。",
+		   NULL, "...정말로 그렇다면, 당신이 나에게 이러한 훈수를 할 필요는 없을테니까요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700090", 256, TRUE);
+	OutputLine(NULL, "少なくとも、今回の事件を起こそうと考えた何者かとは相対する位置にいると思ってます。」",
+		   NULL, "적어도 이번 사건을 일으킨 누군가와는 맞서는 위치라고 생각합니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500076", 256, TRUE);
+	OutputLine(NULL, "「……それが本当ならとても嬉しいのです。」",
+		   NULL, "\"...그게 진심이라면 매우 기쁜 거예요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石は賽銭箱に１０円を放り込むと、ガランガランと鳴らしてから言った。",
+		   NULL, "오오이시는 새전함에 10엔을 던져넣고, 종을 흔들어 소리를 내고는 말하였다. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700091", 256, TRUE);
+	OutputLine(NULL, "「どうか今年こそ、雛見沢村連続怪死事件を終わらせられますように！」",
+		   NULL, "\"부디 올해야말로 히나미자와 마을 연속괴사 사건을 끝낼 수 있기를!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500077", 256, TRUE);
+	OutputLine(NULL, "「……そのためにボクに協力しろと？」",
+		   NULL, "\"...그러기 위해 나보고 협력하라고?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700092", 256, TRUE);
+	OutputLine(NULL, "「なっはっはっは。",
+		   NULL, "\"와하하핫. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700093", 256, TRUE);
+	OutputLine(NULL, "今のはオヤシロさまにお願いしたんですよ？」",
+		   NULL, "방금 건 오야시로님에게 부탁한 겁니다?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私がオヤシロさまの生まれ変わりと呼ばれているのは大石も知っている。",
+		   NULL, "내가 오야시로님의 환생이라 불리는 것은 오오이시도 안다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…大石ギャグということにしておこう。",
+		   NULL, "...오오이시 나름의 개그라고 해두자. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500078", 256, TRUE);
+	OutputLine(NULL, "「……ボクも、こんな祟りはもう金輪際にしてほしいと思っていますです。」",
+		   NULL, "\"...나도 이런 신벌은 여기서 마무리 지었으면 하는 거예요 .\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_4_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700094", 256, TRUE);
+	OutputLine(NULL, "「おや、なら古手さんと私の求めるところは一致するようですねぇ。」",
+		   NULL, "\"오호, 그렇다면 저와 후루데 양은 원하는 바가 일치하는군요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500079", 256, TRUE);
+	OutputLine(NULL, "「……ボクは昨日、富竹の死体が見付かりそうなところを予言しましたです。",
+		   NULL, "\"......나는 토미타케의 시체가 발견될 거 같다고 어제 예언한 거예요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500080", 256, TRUE);
+	OutputLine(NULL, "そこにパトカーはいなかったのですか？」",
+		   NULL, "거기에 순찰차는 없었던 건가요?\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700095", 256, TRUE);
+	OutputLine(NULL, "「いいえ、ちゃんと巫女さまの予言に従って配置しました。",
+		   NULL, "\"아뇨, 제대로 무녀님의 예언에 따라 배치했습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700096", 256, TRUE);
+	OutputLine(NULL, "ほら、舗装道路と砂利道の境目になってる辺りがあるじゃないですか。",
+		   NULL, "그, 포장 도로와 자갈길의 경계선 부근 있지 않습니까. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700097", 256, TRUE);
+	OutputLine(NULL, "通称、村境とか呼ばれてる辺りです。",
+		   NULL, "흔히 마을 경계라 불리는 부근입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700098", 256, TRUE);
+	OutputLine(NULL, "あそこら辺はとても暗いですからね。",
+		   NULL, "그 주변은 굉장히 어두우니까요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700099", 256, TRUE);
+	OutputLine(NULL, "何かヤバイことの起こりそうな臭いが一番ぷんぷんする辺りです。」",
+		   NULL, "무언가 위험한 일이 일어날 것 같은 냄새가 모락모락 나잖습니까.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500081", 256, TRUE);
+	OutputLine(NULL, "「…………では、富竹の死体はどこで？」",
+		   NULL, "\"......그렇다면, 토미타케의 시체는 어디서?\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_4_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700100", 256, TRUE);
+	OutputLine(NULL, "「配置場所よりももっとずっと興宮寄りの水田地帯の路肩です。」",
+		   NULL, "\"배치 장소보다 더 먼, 오키노미야 쪽 논밭지대의 갓길입니다.\" ", Line_Normal);
+	ClearMessage();
+	ModFadeOutBGM( 1, 300, FALSE, 1 );
+
+	ModPlayBGM( 0, "msys17", 56, 0, 0 );
+	ModPlayBGM( 0, "z02_kyousou", 56, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…毎回見付かる富竹の死体の場所と違う。",
+		   NULL, "매번 발견되던 토미타케의 시체 장소와 다르다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹があの場所で錯乱するのが運命なのだとしたら、例えパトカーがいようといなかろうと同じ場所で錯乱する。",
+		   NULL, "토미타케가 그 장소에서 착란 상태에 빠지는 게 운명이라면, 순찰차가 있든 없든 똑같은 장소에서 착란이 일어난다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それが、その場所に予めパトカーが配置されているだけで、",
+		   NULL, "그런데 그 곳에 미리 순찰차가 배치 되었다고, ", Line_WaitForInput);
+	OutputLine(NULL, "不変と思われた富竹の死に場所が変わるということは、",
+		   NULL, "불변이라 생각했던 토미타케의 죽는 장소가 바뀐다는 말은, ", Line_ContinueAfterTyping);
+	Wait( 1000 );
+	OutputLine(NULL, "……パトカーを嫌う意思が運命に介在した証拠だ。",
+		   NULL, "...순찰차를 꺼려하는 의사가 운명에 개입했다는 증거다. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_5_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700101", 256, TRUE);
+	OutputLine(NULL, "「でですねぇ。",
+		   NULL, "\"그래서 말입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700102", 256, TRUE);
+	OutputLine(NULL, "ここからがちょいと面白い話になります。",
+		   NULL, "여기서부터는 조금 재미있는 이야기가 됩니다만. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700103", 256, TRUE);
+	OutputLine(NULL, "……パトにはですね、私、通る車もチェックさせたんです。",
+		   NULL, "....순찰차에게 제가 지나가는 차도 체크하게 했단 말이죠. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700104", 256, TRUE);
+	OutputLine(NULL, "そしたら、鷹野の車が祭りが終わった後、興宮方向へ通過したんですよ。」",
+		   NULL, "그랬더니 축제가 끝난 후에, 타카노의 차가 오키노미야 방향으로 지나갔습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野の住まいは興宮にある。",
+		   NULL, "타카노가 사는 곳은 오키노미야다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　祭りが終わった後に帰宅するのは珍しいことではない。",
+		   NULL, "축제가 끝나고 귀가하는 건 드문 일이 아니다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700105", 256, TRUE);
+	OutputLine(NULL, "「ただ、乗ってたのは１人だったんです。",
+		   NULL, "\"차에는 그녀 혼자 타고 있었어요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700106", 256, TRUE);
+	OutputLine(NULL, "富竹は乗っていなかった。」",
+		   NULL, "토미타케는 함께 있지 않았습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500082", 256, TRUE);
+	OutputLine(NULL, "「……富竹は雛見沢にはいつも自転車で来ますから、」",
+		   NULL, "\"......토미타케는 언제나 자전거를 타고 히나미자와에 오니까요.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700107", 256, TRUE);
+	OutputLine(NULL, "「なら自転車をトランクに積んで車に乗せてもらうのが普通じゃありませんか。",
+		   NULL, "\"그렇다면 자전거를 트렁크에 싣고 차에 태워달라 하는 게 보통 아닙니까. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700108", 256, TRUE);
+	OutputLine(NULL, "ですが、富竹は一緒じゃなかった。",
+		   NULL, "하지만 토미타케는 같이 있지 않았다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700109", 256, TRUE);
+	OutputLine(NULL, "…にもかかわらず、富竹の死体は雛見沢からパトを越えて、興宮の方の水田地帯で見付かる。」",
+		   NULL, "...그런데 토미타케의 시체는 히나미자와의 순찰차를 지나, 오키노미야 쪽의 논밭에서 발견되었다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500083", 256, TRUE);
+	OutputLine(NULL, "「………………つまり…？」",
+		   NULL, "\"......그렇다면...?\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_5_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700110", 256, TRUE);
+	OutputLine(NULL, "「あの真っ暗な中、森の中を突き進んでパトを迂回したなんてできる芸当ではありません。",
+		   NULL, "\"그런 어두컴컴한 숲 속을 돌진하여 순찰차를 우회했다니, 그건 가능한 곡예가 아닙니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700111", 256, TRUE);
+	OutputLine(NULL, "だとしたら、パトに気付かれずに街道を抜けるしか考えられない。",
+		   NULL, "그렇다면 순찰차에게 들키지 않고 가도를 빠져나갔다고 밖에 생각할 수 없습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700112", 256, TRUE);
+	OutputLine(NULL, "…………古手さん。",
+		   NULL, "......후루데 양. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700113", 256, TRUE);
+	OutputLine(NULL, "鷹野とホトケの関係について教えていただけませんか。」",
+		   NULL, "타카노와 토미타케의 관계에 대해서 알려주시지 않겠습니까?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500084", 256, TRUE);
+	OutputLine(NULL, "「……………恋人同士。",
+		   NULL, "\"...연인 사이. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500085", 256, TRUE);
+	OutputLine(NULL, "……それしか知らないです。」",
+		   NULL, "그 정도밖에 모르는 거예요.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(0, 11, "sprite/oisi1_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700114", 256, TRUE);
+	OutputLine(NULL, "「鷹野がね、恋人との最後の夜の逢瀬を１人で帰るというのが腑に落ちないんです。",
+		   NULL, "\"타카노가 연인과의 마지막 밤의 밀회 후에 혼자서 돌아간다는 것이 납득이 되지 않습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700115", 256, TRUE);
+	OutputLine(NULL, "富竹はその時、トランクの中に詰められていて、あの真っ暗な森の中に捨てようとした。",
+		   NULL, "토미타케를 트렁크 안에 넣어, 어두컴컴한 숲 속에 버리려 했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700116", 256, TRUE);
+	OutputLine(NULL, "だが、お告げのパトカーがたまたまそこにいちゃったもんで、仕方なくそこを通り抜け、",
+		   NULL, "그러나 예언을 들은 순찰차가 때마침 대기하고 있어서, 어쩔 수 없이 그 곳을 지나가 ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700117", 256, TRUE);
+	OutputLine(NULL, "もっと先で富竹を捨てた。」",
+		   NULL, "더 먼 곳에 토미타케를 버렸다.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富竹と鷹野は恋人同士である以前に、東京から派遣されている人間だ。",
+		   NULL, "토미타케와 타카노는 연인 사이이기 이전에 도쿄에서 파견된 사람들이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼らの本当の正体が何者であるかなんて、私だって知らない。",
+		   NULL, "그들의 진짜 정체가 무엇인지는, 나도 모른다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だから、鷹野に富竹を殺す理由が絶対にないなんて私にだって断言できなかった。",
+		   NULL, "그래서 타카노에게 토미타케를 죽일 이유가 절대로 없다고도 나도 단언할 수 없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そしてそれは、……今までに一度も考えたことのないことだった。",
+		   NULL, "그리고 그런 건... 지금까지 한번도 생각해보지 못했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鷹野が富竹を殺す……？",
+		   NULL, "타카노가 토미타케를 죽인다...? ", Line_WaitForInput);
+	OutputLine(NULL, "　…どうして？？",
+		   NULL, "어째서?? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　理由が何も思いつかない。",
+		   NULL, "이유를 전혀 모르겠다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　心当たりもないし、",
+		   NULL, "짐작가는 바도 없으며, ", Line_WaitForInput);
+	OutputLine(NULL, "殺さなきゃならないほど鷹野が追い詰められるなんて考えられない。",
+		   NULL, "죽이지 않으면 안 될 정도로 타카노가 궁지에 몰렸다고도 생각하지 않는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…むしろ逆で、恋に狂った富竹が冷たくされたのを逆上して首を絞める方がありえそうなくらいだ。",
+		   NULL, "오히려 역으로 사랑에 미쳐버린 토미타케가 차갑게 대해지자, 격분하여 목을 메어 자살했다는 추측이 그럴듯할 정도다. ", Line_Normal);
+	ClearMessage();
+
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacter(2, 11, "sprite/oisi1_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawScene( "background/ji2", 1000 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700118", 256, TRUE);
+	OutputLine(NULL, "「私はあのカップル、どことなく不釣合いだなぁってずっと思ってました。",
+		   NULL, "\"저는 그 커플이 어딘지 모르게 어울리지 않는다고 계속 생각해왔습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700119", 256, TRUE);
+	OutputLine(NULL, "…なっはっは、こう言っちゃあ富竹くんに失礼ですが、…鷹野さんでは荷が勝ちすぎてるんじゃないかなぁってずっと思ってました。",
+		   NULL, "...아하하, 이렇게 말하면 토미타케 군에게 실례입니다만... 타카노 씨는 그에게 너무 과분한 상대가 아닌가라고도 계속 생각했습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700120", 256, TRUE);
+	OutputLine(NULL, "鷹野が、富竹を何かに利用しようとして近付いていたとか、そういう話を村の中で聞いたことはありませんかねぇ…？」",
+		   NULL, "타카노가 토미타케를 어떻게 이용하려고 접근했다던가, 그러한 이야기를 마을에서 들어본 적은 없으십니까?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500086", 256, TRUE);
+	OutputLine(NULL, "「……ないです。",
+		   NULL, "\"없는 거예요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500087", 256, TRUE);
+	OutputLine(NULL, "でも、話は聞いてみようと思いますです。",
+		   NULL, "그래도 이야기는 물어보겠다는 거예요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500088", 256, TRUE);
+	OutputLine(NULL, "何かわかったら大石にも知らせますです。」",
+		   NULL, "무언가 알게된다면 오오이시에게도 알려주는 거예요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700121", 256, TRUE);
+	OutputLine(NULL, "「ありがとうございます。",
+		   NULL, "\"감사합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700122", 256, TRUE);
+	OutputLine(NULL, "村の内部に詳しい方、それも御三家の頭首でオヤシロさまの生まれ変わりの協力がいただければ鬼に金棒ですよ。」",
+		   NULL, "마을 내부를 잘 아는 분, 그것도 삼대 가문의 수령이자 오야시로님 환생이 협력해주신다면 호랑이에 날개를 단 격입니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…その生まれ変わりが、こうして百年以上も挑んで勝てない運命か。",
+		   NULL, "...그 환생이 이렇게 백년 이상을 도전해도 이길 수 없는 운명인가. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500089", 256, TRUE);
+	OutputLine(NULL, "「……でも。",
+		   NULL, "\"...하지만, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500090", 256, TRUE);
+	OutputLine(NULL, "その鷹野も殺されたのですよ？",
+		   NULL, "그 타카노도 살해당한 거예요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500091", 256, TRUE);
+	OutputLine(NULL, "　どういうことなのですか。」",
+		   NULL, "어찌 된 영문인가요?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 11, "sprite/oisi1_4_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700123", 256, TRUE);
+	OutputLine(NULL, "「私ゃ、もしあなたからタレコミ、おっと、お告げを聞いていなかったら。",
+		   NULL, "\"저야 만일 당신에게서 밀고, 아니지, 예언을 듣지 못했다면. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700124", 256, TRUE);
+	OutputLine(NULL, "多分きっと、富竹と鷹野はともに犠牲者で、オヤシロさまの祟りの５年目ってことになったんだろうと思い込んだと思います。",
+		   NULL, "아마 분명 토미타케와 타카노는 똑같은 희생자로, 오야시로님의 5년째 신벌인 거겠지-하고 생각했을 겁니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700125", 256, TRUE);
+	OutputLine(NULL, "ですが、こうなってくるとどうも違う。",
+		   NULL, "그렇지만, 이렇게 되면 아무래도 다르죠. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700126", 256, TRUE);
+	OutputLine(NULL, "どうやらこいつぁ、オヤシロさまの祟りの５年目ってことにしようとした、巧妙な事件のように見えてきました。」",
+		   NULL, "아무래도 이것이, 오야시로님의 5년째 신벌로 만들려는 교묘한 사건으로 보이기 시작했습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500092", 256, TRUE);
+	OutputLine(NULL, "「…………つまり、……鷹野が犯人…？」",
+		   NULL, "\"그러면... 타카노가 범인..?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石が言わんとするのはわかる。",
+		   NULL, "오오이시가 말하려는 것은 알겠다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　二人とも犠牲者なんじゃない。",
+		   NULL, "둘 다 피해자는 아니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　実は犠牲者と犯人で、犯人も犠牲になったふりをして逃れていると言いたいのだ。",
+		   NULL, "실은 피해자 한 명과 범인 한 명으로, 범인도 희생당한 척을 하여 도망쳤다고 말하려는 것이다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　自分で言ってて実感がない。",
+		   NULL, "내 자신이 말하고도 실감이 나지 않는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……鷹野がどうしてそんなことをするのか、まったくわからないからだ。",
+		   NULL, "...타카노가 어째서 그러는지를 아예 모르겠으니까. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石以上に内情を知っているからこそなおさらだった。",
+		   NULL, "내가 오오이시보다 더 내부사정을 잘 알기에 더욱 그렇다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも、それでは鷹野の焼死体はどういうことになるのか。",
+		   NULL, "하지만 그렇다면 타카노의 소사체는 어떻게 된 걸까. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　岐阜県警がしっかり調べたのではないのか？",
+		   NULL, "기후현의 경찰들이 조사를 똑바로 하지 않았나? ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(2, 11, "sprite/oisi1_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700127", 256, TRUE);
+	OutputLine(NULL, "「焼死体の識別には歯型照合がもっとも有効だと言われています。",
+		   NULL, "\"소사체의 식별에는 치아 형태 조합이 가장 쓸모 있다고 합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700128", 256, TRUE);
+	OutputLine(NULL, "ただ、うちの鑑識のジジイが言うにはそれでも１００％じゃないと言う。",
+		   NULL, "다만 우리쪽 감식반의 영감탱이가 말하기론 그렇다 하더라도 100%는 아니라더군요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "org/ooishi6118", 256, TRUE);
+	OutputLine(NULL, "……まぁ、それよりおかしいのが岐阜県警鑑識の死亡時刻なんです。",
+		   NULL, "...뭐, 그것보다 더욱 이상한 것은 기후현 쪽 감식의 사망 시각입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "org/ooishi6119", 256, TRUE);
+	OutputLine(NULL, "当初、死亡時刻が合わなかったらしいんです。」",
+		   NULL, "애초에 사망 시각이 맞지 않다고 합니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500093", 256, TRUE);
+	OutputLine(NULL, "「……死亡時刻が合わない？」",
+		   NULL, "\"사망 시각이 맞지 않아?\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(2, 11, "sprite/oisi1_4_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700131", 256, TRUE);
+	OutputLine(NULL, "「えぇ。",
+		   NULL, "\"예에. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700132", 256, TRUE);
+	OutputLine(NULL, "祭りの前夜にはもう殺されてたっていう鑑識が出ちゃったらしいんです。",
+		   NULL, "축제 전날 밤에 이미 살해당했었다는 감식이 나온 것 같습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700133", 256, TRUE);
+	OutputLine(NULL, "内容物とかそういうのから調べるらしいですね。",
+		   NULL, "내부 장기나 그런 것부터 조사한다는 데요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "org/ooishi6123", 256, TRUE);
+	OutputLine(NULL, "ですが、この時点で岐阜さんには、鷹野の話をしちゃってたんです。",
+		   NULL, "하지만 이 시점에서 기후현의 경찰들에게 타카노의 이야기를 해버렸습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "org/ooishi6124", 256, TRUE);
+	OutputLine(NULL, "だから岐阜さん、綿流しの日に彼氏とデートしてたはずの死体が死後２４時間では話が合わないって言って、その鑑定結果を握り潰しちゃったらしい。",
+		   NULL, "그러자 기후 현경은, 와타나가시 날에 남친과 데이트를 했을 터인 시체가 사후 24시간이라니 말이 안 된다고 생각해 그 검시 결과를 묵살한 것 같습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700136", 256, TRUE);
+	OutputLine(NULL, "……死亡時刻の鑑定なんかより、死体の歯型鑑定の方がよっぽど精度が高いですからね。",
+		   NULL, "...사망 시간의 감정같은 것 보다, 시체의 치아 형태 감정이 정밀도가 더 높으니깐요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700137", 256, TRUE);
+	OutputLine(NULL, "まぁ、現場にはたまにある話です。",
+		   NULL, "뭐, 현장에선 가끔 있는 이야기지요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700138", 256, TRUE);
+	OutputLine(NULL, "ですが、鷹野が犯人かもしれないって目で見てみると、こいつぁ、鷹野の死体じゃない可能性が出てきます。」",
+		   NULL, "하지만 타카노가 범인일지도 모른다는 관점에서 보면 이 녀석이 타카노의 시체가 아닐 가능성도 나옵니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500094", 256, TRUE);
+	OutputLine(NULL, "「……死体を誤魔化すことなんて可能なのですか？」",
+		   NULL, "\"시체를 속인다는 게 가능한 거예요?\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(2, 11, "sprite/oisi1_1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700139", 256, TRUE);
+	OutputLine(NULL, "「焼死体の鑑定は基本的に歯型以外は絶望的です。",
+		   NULL, "\"일단 소사체 감정에서 치아 형태를 보는 것 외에는 정밀도가 절망적입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700140", 256, TRUE);
+	OutputLine(NULL, "例えば、これは推理小説的な荒技ですが、興宮のデンタルクリニックに残されていた『鷹野三四』の歯型のカルテ、",
+		   NULL, "이건 추리 소설의 기법입니다만, 예를 들어 오키노미야의 치과에 남겨져 있던 \"타카노 미요\"의 치아 형태 진찰 기록부, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700141", 256, TRUE);
+	OutputLine(NULL, "これが、巧妙な手口で捏造されていたら、誤認もありえる。",
+		   NULL, "이 쪽이 교묘한 수법으로 조작되었다면 오인이 가능할지도 모릅니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 11, "sprite/oisi1_5_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "org/ooishi6131", 256, TRUE);
+	OutputLine(NULL, "……まぁ、そんなのは抜きにして、単純に岐阜さんが鷹野に間違いないと決め付けてしまった可能性の方が高いですが。",
+		   NULL, "...뭐, 그런 걸 빼고도 단순히 기후현 경찰들이 타카노가 틀림없다고 단정했을 가능성이 더 높습니다만. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700143", 256, TRUE);
+	OutputLine(NULL, "警察組織内では往々にして、初動時の鑑定ミスが後々まで尾を引くことが少なくない。",
+		   NULL, "경찰 조직 내에서는, 초기의 감정 미스가 두고두고 문제를 만드는 일이 적지 않습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700144", 256, TRUE);
+	OutputLine(NULL, "伝説的な冤罪事件のほとんどはこれに起因します。",
+		   NULL, "억울한 사건의 대부분은 그런 일에서 기인합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s12/11/280700145", 256, TRUE);
+	OutputLine(NULL, "………私ゃどうやら、その可能性が拭えない気がする。」",
+		   NULL, "...저는 아무래도, 그 가능성을 지울 수 없습니다.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500095", 256, TRUE);
+	OutputLine(NULL, "「……つまり、鷹野は生きてる？」",
+		   NULL, "\"...즉, 타카노는 살아있다?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "org/ooishi6135", 256, TRUE);
+	OutputLine(NULL, "「鷹野三四は先日以来、車ごと行方不明です。",
+		   NULL, "\"타카노 미요는 어젯밤부터 승용차째로 행방불명입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "org/ooishi6136", 256, TRUE);
+	OutputLine(NULL, "岐阜の死体が鷹野でないなら、……これは何だか面白そうな話になってきます。」",
+		   NULL, "기후의 시체가 타카노가 아니라면... 뭐랄까 이건 재밌는 이야기가 되겠군요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s12/05/280500096", 256, TRUE);
+	OutputLine(NULL, "「……………………………。」",
+		   NULL, "\".........\" ", Line_Normal);
+	ClearMessage();
+}

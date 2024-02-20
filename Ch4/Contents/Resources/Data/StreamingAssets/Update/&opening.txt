@@ -1,0 +1,46 @@
+void main()
+{
+}
+
+void OpeningQuestion()
+{
+	if (GetGlobalFlag(GVideoOpening) == 0) {
+		OutputLine(NULL, "オープニング動画は多少のネタバレ要素を含んでいますが、再生を有効にしますか？",
+			   NULL, "<size=-4>오프닝 동영상은 경미한 스포일러를 포함합니다. 재생하시겠습니까? (재생하지 않는다를 선택할 경우, 본편의 오프닝 동영상도 생략됩니다.)", Line_Normal);
+
+		char Item[2];
+
+		if (GetGlobalFlag(GLanguage) == 1) {
+			Item[0] = "오프닝을 재생합니다.";
+			Item[1] = "오프닝을 재생하지 않습니다.";
+		} else {
+			Item[0] = "動画再生を有効化";
+			Item[1] = "動画再生を無効化";
+		}
+
+		Select( 2, Item );
+
+		if (LoadValueFromLocalWork(SelectResult) == 0) {
+			SetGlobalFlag(GVideoOpening, 2);
+		} else {
+			SetGlobalFlag(GVideoOpening, 1);
+		}
+
+		DisableWindow();
+	}
+}
+
+void OpeningLaunch()
+{
+	if (GetGlobalFlag(GVideoOpening) >= 3) {
+		ModPlayMovie("mv08");
+	}
+}
+
+void OpeningStory()
+{
+	if (GetGlobalFlag(GVideoOpening) >= 2) {
+		SetGlobalFlag(GVideoOpening, 3);
+		ModPlayMovie("mv08");
+	}
+}

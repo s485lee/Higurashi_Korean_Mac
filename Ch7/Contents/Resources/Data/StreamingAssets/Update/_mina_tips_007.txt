@@ -1,0 +1,254 @@
+void main()
+{
+	EnableJumpingOfReturnIcon();
+
+	PlayBGM( 0, "yoru", 56, 0 );
+
+	DrawSceneWithMask( "background/ho_r1", "maskup", 1, 0, 300 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鉄平は、沙都子がもう少し金を持っているだろうと思っていた。",
+		   NULL, "텟페이는 사토코가 좀 더 돈을 갖고 있을 거라 생각했다. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacterWithFiltering(2, 4, "sprite/sa1a_muhyou_a1_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが実際には沙都子は無一文だった。",
+		   NULL, "하지만 사토코는 무일푼이었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今までどうやって生活してきたのかと聞くと、",
+		   NULL, "그럼 지금까지 어떻게 생활해왔냐고 묻자, ", Line_WaitForInput);
+	OutputLine(NULL, "同居してた友人に世話になっていたので、自分はお金が必要なかったと返事が返ってきた。",
+		   NULL, "동거하는 친구한테 신세를 졌기에 자신은 돈이 필요 없었다는 대답이 돌아왔다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鉄平は、賭場などで悪いお金を多少は稼いでいた。",
+		   NULL, "텟페이에겐 다소나마 도박장 같은 곳에서 불법으로 번 돈이 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その蓄えが多少はあったから当分は問題なかったが、",
+		   NULL, "당분간은 그 저축으로 문제가 없겠지만, ", Line_WaitForInput);
+	OutputLine(NULL, "そもそも鉄平にとってその金は軍資金兼、遊興費であり、生活費に回すなど不愉快極まりないことだった。",
+		   NULL, "애초에 텟페이에게 이 돈은 군자금 겸 유흥비로서, 생활비로 돌린다는 건 지극히 불쾌한 일이었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、沙都子が金を持っていないはずがない。",
+		   NULL, "하지만, 사토코에게선 틀림없이 돈을 우려낼 수 있다. ", Line_WaitForInput);
+	OutputLine(NULL, "鉄平はそう考えた。",
+		   NULL, "텟페이는 그렇게 생각했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鉄平の妻、つまり沙都子の叔母は、事故で死んだ沙都子の両親からかなりの金の入った預金通帳を奪っているはずだった。",
+		   NULL, "텟페이의 마누라, 즉 사토코의 숙모는 사고로 죽은 사토코의 부모한테 꽤 많은 돈이 든 예금통장을 빼앗았다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その叔母は去年死に、悟史も失踪。",
+		   NULL, "그 숙모는 작년에 죽고, 사토시도 실종. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だとしたら、その通帳は最後のひとりの沙都子が持っているに違いなかった。",
+		   NULL, "그렇다면, 통장은 최후의 한 사람인 사토코가 가진 게 틀림없었다. ", Line_Normal);
+	ClearMessage();
+
+	ModSetLayerFilter(0, 256, "none");
+	ModDrawCharacter(0, 4, "sprite/sa1b_muhyou_b2_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, FALSE );
+	DrawScene( "background/ho_r1", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、沙都子をいくら脅しても、そんなものを受け取っていないと繰り返すのみだった。",
+		   NULL, "하지만 사토코를 아무리 협박해도 그런 건 받지 않았다고 되풀이할 뿐이었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　きっと隠してるに違いないと思い、鉄平が納得行くように沙都子を詰問してみた。",
+		   NULL, "분명 숨기는 게 틀림없다고 생각해, 텟페이가 스스로 납득할 정도로 사토코를 심문했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　沙都子自身に暴力を加えると傷が残り、女教師や相談所に疑われる。",
+		   NULL, "사토코한테 폭력을 가하면 상처가 남아서 여교사나 상담소의 의심을 사게 된다. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だから沙都子は殴らない。",
+		   NULL, "그러니까 사토코의 몸은 때리지 않는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　言葉や暴言で殴り、物や家具を殴ったり壊したりして見せた。",
+		   NULL, "물건이나 가구를 때리거나 부수며, 정신을 때리는 폭언을 늘어놓았다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 400 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_tataku", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 400 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_Down", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 600 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 400 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_tataku", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　こういう脅し方ももちろん鉄平の得意とするものだ。",
+		   NULL, "이런 협박도 물론 텟페이의 특기였다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、沙都子は持っていない知らないと半狂乱になって答えるのみで、本当に持っていなさそうだった。",
+		   NULL, "하지만 사토코는 가지고 있지 않다는 둥, 모른다는 둥, 반쯤 광란 상태가 되어 대답할 뿐이라, 정말로 모르는 모양이었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　沙都子の怯えた小動物のような仕草に、鉄平は居間をひとつ、完全に荒らしきった後、ようやく納得するのだった。",
+		   NULL, "사토코의 겁먹은 작은 동물 같은 모습을 보고, 텟페이는 거실 하나를 완전히 황폐하게 만든 후에야 겨우 납득했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……となれば、通帳はどこに？",
+		   NULL, "......그렇다면 통장은 어디 있지? ", Line_WaitForInput);
+	OutputLine(NULL, "　鉄平は２つ考えた。",
+		   NULL, "텟페이는 두 가지 가능성을 떠올렸다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　１つは叔母がへそくりのようにどこかに未だ隠し持っていること。",
+		   NULL, "하나는 숙모가 비상금처럼 숨겨둔 채, 아직도 발견되지 않았을 가능성. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もう１つは、叔母が死んだ後、それを悟史が奪い、やはりどこかに隠し持っていること。",
+		   NULL, "또 하나는 숙모가 죽은 후, 사토시가 빼앗아 마찬가지로 어딘가에 숨겨두었을 가능성. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どちらにせよ、この家のどこかに隠されているだろうという結論に至った。",
+		   NULL, "어느 쪽이 됐건 이 집 어딘가에 숨겨져 있을 거라는 결론에 도달했다. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/ho_r1", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　沙都子には自分で荒らした居間の片付けを命じ、鉄平は二階建ての狭くない家の中を彷徨い始めた。",
+		   NULL, "사토코에겐 자신이 어지럽힌 거실의 뒷정리를 명령하고, 텟페이는 2층짜리 건물의 좁지 않은 집안을 거닐기 시작했다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskright", 1, 0, 300 );
+	DrawSceneWithMask( "background/ho_2", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……実は、この頃には鉄平は沙都子を持て余し始めていた。",
+		   NULL, "......실은, 이 시점에서 텟페이는 사토코를 어떻게 처리해야 할지 고민 중이었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　風の噂では、沙都子の両親は相当の金を残していたはずだ。",
+		   NULL, "소문에 따르면 사토코의 부모는 상당한 돈을 남겼을 것이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そしてそれを叔母は全て独り占めしていた。",
+		   NULL, "그리고 숙모는 그 돈을 전부 독점했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　守銭奴だったから、犬が何でも持ち帰って律儀に取って置くように、多分、通帳も手付かずで丸々残っているはずだ。",
+		   NULL, "수전노였으니까, 까마귀가 빛나는 물건을 물어다가 둥지에 모아놓듯 아마 통장도 손대지 않은 채 그대로 남겨 놓았을 터였다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　まとまった金が手に入ったら、どこか別の土地へ行くのも悪くないと思い始めていた。",
+		   NULL, "숨겨둔 돈만 손에 들어오면, 어딘가 다른 장소로 떠나도 나쁘지 않을 거라는 생각이 점점 확고해졌다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　穀倉の辺りの賭場には多少のツテもある。",
+		   NULL, "고구라 주변 도박장에는 다소 연줄도 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　昔世話したヤツらがまだヤサにしてたはずだ。",
+		   NULL, "옛날 나한테 신세를 졌던 녀석들이 잘 대해줄 거다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　当時の恩でゴネて転がりこむか。",
+		   NULL, "그 때의 빚을 빌미로 굴러들어갈까. ", Line_WaitForInput);
+	OutputLine(NULL, "寝床くらいは貸してくれるはずだ。",
+		   NULL, "머리를 눕힐 곳 정도는 빌려주겠지. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　確かに沙都子に家事を任せる気楽さはあるが、学校や児童相談所から監視を受けており、窮屈さは否めない。",
+		   NULL, "확실히 사토코한테 가사를 떠맡기면 편안해서 좋지만, 학교나 아동상담소의 감시가 답답했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　自らを暴力の塊であると認める鉄平にとって、今後も沙都子に暴行しない保証など、自分に対してすら出せるわけがなかった。",
+		   NULL, "스스로가 폭력덩어리라는 사실을 인정하는 텟페이로서는, 자신이 앞으로도 사토코를 폭행하지 않는다는 보장따윈 도저히 할 수 없었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	PlayBGM( 1, "semi_r", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…そう思えば思うほどに、無抵抗な沙都子を思い切りぶん殴ってやりたい衝動に駆られるのだった。",
+		   NULL, "...그렇게 생각할수록, 저항하지 않는 사토코를 마음대로 때리고 싶은 충동이 마음에서 자라났다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　抵抗する相手を屈服させる愉しみしか知らなかった鉄平にとって、",
+		   NULL, "저항하는 상대를 굴복시키는 즐거움밖에 몰랐던 텟페이는, ", Line_WaitForInput);
+	OutputLine(NULL, "無抵抗の沙都子がどこまで乱暴すれば抵抗してくれるかを試すことは、最後に試してみたい愉しみだった。",
+		   NULL, "얼마나 가혹한 행위를 해야 저항을 포기한 사토코조차 반항할지, 마지막 즐거움으로서 시험해보고 싶었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　知恵が訪問して以来の不愉快さは未だ消えず、",
+		   NULL, "치에가 방문한 이후의 불쾌함은 아직 사라지지 않은 채, ", Line_WaitForInput);
+	OutputLine(NULL, "ここを出る時にその鬱憤を晴らすために沙都子を滅茶苦茶にしてやろうというルールが、いつの間にか鉄平の内側に作られていたのである……。",
+		   NULL, "이 집을 떠날 때는 울적함을 풀기 위해 사토코를 엉망진창으로 만들어 주겠다는 생각이, 어느샌가 텟페이의 안에 자리잡기 시작했다...... ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+}

@@ -1,0 +1,86 @@
+void main()
+{
+}
+
+void dialog000()
+{
+//　...わ、...それ絶対にバレるよ、お酒臭いー！＠
+//「そう言えば昨日は町会の人が集まっての打ち合わせ会だったんだろ？＠
+	ModPlayVoiceLS(4, 2, "ps3/s03/02/140200120", 256, TRUE);
+	OutputLine(NULL, "　…わ、…それ絶対にバレるよ、お酒臭いー！」",
+		   NULL, "...왓, 그거 분명 들킬 거야, 술냄새 나!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s03/01/140100464", 256, TRUE);
+	OutputLine(NULL, "「そう言えば昨日は町会の人が集まっての打ち合わせ会だったんだろ？」",
+		   NULL, "\"그러고 보니 어제 마을회 사람들이 모여서 회의를 했지?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+
+void dialog001()
+{
+//「うん＠先生があの後、直接、県の児童相談所に電話してね＠児童福祉司が昨夜の内に訪問したらしいよ＠私の叔母さんにも、今後定期的にアプローチするようにと連絡があったって。＠
+//「......小難しい話はいいよ＠それより沙都子はどうなったんだよ＠保護されたのか？！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s03/03/140300255", 256, TRUE);
+	OutputLine(NULL, "「うん。",
+		   NULL, "\"응. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s03/03/mio040401", 256, TRUE);
+	OutputLine(NULL, "先生があの後、直接、県の児童相談所に電話してね。",
+		   NULL, "선생님이 그 뒤에 직접 현의 아동상담소에 전화해서 말야. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s03/03/mio040402", 256, TRUE);
+	OutputLine(NULL, "児童福祉司が昨夜の内に訪問したらしいよ。",
+		   NULL, "아동복지사가 어젯밤에 방문한 모양이야. ", GetGlobalFlag(GLinemodeSp));
+}
+
+
+void dialog002()
+{
+//「...保護司、来たんでしょ＠　......その、...どういう話になったわけ？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s03/03/mio040403", 256, TRUE);
+	OutputLine(NULL, "「…保護司、来たんでしょ？",
+		   NULL, "\"...보호사, 왔지? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s03/03/mio040404", 256, TRUE);
+	OutputLine(NULL, "　……その、…どういう話になったわけ？」",
+		   NULL, "...그, 어떻게 이야기가 된 거야?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog003()
+{
+//「...それは......、児童相談所長がいろいろ検討した末に判断を......。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#68aee5>知恵</color>", NULL, "<color=#68aee5>치에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 22, "ps3/s03/22/chie040402", 256, TRUE);
+	OutputLine(NULL, "「…それは……、児童相談所長がいろいろ検討した末に判断を……。」",
+		   NULL, "\"...그건, 아동상담소장이 여러 가지를 검토한 끝에 내린 판단이라...\" ", Line_Normal);
+	ClearMessage();
+}
+
+void dialog004()
+{
+	ModPlayVoiceLS(4, 5, "ps3/s03/05/140500026", 256, TRUE);
+	OutputLine(NULL, "……実は、沙都子の児童虐待の通報は、これが三回目なのです。",
+		   NULL, "...실은 사토코의 아동학대 통보는, 이걸로 세 번째인 거예요. ", Line_WaitForInput);
+}
+
+void dialog005()
+{
+	ModPlayVoiceLS(4, 22, "ps3/s03/22/chie040405", 256, TRUE);
+	OutputLine(NULL, "…特に義理のお父さんを陥れるのを目的に、自傷と作話で…嘘の虐待話を作って……、",
+		   NULL, "...특히 의붓아버지를 곤경에 빠뜨리기 위해, 자해와 꾸며내기로 거짓 학대 이야기를 만들어서... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 22, "ps3/s03/22/chie040406", 256, TRUE);
+	OutputLine(NULL, "自分で虐待ＳＯＳに電話したって。」",
+		   NULL, "스스로 학대 SOS에 전화했다고.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog006()
+{
+	ModPlayVoiceLS(4, 5, "ps3/s03/05/140500035", 256, TRUE);
+	OutputLine(NULL, "……………児童相談所に、ちゃんと昔の記録が残ってましたですから、",
+		   NULL, "...아동상담소에 옛날 기록이 확실하게 남아있었으니까, ", Line_WaitForInput);
+}

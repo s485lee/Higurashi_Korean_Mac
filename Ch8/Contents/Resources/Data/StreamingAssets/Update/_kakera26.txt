@@ -1,0 +1,715 @@
+void main()
+{
+	DrawScene( "black", 400 );
+
+	PlayBGM( 0, "Nazo", 120, 0 );
+
+	DrawScene( "background/ka1_01", 400 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>役人</color>", NULL, "<color=#f5e6d3>관리</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_yakua1001", 128, TRUE);
+	OutputLine(NULL, "「でして、ダムの建設事業に伴う地域振興や地域産業の育成などですね…、」",
+		   NULL, "\"그러니 댐 건설 사업으로 따라오는 지역 진흥이나 지역 산업 육성 등으로...\" ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_Down", 128, 64 );
+	StartShakingOfWindow( 241, 40, 0, 2, 4*2, FALSE );
+	StartShakingOfAllObjects( 241, 40, 0, 2, 4*2, FALSE );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmma1008", 128, TRUE);
+	OutputLine(NULL, "「そんなことは聞いてねぇっつってんだらぁ！！」",
+		   NULL, "\"누가 그딴 거 물어봤나!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "s_tataku", 128, 64 );
+	StartShakingOfWindow( 241, 40, 0, 0, 3*2, FALSE );
+	StartShakingOfAllObjects( 241, 40, 0, 0, 3*2, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmb1009", 128, TRUE);
+	OutputLine(NULL, "「俺らの誰の断りがあって、ダムなんか作ろうって言い出したかって聞いてんだ！」",
+		   NULL, "\"우리 중에 누구 허락을 받고 댐 만들자고 씨부리나 물어봤다이가!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "s_Down", 128, 64 );
+	StartShakingOfWindow( 241, 40, 0, 2, 4*2, FALSE );
+	StartShakingOfAllObjects( 241, 40, 0, 2, 4*2, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmc1009", 128, TRUE);
+	OutputLine(NULL, "「おう、わしらから税金絞るだけ絞っといてそれに対する返事がこれっちゅうんか？！",
+		   NULL, "\"그래, 우리한테 세금 뜯어묵을만큼 뜯어놓고 한다는 말이 이그가! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmc1010", 128, TRUE);
+	OutputLine(NULL, "　おんどりゃあ、誰の税金で給料もらっとんじゃあ！！」",
+		   NULL, "야이 새꺄 니 누구 세금으로 밥 빌어먹고 사노?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>役人</color>", NULL, "<color=#f5e6d3>관리</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_yakua1002", 128, TRUE);
+	OutputLine(NULL, "「ですから！",
+		   NULL, "\"그러니까! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_yakua1003", 128, TRUE);
+	OutputLine(NULL, "　先ほどから申し上げておりますように…！！」",
+		   NULL, "아까부터 말씀드렸듯이...!!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmma1009", 128, TRUE);
+	OutputLine(NULL, "「言い訳など聞いちゃならんねぇ、いつ計画を中止するんか聞いとるんじゃい！！」",
+		   NULL, "\"변명 따위 듣고 싶지 않아! 언제 계획을 중지할 꺼냐고 묻잖아!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmb1010", 128, TRUE);
+	OutputLine(NULL, "「お前じゃ話にならん、東京の建設大臣を連れて来い！！",
+		   NULL, "\"니하곤 말이 안통하네, 도쿄에서 장관님 댈꼬 온나! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmb1011", 128, TRUE);
+	OutputLine(NULL, "　ここではっきり白黒つけちゃる！！」",
+		   NULL, "여서 담판을 짓자꼬!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "s_daidageki", 128, 64 );
+	StartShakingOfWindow( 241, 40, 0, 2, 6*2, FALSE );
+	StartShakingOfAllObjects( 241, 40, 0, 2, 6*2, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmc1011", 128, TRUE);
+	OutputLine(NULL, "「引っ込まんか木っ端役人があぁあぁ！！」",
+		   NULL, "\"안 끄지나? 공무원 찌끄레기야!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmma1010", 128, TRUE);
+	OutputLine(NULL, "「大体おどれら、人さまの税金で仕事しとって、何でわしらより高い段で話をしとるんじゃ。",
+		   NULL, "\"애초에 느그들 남의 세금가꼬 일하믄서 와 우리보다 우에서 말하노? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmma1011", 128, TRUE);
+	OutputLine(NULL, "目線で話さんかい目線で！！」",
+		   NULL, "눈높이를 마차가 씨부리라고 눈높이를!!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　体育館の中は怒号に満ちていた。",
+		   NULL, "체육관 안은 분노와 고함으로 가득했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢ダム基本計画地元説明会。",
+		   NULL, "히나미자와 댐 기본 계획 현지 설명회. ", Line_WaitForInput);
+	OutputLine(NULL, "…表に出ている立て看板にはそう書かれていた。",
+		   NULL, "...밖의 간판에는 그렇게 쓰여 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　壇上で、役人の男が何かを言おうとする度に、満場の住民たちは一斉に怒号を浴びせ掛け、それを塗りつぶす。",
+		   NULL, "단상의 공무원이 뭔가를 말하려고 하면, 체육관을 가득 채운 주민들이 일제히 분노로 가득찬 일갈로 그 말을 묻어 버린다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それでは進行にならないので、それらを聞こえないかのように振る舞い、ダムの有用性をパネルで説明すればするほど、",
+		   NULL, "진행을 하기 위해 주민들의 말이 들리지 않는 척 패널로 댐의 유용성을 설명하면 할수록, ", Line_WaitForInput);
+	OutputLine(NULL, "住民の声を聞かない政府の横暴という図式になり、ますますに彼らの怒りを焚きつけた。",
+		   NULL, "주민의 소리를 듣지 않는 정부의 횡포라는 모양새가 되어, 더더욱 주민들의 분노에 불을 붙인다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/ka4", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　壇上と住民の席の間には空白地帯が設けられ、警官隊がスクラムを組み制止線を作っていた。",
+		   NULL, "경관들은 대열을 짜서 저지선을 치고, 단상과 주민들 사이에 일정한 거리를 벌려 놓았다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…もし、これがなかったら、住民たちはすぐにでも壇上に駆け上がり、取っ組み合いに発展していたに違いない…。",
+		   NULL, "...만약 이것마저 없었다면, 주민들은 당장 단상에 뛰어올라 실랑이를 벌였겠지.... ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModSetLayerFilter(2, 179, "none");
+	ModDrawCharacterWithFiltering(2, 12, "sprite/ha1_yowaki_", "0", "maskc", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……そんな光景を、僕はみんなの後から見守っていた。",
+		   NULL, "......나는 사람들의 뒤에서 그 광경을 지켜본다. ", Line_Normal);
+	ClearMessage();
+
+	DrawFilm( 2, 0xff, 0x88, 0x88, 64, 0, 1000, TRUE );
+	//DrawBustshot( 8, "mono_ka26_1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 1000, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼らが、怒りの感情に飲み込まれているのが、はっきりと色で見える。",
+		   NULL, "그들이 분노의 감정에 물들어가는 것이 뚜렷한 색깔로 보인다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…血の赤に徐々に飲み込まれ、",
+		   NULL, "...피의 붉은 색에 서서히 삼켜진다. ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……ある目的のために芽生えた怒りの感情が、目的そのものに取って代わり、",
+		   NULL, "......어떤 목적을 위해서 싹튼 분노의 감정이, 목적 그 자체가 된다. ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 900 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "怒るために怒るという悪循環を生み出そうとしている…。",
+		   NULL, "분노를 위한 분노라는 악순환을 만들어내려 한다.... ", Line_Normal);
+	ClearMessage();
+
+	DrawFilm( 2, 0xff, 0x88, 0x88, 128, 0, 1000, TRUE );
+	//DrawBustshot( 8, "mono_ka26_2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 1000, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…怒りは決して不要な感情ではない。",
+		   NULL, "...분노는 결코 불필요한 감정이 아니다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　人は生きるために様々な障害にぶつかる。",
+		   NULL, "사람은 살아가면서 여러 가지 장애물에 부딪힌다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それと戦い乗り越える力の原動力が怒りなのだ。",
+		   NULL, "그 장애물과 싸워 이겨내는 힘은 다름아닌 분노가 원동력이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…その意味において、怒りは人の生きる力そのものと言える。",
+		   NULL, "...이러한 의미에서 분노는 사람이 살아가는 힘 그 자체. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だから、怒りそのものを否定したりはしない。",
+		   NULL, "그러니 분노 자체를 부정하진 않는다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、度を越えた怒りは、時に目的を忘れさせる。",
+		   NULL, "하지만 도를 넘는 분노는, 가끔 목적을 잊게 만든다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…それはすでに、生きるための力ではない。",
+		   NULL, "...거기까지 다다른 분노는 이미 살아가기 위한 힘이 아니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　頭に血が上り、自分が何をしたかったのかも忘れてしまった、まさに暴走の状態なのだ。",
+		   NULL, "머리에 피가 쏠려, 자신이 무엇을 하고 싶었는지조차 잊고 폭주하게 만든다. ", Line_Normal);
+	ClearMessage();
+
+	DrawFilm( 2, 0xff, 0x88, 0x88, 192, 0, 1000, TRUE );
+	//DrawBustshot( 8, "mono_ka26_3", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 1000, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…………このような感情は、僕たちにとって辛く悲しく耐え難いもの。",
+		   NULL, ".........이런 감정은 우리들에게 괴롭고 슬프며, 참기 어려운 것. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……村人と共にある僕たちが、少しずつ怒りの感情に飲み込まれて、「鬼」に染まっていくのを、私は色を見るようにはっきりと見えているのだった…。",
+		   NULL, "...마을 사람과 함께하는 우리들이 조금씩 분노의 감정에, \"귀신\"에 물들어 가는 모습이, 내 눈에는 색을 바라보듯 확실히 비춰 보였다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　人間の世界のルールはわかる。",
+		   NULL, "인간 세계의 규칙은 안다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　国の政策に立ち向かうには、個人の力はあまりに無力だ。",
+		   NULL, "국가 정책에 맞서기에, 개인의 힘은 너무나 무력하다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……それに立ち向かうためには、個人の域を超えた力と結束が必要になる。",
+		   NULL, "......거기에 맞서기 위해서는 개인의 영역을 넘는 힘과 결속이 필요하다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、その力を正しい方向に導くのはとても難しいこと。",
+		   NULL, "하지만 그 힘을 올바른 방향으로 이끌기란 몹시 어렵다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…怒りの連鎖は怒りのために怒りを生む。",
+		   NULL, "...분노의 연쇄는 분노를 위한 분노를 낳는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　生きるために怒るのではなく、怒るために怒る。",
+		   NULL, "살아가기 위한 분노가 아닌, 분노를 위한 분노. ", Line_WaitForInput);
+	OutputLine(NULL, "……それは、ただの鬼でしかない。",
+		   NULL, "......그건 단지 귀신에 지나지 않는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、……この感情は、永い間、静かに眠ってきた僕たちを乱暴に起こすものにしかならない…。",
+		   NULL, "그리고... 이 감정은 오랫동안 조용히 지내온 우리들을 난폭하게 깨울 뿐이다.... ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　みんなが、…怒りに塗りつぶされていく。",
+		   NULL, "모두가 분노에 물들어간다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　僕たちは平和に村人たちと共存することを知り、静かに眠りながら過ごしてきたのだ。",
+		   NULL, "평화롭게 마을 사람들과 공존하는 법을 알아낸 우리들은 조용히 잠들어 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……それが、起こされ、",
+		   NULL, "......긴 잠에서 깨어나, ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 700 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……鬼ヶ淵沼から鬼が湧き出したと伝えられたあの時代に戻ってしまいそうになっている…。",
+		   NULL, "오니가후치 늪에서 귀신들이 나타났다고 전해지는 그 시대로 돌아가 버릴 것 같다.... ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　僕はみんなに、どうか落ち着いてと叫ぶ。",
+		   NULL, "나는 제발 침착하라고 모두에게 외쳤다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも、怒りが怒りを増幅しあうこの悪循環に、私の声無き声など誰にも届きはしない……。",
+		   NULL, "하지만 분노가 분노를 낳는 이 악순환 속에서, 나의 소리 없는 아우성 따위는 누구에게도 전해지지 않는다.... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それでも誰かひとりの耳に届くことを信じて、僕はみんなに、どうか落ち着いてと何度も叫ぶしかないのだ。",
+		   NULL, "그럼에도 누군가에겐 들릴 것이라 믿으며, 나는 제발 침착하라고 계속해서 외칠 수밖에 없었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　このままでは、………鬼が目覚めてしまうかもしれない。",
+		   NULL, "이대로는...... 귀신이 눈을 떠 버릴지도 모른다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　眠りにつき、二度と蘇ることなどないはずだった鬼たちが、……この騒ぎで目覚めてしまうかもしれない…。",
+		   NULL, "두 번 다시 깨어날 수 없는 잠에 빠진 귀신들이, 이 소동으로 눈을 떠 버릴지도 모른다.... ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/ka1_01", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その時、騒ぎの雰囲気が変わった。",
+		   NULL, "그때 체육관의 분위기가 바뀌었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　見れば、壇上と住民の間の対決だったのが、いつの間にか住民と住民の間の対決に移っていた。",
+		   NULL, "단상과 주민 사이의 대결이 어느새 주민과 주민 사이의 대결로 변한다. ", Line_WaitForInput);
+	OutputLine(NULL, "……一体、何事だろう？",
+		   NULL, "...도대체 무슨 일일까? ", Line_Normal);
+	ClearMessage();
+
+	SetSpeedOfMessage( TRUE, 128 );
+
+	FadeOutBGM( 0, 300, FALSE );
+	PlaySE( 0, "s_Down", 128, 64 );
+	PlayBGM( 1, "B08_Izyou", 120, 0 );
+	StartShakingOfWindow( 248, 40, 0, 2, 3*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 3*2, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沙都子父</color>", NULL, "<color=#f5e6d3>사토코의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1001", 128, TRUE);
+	OutputLine(NULL, "「じゃかましいわッ！！",
+		   NULL, "\"마 시끄릅다!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1002", 128, TRUE);
+	OutputLine(NULL, "　そりゃおんどれの都合やんね、勝手に総意にせんといてんなクソババアッ！！」",
+		   NULL, "그기는 니들 사정이지, 지멋대로 모두의 의견이라 카지 마라 이 빌어묵을 할망구야!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>오료</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1010", 128, TRUE);
+	OutputLine(NULL, "「あんじょう、すったらんわッ！！",
+		   NULL, "\"미친 소리 하고 자빠짔네!! ", Line_WaitForInput);
+
+	PlaySE( 0, "s_daidageki", 128, 64 );
+	StartShakingOfWindow( 241, 40, 0, 0, 5*2, FALSE );
+	StartShakingOfAllObjects( 241, 40, 0, 0, 5*2, FALSE );
+
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1011", 128, TRUE);
+	OutputLine(NULL, "　ようも言ったん、抜かしよってからにこんの輩ぁああぁッ！！！」",
+		   NULL, "잘도 그래 씨부리네, 우리가 호구로 보이나 이 새끼야!!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmma1012", 128, TRUE);
+	OutputLine(NULL, "「おうおうッ！！",
+		   NULL, "\"얌마!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmma1013", 128, TRUE);
+	OutputLine(NULL, "　てめぇお魎さんと知っててその口聞いとるんかいな、上等きっちゃら、おあああッ？！",
+		   NULL, "이 쌍놈이 오료 씨가 눈줄 알고 말뽄새를 그래 하나, 배짱도 좋구마! 어엉?! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmma1014", 128, TRUE);
+	OutputLine(NULL, "　名乗らんかいおおぅッ！！」",
+		   NULL, "니 이름 뭔데!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "s_tataku", 128, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沙都子父</color>", NULL, "<color=#f5e6d3>사토코의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1003", 128, TRUE);
+	OutputLine(NULL, "「やっかましいわぁ！！",
+		   NULL, "\"시끄릅다!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1004", 128, TRUE);
+	OutputLine(NULL, "　園崎がなんぼのもんじゃい、わしゃあ北条じゃ、腰巾着は引っ込んどらんかいッ！！」",
+		   NULL, "소노자키가 뭐 우쨌다고! 낸 호죠다. 똘마이들은 끄지라!\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/ka4", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmb1012", 128, TRUE);
+	OutputLine(NULL, "「おぉう北条んの！",
+		   NULL, "\"야 호죠~!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmb1013", 128, TRUE);
+	OutputLine(NULL, "　何ば抜かしよったんようも村を沈めちゃる言えるのぉ！！",
+		   NULL, "우째 미치면 마을을 가라앉히자 칼 수 있노!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmb1014", 128, TRUE);
+	OutputLine(NULL, "　お前ぇ何ぼで村を売ったんッ？！」",
+		   NULL, "니 얼마에 마을을 팔아제낐는데?\" ", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 2, "kaze", 120, 0 );
+	PlaySE( 0, "s_Down", 128, 64 );
+	StartShakingOfWindow( 244, 40, 0, 2, 4*2, FALSE );
+	StartShakingOfAllObjects( 244, 40, 0, 2, 4*2, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沙都子父</color>", NULL, "<color=#f5e6d3>사토코의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1005", 128, TRUE);
+	OutputLine(NULL, "「黙らんかい死に損ないがぁッ！！",
+		   NULL, "\"닥치라, 이 영감탱이야! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1006", 128, TRUE);
+	OutputLine(NULL, "　いいんか、雛見沢には貧乏人も大勢おるん、お前んとこみたいに、山に畑に唸るほど持ってる地主とはわけが違うんッ！！",
+		   NULL, "알긋나, 히나미자와엔 가난한 사람도 많이 있다, 느그처럼 산이랑 밭이 썩어 넘치는 지주랑 사정이 다르다! ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沙都子父</color>", NULL, "<color=#f5e6d3>사토코의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1007", 128, TRUE);
+	OutputLine(NULL, "　わしゃあの、国の補償金で充分満足しとったん、町の公営住宅も手配してくれちょうゆぅし、なぁんも不足はなかったん！！",
+		   NULL, "내는 나라의 보상금에 충분히 만족한다! 마을 공영주택도 마련해준다 캤으니까 불만도 없고!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1008", 128, TRUE);
+	OutputLine(NULL, "　それをおんどれが全部ちゃぶ台引っくり返しよったん、台無しにしよったんじゃボケぇッ！！！",
+		   NULL, "그걸 느그들이 싸그리 엎어가꼬 엉망으로 만들었다아이가!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1009", 128, TRUE);
+	OutputLine(NULL, "　おどれら地主の都合で人まで巻き込むなや！",
+		   NULL, "느그 지주들 사정으로 남까지 말리들게 하지 마라! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沙都子父</color>", NULL, "<color=#f5e6d3>사토코의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1010", 128, TRUE);
+	OutputLine(NULL, "　そんなに国と喧嘩せぇんかったらおどれがひとりでやれ！！",
+		   NULL, "그래 나라랑 쌈박질 하고잡으면 느그끼리 해라! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1011", 128, TRUE);
+	OutputLine(NULL, "　したらん、ゼニが誰が払うんね、おどれかいな！！",
+		   NULL, "아니믄 누가 돈을 줄낀데, 느그가 줄끼가!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1012", 128, TRUE);
+	OutputLine(NULL, "　うちはな、貧乏だし育ち盛りが二人もおるん。",
+		   NULL, "우리 집은 가난하고 애도 둘이나 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沙都子父</color>", NULL, "<color=#f5e6d3>사토코의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1013", 128, TRUE);
+	OutputLine(NULL, "おとなしゅう、国からゼニをもろぅて職を斡旋してもろぅて、人生再設計ちゅうとこなんや。",
+		   NULL, "가마이 나라한테 돈 받고 일도 소개받고, 인생을 재설계할라캤다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1014", 128, TRUE);
+	OutputLine(NULL, "それをおどれは何じゃ、いつからお前はわしの代表になったんじゃ！！",
+		   NULL, "그른데 느그가 뭐라꼬, 은제부터 니가 우리의 대표가 됐는데!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沙都子父</color>", NULL, "<color=#f5e6d3>사토코의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1015", 128, TRUE);
+	OutputLine(NULL, "　お前、そんなに偉いんか、おああああッ？！」",
+		   NULL, "느그가 그래 잘났나, 아앙?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmc1012", 128, TRUE);
+	OutputLine(NULL, "「おうおうおう、北条の！！",
+		   NULL, "\"호죠 이 새끼야! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmc1013", 128, TRUE);
+	OutputLine(NULL, "　ようも抜かした、この裏切り者がぁッ！！",
+		   NULL, "잘 씨부리네, 이 배신자가!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmc1014", 128, TRUE);
+	OutputLine(NULL, "　んなら村から出てけ出てけッ！！」",
+		   NULL, "그라믄 마을에서 나가라!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沙都子父</color>", NULL, "<color=#f5e6d3>사토코의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1016", 128, TRUE);
+	OutputLine(NULL, "「おう、出ていったら！",
+		   NULL, "\"그래 나가주께! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1017", 128, TRUE);
+	OutputLine(NULL, "　もちろん、それに見合うゼニはお前が払うんじゃろうな？！",
+		   NULL, "그 돈은 당연히 니가 줄끼제? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1018", 128, TRUE);
+	OutputLine(NULL, "　わしが国からもらい損ねたゼニ、きっちり都合つけてくれちゃるんじゃろなぁッ？！",
+		   NULL, "내가 나라한테 못 받은 돈 고대로 줄끼제?! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沙都子父</color>", NULL, "<color=#f5e6d3>사토코의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1019", 128, TRUE);
+	OutputLine(NULL, "　村から出たぅともゼニがないんじゃ。",
+		   NULL, "마을에서 나갈라 캐도 돈이 없다이가. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1020", 128, TRUE);
+	OutputLine(NULL, "おどれが払うんならすぐにでも出たっるわ！！」",
+		   NULL, "느그가 내주면 당장에라도 나가주께!!\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/ka1_01", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmd1001", 128, TRUE);
+	OutputLine(NULL, "「……北条の言う通りだ！",
+		   NULL, "\"...호죠 말이 맞다! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmd1002", 128, TRUE);
+	OutputLine(NULL, "　立ち退いてもいいと思ってる住民もいるんだぞ！",
+		   NULL, "나가도 된다 생각하는 사람도 있다! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmd1003", 128, TRUE);
+	OutputLine(NULL, "　御三家は俺たちを巻き込むな！」",
+		   NULL, "세 가문은 우리까지 말리들게 하지 마라!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>오료</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1012", 128, TRUE);
+	OutputLine(NULL, "「おうおう何じゃい？",
+		   NULL, "\"뭐라카노?! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1013", 128, TRUE);
+	OutputLine(NULL, "　今抜かしたのは誰じゃい？！",
+		   NULL, "지금 누가 씨부맀노?! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1014", 128, TRUE);
+	OutputLine(NULL, "　名乗らんかいボケッ？！」",
+		   NULL, "이름 대라!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmd1004", 128, TRUE);
+	OutputLine(NULL, "「残りたいヤツは勝手に残ればいいだろが！！",
+		   NULL, "\"남고 싶은 놈은 지맘대로 남으면 되지!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmmd1005", 128, TRUE);
+	OutputLine(NULL, "　立ち退きも権利じゃ、勝手に人様の権利に干渉するなやこんのダラズがッ！！」",
+		   NULL, "나가는 것도 권리다. 마음대로 남의 권리에 끼들지 마라 이 빌어먹을 새끼들아!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmme1001", 128, TRUE);
+	OutputLine(NULL, "「そうじゃそうじゃ！！",
+		   NULL, "\"그래 맞다!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmme1002", 128, TRUE);
+	OutputLine(NULL, "　園崎のクソババアはすっこんどれッ！！」",
+		   NULL, "소노자키의 썩을 할매는 꺼지라!!\" ", Line_Normal);
+	SetSpeedOfMessage( FALSE, 0 );
+
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>役人</color>", NULL, "<color=#f5e6d3>관리</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_yakua1004", 128, TRUE);
+	OutputLine(NULL, "「…あーー、",
+		   NULL, "\"...아아- ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 800 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "もちろんダム計画に同意してくださる方には見合う保障を用意いたしております。",
+		   NULL, "물론 댐 계획에 동의해 주신다면 그에 맞는 보상을 준비해 드립니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_yakua1005", 128, TRUE);
+	OutputLine(NULL, "決して土地の搾取ではありませんのでぇ…、」",
+		   NULL, "결코 토지의 착취가 아니므로...\" ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_daidageki", 128, 64 );
+	StartShakingOfWindow( 244, 40, 0, 0, 4*2, FALSE );
+	StartShakingOfAllObjects( 244, 40, 0, 0, 4*2, FALSE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>오료</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1015", 128, TRUE);
+	OutputLine(NULL, "「黙れ役人！！",
+		   NULL, "\"닥치라 공무원!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1016", 128, TRUE);
+	OutputLine(NULL, "　おんどりゃあ、村ン真っ二つに裂こう魂胆かいッ！！",
+		   NULL, "느그들 마을을 둘로 쪼갤 셈이제!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>오료</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1017", 128, TRUE);
+	OutputLine(NULL, "死ねや北条！！",
+		   NULL, "지기삔다 호죠!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1018", 128, TRUE);
+	OutputLine(NULL, "　村の空気を吸う資格はねぇ、今すぐ息止めて死ねッ！！」",
+		   NULL, "마을의 공기를 마실 자격도 없다, 숨도 쉬지 말고 디지라!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>沙都子父</color>", NULL, "<color=#f5e6d3>사토코의 아버지</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1021", 128, TRUE);
+	OutputLine(NULL, "「なめんなボケが！！",
+		   NULL, "\"장난치나 노친네야! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1022", 128, TRUE);
+	OutputLine(NULL, "　ぶッ殺してやるわ、前に出ろクソババア！！！",
+		   NULL, "앞으로 튀 나와라 망할 할망구야 지기삐게!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_satokof1023", 128, TRUE);
+	OutputLine(NULL, "　おおおお、引っ込まんかいデカポリ！！」",
+		   NULL, "오오오, 짭새는 끄지라!!\" ", Line_Normal);
+	ClearMessage();
+
+	DrawFilm( 2, 0xff, 0x88, 0x88, 256, 0, 1000, TRUE );
+
+	ModPlayBGM( 3, "semi_r", 120, 0, 0 );
+	ModPlayBGM( 3, "semi", 120, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>오료</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1019", 128, TRUE);
+	OutputLine(NULL, "「よーーう抜かした。",
+		   NULL, "\"잘 씨부리네. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1020", 128, TRUE);
+	OutputLine(NULL, "…よーぅ抜かしたわ北条の。",
+		   NULL, "잘도 씨부리네 호죠 이 새끼야. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1021", 128, TRUE);
+	OutputLine(NULL, "……この園崎お魎、ひっさびさに頭に血ぃ登って来よったんわ。",
+		   NULL, "...이 소노자키 오료, 오랜만에 머리에 피가 쏠리네. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1022", 128, TRUE);
+	OutputLine(NULL, "きっちりケジメ取らせてもらうかんの。",
+		   NULL, "반드시 대가를 치루게 해주마. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1023", 128, TRUE);
+	OutputLine(NULL, "あんじょう、楽しみに待っとれやッ…！！！」",
+		   NULL, "기대하고 있으라이...!!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>村人</color>", NULL, "<color=#f5e6d3>마을 남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmme1003", 128, TRUE);
+	OutputLine(NULL, "「北条、やれやれッ！！",
+		   NULL, "\"한 판 붙어삐자 호죠! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_farmme1004", 128, TRUE);
+	OutputLine(NULL, "　国は俺たちに仕事と住処とカネを与えろー！！」",
+		   NULL, "나라는 우리에게 일이랑 집이랑 돈을 내놔라~!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>役人</color>", NULL, "<color=#f5e6d3>관리</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_yakua1006", 128, TRUE);
+	OutputLine(NULL, "「こらこら！！",
+		   NULL, "\"이거 참!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_yakua1007", 128, TRUE);
+	OutputLine(NULL, "　やめなさい暴力は！！",
+		   NULL, "폭력은 안돼요!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtk1_yakua1008", 128, TRUE);
+	OutputLine(NULL, "　お互い、やめてやめてッ！！」",
+		   NULL, "모두 그만둬 그만둬!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#d7e6de>お魎</color>", NULL, "<color=#d7e6de>오료</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1024", 128, TRUE);
+	OutputLine(NULL, "「すったらんたぁ上等じゃああ！！",
+		   NULL, "\"말 잘했다 개자식아!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 17, "ps3/s20/17/vtk1_oryou1025", 128, TRUE);
+	OutputLine(NULL, "　おんしが出てこんかいなッ！！」",
+		   NULL, "빨리 덤비라!!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　みんなが、真っ赤な怒りにどんどんと染まっていく…。",
+		   NULL, "모두가 새빨간 분노에 점점 물들어 간다.... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　僕はそれを、黙って見ているしかできない………。",
+		   NULL, "나는 그 광경을 입 다물고 지켜볼 수밖에 없다.......... ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　せめてできるのは、",
+		   NULL, "내가 할 수 있는 일이라곤, ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 900 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……これから起こるかもしれない惨劇を、",
+		   NULL, "앞으로 일어날지도 모르는 참극을, ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…今から詫びることだけだった…。",
+		   NULL, "지금부터 사과하는 것뿐이었다.... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…ごめんなさい、",
+		   NULL, "...미안해요, ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "ごめんなさい。",
+		   NULL, "미안해요 ", Line_WaitForInput);
+	OutputLine(NULL, "ごめんなさい、",
+		   NULL, "미안해요. ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "ごめんなさい、",
+		   NULL, "미안해요. ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "ごめんなさい…。",
+		   NULL, "미안해요... ", Line_ContinueAfterTyping);
+	OutputLineAll(NULL, "", Line_Normal);
+
+	ClearMessage();
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして………、この日がきっかけなのだ。",
+		   NULL, "이날이......... 모든 일의 시작이였다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……この日を境に北条家と園崎家は決定的に対立し、北条家は村の中で孤立を深めていく。",
+		   NULL, "......이날을 계기로 호죠 가문과 소노자키 가문이 대립하기 시작해, 호죠 가문이 마을 안에서 고립되었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それは沙都子と悟史を辛い運命へ突き落としていくということなのだ……。",
+		   NULL, "그리고 사토코와 사토시가, 괴로운 운명의 구렁텅이에 빠지게 되었다.... ", Line_Normal);
+	ClearMessage();
+
+	FadeFilm( 0, TRUE );
+
+	CallScript( "&eye" );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, FALSE );
+	FadeOutBGM( 3, 1000, FALSE );
+	DrawScene( "black", 1000 );
+
+}

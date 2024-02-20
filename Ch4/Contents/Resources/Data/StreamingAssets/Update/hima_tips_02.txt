@@ -1,0 +1,261 @@
+void main()
+{
+
+//*Sub_Tips_065
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 1, "msys13", 56, 0 );
+
+//■来賓挨拶用原稿
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　××会長さん＠××会の皆さん＠この度は××会創立二十五周年、誠におめでとうございます￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　××会長さん、",
+		   NULL, "xx회장님. ", Line_WaitForInput);
+	OutputLine(NULL, "××会の皆さん、",
+		   NULL, "xx회 여러분. ", Line_WaitForInput);
+	OutputLine(NULL, "この度は××会創立二十五周年、誠におめでとうございます。",
+		   NULL, "이번 xx회 창립 25주년을 진심으로 축하드립니다. ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　この二十五年は、そのまま××県発展の歴史そのものでありました＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この二十五年は、そのまま××県発展の歴史そのものでありました。",
+		   NULL, "이 25년간은 xx현 발전의 역사 그 자체라고 할 수 있습니다. ", GetGlobalFlag(GLinemodeSp));
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　かつては閑静で一面の田畑だった景色も＠念願であった新幹線停車駅の開業＠そして高速道路の整備により、今や若い活気の溢れる近代的都市に生まれ変わりました￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　かつては閑静で一面の田畑だった景色も、",
+		   NULL, "한 때 적적한 논밭이 드리워졌을 뿐인 경치도, ", Line_WaitForInput);
+	OutputLine(NULL, "念願であった新幹線停車駅の開業、",
+		   NULL, "모두가 소망하던 신칸센 역의 개업과, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "そして高速道路の整備により、今や若い活気の溢れる近代的都市に生まれ変わりました。",
+		   NULL, "고속도로의 정비에 의해서 근래의 젊은 기운이 넘쳐나는 근대적인 도시로 다시 태어난 것입니다. ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　新しい良いものを次々と取り入れて発展する経済と産業＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　新しい良いものを次々と取り入れて発展する経済と産業。",
+		   NULL, "우수한 신문물을 차례차례 들여와 발전하는 경제와 산업. ", GetGlobalFlag(GLinemodeSp));
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　そして古き良き伝統を大切にする××県民特有の郷土愛により＠伝統と文化、経済と産業の全てを両立した日本有数の素晴らしい都市へと成長を遂げました＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして古き良き伝統を大切にする××県民特有の郷土愛により、",
+		   NULL, "그리고 오래됐지만 좋은 전통을 소중히 하는 xx현 사람들 특유의 향토애에 의해, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "伝統と文化、経済と産業の全てを両立した日本有数の素晴らしい都市へと成長を遂げました。",
+		   NULL, "전통과 문화, 경제와 산업 모든 것을 갖춘 일본 유수의 훌륭한 도시로 성장을 이루었습니다. ", GetGlobalFlag(GLinemodeSp));
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　そして、この××県発展の歴史はそのまま、××会の発展の歴史そのものと言えるのであります￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、この××県発展の歴史はそのまま、××会の発展の歴史そのものと言えるのであります。",
+		   NULL, "그리고, 이 xx현 발전의 역사는 말 그대로, xx회의 발전의 역사 그 자체라고도 할 수 있습니다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　私共には、一度決めて掲げた公約、施策はどこまでも貫き掲げとおす＠文字通り矢のような鋭い実行力が求められています＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私共には、一度決めて掲げた公約、施策はどこまでも貫き掲げとおす、",
+		   NULL, "저희에게는 한 번 정한 공약과 시책은 끝까지 관철시킬만한, ", Line_WaitForInput);
+	OutputLine(NULL, "文字通り矢のような鋭い実行力が求められています。",
+		   NULL, "말 그대로 화살과도 같이 단호한 실행력이 필요합니다. ", GetGlobalFlag(GLinemodeSp));
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　この矢を会章にあしらった××会の皆さんは、まさにこの矢のごとき実行力を以て、××県民の恒久的幸せのために、あらゆる障害を貫く矢であると思っています￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この矢を会章にあしらった××会の皆さんは、まさにこの矢のごとき実行力を以て、××県民の恒久的幸せのために、あらゆる障害を貫く矢であると思っています。",
+		   NULL, "이 화살을 회칙으로 삼은 xx회의 여러분은, 그야말로 이 화살과도 같은 실행력을 본받아 xx현 사람들의 항구적인 행복을 위해서, 갖은 장해물을 돌파하는 화살 그 자체라 생각합니다. ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　ですが皆さんはただの矢ではありません＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ですが皆さんはただの矢ではありません。",
+		   NULL, "하지만, 여러분은 단순한 화살이 아닙니다. ", GetGlobalFlag(GLinemodeSp));
+
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　矢のように剛直でまっすぐであると同時に、時代に即したやり方を常に模索して研究を怠らず、常に時代の先を見通す目も持っております＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　矢のように剛直でまっすぐであると同時に、時代に即したやり方を常に模索して研究を怠らず、常に時代の先を見通す目も持っております。",
+		   NULL, "화살과 같이 강직하고 올곧으며, 동시에 시대에 걸맞은 방식을 항상 모색하고 연구를 게을리 하지 않는, 언제나 시대를 앞서 내다보는 눈을 가지고 계십니다. ", GetGlobalFlag(GLinemodeSp));
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　放たれた矢は、一度決められた目標に向かってただただ飛ぶことしかできません￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　放たれた矢は、一度決められた目標に向かってただただ飛ぶことしかできません。",
+		   NULL, "한 번 쏘아진 화살은, 정해진 목표를 향해 그저 날아갈 수 밖에 없습니다. ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　しかし皆さんは、ただの矢ではない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかし皆さんは、ただの矢ではない。",
+		   NULL, "하지만 여러분은 단순한 화살이 아닙니다. ", GetGlobalFlag(GLinemodeSp));
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　一度、弓から放たれながらも、常に勉強を怠らず＠新しいやり方＠より効果的な施策を見つけ出すや、その矢の軌道を直ちに変えるという柔軟な姿勢も持つ、魔法の矢なのでもあります￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　一度、弓から放たれながらも、常に勉強を怠らず、",
+		   NULL, "한 번 활에서 쏘아지더라도 언제나 궁리하고, ", Line_WaitForInput);
+	OutputLine(NULL, "新しいやり方、",
+		   NULL, "새로운 방식으로, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "より効果的な施策を見つけ出すや、その矢の軌道を直ちに変えるという柔軟な姿勢も持つ、魔法の矢なのでもあります。",
+		   NULL, "보다 효과적인 시책을 찾아내거나 그 화살의 궤도를 곧장 바꿀수 있는 유연한 자세를 가진, 마법의 화살이기도 합니다. ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　時代は常に進歩しています＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　時代は常に進歩しています。",
+		   NULL, "시대는 언제나 진보해 나갑니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　時に、施策から実行に至る過程よりもさらに早く時代が進んでしまうこともありえます＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　時に、施策から実行に至る過程よりもさらに早く時代が進んでしまうこともありえます。",
+		   NULL, "때로는 시책으로부터 실행에 이르는 과정보다도 더욱 빠르게 시대가 나아가 버리기도 합니다. ", GetGlobalFlag(GLinemodeSp));
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//（以下は原稿にない部分＠大臣のアドリブと思われる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（以下は原稿にない部分。",
+		   NULL, "(이하는 원고에는 없는 부분. ", Line_WaitForInput);
+	OutputLine(NULL, "大臣のアドリブと思われる）",
+		   NULL, "장관의 애드립으로 생각된다.) ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　例えば、県内で近年、いろいろと問題になっている雛見沢村電源基本計画についても＠お上が決めたからこうと貫くのではなく、次代と郷土と県民の変わり続ける要望と常に照らし合わせて見直す柔軟さが必要なのです＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　例えば、県内で近年、いろいろと問題になっている雛見沢村電源基本計画についても、",
+		   NULL, "예를 들면, 현 내에 최근 여러가지로 문제가 된 히나미자와촌 전원기본계획에 대해서도, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "お上が決めたからこうと貫くのではなく、次代と郷土と県民の変わり続ける要望と常に照らし合わせて見直す柔軟さが必要なのです。",
+		   NULL, "위에서 정했기에 나아가는 것이 아닌, 다음 세대와 향토와 현민들이 계속 변해가길 바라는 요망과 항상 서로를 비춰주며 다시 되돌아보는 유연함이 필요한 것입니다. ", GetGlobalFlag(GLinemodeSp));
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　雛見沢ダムを巡る住民運動もまた＠××県民の意思なのであり＠すでに決まった施策であるからこれに耳を貸す必要がないとなれば、これは戦後日本の民主政治に悪い影を落とすことになりかねません￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢ダムを巡る住民運動もまた、",
+		   NULL, "히나미자와 댐을 둘러싼 주민운동도 또한, ", Line_WaitForInput);
+	OutputLine(NULL, "××県民の意思なのであり、",
+		   NULL, "xx현민의 의사이며, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "すでに決まった施策であるからこれに耳を貸す必要がないとなれば、これは戦後日本の民主政治に悪い影を落とすことになりかねません。",
+		   NULL, "이미 정해진 시책이기에 여기에 귀를 기울일 필요가 없다고 넘긴다면, 전후 일본의 민주정치에 나쁜 영향을 끼칠지도 모릅니다. ", Line_Normal);
+	ClearMessage();
+
+//（以下から原稿のとおり￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（以下から原稿のとおり）",
+		   NULL, "(이하부턴 다시 원고내용대로) ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　私も日本国民の、そして××県民の皆さんの恒久的幸せのために、これと決めた施策は徹底的に＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私も日本国民の、そして××県民の皆さんの恒久的幸せのために、これと決めた施策は徹底的に。",
+		   NULL, "저도 일본국민과 xx현 사람들 모두의 항구적인 행복을 위해서, 한 번 정한 시책은 철저하게, ", GetGlobalFlag(GLinemodeSp));
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　だけれども常に時代の先を見据えながら、そのやり方を模索できる××会の皆さんの柔軟性を学ばなければならないなと常日頃思わされるわけであります￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だけれども常に時代の先を見据えながら、そのやり方を模索できる××会の皆さんの柔軟性を学ばなければならないなと常日頃思わされるわけであります。",
+		   NULL, "그렇지만 항상 시대를 앞서 내다보면서, 그 방식을 모색할 수 있는 xx회 여러분들의 유연함을 배우지 않으면 안된다고 항상 생각하게 됩니다. ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　長くなりましたが＠以上を持ちまして××会二十五周年のお祝いの言葉とかえさせていただきます＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　長くなりましたが、",
+		   NULL, "길어졌습니다만, ", Line_WaitForInput);
+	OutputLine(NULL, "以上を持ちまして××会二十五周年のお祝いの言葉とかえさせていただきます。",
+		   NULL, "이상으로, xx회 25주년 축하연설을 끝마치도록 하겠습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　××会長さん＠並びに××会の皆さん＠本日は本当におめでとうございました＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　××会長さん、",
+		   NULL, "xx회장님, ", Line_WaitForInput);
+	OutputLine(NULL, "並びに××会の皆さん。",
+		   NULL, "더불어서 xx회의 여러분들. ", Line_WaitForInput);
+	OutputLine(NULL, "本日は本当におめでとうございました。",
+		   NULL, "오늘 진심으로 축하드립니다. ", GetGlobalFlag(GLinemodeSp));
+
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　××県議連、議員勉強会××会発足二十五周年記念祝賀会での、建設大臣の来賓挨拶より￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　××県議連、議員勉強会××会発足二十五周年記念祝賀会での、建設大臣の来賓挨拶より。",
+		   NULL, "xx현 의원연합, 의원연구회 xx회 발전 25주년 기념 축하회에서의 건설부장관 내빈인사로부터. ", Line_Normal);
+	ClearMessage();
+
+
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+//gosub *tip_e
+//return
+
+}

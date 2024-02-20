@@ -1,0 +1,684 @@
+void main()
+{
+
+//*Sub_Tips_072
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+
+	DisableWindow();
+	DrawScene("black", 1000 );
+
+	PlayBGM( 1, "msys31", 56, 0 );
+
+//■箱選びゲーム
+
+//　人生に選択肢なんて、あると思う＠
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　人生に選択肢なんて、あると思う？",
+		   NULL, "인생에 선택지가 있다고 생각해? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　よく嘆く人がいる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　よく嘆く人がいる。",
+		   NULL, "곧잘 아쉬워하는 사람이 있어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　人生の節々で、明確な選択肢が設けられていたならば、それを吟味し、よりよい未来へ自分を誘えるのに、と＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　人生の節々で、明確な選択肢が設けられていたならば、それを吟味し、よりよい未来へ自分を誘えるのに、と。",
+		   NULL, "인생의 마디마디에 명확한 선택지가 있다면, 천천히 고민해서 보다 좋은 미래로 자신을 이끌 수 있었을 거라면서. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　…私はそういう嘆きを漏れ聞く度に、下らない悩みだな、と思うのだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…私はそういう嘆きを漏れ聞く度に、下らない悩みだな、と思うのだ。",
+		   NULL, "...나는 그런 후회하는 소리를 들을 때마다 시시한 고민이라고 생각해. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　選択肢を与えられたって、どうせ何の意味もないし、よりよい未来へ自分を誘えることなんて何もない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　選択肢を与えられたって、どうせ何の意味もないし、よりよい未来へ自分を誘えることなんて何もない。",
+		   NULL, "선택지가 주어졌다고 해도 어차피 아무런 의미도 없는데다가, 보다 좋은 미래로 자신을 이끌어 간다니 있을 수 없어. ", Line_Normal);
+	ClearMessage();
+
+
+
+//　……話がわかりにくい？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……話がわかりにくい？　",
+		   NULL, "......무슨 이야기인지 이해하기 어려워? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	DrawScene("background/aka1", 1000 );
+
+//　じゃあ仮に、あなたの目の前に２つの怪しげな箱を置いてあげよう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　じゃあ仮に、あなたの目の前に２つの怪しげな箱を置いてあげよう。",
+		   NULL, "자, 그럼 당신의 눈앞에 2개의 이상한 상자를 놓아둘게. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　そして、そこに２つだけの選択肢を与えてやるとする＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、そこに２つだけの選択肢を与えてやるとする。",
+		   NULL, "그리고 그곳에 단 두 가지만의 선택지가 주어졌다고 하자. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　曰く、赤い箱を開けるか、青い箱を開けるか￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　曰く、赤い箱を開けるか、青い箱を開けるか。",
+		   NULL, "흔히 말하는, 빨간 상자를 열까 파란 상자를 열까 야. ", Line_Normal);
+	ClearMessage();
+
+
+//　あなたはいろいろと迷うだろう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あなたはいろいろと迷うだろう。",
+		   NULL, "당신은 여러 가지로 고민하겠지. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　開けなくてはならないなら、赤か青か、自分にとってよりよい方を開けたいと願うのは自然な欲求だ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　開けなくてはならないなら、赤か青か、自分にとってよりよい方を開けたいと願うのは自然な欲求だ。",
+		   NULL, "반드시 열어야만 한다면, 빨강인가 파랑인가, 자신에게 있어 보다 좋은 쪽을 열고 싶다고 바라는 것이 자연스런 욕구겠지. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　そして、箱の形状や気配、諸々を勘案し、やがて苦慮の末、赤か青か、どちらかを選択するに違いない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、箱の形状や気配、諸々を勘案し、やがて苦慮の末、赤か青か、どちらかを選択するに違いない。",
+		   NULL, "그리고 상자의 형태나 분위기 여러 가지를 감안하여, 결국 고심한 끝에 빨강이나 파랑 어느 쪽인가를 선택할 것이 틀림없어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　………あなたなら、どっちの箱を選ぶ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　………あなたなら、どっちの箱を選ぶ？",
+		   NULL, ".........당신이라면 어느 쪽 상자를 선택할거야? ", Line_Normal);
+	ClearMessage();
+
+
+//　赤と青＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　赤と青。",
+		   NULL, "빨강과 파랑. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　…刷り込まれた信号機の法則に従うなら、赤は危険を意味する色＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…刷り込まれた信号機の法則に従うなら、赤は危険を意味する色。",
+		   NULL, "... 틀에 박힌 신호등의 법칙을 따른다면 빨강은 위험을 의미하는 색. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　でも、だからといって、青という色が安全を保証するものでもない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも、だからといって、青という色が安全を保証するものでもない。",
+		   NULL, "하지만 그렇다고 해서 파랑이라는 색이 안전을 보증하는 것도 아니야. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　むしろ、赤を警戒させて、青を開けさせようという罠かもしれない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　むしろ、赤を警戒させて、青を開けさせようという罠かもしれない。",
+		   NULL, "오히려 빨강을 경계하게 해서 파랑을 열게 하려고 하는 함정일지도 몰라. ", Line_Normal);
+	ClearMessage();
+
+//　罠＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　罠？",
+		   NULL, "함정? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　…この中身には得をするものでなく、損をさせるものが入っているかもしれない…＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…この中身には得をするものでなく、損をさせるものが入っているかもしれない…？",
+		   NULL, "...이 안에는 득이 되는 것이 아니라, 손해를 보는 것이 들어있을지도 몰라...? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　さぁさぁ…あなたは迷ってきた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さぁさぁ…あなたは迷ってきた。",
+		   NULL, "자~자~... 당신은 망설이기 시작했어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　赤か青かの選択に葛藤し、…箱を開けずにここから立ち去るという選択肢も欲しくなって来たに違いない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　赤か青かの選択に葛藤し、…箱を開けずにここから立ち去るという選択肢も欲しくなって来たに違いない。",
+		   NULL, "빨강이냐 파랑이냐의 선택에 갈등하며... 상자를 열지 않은 채 여기서 도망치는 선택지도 바라게 됐을 게 틀림없어. ", Line_Normal);
+	ClearMessage();
+
+
+//　でもだめ＠赤か青のどちらかを開けなくてはならない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でもだめ。",
+		   NULL, "하지만 안돼. ", Line_WaitForInput);
+	OutputLine(NULL, "赤か青のどちらかを開けなくてはならない。",
+		   NULL, "빨강이나 파랑 어느 쪽 중 하나를 열지 않으면 안돼. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　あ、言い忘れたけれども、あなたが片方を選ぶと、もう片方の箱は消えてしまう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あ、言い忘れたけれども、あなたが片方を選ぶと、もう片方の箱は消えてしまう。",
+		   NULL, "아, 말하는 걸 잊었는데 당신이 한쪽을 선택하면 다른 한쪽의 상자는 사라지고 말아. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　だから、選ばなかった方の箱の中身は知ることができない＠そういうルールがあることを、最後に付け加えておくね￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だから、選ばなかった方の箱の中身は知ることができない。",
+		   NULL, "그러니까 선택하지 않았던 상자의 안에는 뭐가 들어있었는지 알 수 없어. ", Line_WaitForInput);
+	OutputLine(NULL, "そういうルールがあることを、最後に付け加えておくね？",
+		   NULL, "이런 규칙이 있다는 걸 마지막으로 덧붙여둘게? ", Line_Normal);
+	ClearMessage();
+
+
+//　さぁ＠選んでごらん＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さぁ。",
+		   NULL, "자~. ", Line_WaitForInput);
+	OutputLine(NULL, "選んでごらん？",
+		   NULL, "골라볼래? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　赤い箱か、青い箱＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　赤い箱か、青い箱。",
+		   NULL, "빨강 상자나 파랑 상자. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　…大丈夫、どっちも損なものは入っていないから＠…ほら￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…大丈夫、どっちも損なものは入っていないから。",
+		   NULL, "...괜찮아, 어느 쪽도 손해보는 것은 들어있지 않으니까. ", Line_WaitForInput);
+	OutputLine(NULL, "…ほら。",
+		   NULL, "...자 어서. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_044", 56, 64 );
+
+	DrawBustshot(5, "2choices", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 300, FALSE );
+	char Item[2];
+
+	if(GetGlobalFlag(GLanguage) == 1)
+	{
+		Item[0] = "Open the red box";
+		Item[1] = "Open the blue box";
+	}
+	else
+	{
+		Item[0] = "赤い箱を開ける";
+		Item[1] = "青い箱を開ける";
+	}
+
+//	InitializeSelectedItem();
+	Select( 2, Item );
+	FadeBustshot( 5, FALSE, 0, 0, 0, 0, 300, TRUE );
+	if(LoadValueFromLocalWork( SelectResult ) == 0)
+	{
+		SetGlobalFlag(redbox , TRUE);
+		CallSection( "hima_tips_09_a" );
+	}
+
+	if(LoadValueFromLocalWork( SelectResult ) == 1)
+	{
+		SetGlobalFlag(bluebox , TRUE);
+		CallSection( "hima_tips_09_b" );
+	}
+}
+
+void hima_tips_09_a()
+{
+	EnableJumpingOfReturnIcon();
+
+//　よく考えた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　よく考えた？",
+		   NULL, "잘 생각한 거야? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　その結果、この色を選んだのね＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その結果、この色を選んだのね？",
+		   NULL, "그 결과, 이 색깔을 선택한거지? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　…あなたが選んだ時点で、もう片方の色の箱はパッ消えてしまった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…あなたが選んだ時点で、もう片方の色の箱はパッ消えてしまった。",
+		   NULL, "... 당신이 선택한 시점에서 이미 다른 쪽 색의 상자는 팟~ 하고 사라져 버렸어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　そっちの箱の中身はもう諦めてね＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そっちの箱の中身はもう諦めてね？",
+		   NULL, "그쪽의 상자 안에 든 내용은 이제 포기해야된다? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　そういうルールなんだから＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そういうルールなんだから。",
+		   NULL, "그런 규칙이었으니까. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　さ、あなたの選んだ箱を開けてみよう￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さ、あなたの選んだ箱を開けてみよう。",
+		   NULL, "자, 당신이 선택한 상자를 열어볼게. ", Line_Normal);
+	ClearMessage();
+
+
+//　箱の中からは、!w1000……キャラメルが１つぶ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　箱の中からは、",
+		   NULL, "상자의 안에는, ", Line_ContinueAfterTyping);
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "……キャラメルが１つぶ。",
+		   NULL, "...캐러멜이 1개. ", Line_Normal);
+	ClearMessage();
+
+
+
+	if(GetGlobalFlag(bluebox) == 0)
+	{
+		CallSection( "hima_tips_09_c" );
+	}
+
+	if(GetGlobalFlag(bluebox) == 1)
+	{
+		CallSection( "hima_tips_09_d" );
+	}
+
+
+}
+
+void hima_tips_09_b()
+{
+	EnableJumpingOfReturnIcon();
+
+//　よく考えた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　よく考えた？",
+		   NULL, "잘 생각한 거야 ? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　その結果、この色を選んだのね＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その結果、この色を選んだのね？",
+		   NULL, "그 결과, 이 색깔을 선택한거지 ? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　…あなたが選んだ時点で、もう片方の色の箱はパッ消えてしまった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…あなたが選んだ時点で、もう片方の色の箱はパッ消えてしまった。",
+		   NULL, "...당신이 선택한 시점에서 이미 다른 쪽 색의 상자는 팟~ 하고 사라져 버렸어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　そっちの箱の中身はもう諦めてね＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そっちの箱の中身はもう諦めてね？",
+		   NULL, "그쪽의 상자 안에 든 내용은 이제 포기해야된다? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　そういうルールなんだから＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そういうルールなんだから。",
+		   NULL, "그런 규칙이었으니까. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　さ、あなたの選んだ箱を開けてみよう￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さ、あなたの選んだ箱を開けてみよう。",
+		   NULL, "자, 당신이 선택한 상자를 열어볼게. ", Line_Normal);
+	ClearMessage();
+
+
+//　箱の中からは、!w1000……チューイングガムが１枚￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　箱の中からは、",
+		   NULL, "상자의 안에는, ", Line_ContinueAfterTyping);
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "……チューイングガムが１枚。",
+		   NULL, "...풍선껌이 1개. ", Line_Normal);
+	ClearMessage();
+
+	if(GetGlobalFlag(redbox) == 0)
+	{
+		CallSection( "hima_tips_09_c" );
+	}
+
+	if(GetGlobalFlag(redbox) == 1)
+	{
+		CallSection( "hima_tips_09_d" );
+	}
+}
+
+void hima_tips_09_c()
+{
+	EnableJumpingOfReturnIcon();
+
+
+//　……あなたが少しがっかりしてるのが分かる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……あなたが少しがっかりしてるのが分かる。",
+		   NULL, "...당신이 조금 실망 하고 있을 거라는 걸 알아. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　そりゃそうよね＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そりゃそうよね。",
+		   NULL, "그야 그렇겠네. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　どう見ても、ハズレっぽいものね￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どう見ても、ハズレっぽいものね。",
+		   NULL, "어떻게 봐도 꽝 같은 걸. ", Line_Normal);
+	ClearMessage();
+
+
+//　正解の箱には、ひょっとすると、板チョコが１枚くらいは入ってたかもしれないものね＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　正解の箱には、ひょっとすると、板チョコが１枚くらいは入ってたかもしれないものね。",
+		   NULL, "정답의 상자에는 어쩌면 판초코가 1개 정도는 들어있었을지도 몰라. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　いや、ひょっとすると、ハワイにペアでご招待なんていう、もっともっとすごいものが入っていたかもしれない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　いや、ひょっとすると、ハワイにペアでご招待なんていう、もっともっとすごいものが入っていたかもしれない。",
+		   NULL, "아니야, 어쩌면 하와이 페어 초대권 같은 훨씬 더 굉장한 것이 들어있었을지도 모르지. ", Line_Normal);
+	ClearMessage();
+
+
+//　でも、それを確かめたくても、もうひとつの箱はもう消えてしまっている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも、それを確かめたくても、もうひとつの箱はもう消えてしまっている。",
+		   NULL, "하지만 그것을 확인하고 싶어도 또 하나의 다른 상자는 이미 사라져 버렸어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　それを確かめる術はない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それを確かめる術はない。",
+		   NULL, "그것을 확인할 방법은 없어. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　だからあなたはプラス思考で考えてみることにするの＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だからあなたはプラス思考で考えてみることにするの。",
+		   NULL, "그러니까 당신은 플러스 사고로 생각해 보기로 한 거야. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　ひょっとすると…もう片方の箱は空っぽで、むしろこの箱はアタリだったのかもしれない、と＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ひょっとすると…もう片方の箱は空っぽで、むしろこの箱はアタリだったのかもしれない、と。",
+		   NULL, "어쩌면... 또 한쪽의 상자는 텅 빈 채 오히려 이 상자가 정답이었을지도 모른다고. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　そしてその安っぽい賞品に満足して（あるいは不満でもいい）、それをポイ！と口に放り込んで、もぐもぐとやって満足してしまうのだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そしてその安っぽい賞品に満足して（あるいは不満でもいい）、それをポイ！と口に放り込んで、もぐもぐとやって満足してしまうのだ。",
+		   NULL, "그리고 이 값싼 상품에 만족하며 (만족하지 못해도 좋아.)  그것을 가볍게 휙!하고 입에 넣어 냠냠 먹으며 만족하는 거야. ", Line_Normal);
+	ClearMessage();
+
+
+//　で、最後にあなたは思うのかしら＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　で、最後にあなたは思うのかしら？",
+		   NULL, "그리고 마지막에 당신은 생각하겠지? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　次に同じ選択肢が与えられたら、反対の箱を開けてみようって＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　次に同じ選択肢が与えられたら、反対の箱を開けてみようって？",
+		   NULL, "다음에 같은 선택지가 주어진다면 반대쪽 상자를 열어보자고? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　……でも、お気の毒だけど、赤い箱と青い箱を選ぶなんてゲームは二度とあなたには訪れない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……でも、お気の毒だけど、赤い箱と青い箱を選ぶなんてゲームは二度とあなたには訪れない。",
+		   NULL, "...그러나 안됐지만 빨강 상자와 파랑상자를 고르는 놀이는 두 번 다시 당신에게 방문하지 않아. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　だから、選択肢を選びなおす機会など、一生訪れない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だから、選択肢を選びなおす機会など、一生訪れない。",
+		   NULL, "그러니까 선택지를 다시 고를 기회 따윈 평생 없어. ", Line_Normal);
+	ClearMessage();
+
+
+//　人生の選択は一度しかないから、慎重にって、よく親に言われるでしょう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　人生の選択は一度しかないから、慎重にって、よく親に言われるでしょう？",
+		   NULL, "인생의 선택은 한번 밖에 없으니까 신중하게 하라는 말, 곧잘 부모님께 듣잖아? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　くすくすくすくす……＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　くすくすくすくす……。",
+		   NULL, "후후후후....... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　ね＠　選択肢なんて、大したものじゃない＠…ちょっと幻滅した＠　あっはははははは……￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ね？",
+		   NULL, "그치 ? ", Line_WaitForInput);
+	OutputLine(NULL, "　選択肢なんて、大したものじゃない。",
+		   NULL, "선택지 따윈 대단한 게 아냐.... ", Line_WaitForInput);
+	OutputLine(NULL, "…ちょっと幻滅した？",
+		   NULL, "조금 실망했어? ", Line_WaitForInput);
+	OutputLine(NULL, "　あっはははははは……。",
+		   NULL, "앗하하하하하....... ", Line_Normal);
+	ClearMessage();
+
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+}
+
+void hima_tips_09_d()
+{
+	EnableJumpingOfReturnIcon();
+//■■再挑戦で、両方の箱を開けた場合
+//※二つ目に選んだ箱を開けた場合ということ
+//*Sub_Tips_072_4
+
+
+//　……あなたは今、なぁんだと思ってる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……あなたは今、なぁんだと思ってる。",
+		   NULL, "......당신은 지금 뭐~야 라고 생각하고 있어. ", Line_Normal);
+	ClearMessage();
+
+
+//　そう、赤と青の箱の中身は、キャラメル１つぶと、チューイングガム１枚＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そう、赤と青の箱の中身は、キャラメル１つぶと、チューイングガム１枚。",
+		   NULL, "그래, 빨강과 파랑의 상자의 안은 캐러맬 1개와, 풍선껌 1개. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　さっきはハズレだと思ってたかもしれないけど、こうして並べると、どっちがハズレとも言い難いのがわかるでしょ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さっきはハズレだと思ってたかもしれないけど、こうして並べると、どっちがハズレとも言い難いのがわかるでしょ。",
+		   NULL, "조금 전은 꽝이라고 생각했을지도 모르지만, 이렇게 비교해보면 어느 쪽이 꽝인지 말하기 어렵다는 걸 알겠지? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　まぁ、でも、人の好みもあるもんね＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　まぁ、でも、人の好みもあるもんね。",
+		   NULL, "뭐~ 하지만 사람의 취향이란 것도 있으니까. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　キャラメルの方が好きだとか、ガムの方が好きだとか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　キャラメルの方が好きだとか、ガムの方が好きだとか。",
+		   NULL, "캐러맬 쪽이 좋다던가 껌 쪽이 좋다던가. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　…あなたの好みによって、あなたはきっと開ける箱を選びなおそうと思うに違いない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…あなたの好みによって、あなたはきっと開ける箱を選びなおそうと思うに違いない。",
+		   NULL, "...당신의 취향에 따라 당신은 분명 열 상자를 다시 선택하려 생각할 게 틀림없어. ", Line_Normal);
+	ClearMessage();
+
+
+
+//　…あなたが欲しがっている選択肢ってのは、つまりそういうもの＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…あなたが欲しがっている選択肢ってのは、つまりそういうもの。",
+		   NULL, "...당신이 원하던 선택지라는 건 즉 그런 것. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　両方の箱の中身を見比べて、良い方を選びたいっていうわがままのこと￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　両方の箱の中身を見比べて、良い方を選びたいっていうわがままのこと。",
+		   NULL, "양쪽 상자 안의 내용물을 서로 비교해서, 좋은 쪽을 선택하고 싶다는 제멋대로인 생각. ", Line_Normal);
+	ClearMessage();
+
+
+//　でもね＠　現実の世の中は今のゲームと同じ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でもね？",
+		   NULL, "하지만 말이지? ", Line_WaitForInput);
+	OutputLine(NULL, "　現実の世の中は今のゲームと同じ。",
+		   NULL, "현실의 세상은 지금의 게임과 마찬가지야. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　片方を選んだら、選ばなかった方は消えてしまう＠だから確かめられない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　片方を選んだら、選ばなかった方は消えてしまう。",
+		   NULL, "한쪽을 선택하면 선택하지 않았던 쪽은 사라져 버리고 말아. ", Line_WaitForInput);
+	OutputLine(NULL, "だから確かめられない。",
+		   NULL, "그러니까 확인할 수 없어. ", Line_Normal);
+	ClearMessage();
+
+
+//　もしもあの時＠××をしていたら＠もしくはしていなかったら＠…きっと今よりも幸福に（もしくは不幸に）なっていたはずだ、なんて、わかりようもない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もしもあの時、",
+		   NULL, "혹시 그때. ", Line_WaitForInput);
+	OutputLine(NULL, "××をしていたら、",
+		   NULL, "XX를 했었다면, ", Line_WaitForInput);
+	OutputLine(NULL, "もしくはしていなかったら、",
+		   NULL, "혹은 하지 않았더라면, ", Line_WaitForInput);
+	OutputLine(NULL, "…きっと今よりも幸福に（もしくは不幸に）なっていたはずだ、なんて、わかりようもない。",
+		   NULL, "...분명 지금보다도 행복하게 (혹은 불행하게) 되어있을 텐데, 되뇌여도 알 턱이 없어. ", Line_Normal);
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　結局、選んだ選択肢に納得し、あるいはがっかりし、一応の満足をする他ないのだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　結局、選んだ選択肢に納得し、あるいはがっかりし、一応の満足をする他ないのだ。",
+		   NULL, "선택지라는 스릴은 일단 만끽했잖아? ", Line_Normal);
+	ClearMessage();
+
+
+//　でもいいじゃない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でもいいじゃない。",
+		   NULL, "하지만 뭐 어때. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　選択肢というスリルは、一応、楽しめたでしょ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　選択肢というスリルは、一応、楽しめたでしょ？",
+		   NULL, "선택지라는 스릴은 일단 만끽했잖아? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　こうして、２つの箱の中身を知ってしまったなら＠赤か青かの選択なんて、暇潰しにもなりゃしない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　こうして、２つの箱の中身を知ってしまったなら。",
+		   NULL, "이렇게 두 개의 상자의 내용물을 알아 버렸다면. ", Line_WaitForInput);
+	OutputLine(NULL, "赤か青かの選択なんて、暇潰しにもなりゃしない。",
+		   NULL, "빨강이냐 파랑이냐의 선택 따위 심심풀이 거리도 안돼. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　こんなつまらない箱遊びよりも、変わりやすい夏の夕暮れの空を見上げて、遠雷に耳を澄ませながら、夕立が降るか降らないかを迷う方が、ずっと楽しいんだから￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "　こんなつまらない箱遊びよりも、変わりやすい夏の夕暮れの空を見上げて、遠雷に耳を澄ませながら、夕立が降るか降らないかを迷う方が、ずっと楽しいんだから。",
+		   NULL, "이런 재미없는 상자 고르기 놀이보다도, 변하기 쉬운 여름 석양의 하늘을 올려다보며, 멀리서 천둥치는 소리에 귀를 기울여... 소나기가 내릴지 안 내릴지를 고민하는 쪽이 훨씬 즐거우니까. ", Line_Normal);
+	ClearMessage();
+
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 1, 1000, TRUE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	SetGlobalFlag(redbox , FALSE);
+	SetGlobalFlag(bluebox , FALSE);
+
+//gosub *tip_e
+//return
+}

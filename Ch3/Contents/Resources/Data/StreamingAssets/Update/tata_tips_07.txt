@@ -1,0 +1,185 @@
+void main()
+{
+
+//■研究ノート
+//*Sub_Tips_051
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	PlayBGM( 1, "msys11", 56, 0 );
+
+//locate 6,6
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	SetStyleOfMessageSwinging( 1 );
+//＜北条家について￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜北条家について＞",
+		   NULL, "<호죠 가에 대해서> ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　オヤシロさまの祟りによって、毎年２人ずつの犠牲者が出ている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　オヤシロさまの祟りによって、毎年２人ずつの犠牲者が出ている。",
+		   NULL, "매년 오야시로님의 저주로 2명씩 희생자가 나오고 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　すでに４年続き、犠牲者は８人になったわけだが、その半数の人間が北条姓を持つことは特筆に価する＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　すでに４年続き、犠牲者は８人になったわけだが、その半数の人間が北条姓を持つことは特筆に価する。",
+		   NULL, "4년 연속으로 희생자가 8명이 나온 현재, 희생자 절반이 호죠 성씨라는 부분을 주목할 필요가 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//※２年目の祟りである転落事故ではダム推進派であった北条氏本人が死に、その妻が失踪した＠（危難失踪扱いでその翌年に死亡宣告＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "※２年目の祟りである転落事故ではダム推進派であった北条氏本人が死に、その妻が失踪した。",
+		   NULL, "저주 2년차(쇼와 55년, 1980년)에 발생한 추락사고에선 댐 찬성파였던 호죠가 죽고 부인이 실종됐다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（危難失踪扱いでその翌年に死亡宣告）",
+		   NULL, "(재난실종 취급으로, 다음해에 사망선고.) ", Line_Normal);
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+//　４年目の祟りでは北条兄妹の養母である叔母が死に、北条氏の長男が失踪した￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　４年目の祟りでは北条兄妹の養母である叔母が死に、北条氏の長男が失踪した。",
+		   NULL, "저주 4년차(쇼와 57년, 1982년)에는 호죠 오누이의 보호자였던 숙모가 죽고 호죠가의 장남이 실종됐다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　北条家は貧しい家庭で、北条氏の仕事も満帆とは言い難かった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　北条家は貧しい家庭で、北条氏の仕事も満帆とは言い難かった。",
+		   NULL, "호죠가는 궁핍한 가정이었으며 일도 잘 풀린다고 말하긴 어려웠다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　親類の縁での再就職をあてに、母方の故郷へ引越す計画があったと言う＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　親類の縁での再就職をあてに、母方の故郷へ引越す計画があったと言う。",
+		   NULL, "친척의 소개로 재취직을 위해서 외가 쪽의 고향으로 이사 갈 계획이 있었다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　そんな北条氏にとって、雛見沢ダム計画による立ち退きと高額な補償金の給付は、まさに渡りに船だったと言えるだろう￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんな北条氏にとって、雛見沢ダム計画による立ち退きと高額な補償金の給付は、まさに渡りに船だったと言えるだろう。",
+		   NULL, "그런 호죠 씨에게 히나미자와 댐 계획으로 지급받는 고액의 보상금은 천재일우의 기회였다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　北条氏は建設省の交渉初期から積極的に応じ、ダム推進派の雛見沢のまとめ役として抜擢された＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　北条氏は建設省の交渉初期から積極的に応じ、ダム推進派の雛見沢のまとめ役として抜擢された。",
+		   NULL, "호죠 씨는 건설부와의 교섭 초기부터 적극적으로 나섰으며, 댐 찬성파에서 히나미자와 협상 정리역으로 발탁되었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　その過程において、建設省から金銭による買収があったと囁かれるが、真偽はわからない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その過程において、建設省から金銭による買収があったと囁かれるが、真偽はわからない。",
+		   NULL, "그 과정에 건설부로부터 매수되었다는 소문도 돌았으나 진위는 알 수 없다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　だが、ダム推進派は極めて少数だった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、ダム推進派は極めて少数だった。",
+		   NULL, "하지만 댐 찬성파는 극히 소수였다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　しかも、園崎家が強力に地盤を固め、反ダムへの結束を強化し始めると、北条氏を除く全てのダム推進派は反ダムへ鞍替えすることになる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかも、園崎家が強力に地盤を固め、反ダムへの結束を強化し始めると、北条氏を除く全てのダム推進派は反ダムへ鞍替えすることになる。",
+		   NULL, "게다가 소노자키 가문이 강력히 기반을 구축하여 댐 반대파의 결속을 강화하기 시작하자, 호죠가를 제외한 모든 댐 찬성파는 댐 반대파로 전향했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　この時点で雛見沢は完全に反ダムで結束し、北条家はダム計画推進の手先として槍玉に挙げられることになった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この時点で雛見沢は完全に反ダムで結束し、北条家はダム計画推進の手先として槍玉に挙げられることになった。",
+		   NULL, "이 시점에서 히나미자와는 완전히 댐 반대파로 결속하였고, 호죠가는 댐 계획의 앞잡이라고 비난받았다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　反ダム結束の為のスケープゴートにされたと言ってもいいだろう￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　反ダム結束の為のスケープゴートにされたと言ってもいいだろう。",
+		   NULL, "댐 반대파의 결속을 위한 희생양이 되었다고 해도 좋을 것이다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　結局、ダム計画は初めてのオヤシロさまの祟りである「バラバラ殺人事件」を最後に瓦解する＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　結局、ダム計画は初めてのオヤシロさまの祟りである「バラバラ殺人事件」を最後に瓦解する。",
+		   NULL, "결국 댐 계획은 최초의 오야시로님의 저주, '토막 살인 사건'을 마지막으로 와해된다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　だが、ダム計画に加担した仇敵への報復は今日でも続けられているのだ...￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、ダム計画に加担した仇敵への報復は今日でも続けられているのだ…。",
+		   NULL, "하지만 댐 계획에 가담했던 배신자를 향한 보복은 오늘날까지도 계속되고 있다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　ダム計画に加担した、もしくは当時にネガティブな評価を持つ者は今日、ほとんど残っていない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ダム計画に加担した、もしくは当時にネガティブな評価を持つ者は今日、ほとんど残っていない。",
+		   NULL, "댐 계획에 가담했거나 당시에 부정적인 평가를 받았던 자들은 오늘날, 거의 남지 않았다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　残る祟り候補がいるとすれば、昨年の主婦撲殺事件の被害者の夫である北条鉄平＠北条氏の娘の北条沙都子＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　残る祟り候補がいるとすれば、昨年の主婦撲殺事件の被害者の夫である北条鉄平。",
+		   NULL, "남은 후보라면 작년 주부 박살사건 피해자의 남편인 호죠 텟페이, ", Line_WaitForInput);
+	OutputLine(NULL, "北条氏の娘の北条沙都子。",
+		   NULL, "그리고 호죠 가문 첫 희생자의 딸인 호죠 사토코뿐이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	PlaySE( 3, "wa_024", 56, 64 );
+
+//　奇しくも、残る候補者は２人だ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　奇しくも、残る候補者は２人だ。",
+		   NULL, "공교롭게도 남은 후보자는 두 명이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　今年の祟りは、この２人に対して下されるのか...＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今年の祟りは、この２人に対して下されるのか…？",
+		   NULL, "올해의 저주는 이 두 명에게 내려지게 될까...? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　この２人を観察する価値は、十二分にある......￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この２人を観察する価値は、十二分にある……。",
+		   NULL, "이 두 명을 관찰할 가치는 충분해 보인다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+}

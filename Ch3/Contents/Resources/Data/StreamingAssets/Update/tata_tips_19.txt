@@ -1,0 +1,182 @@
+void main()
+{
+
+//*Sub_Tips_063
+//gosub *tip_s
+
+//■タイトル：　研究ノートⅡ
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+
+	PlayBGM( 1, "msys21", 56, 0 );
+
+//locate 5,7
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 7 ); }
+	SetStyleOfMessageSwinging( 1 );
+//＜オヤシロさまについて￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜オヤシロさまについて＞",
+		   NULL, "<오야시로님에 대해서> ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　オヤシロさまだが、どういう字で書くのかはあまり知られていない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　オヤシロさまだが、どういう字で書くのかはあまり知られていない。",
+		   NULL, "오야시로님을 한자로 어떻게 써야 하는지는 잘 알려져 있지 않다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　と言うのも、時代によって様々な修飾詞が付き、微妙に名称が変わったり、当て字が変わったりするため＠本来の正確な名称が何なのか、知る事が大変難しいからだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　と言うのも、時代によって様々な修飾詞が付き、微妙に名称が変わったり、当て字が変わったりするため、",
+		   NULL, "왜냐하면 시대마다 다양한 수식이 붙거나, 미묘하게 명칭이 바뀌거나, 음을 빌려 만든 한자가 변하거나 하는 이유로, ", Line_WaitForInput);
+	OutputLine(NULL, "本来の正確な名称が何なのか、知る事が大変難しいからだ。",
+		   NULL, "본래의 정확한 명칭이 무엇인지 알아내기가 무척 어려워졌기 때문이다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　全ての時代に共通するのは、名称の読みに必ず「オヤシロ」の４文字が入るということだけ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　全ての時代に共通するのは、名称の読みに必ず「オヤシロ」の４文字が入るということだけ。",
+		   NULL, "모든 시대의 공통점은, 명칭을 읽을 때 반드시 「오야시로」의 4문자가 들어간다는 점 뿐. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　オヤシロさまを祀る「社（やしろ）」が、そのまま礼拝対象になり＠「御社さま」と呼ばれるに至ったと言う説があるが、実にセンスの欠片もない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　オヤシロさまを祀る「社（やしろ）」が、そのまま礼拝対象になり、",
+		   NULL, "오야시로님을 모시는「사당 (야시로)」이 그대로 숭배대상이 되서, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「御社さま」と呼ばれるに至ったと言う説があるが、実にセンスの欠片もない。",
+		   NULL, "「오야시로님」이라고 불리게 되었다는 설도 있으나, 그닥 설득력은 없다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　これに関連するかわからないが、オヤシロさまを祀る高貴な血筋である古手家の人間には、オヤシロさまの血が流れているという＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これに関連するかわからないが、オヤシロさまを祀る高貴な血筋である古手家の人間には、オヤシロさまの血が流れているという。",
+		   NULL, "이러한 설과 관련이 있는지는 알 수 없으나, 오야시로님을 모시는 고귀한 혈족인 후루데 가의 인간에게는 오야시로님의 피가 흐른다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　そして古手家に伝えられる伝説では、八代続いて第一子が女子ならば、八代目のその娘はオヤシロさまの生まれ変わりである...というのだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして古手家に伝えられる伝説では、八代続いて第一子が女子ならば、八代目のその娘はオヤシロさまの生まれ変わりである…というのだ。",
+		   NULL, "또한 후루데 가에 전해지는 전설에 따르면, 8대를 연이어 첫째가 여자로 태어나면 그 아이는 오야시로님의 환생이라고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　この伝説に従うなら、オヤシロさまは「御八代さま」と書くのが正しいように思う＠（この当て字はあくまでも私の思いつきなので、真偽は確かめようもないが￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この伝説に従うなら、オヤシロさまは「御八代さま」と書くのが正しいように思う。",
+		   NULL, "이 전설에 의하면, 지금은 가타카나로 적는 「오야시로님」은, 본래는 '거느릴 어'자에 '여덟 팔', '대신할 대'자를 써 한자로 적었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（この当て字はあくまでも私の思いつきなので、真偽は確かめようもないが）",
+		   NULL, "(이는 어디까지나 나의 추측일 뿐, 진위는 확인할 수 없다) ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　だとするなら、御八代さまは再び降臨することを前提にした名称ということになる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だとするなら、御八代さまは再び降臨することを前提にした名称ということになる。",
+		   NULL, "그렇다면 오야시로님은 다시 강림할 것을 전제로 한 명칭이라는 말이 된다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　崇拝対象の再臨は、いくつかの宗教でも見受けられるので、そんなに珍しいものではない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　崇拝対象の再臨は、いくつかの宗教でも見受けられるので、そんなに珍しいものではない。",
+		   NULL, "숭배 대상의 재림에 대한 믿음은 몇몇 종교에서도 보이므로 딱히 드문 일은 아니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　だが、さらにその中のいくつかでは、崇拝対象の再臨を、「審判の日」等と呼び、世界の終末を意味するものであることも忘れてはならないだろう￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、さらにその中のいくつかでは、崇拝対象の再臨を、「審判の日」等と呼び、世界の終末を意味するものであることも忘れてはならないだろう。",
+		   NULL, "하지만 우리가 잊지 말아야 할 점은, 몇몇 종교가 숭배하는 신의 재림을 「심판의 날」이라 부르며 세계의 종말로 받아들인다는 점이다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　村中の年寄り連中に、目に入れても痛くないくらいに甘やかされている少女、古手梨花＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　村中の年寄り連中に、目に入れても痛くないくらいに甘やかされている少女、古手梨花。",
+		   NULL, "온 마을의 어르신들이 눈에 넣어도 아프지 않다고 할 만큼 사랑받는 소녀, 후루데 리카. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　......彼女が、その八代目、「御八代さま」であるという噂がある＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……彼女が、その八代目、「御八代さま」であるという噂がある。",
+		   NULL, "......그녀가 바로 8대 째의 맏딸로서 「오야시로님」이라는 소문이 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　古手家の家系図はわからないが、少なくとも、過去２代の間、第一子が女子であることは私も確認している￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　古手家の家系図はわからないが、少なくとも、過去２代の間、第一子が女子であることは私も確認している。",
+		   NULL, "후루데 가의 가계도는 모르지만 최근 2대의 첫째가 딸이라는 사실은 나 역시 확인했다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　雛見沢を見守る少女、古手梨花＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢を見守る少女、古手梨花。",
+		   NULL, "히나미자와를 수호하는 소녀, 후루데 리카. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　彼女の加護を村が失ったなら、どうなるのか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼女の加護を村が失ったなら、どうなるのか？",
+		   NULL, "마을에 그녀의 가호가 없어진다면, 어떻게 될까? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　人と鬼は和を失い、どうなるのか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　人と鬼は和を失い、どうなるのか？",
+		   NULL, "인간과 귀신은 평화를 잃게 될까? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　再び、人食い鬼たちが跋扈する地獄が再現されるのか￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　再び、人食い鬼たちが跋扈する地獄が再現されるのか？",
+		   NULL, "다시금 사람을 잡아먹는 귀신들이 득실거리는 지옥이 재현되는 것일까? ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　泣き、叫び、逃げ惑うしかできないひ弱な人間どもと、それらがいかに美味であったかを思い出した鬼たちの、凄惨な宴＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　泣き、叫び、逃げ惑うしかできないひ弱な人間どもと、それらがいかに美味であったかを思い出した鬼たちの、凄惨な宴。",
+		   NULL, "울부짖고, 방황하며, 이리저리 도망다닐 수밖에 없는 유약한 인간들과, 그들이 얼마나 맛있었는지를 떠올린 귀신들의 처참한 연회. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　......それはどんな光景だろう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……それはどんな光景だろう。",
+		   NULL, "......그건 어떤 광경일까. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　想像するだけでも...胸が、躍る￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　想像するだけでも…胸が、躍る。",
+		   NULL, "상상만 해도...가슴이 설렌다. ", Line_Normal);
+	ClearMessage();
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+}

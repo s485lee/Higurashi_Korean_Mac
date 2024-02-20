@@ -1,0 +1,23 @@
+void main()
+{
+}
+
+void dialog000()
+{
+	ModPlayVoiceLS(4, 3, "ps3/s03/03/140300325", 256, TRUE);
+	OutputLine(NULL, "…ちょっと私、お酒が残ってるみたい。",
+		   NULL, "...잠깐 나, 술기운이 남았나 봐. ", Line_WaitForInput);
+}
+
+void dialog001()
+{
+//「確かに状況証拠は揃ってるけど、......多分、圭ちゃんの推理ははずれだと思う＠......県内のどっかで捕まった覚醒剤でイカれたヤツが、犯行を自供したって言うし。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s03/03/140300344", 256, TRUE);
+	OutputLine(NULL, "「確かに状況証拠は揃ってるけど、……多分、圭ちゃんの推理ははずれだと思う。",
+		   NULL, "\"확실히 정황증거는 모였지만... 케이쨩의 추리는 아마 틀렸다고 생각해. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s03/03/140300345", 256, TRUE);
+	OutputLine(NULL, "……県内のどっかで捕まった覚醒剤でイカれたヤツが、犯行を自供したって言うし。」",
+		   NULL, "...현내 어딘가에서 잡힌 각성제로 맛이 간 녀석이, 범행을 자백했다고 들었고.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+}

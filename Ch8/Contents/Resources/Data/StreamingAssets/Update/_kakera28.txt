@@ -1,0 +1,642 @@
+void main()
+{
+	DrawScene( "black", 400 );
+
+	DrawScene( "white", 1000 );
+
+	PlayBGM( 1, "semi", 120, 0 );
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+
+	PlayBGM( 0, "Cafe", 120, 0 );
+
+	DrawSceneWithMask( "background/oki_g3", "maskm1", 1, 0, 1300 );
+	SetSpeedOfMessage( FALSE, 0 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　真夏の太陽を思わせるような強い日差しの中、野球少年たちが無心に白球を追いかけていた。",
+		   NULL, "한여름의 태양을 연상케 하는 따가운 햇살 속에 야구소년들이 아무 생각 없이 하얀 공을 쫓고 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　暑さをより一層引き立てるセミたちの合唱も、今の子供たちには応援の歓声のひとつでしかなかった。",
+		   NULL, "더위를 더욱 돋우는 매미들의 합창도 지금 아이들에게는 응원의 함성일 뿐이었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん、基礎練習もしっかりするし、体力をつけるため運動もする。",
+		   NULL, "물론 기초훈련도 확실히 했고 체력을 키우기 위해 운동도 했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でも、子供たちはそういう体育の授業みたいなものは本当は苦手で、練習の最後にやらせてくれる自由試合の方が楽しみだった。",
+		   NULL, "하지만 아이들은 사실 체육수업을 싫어해서, 연습 마지막에 시켜주는 자유시합을 더 기대하곤 했다. ", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢の学校は、本来は営林署で、その敷地を間借りしているに過ぎない。",
+		   NULL, "히나미자와 분교는 본래는 영림서 건물로서, 그 부지를 빌린 상태에 불과하다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そのため、校庭は砂利で、あまり激しい運動をするには向いていない。",
+		   NULL, "그 때문에 교정은 자갈로 뒤덮여서 격렬한 운동을 하기에는 부적절하다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それに比べ、この興宮の学校のグラウンドはちゃんと整備された運動用のグラウンドなので、子供たちは一層元気にはしゃげるのだ。",
+		   NULL, "그에 비하면 이 오키노미야의 학교 운동장은 잘 정비된 편이라 아이들이 활기차게 뛰어놀 수 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もっとも、雛見沢っ子の元気さは、校庭が砂利であろうとお構いなしだが。",
+		   NULL, "애당초, 히나미자와 아이들의 열정은 교정이 자갈이든 아니든 상관없지만 말이다. ", Line_Normal);
+	ClearMessage();
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　子供たちの試合の方は、他の指導者の人が見てくれているので、入江はその間に、子供たち用のジュースを買いに行くことにした。",
+		   NULL, "아이들의 시합은 다른 지도자분이 봐 주기로 했기에, 이리에는 그 사이 아이들이 마실 주스를 사러 가기로 했다. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacterWithFiltering(2, 7, "sprite/sato2_def1_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1001", 128, TRUE);
+	OutputLine(NULL, "「監督、どこへ行くんですか？」",
+		   NULL, "\"감독, 어디 가세요?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1077", 128, TRUE);
+	OutputLine(NULL, "「皆さんにジュースを買って来ようと思いまして。",
+		   NULL, "\"여러분들이 마실 주스를 사오려고 합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1078", 128, TRUE);
+	OutputLine(NULL, "もしよかったら、悟史くんも手伝ってくださるととても助かるのですが。」",
+		   NULL, "혹시 괜찮다면, 사토시 군이 도와주면 큰 도움이 될 것 같은데요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 7, "sprite/sato2_warai_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1002", 128, TRUE);
+	OutputLine(NULL, "「あ、はい。",
+		   NULL, "\"아, 네. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1003", 128, TRUE);
+	OutputLine(NULL, "お手伝いします。」",
+		   NULL, "도와드리겠습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんは素直な返事をしてくれると、私と一緒に買い物に付き合ってくれた。",
+		   NULL, "사토시 군은 선선히 쇼핑에 함께 가자는 내 제안에 응했다. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "white", 400 );
+
+	FadeOutBGM( 1, 400, FALSE );
+
+	DrawScene( "background/sora5", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大人の感性でジュースを選ぶと不評なことがあるので、付き合ってくれるのはとても助かる。",
+		   NULL, "어른의 취향으로 주스를 고르면 평이 나쁠 때가 있어서, 함께 가면 많은 도움이 된다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私は悟史くんと一緒に、車で近くのスーパーまで出掛けた。",
+		   NULL, "차를 몰아 사토시 군과 함께 근처 슈퍼까지 간다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "white", "maskright", 1, 0, 300 );
+
+	FadeOutBGM( 0, 300, FALSE );
+	PlayBGM( 1, "Mati", 120, 0 );
+
+	DrawSceneWithMask( "background/kuruma1", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1004", 128, TRUE);
+	OutputLine(NULL, "「……監督。",
+		   NULL, "\"...감독. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1005", 128, TRUE);
+	OutputLine(NULL, "沙都子の具合はどうなんですか…？」",
+		   NULL, "사토코의 상태는 어떤가요...?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1079", 128, TRUE);
+	OutputLine(NULL, "「えぇ。",
+		   NULL, "\"네. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1080", 128, TRUE);
+	OutputLine(NULL, "経過は良好ですよ。",
+		   NULL, "경과는 양호합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1081", 128, TRUE);
+	OutputLine(NULL, "本当にゆっくりとですが、沙都子ちゃんの心の傷も癒えてきています。",
+		   NULL, "정말 느리지만, 사토코쨩이 품은 마음의 상처도 아물어 가고 있습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1082", 128, TRUE);
+	OutputLine(NULL, "もう少しだけ安静にしてあげた方がいいでしょう。」",
+		   NULL, "조금만 더 안정을 취하는 게 좋겠어요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんが心配するのは当然だ。",
+		   NULL, "사토시 군의 걱정은 당연하다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　沙都子ちゃんの入院がすでに２週間以上にわたっていたからだ。",
+		   NULL, "사토코쨩이 입원한지 벌써 2주 이상 지났기 때문이다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん彼は、自分の妹が雛見沢症候群にかかり、しかもいつ錯乱してもおかしくない瀬戸際のＬ５にいることは知らない。",
+		   NULL, "물론 그는 자신의 여동생이 히나미자와 증후군에 걸렸다는 것도, 게다가 언제 착란해도 이상하지 않은 벼랑 끝 L5 상태라는 사실도 전혀 모른다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だから、両親の事故のショックで何日も寝込んでいると思っているのだった。",
+		   NULL, "그래서 부모님의 사고로 인한 충격으로 며칠씩 몸져누운 거라고만 생각했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんな妹を元気付けようと、連日見舞いに来てくれていたのだが、",
+		   NULL, "그런 여동생의 기운을 북돋아주려고 연일 문병을 와줬지만, ", Line_WaitForInput);
+	OutputLine(NULL, "……沙都子ちゃんの情緒が最近、不安定になり、かなり危険な兆候を見せたため、その見舞いを謝絶していたのだ。",
+		   NULL, "최근 사토코쨩의 정서가 불안정해져서 상당히 위험한 징조를 보였기에, 우리는 그의 병문안도 거절하고 있었다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskdown", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　正直なところ、……沙都子ちゃんの容態は芳しくない。",
+		   NULL, "솔직히 말해서... 사토코쨩의 병세는 좋지 않다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　沙都子ちゃんが示すＬ５という状態は、すでに尋常なレベルではないのだ。",
+		   NULL, "사토코쨩이 도달한 L5는 아주 위험한 단계다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　同じレベルにあった去年の男は、末期の麻薬患者も裸足で逃げ出すような異常な状態にあった。",
+		   NULL, "같은 레벨이었던 지난해의 남자는 말기 마약환자도 맨발로 도망칠 비정상적인 상태였다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…沙都子ちゃんが、わずかの拍子にそうならない保証などまったくないのだ。",
+		   NULL, "사토코쨩이 짧은 시간에 그렇게 되지 않는다는 보장은 전혀 없다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　確かに、去年の男の解剖で私たちは雛見沢症候群の正体を知り、そのメカニズムを大きく解明した。",
+		   NULL, "분명 작년 남자를 해부함으로서 우리는 히나미자와 증후군의 정체를 밝히고 그 메커니즘을 크게 해명했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　………治療薬開発につながる貴重な発見もしている。",
+		   NULL, "치료약 개발로 연결될 귀중한 발견까지 했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、治療方法は依然確立しておらず、…もし沙都子ちゃんが回復不可能な状態に陥った場合、",
+		   NULL, "하지만 치료방법은 여전히 확립되지 않았고, 만약 사토코가 회복 불가능한 상태에 빠진다면. ", Line_WaitForInput);
+	OutputLine(NULL, "…去年の男同様、解剖されてしまうことだってある…。",
+		   NULL, "...작년 그 남자처럼 해부해야 할지도 모른다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんな、妹の生きるか死ぬかの瀬戸際を、…私は悟史くんに話すことができず、こうして曖昧に、順調に回復していると嘘をつくことしかできない。",
+		   NULL, "나는 차마 사토시 군에게 여동생이 삶과 죽음의 기로에 놓였다고 이야기하지 못한채, 이렇게 순조롭게 회복중이라는 거짓말을 할 수밖에 없었다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もし、彼女に何かがあったなら。",
+		   NULL, "만약 그녀에게 무슨 일이 생긴다면. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……私は悟史くんに対し、許されない嘘をついてしまっていることになるだろう。",
+		   NULL, "...나는 사토시 군에게 용서받지 못할 거짓말을 한 것이 된다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…私の心の中にわずかに残る良心が、ちくりと痛む。",
+		   NULL, "내 마음 속에 얼마 남지 않은 양심이 저미듯 아프다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/kuruma2", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1006", 128, TRUE);
+	OutputLine(NULL, "「………もし監督の診療所のご迷惑でなければ…。",
+		   NULL, "\"......혹시 감독의 진료소에 실례가 아니라면... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1007", 128, TRUE);
+	OutputLine(NULL, "…もうしばらく、入院させてもらった方がいいかもしれません。」",
+		   NULL, "조금 더 입원하는 편이 좋을지도 몰라요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1191", 128, TRUE);
+	OutputLine(NULL, "「……それはどういう意味ですか？」",
+		   NULL, "\"...그건 무슨 뜻이죠?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　妹の一日でも早い退院を願っているとばかり思っていたので、少しだけ驚く。",
+		   NULL, "여동생이 하루라도 빨리 퇴원하길 바라는 줄로만 알았기에 지금 말에 조금 놀랐다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1008", 128, TRUE);
+	OutputLine(NULL, "「いえ。",
+		   NULL, "\"아뇨. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1009", 128, TRUE);
+	OutputLine(NULL, "……実は、沙都子。",
+		   NULL, "사실 사토코... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1010", 128, TRUE);
+	OutputLine(NULL, "……あまり、叔母さん一家とも馴染めていないんです。」",
+		   NULL, "숙모 일가와도 별로 친해지질 못해서요....\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1084", 128, TRUE);
+	OutputLine(NULL, "「沙都子ちゃんが、ご両親とあまり良い関係ではなかったと聞いていましたが、",
+		   NULL, "\"사토코쨩이 부모님과 그다지 좋은 관계는 아니었다고 들었습니다만, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1085", 128, TRUE);
+	OutputLine(NULL, "……新しく預けられた叔母さん夫婦ともなのですか…？」",
+		   NULL, "새로 맡겨진 숙모님 부부와도 마찬가지인가요...?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1011", 128, TRUE);
+	OutputLine(NULL, "「………………。沙都子は、……大人にはあまり心を開かないので。」",
+		   NULL, "\"...... 사토코는, 어른에게는 그다지 마음을 열지 않아서요.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/sora5", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんから、沙都子ちゃんの恵まれない生い立ちについては聞かされたことがある。",
+		   NULL, "예전에 사토시 군으로부터 사토코쨩의 불우한 성장 내력에 관한 이야기를 들었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……何度も繰り返されたお母さんの再婚が、子供たちに心の傷を強いていたのだ。",
+		   NULL, "몇 번이나 반복된 어머니의 재혼이 자식들에게 마음의 상처를 안겨주고 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんはそれを乗り越えられたが、沙都子ちゃんにそれを期待するには、当時の彼女は幼すぎた。",
+		   NULL, "사토시 군은 극복해냈지만, 똑같이 극복하길 바라기엔 당시의 사토코쨩은 너무 어렸다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それがトラウマとなり、血のつながっていない保護者というものを過度に嫌う傾向があるのだと言う。",
+		   NULL, "과거의 경험이 트라우마가 되어, 혈연관계가 없는 보호자를 지나치게 싫어하는 경향이 있다고 들었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……いや、血のつながっていない人間が保護者なんて、誰だって嫌なはずだ。",
+		   NULL, "...그야 누구던 피가 섞이지 않은 사람이 보호자가 된다면 싫겠지. ", Line_WaitForInput);
+	OutputLine(NULL, "沙都子ちゃんに限ったことじゃない。",
+		   NULL, "사토코쨩에게 국한된 일은 아니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ただ、普通は心の中で嫌だと思っていても、それをぐっと抑える。",
+		   NULL, "다만 보통은, 마음속으로 싫다고 생각하더라도 겉으론 꾹 참는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……でも、沙都子ちゃんにはそれがどうしてもできないということだろう…。",
+		   NULL, "하지만 사토코쨩은 어떻게 해도 그럴 수 없는 거겠지.... ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/kuruma1", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1012", 128, TRUE);
+	OutputLine(NULL, "「叔父さんはあまり家に帰ってこないし、…居ても寝てるかテレビを見てるかなのでそんなに問題はないんですが…。",
+		   NULL, "\"숙부는 집에 잘 안 들어오시고, 집에 있어도 자던가 TV를 보시던가 해서 큰 문제는 없는데... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1013", 128, TRUE);
+	OutputLine(NULL, "……叔母さんがものすごく沙都子に絡むんです。」",
+		   NULL, "숙모가 굉장히 사토코에게 시비를 걸어요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1086", 128, TRUE);
+	OutputLine(NULL, "「……どうして、そんなに嫌われてしまったんでしょうね…。」",
+		   NULL, "\"...어째서 그렇게 미움을 받아버렸을까요...?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　一応の想像はついた。",
+		   NULL, "순간 상상이 갔다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……沙都子ちゃんの両親がダム賛成派だったせいで、叔父叔母も北条家というだけの理由で、とばっちりを受けていたはずだ。",
+		   NULL, "...사토코쨩의 부모가 댐 찬성파였던 탓에, 숙부도 숙모도 호죠 가라는 이유만으로 비난을 받았을 것이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さらにその上、事故でぽっくり他界して、子供を２人も押し付けられたのだから、仇はあっても恩はない、というところなのだろう。",
+		   NULL, "게다가 그 이후에 사고로 덜컥 타계하고 자식을 두 명이나 떠넘겼으니 나쁜 감정은 몰라도 좋은 감정이 있을 리 없다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それでも、悟史くんのように、表向き大人しくしていればそうそう波風は立たない。",
+		   NULL, "그래도 사토시 군처럼 겉으로 얌전히 굴면 문제는 일어나지 않는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……でも、沙都子ちゃんは大人しくできない。",
+		   NULL, "하지만 사토코쨩은 얌전히 굴 수 없었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それを態度や表情に出してしまい、大喧嘩になってしまうのだ。",
+		   NULL, "반항적인 속내가 태도나 표정에 드러나 큰 싸움으로 이어진다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1014", 128, TRUE);
+	OutputLine(NULL, "「……僕も叔母さんに、沙都子の事情を説明してはいるのですが…。",
+		   NULL, "\"저도 숙모에게 사토코의 사정을 설명하긴 했지만... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1015", 128, TRUE);
+	OutputLine(NULL, "なかなかわかってもらえなくて……。」",
+		   NULL, "도통 알아주지 않으셔서....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1087", 128, TRUE);
+	OutputLine(NULL, "「その度に、沙都子ちゃんを庇ってあげる悟史くんは、お兄さんの鑑だと思いますよ。",
+		   NULL, "\"그럴 때마다 사토코쨩을 감싸는 사토시 군은 오빠의 귀감이라고 생각합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1088", 128, TRUE);
+	OutputLine(NULL, "……今や沙都子ちゃんにとって、唯一の肉親は悟史くんだけなのかもしれませんからね。」",
+		   NULL, "...이제 사토코쨩에게 유일한 혈육은 사토시 군 뿐일지도 모르니까요.\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1016", 128, TRUE);
+	OutputLine(NULL, "「…そうですね。……そんな気がしてます。」",
+		   NULL, "\"그렇죠... 그렇게 생각해요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ほんの少しため息を混じらせならが、悟史くんはそう言った。",
+		   NULL, "아주 작은 한숨을 내쉬며, 사토시 군이 말했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…口に出しては言わないが、…悟史くんも、沙都子ちゃんが叔母と喧嘩する度に、それを庇うために巻き込まれてしまうのに、疲れを感じているようだった。",
+		   NULL, "입 밖으로 내지는 않았지만, 사토코가 숙모와 싸울 때마다 동생을 감싸려고 싸움에 말려드는 상황에 사토시 군도 피로한 기색이다. ", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 300, FALSE );
+	PlayBGM( 0, "bellflower", 120, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　彼は良い人間で良い兄だ。",
+		   NULL, "사토시 군은 착하고 좋은 오빠다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だから妹を庇うためにいつでも戦うだろう。",
+		   NULL, "여동생을 감싸기 위해 언제라도 싸우겠지. ", Line_WaitForInput);
+	OutputLine(NULL, "…でもそれはとてもとても疲れることなのだ。",
+		   NULL, "하지만 그건 정말로 힘든 일. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんは、前のご両親の時からずっとそういう生活を送ってきた。",
+		   NULL, "사토시 군은 이전 부모님 때부터 쭉 그렇게 생활해왔다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そして、それに心のバランスが耐え切れなくなって病んでしまい、私のところへ訪れたのだ。",
+		   NULL, "결국 부담감에 마음의 균형이 무너지고, 혼자 속병을 얻어 나를 찾아오게 되었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私は、その状況の根源であるご両親が亡くなったので、それは改善されたものだと思っていたのだが…。",
+		   NULL, "나는 그런 상황의 원인이었던 부모님이 돌아가신 후, 사토시 군의 상황만큼은 나아졌으리라 생각했는데. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　状況はどうやら、当時以上に深刻なようだった…。",
+		   NULL, "상황은 아무래도 당시 이상으로 심각해 보였다.... ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1089", 128, TRUE);
+	OutputLine(NULL, "「わかりました。",
+		   NULL, "\"알겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1090", 128, TRUE);
+	OutputLine(NULL, "……そんな状況で沙都子ちゃんを退院させたら、また心の症状がぶり返してしまうかもしれませんね。",
+		   NULL, "이런 상황에서 사토코쨩을 퇴원시키면 또 마음의 병이 도져버릴지도 모르겠네요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1091", 128, TRUE);
+	OutputLine(NULL, "…入院費のことは気にしないでください。",
+		   NULL, "입원비는 신경쓰지 마세요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1092", 128, TRUE);
+	OutputLine(NULL, "沙都子ちゃんが本当の意味で回復するまで、私が責任を持ってお預かりします。」",
+		   NULL, "사토코쨩이 진정한 의미로 회복될 때까지 제가 책임지고 맡겠습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……彼の願いを聞き入れた風にしながら、自分の都合をつらづらと言ってしまう自分の狡猾さに、ほんの少し嫌気がさした。",
+		   NULL, "...그의 소원을 들어주는듯이 굴면서, 실은 내 형편대로 말하는 자신의 교활함에 조금 환멸감을 느꼈다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何が、責任を持ってお預かりなのか。",
+		   NULL, "뭐가 책임지고 맡는다는 건데? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……鷹野さんは彼女の解剖計画案を着々と進めているというのに…。",
+		   NULL, "타카노 씨는 사토코쨩의 해부 계획을 순조롭게 진행하고 있는 중인데.... ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/kuruma2", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1017", 128, TRUE);
+	OutputLine(NULL, "「………お願いできると、",
+		   NULL, "\"그래주신다면... ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1800 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……僕も少しだけ助かります。」",
+		   NULL, "저도 조금 편해질 수 있겠네요....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1093", 128, TRUE);
+	OutputLine(NULL, "「はい…？」",
+		   NULL, "\"네...?\" ", Line_Normal);
+	ClearMessage();
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1018", 128, TRUE);
+	OutputLine(NULL, "「…いえ、",
+		   NULL, "\"....아뇨. ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "……………沙都子がもうしばらく入院しててくれたら、",
+		   NULL, "사토코가 좀 더 입원해 준다면, ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 600 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…僕もその分、",
+		   NULL, "저도 그만큼... ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 500 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "気楽だな、",
+		   NULL, "마음이 편해질 수 있겠다고... ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 600 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "って。",
+		   NULL, "그렇게, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1019", 128, TRUE);
+	OutputLine(NULL, "……思っただけです。」",
+		   NULL, "생각했을 뿐입니다....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1094", 128, TRUE);
+	OutputLine(NULL, "「それは、…どういう意味ですか？」",
+		   NULL, "\"그건... 무슨 뜻입니까?\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1020", 128, TRUE);
+	OutputLine(NULL, "「………沙都子が帰ってきたら、",
+		   NULL, "\".........사토코가 돌아오면, ", Line_Continue);
+	OutputLine(NULL, "…どうせまた叔母と喧嘩をするだろうと思います。",
+		   NULL, "어차피 또 숙모랑 싸울 거라고 생각해요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1021", 128, TRUE);
+	OutputLine(NULL, "…そうしたら、また喧嘩や怒鳴り声ばかりの日になって、",
+		   NULL, "...그러면 또 싸우거나 고함만 치는 날이 되서, ", Line_Continue);
+	OutputLine(NULL, "……僕もそれに巻き込まれるのかなって思うと。",
+		   NULL, "저도 거기에 말려든다고 생각하면... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1022", 128, TRUE);
+	OutputLine(NULL, "…………沙都子はずっと入院しててくれるのが、",
+		   NULL, "사토코가 계속 입원해주는 쪽이, ", Line_Continue);
+	OutputLine(NULL, "一番僕にとって気楽なことなんじゃないかって、",
+		   NULL, "제게 제일 편한 게 아닐까 하고, ", Line_Continue);
+	OutputLine(NULL, "……そう思ってしまう自分がいて…。",
+		   NULL, "그런 생각을 하는 제가 있어서, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1023", 128, TRUE);
+	OutputLine(NULL, "…………嫌になります…。」",
+		   NULL, "......스스로가 싫어져요....\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s20/10/vtk1_irie1095", 128, TRUE);
+	OutputLine(NULL, "「………悟史くん…。」",
+		   NULL, "\"사토시 군....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんは、常に妹を庇う良い兄だ。",
+		   NULL, "사토시 군은 언제나 여동생을 감싸주는 좋은 오빠다. ", Line_WaitForInput);
+	OutputLine(NULL, "…でも、だからといって何の負担にも感じていないわけもない…。",
+		   NULL, "하지만 그렇다고 아무런 부담감이 없을 리가 없다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#ffdc6f>悟史</color>", NULL, "<color=#ffdc6f>사토시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1024", 128, TRUE);
+	OutputLine(NULL, "「……そんなことを考えてしまうなんて、…僕は何て悪い兄だろうって思います。",
+		   NULL, "\"그런 식으로 생각해 버리다니... 저는 이 얼마나 나쁜 오빠냐 하고 떠올려요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1025", 128, TRUE);
+	OutputLine(NULL, "……そうだと思えば思うほど、…自分が嫌になって。",
+		   NULL, "그렇게 생각할수록... 제 자신이 싫어져서, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 7, "ps3/s20/07/vtk1_satoshi1026", 128, TRUE);
+	OutputLine(NULL, "…………………………。」",
+		   NULL, "................\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そう言い、悟史くんは鼻をひとつすすった。",
+		   NULL, "거기까지 토해내고서, 사토시 군은 코를 한 번 훌쩍였다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その表情は苦悶に満ちていて、…自らに罪の意識を感じているかのように見えた…。",
+		   NULL, "고민으로 가득 찬 표정에선 죄의식이 엿보였다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　模範的な兄であろうという気持ちが、彼を追い詰めていく。",
+		   NULL, "사토코쨩에게 모범적인 오빠가 되어 줘야 한다는 생각이 그를 끝없이 짓누른다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　………沙都子ちゃんも不憫だが、…それとは別な意味で、悟史くんも不憫だった。",
+		   NULL, "사토코쨩도 가엾지만, 사토시 군도 다른 의미로 가엾다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私は、二人をよく知る者として、……誰も顧みてくれない二人のために、味方でなくてはならないのだと、ひしひし感じるのだった…。",
+		   NULL, "나는 두 사람을 잘 아는 사람으로서... 아무도 돌봐 주지 않는 두 사람을 위해 그들의 편이 되어줘야 한다고 뼈저리게 느꼈다... ", Line_Normal);
+	ClearMessage();
+
+	CallScript( "&eye" );
+	FadeOutBGM( 0, 1000, FALSE );
+	DrawScene( "black", 1000 );
+
+}

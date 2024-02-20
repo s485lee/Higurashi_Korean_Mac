@@ -1,0 +1,53 @@
+void main()
+{
+	EnableJumpingOfReturnIcon();
+
+	SetSpeedOfMessage( TRUE, 128 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "Ｎｏ．",
+		   NULL, "No. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "昭和　　年　　月　　日（　　）",
+		   NULL, "쇼와 XX년 X월 XX 일 (   ) ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "件　名　　北条サトコさんの件",
+		   NULL, "사건명      호죠 사토코 씨 건 ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "来訪者　　前原圭一　外４名（関係：友人）",
+		   NULL, "방문자      마에바라 케이이치 외 4명 (관계:친구) ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "・北条サトコさんが叔父に虐待を受けているので、一時保護をしてほしい旨、訴えがありました。",
+		   NULL, "·호죠 사토코 씨가 숙부에게 학대를 당하고 있으므로, 일시 보호해달라는 취지의 호소가 들어왔습니다. ", Line_WaitForInput);
+	OutputLine(NULL, "（対応中？）",
+		   NULL, "(대응중?) ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "・冷蔵庫の掃除をしますので、私物は今夕までに片付けてください。",
+		   NULL, "·냉장고 청소를 할 예정이므로, 자기 물건은 오늘 저녁까지 정리해주세요. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE( 0, "s_page", 56, 64 );
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+}

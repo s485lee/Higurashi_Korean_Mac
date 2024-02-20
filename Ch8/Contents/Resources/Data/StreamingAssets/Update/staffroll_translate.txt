@@ -1,0 +1,34 @@
+#include	"Include\bss.h"
+#include	"Include\WorksAndFlags.h"
+void main()
+
+{
+	DisableWindow();
+
+	SetValidityOfInput(FALSE);
+	DrawSprite( 5, "text/staff_ours_a", NULL, -320, -250, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 32, 0, FALSE );
+	DrawSprite( 6, "text/staff_ours_b", NULL, -320, 2885, 0, 0, 0, 0, FALSE, FALSE, 0, 0, 32, 0, TRUE );
+
+
+	PlayBGM( 0, "typewriter", 120, 500 );
+
+	MoveSprite( 5, -320, -5350, 0, 0, 0, 0, 0,200000, FALSE );
+	MoveSprite( 6, -320, -2235, 0, 0, 0, 0, 0,200000, FALSE );
+
+	Update(); //start the queued move without waiting for it
+	Wait(100000);
+	SetValidityOfInput(TRUE);
+	
+	Wait(1850000);
+	
+	FadeOutBGM( 0, 1000, FALSE );
+
+	Wait(10000);
+
+	FadeSprite( 5, 10000, FALSE );
+	FadeSprite( 6, 10000, TRUE );
+
+
+	DrawScene( "black" , 100 );
+
+}

@@ -1,0 +1,1886 @@
+void main()
+{
+	char sprite_iri_def1;
+	char sprite_iri_def2;
+	char sprite_iri_majime;
+	char sprite_iri_majime2;
+
+	int i;
+	i = GetRandomNumber( 3 );
+
+	if (i == 0) {
+		sprite_iri_def1 = "sprite/iri1_def1_";
+		sprite_iri_def2 = "sprite/iri1_def2_";
+		sprite_iri_majime = "sprite/iri1_majime_";
+		sprite_iri_majime2 = "sprite/iri1_majime2_";
+	}
+
+	if (i == 1) {
+		sprite_iri_def1 = "sprite/iri2_def1_";
+		sprite_iri_def2 = "sprite/iri2_def2_";
+		sprite_iri_majime = "sprite/iri2_majime_";
+		sprite_iri_majime2 = "sprite/iri2_majime2_";
+	}
+
+	if (i == 2) {
+		sprite_iri_def1 = "sprite/iri3_def1_";
+		sprite_iri_def2 = "sprite/iri3_def2_";
+		sprite_iri_majime = "sprite/iri3_majime_";
+		sprite_iri_majime2 = "sprite/iri3_majime2_";
+	}
+
+	DisableWindow();
+	PlaySE( 0, "s_furu", 56, 64 );
+
+	DrawScene( "white", 300 );
+	DrawScene( "black", 50 );
+	FadeOutBGM( 2, 100, FALSE );
+	PlaySE( 0, "s_glass", 56, 64 );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000001", 256, TRUE);
+	OutputLine(NULL, "「とああぁあぁああぁあぁあッ！！！」",
+		   NULL, "\"타아아아아아아아아앗!!!\" ", Line_Normal);
+	SetSpeedOfMessage( FALSE, 0 );
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100087", 256, TRUE);
+	OutputLine(NULL, "「ななな、なんだぁあぁッ？！」",
+		   NULL, "\"뭐뭐뭐, 뭐야아아아?!\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 300 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 300 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 200 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "wa_007", 56, 64 );
+
+	ModDrawCharacter(1, 10, sprite_iri_majime, "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawScene( "background/res1", 50 );
+	PlayBGM( 0, "4", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　空中を舞うように大回転しながら、スタッと美しく着地を決めて現れたのは……か、監督ッ？！？！",
+		   NULL, "허공에서 춤추듯 크게 회전하고는 아름다운 착지까지 선보이며 나타난 사람은...... 가, 감독?!?! ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, sprite_iri_majime2, "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000002", 256, TRUE);
+	OutputLine(NULL, "「許しません…。",
+		   NULL, "\"용서할 수 없습니다.... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000003", 256, TRUE);
+	OutputLine(NULL, "許しませんよ前原さん…。」",
+		   NULL, "용서할 수 없어요 마에바라 씨....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+	PlaySE( 0, "wa_011", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　監督がぎょろりと俺を睨み付ける。",
+		   NULL, "감독이 찌릿하고 나를 노려본다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　口からは比重の重い白い息が、コーハー、コーハーと吐き出され異様に恐ろしい形相だ。",
+		   NULL, "입에선 하~아~, 하~아~, 하고 뿜어져 나오는 무거운 입김에서, 기이한 공포가 느껴진다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100088", 256, TRUE);
+	OutputLine(NULL, "「なな、許さないって、何が許さないんですか…！！」",
+		   NULL, "\"요요, 용서할 수 없다니 뭘 말인가요...?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DrawScene( "white", 200 );
+	ModSetLayerFilter(2, 256, "none");
+	ModDrawCharacter(2, 4, "sprite/sa6_hau_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawScene( "background/furiker_c", 50 );
+	FadeOutBGM( 0, 100, FALSE );
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 4*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 4*2, FALSE );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000004", 256, TRUE);
+	OutputLine(NULL, "「ああああぁあ、あれですよぉおおぉぉおぉ！！」",
+		   NULL, "\"저저저저저저, 저것 말입니다아아아아아아!!\" ", Line_Normal);
+	ClearMessage();
+	SetSpeedOfMessage( FALSE, 0 );
+
+	DrawScene( "black", 300 );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ドン、",
+		   NULL, "통, ", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "s_Down", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 200 );
+	SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "ガン、",
+		   NULL, "깡, ", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "s_Down", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 200 );
+	SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "ゴン、",
+		   NULL, "쾅, ", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "s_Down", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 200 );
+	SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "ガッシャーーーン！！",
+		   NULL, "챙그랑!! ", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 5*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 5*2, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+
+
+	ClearMessage();
+	SetSpeedOfMessage( FALSE, 0 );
+
+
+	ModDrawCharacter(1, 10, sprite_iri_majime2, "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskleft", 1, 0, 300 );
+	ModDrawCharacter(1, 10, sprite_iri_majime, "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+	FadeBustshot( 1, FALSE, 0, 0, 0, 0, 300, TRUE );
+	PlaySE( 0, "wa_003", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　監督が絶叫した瞬間に、監督の頭に大中小のタライが次々と多段ヒットし、しかもダメ押しに中華鍋まで振ってきた…！",
+		   NULL, "감독이 절규하는 순간, 감독의 머리로 크고 작은 냄비가 차례차례 다단 히트하더니, 마지막엔 확인 사살용 중화 냄비가 떨어졌다. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "scene/303c", 1000 );
+	ModPlayBGM( 0, "4", 56, 0, 0 );
+	ModPlayBGM( 0, "3", 56, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400003", 256, TRUE);
+	OutputLine(NULL, "「まぁ、この格好が罰ゲームになった時点で、多少は心の準備がありましたのよ…。」",
+		   NULL, "\"뭐, 이런 꼴이 벌게임으로 결정된 시점에서 다소 마음의 준비는 해뒀어요....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s09/05/170500004", 256, TRUE);
+	OutputLine(NULL, "「……沙都子のメイドさんは、ある意味、命に関わりますです。」",
+		   NULL, "\"......사토코의 메이드 차림은 어떤 의미로는 목숨이 걸린 거예요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200090", 256, TRUE);
+	OutputLine(NULL, "「はぅ〜〜〜！！！",
+		   NULL, "\"하우~~~!!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200091", 256, TRUE);
+	OutputLine(NULL, "　沙都子ちゃんのメイドさん、かぁいいよーぅ！！！",
+		   NULL, "사토코쨩의 메이드 복장, 기여어~어!!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200092", 256, TRUE);
+	OutputLine(NULL, "　お持ち帰りいいぃいぃ！！」",
+		   NULL, "가져갈래에에에에!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000005", 256, TRUE);
+	OutputLine(NULL, "「それはさせませんッ！！",
+		   NULL, "\"그렇게 하도록 내버려 둘 수 없습니다!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000006", 256, TRUE);
+	OutputLine(NULL, "　お持ち帰るのはこの私、入江京介です！！」",
+		   NULL, "가져가는 건 바로 나, 이리에 쿄스케입니다!!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200093", 256, TRUE);
+	OutputLine(NULL, "「だめだよだめだめだめ〜〜〜☆",
+		   NULL, "\"안 돼요 안 돼 안 돼 안 돼~~~☆ ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200094", 256, TRUE);
+	OutputLine(NULL, "　レナのお持ち帰りを邪魔すると〜〜",
+		   NULL, "레나가 가져가는 걸 방해하면~~ ", Line_Continue);
+	SetSpeedOfMessage( TRUE, 128 );
+	Wait( 2800 );
+	PlaySE( 0, "s_furu", 56, 64 );
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 200 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "はぅ",
+		   NULL, "하우 ", Line_Continue);
+
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 2*2, TRUE );
+	Wait( 50 );
+	OutputLine(NULL, "はぅ",
+		   NULL, "하우 ", Line_Continue);
+
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 0, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 0, 2*2, TRUE );
+	Wait( 50 );
+	OutputLine(NULL, "はぅ",
+		   NULL, "하우 ", Line_Continue);
+
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 2*2, TRUE );
+	Wait( 50);
+	OutputLine(NULL, "はぅ〜！！」",
+		   NULL, "하우~!!\" ", Line_Continue);
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	DrawScene( "background/furiker_c", 50 );
+	StartShakingOfWindow( 248, 40, 0, 2, 6*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 6*2, TRUE );PlaySE( 0, "s_Down", 56, 64 );
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 500 );
+	// (backup) SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+	DrawScene( "scene/303c", 400 );
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…レナのかぁいいモードって見掛けによらず容赦ないよな。",
+		   NULL, "...레나의 귀여워 모드는 겉보기와 다르게 가차 없구나. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "　お持ち帰りを邪魔するものは、岩なら砕き、河なら埋め、海なら裂いてでも渡るだろう…。",
+		   NULL, "가져가려는 걸 방해하는 게 바위라면 부숴버리고, 강이라면 메워버리고, 바다라면 갈라서라도 건널 기세다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "おお？！",
+		   NULL, "오오?! ", Line_WaitForInput);
+	PlaySE( 0, "wa_011", 56, 64 );
+	OutputLine(NULL, "　だが監督もむっくりとゾンビみたいに起き上がる。",
+		   NULL, "하지만 감독도 좀비처럼 벌떡 일어난다. ", Line_WaitForInput);
+	OutputLine(NULL, "…レナの超高速弾を全弾受けたのに、立ち上がれるのかぁあぁ！！",
+		   NULL, "레나의 초고속 공격을 전부 맞았는데도 일어날 수 있다는 건가아아아아!! ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000007", 256, TRUE);
+	OutputLine(NULL, "「ふはぁはははははははははッ！！！",
+		   NULL, "\"후하아하하하하하하하하핫!!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000008", 256, TRUE);
+	OutputLine(NULL, "　無駄ですよ効きません！！",
+		   NULL, "소용없어요, 헛수고입니다!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	SetSpeedOfMessage( TRUE, 128 );
+
+	DisableWindow();
+	PlaySE( 0, "s_furu", 56, 64 );
+	DrawScene( "white", 300 );
+	PlaySE( 0, "s_tataku", 56, 64 );
+	DrawScene( "background/furiker_a", 100 );
+	Wait( 50 );
+	PlaySE( 0, "s_tataku", 56, 64 );
+	DrawScene( "background/furiker_b", 100 );
+	Wait( 50 );
+	PlaySE( 0, "s_tataku", 56, 64 );
+	DrawScene( "background/furiker_c", 100 );
+	Wait( 50 );
+	PlaySE( 0, "wa_003", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 2*2, FALSE );
+	DrawScene( "scene/303c", 200 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000009", 256, TRUE);
+	OutputLine(NULL, "ふが、",
+		   NULL, "컥! ", Line_Continue);
+	Wait( 800 );
+	OutputLine(NULL, "ぶげッ、",
+		   NULL, "으헉! ", Line_Continue);
+	Wait( 800 );
+	OutputLine(NULL, "ぐぽらッ！！",
+		   NULL, "쿨럭!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "wa_011", 56, 64 );
+	ModPlayBGM( 1, "semi", 56, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000010", 256, TRUE);
+	OutputLine(NULL, "　無駄無駄無駄です！！",
+		   NULL, "무다무다무다입니다!!! ", Line_WaitForInput);
+
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+	Wait( 300 );
+	PlaySE( 0, "s_furu", 56, 64 );
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 200 );
+	// (backup) SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 200 );
+	// (backup) SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000011", 256, TRUE);
+	OutputLine(NULL, "　入江は何度でも蘇る、メイドがそこにいれば何度でも蘇る、",
+		   NULL, "이리에는 몇 번이고 되살아난다. 메이드가 거기에 있다면 몇 번이고 되살아난다. ", Line_Continue);
+	OutputLine(NULL, "それが人類の夢だからだああぁああぁあッ！",
+		   NULL, "메이드는 인류의 꿈이기 때문이다아아아아악! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	PlaySE( 0, "s_furu", 56, 64 );
+	DrawScene( "white", 300 );
+	PlaySE( 0, "s_tataku", 56, 64 );
+	DrawScene( "background/furiker_a", 100 );
+	Wait( 50 );
+	PlaySE( 0, "s_tataku", 56, 64 );
+	DrawScene( "background/furiker_b", 100 );
+	Wait( 50 );
+	PlaySE( 0, "s_tataku", 56, 64 );
+	DrawScene( "background/furiker_c", 100 );
+	Wait( 50 );
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 2*2, FALSE );
+	DrawScene( "scene/303c", 200 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000012", 256, TRUE);
+	OutputLine(NULL, "ぎゃふ、",
+		   NULL, "컥, ", Line_Continue);
+	Wait( 800 );
+	OutputLine(NULL, "ぐへッ、",
+		   NULL, "크헉, ", Line_Continue);
+	Wait( 800);
+	OutputLine(NULL, "ぶぴょ！！」",
+		   NULL, "쿨럭!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200095", 256, TRUE);
+	OutputLine(NULL, "「それでもダメ〜〜、レナがお持ち帰りぃ〜〜〜☆",
+		   NULL, "\"그래도 안 돼~~, 레나가 가지고 갈 꺼야~~~☆ ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200096", 256, TRUE);
+	OutputLine(NULL, "　はぅ〜！！」",
+		   NULL, "하우~!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DrawScene( "black", 1000 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　監督、痙攣して倒れてるぞ…。",
+		   NULL, "감독, 경련하면서 쓰러졌는데.... ", Line_WaitForInput);
+	OutputLine(NULL, "今、ド至近でつるべ打ちだったもんなぁ…。",
+		   NULL, "방금 초 근접 거리에서 연타를...? ", Line_Normal);
+	ClearMessage();
+
+	ModFadeOutBGM( 0, 400, FALSE, 0 );
+	ModSetLayerFilter(1, 256, "none");
+	ModDrawCharacter(1, 4, "sprite/sa6_hau_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	ModDrawCharacter(2, 3, "sprite/me5_def_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacter(3, 5, "sprite/ri6_def_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene( "background/res1", 400 );
+	ModPlayBGM( 0, "cafe", 56, 0, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100089", 256, TRUE);
+	OutputLine(NULL, "「しっかし……、圧巻な光景だなぁ。",
+		   NULL, "\"하지만...... 정말 압권인 광경이네. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100090", 256, TRUE);
+	OutputLine(NULL, "勝ってよかったと同時に、負けてたらその一角に俺がいたかもしれないことを思うととても笑えん。」",
+		   NULL, "이겨서 다행이라고 생각하는 동시에, 졌다면 저 가운데 내가 있었을지도 모른다고 생각하니 마냥 웃을 수만도 없어.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 4, "sprite/sa6_akireru_a1_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400004", 256, TRUE);
+	OutputLine(NULL, "「まったく悔しいですわね！！",
+		   NULL, "\"정말이지 분통하기 그지없사와요!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400005", 256, TRUE);
+	OutputLine(NULL, "　いくら罰ゲームも部活の務めとはいえ…、こんな格好はあんまりでございましてよー！」",
+		   NULL, "아무리 벌게임도 부활동의 하나라지만... 이런 차림은 너무하다고요!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 3, "sprite/me5_tohoho_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300006", 256, TRUE);
+	OutputLine(NULL, "「ちぇー、おじさんの格好に比べたら沙都子の格好なんて、まともな方じゃない。」",
+		   NULL, "\"쳇, 이 아저씨의 차림에 비하면 사토코 쪽은 그나마 정상이라구.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(3, 5, "sprite/ri6_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s09/05/170500005", 256, TRUE);
+	OutputLine(NULL, "「……メイドの格好がまともに見える時点で、みんなただれてると思いますです。」",
+		   NULL, "\"......메이드 차림을 정상이라고 보는 시점에서, 이미 다들 맛이 가버린 거라고 생각합니다에요.\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	FadeOutBGM( 0, 400, FALSE );
+	ModFadeOutBGM( 1, 400, FALSE, 1 );
+	FadeAllBustshots( 400, TRUE );
+	ModDrawCharacterWithFiltering(2, 2, "sprite/re2a_kaii_a1_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+	PlayBGM( 0, "rika", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100091", 256, TRUE);
+	OutputLine(NULL, "「ほらほらレナ、いつまでもはぅはぅしてないで席に座れ。",
+		   NULL, "\"자, 자, 레나, 계속 하우하우 거리지만 말고 자리에 앉아. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100092", 256, TRUE);
+	OutputLine(NULL, "負けた連中にサービスしてもらうのが勝者の特権なんだからよー。」",
+		   NULL, "패배한 녀석들에게 서비스를 받는 게 승자의 권리잖아.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200097", 256, TRUE);
+	OutputLine(NULL, "「はぅ〜〜！！！",
+		   NULL, "\"하우~!!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200098", 256, TRUE);
+	OutputLine(NULL, "　今日は誰をお持ち帰ろうかな〜〜！！",
+		   NULL, "오늘은 누구를 가져갈까나~~!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200099", 256, TRUE);
+	OutputLine(NULL, "　はぅ〜はぅ〜！！」",
+		   NULL, "하우~ 하우~!!\" ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "background/res1", 200 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100093", 256, TRUE);
+	OutputLine(NULL, "「そら、ウェイトレスさん、今日のお勧めは何かなぁ？」",
+		   NULL, "\"거기 웨이트리스 씨, 오늘의 추천 메뉴는 뭐야?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 3, "sprite/me5_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 400, TRUE );
+	PlaySE( 0, "wa_011", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300007", 256, TRUE);
+	OutputLine(NULL, "「こちらのフルーツパフェはいかがでしょうかー。」",
+		   NULL, "\"여기 이 후르츠 파르페는 어떠신가요?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	FadeBustshotWithFiltering( 1, "mask00" , 0, FALSE, 0, 0, 400, TRUE );
+	ModDrawCharacterWithFiltering(2, 4, "sprite/sa6_akuwarai_a1_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+	PlaySE( 0, "s_kyupiin", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400006", 256, TRUE);
+	OutputLine(NULL, "「ただいまシュークリームのセットがお安くなってましてよー！」",
+		   NULL, "\"지금은 슈크림 세트가 할인 중이에요 - !\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	FadeBustshotWithFiltering( 2, "maskleft" , 1, FALSE, 0, 0, 300, TRUE );
+	ModDrawCharacterWithFiltering(1, 5, "sprite/ri6_warai_a1_", "0", "maskleft", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+	PlaySE( 0, "s_boyoon", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s09/05/170500006", 256, TRUE);
+	OutputLine(NULL, "「……お水ならいくらおかわりしてもＯＫなのです。」",
+		   NULL, "\"......물 리필은 언제라도 OK인 거예요.\" ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "wa_041", 56, 64 );
+	DrawScene( "white", 400 );
+	DrawScene( "background/res2", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　こんな壮絶な格好のウェイトレスさんが独り占めできて、レナはさっきから鼻血がぼたぼた出まくりだ。",
+		   NULL, "이런 굉장한 모습을 한 웨이트리스들을 혼자 독점할 수 있다는 사실에, 레나는 아까부터 코피를 줄줄 흘리고 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……というか、レナが取り乱しててくれるので、俺が冷静なふりをできているだけで、本当は俺だって鼻血を出したい気分だ。",
+		   NULL, "......뭐, 레나가 난리를 부리는 덕에 애써 태연한 척 할 뿐, 실은 나도 코피를 쏟고 싶은 심정이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　というか、鼻の下を伸ばしまくるというのはこういうのを言うんだろうな〜〜えへへ〜〜☆",
+		   NULL, "아마 뿅 가 죽는다는 건 이런 걸 두고 하는 말이렸다~~ 에헤헤~~☆ ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(2, 2, "sprite/re2b_kaii_b1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200100", 256, TRUE);
+	OutputLine(NULL, "「ねーねー、梨花ちゃんウェイトレスさぁん、あ〜〜んやって〜☆」",
+		   NULL, "\"저기 저기, 웨이트리스 리카쨩, 아~~앙 해줘~☆\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 5, "sprite/ri6_warai_a1_", "0", "maskleft", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s09/05/170500007", 256, TRUE);
+	OutputLine(NULL, "「……あ〜〜〜んですよ。」",
+		   NULL, "\"......아~~~앙이에요.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100094", 256, TRUE);
+	OutputLine(NULL, "「沙都子〜、俺にもひとつ頼むよ〜〜！",
+		   NULL, "\"사토코~ 나한테도 하나 부탁해~~! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100095", 256, TRUE);
+	OutputLine(NULL, "　あー、魅音には肩でも揉んでもらおっかなぁ〜☆」",
+		   NULL, "아, 미온에게는 어깨라도 주물러 달라고 할까나~☆\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	ModDrawCharacter(2, 4, "sprite/sa6_yareyare_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400007", 256, TRUE);
+	OutputLine(NULL, "「あーん、もう悔しいですわねぇ！",
+		   NULL, "\"아~ 참으로 분통하옵니다! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 4, "sprite/sa6_odoroki_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400008", 256, TRUE);
+	OutputLine(NULL, "　ほら！",
+		   NULL, "자요! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400009", 256, TRUE);
+	OutputLine(NULL, "　あーん、なさいませー！！」",
+		   NULL, "아~앙, 하시어요!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 3, "sprite/me5_tohoho_a1_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300008", 256, TRUE);
+	OutputLine(NULL, "「ちぇーー！",
+		   NULL, "\"체엣! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300009", 256, TRUE);
+	OutputLine(NULL, "　肩揉みかーー！",
+		   NULL, "어깨 주무르긴가! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 3, "sprite/me5_wink_a1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300010", 256, TRUE);
+	OutputLine(NULL, "おじさんの肩揉みは高くつくからねー！！」",
+		   NULL, "이 아저씨의 어깨 주무르기는 좀 비싸다구!!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ごくり。",
+		   NULL, "꿀꺽. ", Line_WaitForInput);
+	OutputLine(NULL, "……その壮絶な光景に、ギャラリーたちは固唾を呑む。",
+		   NULL, "......그 놀라운 광경에, 구경꾼들이 군침을 삼킨다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何しろ、毎回大賑わいのエンジェルモートイベントデーだが、ここまでとんでもない日がかつてあっただろうか？！",
+		   NULL, "분명 매번 대성황인 엔젤모트 이벤트 데이지만, 이렇게까지 말도 안 되는 날이 일찍이 있었던가?! ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　どのボックスシートにも４人がぎゅうぎゅうとすし詰めのはずなのに、この一角だけは俺とレナでゆったりと座り、",
+		   NULL, "테이블마다 4명이 꽉꽉 들어차 있는데도 나와 레나는 둘이서 여유롭게 테이블을 차지하고 있을 뿐 아니라, ", Line_WaitForInput);
+	OutputLine(NULL, "しかも、鼻血で染まりそうなとんでも衣装のウェイトレスさんを３人も、この一角が独占してるんだぞ！！",
+		   NULL, "거기에 코피가 터질 정도로 엄청난 복장을 한 웨이트리스를 3명이나 독점하고 있다!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかも、肩を揉んでもらうわ、あ〜んはしてもらうわ、挙句の果てにはあれやこれや！！",
+		   NULL, "심지어 어깨를 주물러라, 아~앙 해달라, 그것도 모자라 온갖 잡일까지!! ", Line_WaitForInput);
+	OutputLine(NULL, "　普段のエンジェルモートでは絶対にありえないことだ。",
+		   NULL, "평소의 엔젤모트에서는 절대로 있을 수 없는 일이다. ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/res2", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s09/00/mank17004", 256, TRUE);
+	OutputLine(NULL, "「……そ、そうでござったか。",
+		   NULL, "\"......그, 그런 것이오? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s09/00/mank17005", 256, TRUE);
+	OutputLine(NULL, "…この人たちはウェイトレスさんでござったか……。",
+		   NULL, "...이 사람들은 웨이트리스인게요...? ", Line_WaitForInput);
+
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+
+	ModPlayVoiceLS(4, 0, "ps3/s09/00/mank17006", 256, TRUE);
+	OutputLine(NULL, "でで、では、拙者もお冷をひとつお願いしたいでござるよー！」",
+		   NULL, "그그, 그럼, 소인에게도 물을 한 잔 부탁하오!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あまりのうらやましさに、自分たちもあやかりたいと、ギャラリーの１人が魅音の肩を叩く。",
+		   NULL, "그 광경이 너무도 부러웠는지, 관객 중 한명이 자신에게도 서비스를 해달라며 미온의 어깨를 두드린다. ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(2, 3, "sprite/me5_tohoho_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300011", 256, TRUE);
+	OutputLine(NULL, "「あーー、悪いけどおじさん、ウェイトレスじゃないのよ。",
+		   NULL, "\"하아, 미안하지만 이 아저씨는 웨이트리스가 아니거든. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300012", 256, TRUE);
+	OutputLine(NULL, "お冷はあっちにいる本物のウェイトレスにお願いしてくれるー？」",
+		   NULL, "물이라면 저기에 있는 진짜 웨이트리스에게 부탁해줄래?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "s_daidageki", 56, 64 );
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>男</color>", NULL, "<color=#f5e6d3>남자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s09/00/mank17007", 256, TRUE);
+	OutputLine(NULL, "「なな、なんとー！！",
+		   NULL, "\"뭐뭐, 뭣이라!! ", Line_Continue);
+
+	PlaySE( 0, "s_daidageki", 56, 64 );
+
+	SetSpeedOfMessage( FALSE, 0 );
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	ModPlayVoiceLS(4, 0, "ps2/00/mank17008", 540, TRUE);
+	OutputLine(NULL, "　ウェイトレスさんではないのでござるか？！",
+		   NULL, "웨이트리스가 아니었단 말이오?! ", Line_Continue);
+
+	PlaySE( 0, "s_boyoon", 56, 64 );
+
+	OutputLineAll(NULL, "", Line_WaitForInput);
+
+	ModPlayVoiceLS(4, 0, "ps3/s09/00/mank17009", 256, TRUE);
+	OutputLine(NULL, "　ご奉仕はしてもらえんのでござるかー！！」",
+		   NULL, "소인에겐 봉사를 해주지 않는 것이외까?!\" ", Line_Continue);
+
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 0, 3*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 0, 3*2, TRUE );
+
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 4, "sprite/sa6_akireru_a1_", "0", "maskleft", 1, -240, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400010", 256, TRUE);
+	OutputLine(NULL, "「…別に私たち、店員さんじゃございませんもの。",
+		   NULL, "\"...저희는 점원이 아니여요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400011", 256, TRUE);
+	OutputLine(NULL, "あなたたちにサービスするいわれなどありませんでしてよー。」",
+		   NULL, "여러분들에게 서비스할 이유는 없사와요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(3, 5, "sprite/ri6_def_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 400, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s09/05/170500008", 256, TRUE);
+	OutputLine(NULL, "「……ボクも沙都子も魅ぃも、勝者の二人の慰みものなのですよ。",
+		   NULL, "\"......저도 사토코도 미이도 승자인 두 사람의 노리개인 거예요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 5, "ps3/s09/05/170500009", 256, TRUE);
+	OutputLine(NULL, "……みぃ。」",
+		   NULL, "......미이.\" ", Line_Normal);
+	ClearMessage();
+	SetSpeedOfMessage( TRUE, 128 );
+	FadeOutBGM( 0, 300, FALSE );
+	DrawScene( "white", 300 );
+	ModDrawCharacter(3, 23, "portrait/kameda1b_odoroki_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	DrawScene( "background/res5", 50 );
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 5*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 5*2, FALSE );
+	ModPlayBGM( 0, "4", 56, 0, 0 );
+	ModPlayBGM( 0, "3", 56, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5a5e5e>亀田</color>", NULL, "<color=#5a5e5e>카메다</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 23, "ps3/s09/23/172800019", 256, TRUE);
+	OutputLine(NULL, "「「「なな、納得できんーーーーッ！！！」」」",
+		   NULL, "\"\"\"나나, 납득 못 해------!!!\"\"\" ", Line_Normal);
+	ClearMessage();
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　亀田くんたちが突然、絶叫すると俺に食って掛かる。",
+		   NULL, "카메다 군과 다른 관중들이 갑자기 절규하며 나에게 달려든다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100096", 256, TRUE);
+	OutputLine(NULL, "「納得できんって、一体に何が納得できないんだよ？！」",
+		   NULL, "\"납득할 수 없다니, 대체 뭘 납득할 수 없다는 거야?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5a5e5e>亀田</color>", NULL, "<color=#5a5e5e>카메다</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 23, "ps3/s09/23/172800020", 256, TRUE);
+	OutputLine(NULL, "「Ｋさんばっかり、",
+		   NULL, "\"K 씨 혼자서만, ", Line_Continue);
+
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+	Wait( 800 );
+
+	OutputLine(NULL, "こんなおいしい部活が出来て、",
+		   NULL, "이렇게나 재밌는 부활동을 맛보다니, ", Line_Continue);
+	Wait( 1900 );
+	SetSpeedOfMessage( TRUE, 128 );
+	OutputLine(NULL, "ずるい",
+		   NULL, "치사해. ", Line_Continue);
+	Wait( 300 );
+	PlaySE( 0, "s_Down", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 0, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 0, 2*2, TRUE );
+	Wait( 200 );
+	OutputLine(NULL, "ずるい",
+		   NULL, "치사해. ", Line_Continue);
+	Wait( 300 );
+	PlaySE( 0, "s_Down", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 2*2, TRUE );
+	Wait( 300 );
+	OutputLine(NULL, "ずる過ぎるっすーー！！！」",
+		   NULL, "너무 치사합니다!!!\" ", Line_Continue);
+	Wait( 300 );
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 5*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 5*2, TRUE );
+
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100097", 256, TRUE);
+	OutputLine(NULL, "「い、いやそれは、…俺たちも相応のリスクを払って得た権利だからなぁ。",
+		   NULL, "\"아, 아니 그건... 이쪽도 상응하는 리스크를 감수하고 얻어낸 권리라고. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100098", 256, TRUE);
+	OutputLine(NULL, "ずるいと言われても…。」",
+		   NULL, "치사하다고 말해도....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	SetSpeedOfMessage( TRUE, 128 );
+
+	DisableWindow();
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 0, 5*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 0, 5*2, FALSE );
+	ModDrawCharacter(1, 25, "sprite/oka1_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, FALSE );
+	ModDrawCharacter(2, 24, "sprite/tomita1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a17d6b>富田</color>＆<color=#7a7e7d>岡村</color>", NULL, "<color=#a17d6b>토미타</color>&<color=#7a7e7d>오카무라</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 24, "ps3/s09/24/172400011", 256, TRUE);
+	ModPlayVoiceLS(5, 25, "ps3/s09/25/172500009", 256, TRUE);
+	OutputLine(NULL, "「「ぼぼ、僕たちもずるいと思います！！」」",
+		   NULL, "\"저저, 저희도 치사하다고 생각합니다!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　亀田くんの後ろに富田くん岡村くんも、ポーズを取るようにしながら現れる！",
+		   NULL, "카메다 군 뒤에서 토미타 군과 오카무라 군이 포즈를 취하며 나타난다! ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#7a7e7d>岡村</color>", NULL, "<color=#7a7e7d>오카무라</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 25, "ps2/00/172400012", 540, TRUE);
+	OutputLine(NULL, "「大体、前原さんが昨日ので優勝できたのは、",
+		   NULL, "\"애초에 마에바라 씨가 어제 우승을 차지할 수 있었던 건, ", Line_Continue);
+	SetSpeedOfMessage( TRUE, 128 );
+
+	Wait( 4000 );
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+
+	OutputLine(NULL, "僕たちが委員長を背後からやっつけたからですよーー！！！」",
+		   NULL, "저희가 뒤에서 반장을 처치했기 때문이니까요!!!\" ", Line_Continue);
+	Wait( 200 );
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 4*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 4*2, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	SetSpeedOfMessage( FALSE, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a17d6b>富田</color>", NULL, "<color=#a17d6b>토미타</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(5, 24, "ps2/00/172500010", 540, TRUE);
+	OutputLine(NULL, "「前原さんが負けたら罰ゲームが可哀想だなぁと思って、わざと負けてあげたんです！！",
+		   NULL, "\"마에바라 씨가 져서 벌게임을 받으면 불쌍하니까 일부러 져드린 거라구요!! ", Line_WaitForInput);
+	ModPlayVoiceLS(5, 24, "ps2/00/172500011", 540, TRUE);
+	OutputLine(NULL, "　僕たちにもちょっとは感謝してほしいです…！！！」",
+		   NULL, "저희에게도 조금은 감사해 주셨으면 합니다!!!\" ", Line_Normal);
+	ClearMessage();
+
+	ModPlayBGM( 0, "4", 56, 0, 1 );
+
+	ModSetLayerFilter(0, 256, "none");
+	ModDrawCharacter(0, 3, "sprite/me5_akuwarai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300013", 256, TRUE);
+	OutputLine(NULL, "「………ふふーーん？",
+		   NULL, "\".........흐흐으응? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300014", 256, TRUE);
+	OutputLine(NULL, "　何だか面白い展開になってきたねぇ。",
+		   NULL, "어쩐지 재미있게 되어가는걸. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300015", 256, TRUE);
+	OutputLine(NULL, "どうする圭ちゃん？」",
+		   NULL, "어떻게 할래, 케이쨩?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100099", 256, TRUE);
+	OutputLine(NULL, "「どうするも何も…。",
+		   NULL, "\"어떻게 할래라니 대체 뭘.... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100100", 256, TRUE);
+	OutputLine(NULL, "俺にどうしろと…。」",
+		   NULL, "날더러 어쩌라는 거야....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 3, "sprite/me5_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300016", 256, TRUE);
+	OutputLine(NULL, "「よしよし、亀田くんに富田、岡村。",
+		   NULL, "\"좋아 좋아, 카메다 군이랑 토미타 군, 오카무라 군. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(0, 3, "sprite/me5_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300017", 256, TRUE);
+	OutputLine(NULL, "そこまで言うなら、今日の勝者の権利を賭けて、圭ちゃんとレナに勝負を挑んでみたら？」",
+		   NULL, "그렇게까지 말한다면 오늘 승자의 권리를 걸고 케이쨩과 레나에게 승부를 걸어보지 그래?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	FadeBustshotWithFiltering( 0, "maskright" , 1, FALSE, 0, 0, 300, TRUE );
+	ModDrawCharacterWithFiltering(2, 2, "sprite/re2a_bikkuri_a1_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200101", 256, TRUE);
+	OutputLine(NULL, "「へ？",
+		   NULL, "\"헤? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200102", 256, TRUE);
+	OutputLine(NULL, "　魅ぃちゃん、それってどういう意味かな、かな？！」",
+		   NULL, "미이쨩, 그거 무슨 뜻일까나, 까나?!\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 3, "sprite/me5_huteki_a1_", "0", "maskleft", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300018", 256, TRUE);
+	OutputLine(NULL, "「部活メンバーの他の精鋭たちを圧倒的大差で破ったお二人だもんねぇ〜。",
+		   NULL, "\"다른 부활동 멤버를 압도적인 차이로 해치운 두 사람이니까~. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 3, "sprite/me5_akuwarai_a1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300019", 256, TRUE);
+	OutputLine(NULL, "こんなメンバーですらない連中なんか束でかかってきても負ける気しないでしょ〜？」",
+		   NULL, "이런 멤버 축에도 끼지 못하는 녀석들 따위 한 트럭이 덤벼도 질 리가 없잖아~?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DrawScene( "black", 300 );
+	ModDrawCharacter(3, 23, "portrait/kameda1a_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );
+	ModDrawCharacter(1, 25, "sprite/oka1_shinken_", "0", -240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	ModDrawCharacter(2, 24, "sprite/tomita1_shinken_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawScene( "background/res5", 300 );
+	PlaySE( 0, "s_down", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　亀田くんが、よっしゃあ！！と手を叩く。",
+		   NULL, "카메다 군이, 좋았어!! 하고 손뼉을 친다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　富田くん岡村くんも力強く頷いてやる気十分だ…。",
+		   NULL, "토미타 군과 오카무라 군도 고개를 힘차게 끄덕이며 의욕을 내보인다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　くそ、この場で戦えというのか、こいつらと！！",
+		   NULL, "젠장, 이 자리에서 싸우라는 건가, 이 녀석들과?! ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(0, 4, "sprite/sa6_akuwarai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "org/satoko5000", 256, TRUE);
+	OutputLine(NULL, "「そう言えば、圭一さんとレナさんの勝負は、預かり勝負でございましたものねぇ。",
+		   NULL, "\"그러고 보니, 케이이치 씨와 레나 씨의 승부는 보류 상태였죠. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "org/satoko5001", 256, TRUE);
+	OutputLine(NULL, "少し外野が混じるとは言え、ここで優勝決勝戦をされるのも面白いですものねぇ。」",
+		   NULL, "조금 떨거지들이 섞여 있기는 해도, 여기서 우승 결정전을 치르는 것도 재밌겠네요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 5, "sprite/ri6_def_a1_", "0", "maskleft", 1, -240, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 5, "ps3/s09/05/170500010", 256, TRUE);
+	OutputLine(NULL, "「……もちろん、ここで負ければボクたちと一緒に罰ゲームに加わってもらうことになるのです。」",
+		   NULL, "\"......물론, 진 사람은 우리와 함께 벌게임에 참가해 줘야 하는 거예요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100101", 256, TRUE);
+	OutputLine(NULL, "「…くっそーー！",
+		   NULL, "\"...제길! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100102", 256, TRUE);
+	OutputLine(NULL, "　何かうまいことやられてる気分だが…、レナはどうする。」",
+		   NULL, "왠지 당한 것 같은데... 레나는 어쩔 거야?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(3, 2, "sprite/re2a_kaii_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 400, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200103", 256, TRUE);
+	OutputLine(NULL, "「レナは負けないよーー！！",
+		   NULL, "\"레나는 지지 않을 거야~!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200104", 256, TRUE);
+	OutputLine(NULL, "　だって、みんなみんなレナがお持ち帰りするもん〜〜！！",
+		   NULL, "왜냐면 모두 모두 레나가 가져갈 거니까~~!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200105", 256, TRUE);
+	OutputLine(NULL, "　圭一くんはどんな罰ゲーム服かなぁ〜☆",
+		   NULL, "케이이치 군은 어떤 벌칙 의상일까나~☆. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(3, 2, "sprite/re2b_kaii_b1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200106", 256, TRUE);
+	OutputLine(NULL, "みんなみぃんな、お持ち帰り〜！！！」",
+		   NULL, "모두 모~두, 가져갈래~!!!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　や、やる気満々だな…。",
+		   NULL, "의, 의욕이 넘치는구만. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　亀田くんも自らの楽園、エンジェルモートで最高のパラダイスを獲得しようと闘志を高めているのが分かる。",
+		   NULL, "자신의 낙원인 엔젤모트에서 최고의 파라다이스를 얻기 위해 투지를 불태우는 카메다 군에, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　後輩二人組みも、初めて部活メンバーと戦えるチャンスに、奮い立っているようだ。",
+		   NULL, "부활동 멤버와 싸울 수 있다는 기회에 흥분을 감추지 못하는 후배 2인조까지. ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000013", 256, TRUE);
+	OutputLine(NULL, "「その勝負、この入江京介も混ぜていただきますよぉおぉ！！",
+		   NULL, "\"그 승부, 이 이리에 쿄스케도 끼워주셨으면 합니다아아아!! ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 7200 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "　とお！！！」",
+		   NULL, "타앗!!!\" ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE( 0, "s_furu", 56, 64 );
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 400 );
+	// (backup) SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 200 );
+	// (backup) SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 200 );
+	// (backup) SetValidityOfInput( TRUE );
+	ModDrawCharacter(2, 10, sprite_iri_majime2, "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawScene( "background/res1", 50 );
+	PlaySE( 0, "wa_007", 56, 64 );
+	Wait( 500 );
+	DrawSceneWithMask( "black", "maskright", 1, 0, 300 );
+	ModDrawCharacter(1, 3, "sprite/me5_def_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask( "background/res5", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300020", 256, TRUE);
+	OutputLine(NULL, "「ふむふむ。",
+		   NULL, "\"흠흠. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 3, "sprite/me5_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300021", 256, TRUE);
+	OutputLine(NULL, "よっしゃ！",
+		   NULL, "그럼! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300022", 256, TRUE);
+	OutputLine(NULL, "　この面子で決定しよう。",
+		   NULL, "이 멤버로 하는걸로. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300023", 256, TRUE);
+	OutputLine(NULL, "圭ちゃんもレナも異存はないね？！」",
+		   NULL, "케이쨩도 레나도 이의 없지?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100103", 256, TRUE);
+	OutputLine(NULL, "「ちぇ、異存も何も、勝手に話をまとめやがって。」",
+		   NULL, "\"쳇, 이의고 자시고 멋대로 이야기를 진행한 주제에.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300024", 256, TRUE);
+	OutputLine(NULL, "「まーまー、面白くなった方がいいでしょ？",
+		   NULL, "\"뭐~ 어때~, 재밌게 됐으니까 괜찮잖아? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300025", 256, TRUE);
+	OutputLine(NULL, "　あはははは。」",
+		   NULL, "아하하하하.\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "white", "maskleft", 1, 0, 300 );
+	ModDrawCharacter(2, 4, "sprite/sa6_akireru_a1_", "0", 240, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400014", 256, TRUE);
+	OutputLine(NULL, "「富田さんも岡村さんも、やめておくなら今の内でしてよー。",
+		   NULL, "\"토미타 씨, 오카무라 씨. 그만두려면 지금이랍니다? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 4, "ps3/s09/04/170400015", 256, TRUE);
+	OutputLine(NULL, "分かってると思いますけど、負けたら大変なことになりますのよ？」",
+		   NULL, "알고 있겠지만, 지기라도 한다면 엄청난 꼴을 당하게 될 거예요?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(3, 24, "sprite/tomita1_shinken_", "0", "maskright", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a17d6b>富田</color>", NULL, "<color=#a17d6b>토미타</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 24, "ps3/s09/24/172400013", 256, TRUE);
+	OutputLine(NULL, "「そ、それは覚悟の内です…！」",
+		   NULL, "\"그, 그야 물론 각오는 하고 있어요...!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(1, 25, "sprite/oka1_shinken_", "0", "maskright", 1, -240, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 200 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#7a7e7d>岡村</color>", NULL, "<color=#7a7e7d>오카무라</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 25, "ps3/s09/25/172500012", 256, TRUE);
+	OutputLine(NULL, "「僕たちも男なんです！",
+		   NULL, "\"우리도 남자라구요! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 25, "ps3/s09/25/172500013", 256, TRUE);
+	OutputLine(NULL, "　いつかは戦いたかったんです！！」",
+		   NULL, "언젠가는 싸워보고 싶었습니다!!\" ", Line_Continue);
+
+	PlaySE( 0, "wa_007", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 0, 4*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 0, 4*2, TRUE );
+
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　普段、恐ろしい罰ゲームを目の当たりにしていながら、よくそこまでの勇気を奮いだせるものだ。",
+		   NULL, "평소에 끔찍한 벌게임을 직접 봐왔으면서도 잘도 이렇게 용기를 내는구나. ", Line_WaitForInput);
+	OutputLine(NULL, "…なかなか見所のあるやつらだぜ…！！",
+		   NULL, "...제법 장래가 유망한 녀석들이야!! ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "black", "maskleft", 1, 0, 300 );
+	ModDrawCharacter(0, 23, "sprite/kameda1a_niyari_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 0, FALSE );
+	DrawSceneWithMask( "background/res5", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その後輩二人組を尻目に、ニヤリと笑うのは……エンジェルモートの魔王、亀田！",
+		   NULL, "그런 후배 2인방을 거들떠보지도 않고 씨익 웃는...... 엔젤모트의 마왕, 카메다! ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5a5e5e>亀田</color>", NULL, "<color=#5a5e5e>카메다</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 23, "ps3/s09/23/172800021", 256, TRUE);
+	OutputLine(NULL, "「ふっふっふ！",
+		   NULL, "\"후후훗! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 23, "ps3/s09/23/172800022", 256, TRUE);
+	OutputLine(NULL, "　まさかＫさんと再び戦えるとは思わなかったっすよ。",
+		   NULL, "설마 K 씨와 다시금 싸우게 되리라고는 생각하지 못했습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 23, "ps3/s09/23/172800023", 256, TRUE);
+	OutputLine(NULL, "今回は正々堂々正面からぶつからせていただきますよ！！」",
+		   NULL, "이번엔 정정당당히 정면으로 부딪쳐 드리겠습니다!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100104", 256, TRUE);
+	OutputLine(NULL, "「………く、よりによって、エンジェルモートで亀田くんと戦うことになるとはな…。",
+		   NULL, "\"큭...... 하필이면 엔젤모트에서 카메다 군과 싸우게 될 줄이야.... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100105", 256, TRUE);
+	OutputLine(NULL, "ある意味、野球で戦うより手強い気がするぜ…。」",
+		   NULL, "이건 야구 대결보다 훨씬 벅찰지도 모르겠는 걸....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんなやり取りをみながら不敵に笑うは、メイド世界の貴公子、入江監督！！",
+		   NULL, "나와 카메다 군의 대화를 듣고는 의미심장하게 웃는, 메이드 세계의 귀공자, 이리에 감독!! ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "white", "maskleft", 1, 0, 300 );
+	ModDrawCharacter(1, 10, sprite_iri_majime, "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskleft", 1, 0, 300 );
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000014", 256, TRUE);
+	OutputLine(NULL, "「ふ、……ここは大人の本気というものを見せてあげましょう。",
+		   NULL, "\"후...... 여기선 어른의 진심이 뭔지를 보여드리도록 하지요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 10, sprite_iri_majime2, "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000015", 256, TRUE);
+	OutputLine(NULL, "そして！！",
+		   NULL, "그리고!! ", Line_WaitForInput);
+
+	SetSpeedOfMessage( TRUE, 128 );
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000016", 256, TRUE);
+	OutputLine(NULL, "　今日ここに入江京介のためだけのハーレムを実現させるのですッ！！！」",
+		   NULL, "오늘 이곳에 이리에 쿄스케만을 위한 하렘을 실현하겠습니다!!!\" ", Line_Continue);
+
+	PlaySE( 0, "wa_007", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 4*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 4*2, TRUE );
+
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	SetSpeedOfMessage( FALSE, 0 );
+
+	DrawSceneWithMask( "black", "maskleft", 1, 0, 300 );
+	ModDrawCharacter(2, 2, "sprite/re2b_kaii_b1_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200107", 256, TRUE);
+	OutputLine(NULL, "「あははははは！",
+		   NULL, "\"아하하하하하! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200108", 256, TRUE);
+	OutputLine(NULL, "　みんな勝たせてあげないよ〜！！",
+		   NULL, "모두 그렇겐 안 될 거야~!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200109", 256, TRUE);
+	OutputLine(NULL, "　はぅ〜！！」",
+		   NULL, "하우~!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100106", 256, TRUE);
+	OutputLine(NULL, "「…よし！！",
+		   NULL, "\"...좋아!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100107", 256, TRUE);
+	OutputLine(NULL, "　俺も覚悟を決めたぜ。",
+		   NULL, "불평만 하고 있어봤자 소용없겠지. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100108", 256, TRUE);
+	OutputLine(NULL, "いつまでもぼやいていても仕方ねぇや。",
+		   NULL, "질까 보냐! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100109", 256, TRUE);
+	OutputLine(NULL, "魅音！",
+		   NULL, "미온! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100110", 256, TRUE);
+	OutputLine(NULL, "　勝負は何でやるッ？！」",
+		   NULL, "종목은 뭐지?!\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "white", "maskright", 1, 0, 300 );
+	ModDrawCharacter(1, 3, "sprite/me5_akuwarai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask( "background/res5", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300026", 256, TRUE);
+	OutputLine(NULL, "「くっくっく！",
+		   NULL, "\"큭큭큭! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300027", 256, TRUE);
+	OutputLine(NULL, "　そうこなくっちゃあね！",
+		   NULL, "그렇게 나와야지! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 3, "sprite/me5_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300028", 256, TRUE);
+	OutputLine(NULL, "みんな、道を開けて！！",
+		   NULL, "다들, 길 좀 열어줘!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300029", 256, TRUE);
+	OutputLine(NULL, "　ウェイトレスの皆さんー運んじゃってくださいー！！」",
+		   NULL, "웨이트리스 언니들, 가지고 와주세요!!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　厨房の前には、本当のウェイトレスさんたちが、たくさんのデザートをおぼんに載せてスタンバイしていた。",
+		   NULL, "주방 앞에는 진짜 웨이트리스분들이 쟁반에 디저트를 잔뜩 싣고 대기하고 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ってことは、……早食い、",
+		   NULL, "그렇다는 건 빨리 먹기.... ", Line_ContinueAfterTyping);
+	SetValidityOfInput( FALSE );
+	Wait( 800 );
+	SetValidityOfInput( TRUE );
+	OutputLine(NULL, "大食いかッ？！",
+		   NULL, "아니면, 많이 먹기인가?! ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/res4", "maskup", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>ウェイトレス</color>", NULL, "<color=#f5e6d3>웨이트리스</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s09/00/waita17009", 256, TRUE);
+	OutputLine(NULL, "「……あの、…店長。",
+		   NULL, "\"......저...점장님. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s09/00/waita17010", 256, TRUE);
+	OutputLine(NULL, "本当にいいんですか？」",
+		   NULL, "이래도 괜찮을까요? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>義郎</color>", NULL, "<color=#f5e6d3>요시로</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s09/00/yoshi17001", 256, TRUE);
+	OutputLine(NULL, "「うんうん、いいから運んじゃってー！",
+		   NULL, "\"응응, 괜찮으니까 옮겨주게! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s09/00/yoshi17002", 256, TRUE);
+	OutputLine(NULL, "　面白いことは何でも大歓迎だよ。",
+		   NULL, "재밌는 거라면 뭐든 대환영이야. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s09/00/yoshi17003", 256, TRUE);
+	OutputLine(NULL, "せっかくのイベントデーだしね、盛り上がらないとー！」",
+		   NULL, "모처럼의 이벤트 데이잖나, 분위기를 띄워 줘야지!\" ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　店長のゴーサインを確認した後、ウェイトレスさんたちが、デザートの配膳を開始した。",
+		   NULL, "점장이 고 사인을 내리자, 웨이트리스들은 디저트를 배치하기 시작한다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　俺、レナ、後輩コンビに亀田くん、そして監督が向かい合う。",
+		   NULL, "나, 레나, 후배 콤비, 카메다 군, 그리고 감독까지. 우리는 테이블을 두고 마주 앉았다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そしてその眼前には……壮絶な量のデザートが次々に並べられていた。",
+		   NULL, "그리고 그 앞에는...... 어마어마한 양의 디저트가 차례차례 진열되어 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　本来ならデザートを並べてくれるウェイトレスさんの姿に、鼻の下のひとつも伸ばしたい気分だが、……今や臨戦態勢。",
+		   NULL, "평소라면 디저트를 나르는 웨이트리스를 보며 헤벌쭉하고 있었겠지만...... 지금은 전투 태세. ", Line_WaitForInput);
+	OutputLine(NULL, "そんな余裕はゼロだ！！",
+		   NULL, "그럴 여유는 제로다!! ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　取り囲むギャラリーたちも今や興奮状態だった。",
+		   NULL, "주위를 둘러싼 관중들도 흥분 상태. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　まさかイベントデーがこんなに大騒ぎになるとは思わなかっただろう。",
+		   NULL, "설마 이벤트 데이가 이런 큰 소동으로 번질 줄 그 누가 상상할 수 있었을까. ", Line_WaitForInput);
+	OutputLine(NULL, "だが何でも構わない！",
+		   NULL, "하지만 아무래도 상관없다! ", Line_WaitForInput);
+	OutputLine(NULL, "　面白けりゃ何でもＯＫ！",
+		   NULL, "재밌기만 하면 뭐든 OK! ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(1, 3, "sprite/me5_wink_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300030", 256, TRUE);
+	OutputLine(NULL, "「さぁて、いいかい諸君。",
+		   NULL, "\"자 그럼, 준비는 됐겠지 제군들. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300031", 256, TRUE);
+	OutputLine(NULL, "制限時間内にどれだけのデザートが食べられるかの勝負だよ。",
+		   NULL, "제한 시간 내에 얼마나 디저트를 많이 먹을 수 있는지 승부하는 거야. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300032", 256, TRUE);
+	OutputLine(NULL, "予め各メニューごとに重さは出してあるからね、食べ終わった後に、食べた総重量で勝負をつけよう！」",
+		   NULL, "미리 각 메뉴별로 무게를 재놨으니까, 다 먹은 후에 먹은 총 무게를 비교해서 승부!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大食い勝負と聞き、亀田くんがにやりと笑う！",
+		   NULL, "많이 먹기 승부라는 걸 듣는 순간, 카메다 군이 씨익 웃는다! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　くそ、ますますに亀田くんが有利だな！",
+		   NULL, "젠장, 이거 카메다 군에게 너무 유리하잖아! ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a17d6b>富田</color>", NULL, "<color=#a17d6b>토미타</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 24, "ps3/s09/24/172400014", 256, TRUE);
+	OutputLine(NULL, "「委員長、僕たちはコンビですので、２人で１人の扱いにしてください。」",
+		   NULL, "\"반장, 우리는 콤비니까 두 사람을 한 명 취급해주셨으면 합니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(1, 3, "sprite/me5_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300033", 256, TRUE);
+	OutputLine(NULL, "「ん？",
+		   NULL, "\"응? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300034", 256, TRUE);
+	OutputLine(NULL, "　あぁいいよ。",
+		   NULL, "그래, 좋아. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300035", 256, TRUE);
+	OutputLine(NULL, "いっつもコンビだからね。",
+		   NULL, "언제나 콤비니까 ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300036", 256, TRUE);
+	OutputLine(NULL, "特別に許可しよう！」",
+		   NULL, "특별히 허가하겠어!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　うわ、胃袋勝負ならコンビは有利だぞ、くそ！",
+		   NULL, "이런... 위장으로 하는 승부에서 콤비라니, 너무 유리하잖아. 제길! ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/res5", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100111", 256, TRUE);
+	OutputLine(NULL, "「レナはどうだ…？",
+		   NULL, "\"레나는 어때...? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100112", 256, TRUE);
+	OutputLine(NULL, "　やっぱり女の子には胃袋勝負はキツイんじゃないか？」",
+		   NULL, "역시 여자애니까 많이 먹기 승부는 좀 힘들지 않아?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacterWithFiltering(2, 2, "sprite/re2b_kaii_b1_", "0", "maskright", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200110", 256, TRUE);
+	OutputLine(NULL, "「そんなことないよ〜〜、かぁいいみんなをお持ち帰りできるなら、テーブルごとだって飲み込んじゃうよう〜！！」",
+		   NULL, "\"그런 거 없어~~, 기여운 모두를 가져갈 수 있다면 테이블 통째로 먹어 치워 버릴 거야~!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…侮ってたぜ…。",
+		   NULL, "...얕보고 있었군. ", Line_WaitForInput);
+	OutputLine(NULL, "かぁいいモードのレナには物理的常識は通用しないんだったな…。",
+		   NULL, "귀여워 모드인 레나에게는 물리적 상식이 통용되지 않았었지.... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　自分の体重以上だって平気で平らげるかもしれん…！",
+		   NULL, "자기 몸무게의 몇 배라도 아무렇지 않게 먹어 치워 버릴지도...! ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "white", "maskright", 1, 0, 300 );
+	ModDrawCharacter(1, 10, sprite_iri_def1, "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100113", 256, TRUE);
+	OutputLine(NULL, "「監督は…、どうですか。",
+		   NULL, "\"감독은... 어떤가요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100114", 256, TRUE);
+	OutputLine(NULL, "大食いは。」",
+		   NULL, "많이 먹기.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000017", 256, TRUE);
+	OutputLine(NULL, "「……前原さん。",
+		   NULL, "\"......마에바라 씨. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000018", 256, TRUE);
+	OutputLine(NULL, "そこにメイドがいて、それを手に入れるための条件が大食いならば。",
+		   NULL, "거기에 메이드가 있고, 메이드를 손에 넣기 위한 조건이 많이 먹기라고 한다면, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+	DrawScene( "white", 100 );
+	ModDrawCharacter(1, 10, sprite_iri_majime2, "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawScene( "background/res1", 200 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000019", 256, TRUE);
+	OutputLine(NULL, "私に不可能の文字はありません…！！」",
+		   NULL, "제 사전에 불가능이란 글자는 존재하지 않습니다...!!\" ", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 1, "kaze", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　監督はどす黒いオーラで恐ろしい威圧感を滲み出させていた…。",
+		   NULL, "어두운 오오라를 두른 감독은 무시무시한 위압감을 내뿜고 있었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レンズの向こうの眼光は、鉄板だって貫きそうなくらいの鋭さがある！",
+		   NULL, "게다가, 렌즈 너머로 느껴지는 안광은 철판이라도 뚫어버릴 듯 날카롭다! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　くそ、かぁいいモードのレナに匹敵する、監督のメイドモードかぁ…！！",
+		   NULL, "제길... 귀여워 모드의 레나에 필적하는, 감독의 메이드 모드인가...!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　くそ、何か俺だけ特技がない予感…！！",
+		   NULL, "이래서는 뭔가 나만 특기가 없는 것 같잖아...!! ", Line_Normal);
+	ClearMessage();
+
+	DrawScene( "black", 400 );
+	FadeOutBGM( 1, 400, FALSE );
+	DrawScene( "background/res4", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300037", 256, TRUE);
+	OutputLine(NULL, "「じゃあ準備はいいかなッ？！？！",
+		   NULL, "\"자, 다들 준비는 됐지?!?! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s09/03/170300038", 256, TRUE);
+	OutputLine(NULL, "　レディー",
+		   NULL, "레디 ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 600 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…",
+		   NULL, "... ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 600 );
+	// (backup) SetValidityOfInput( TRUE );
+	OutputLine(NULL, "…、",
+		   NULL, "... ", Line_Continue);
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+	SetSpeedOfMessage( TRUE, 128 );
+	OutputLine(NULL, "ＧＯ！！」",
+		   NULL, "GO!!\" ", Line_Continue);
+
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 4*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 4*2, TRUE );
+
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	SetSpeedOfMessage( FALSE, 0 );
+
+	FadeOutBGM( 0, 300, FALSE );
+	ModPlayBGM( 1, "mienai", 56, 0, 0 );
+	ModPlayBGM( 1, "3", 56, 0, 1 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　心の用意もろくろくできない内に、魅音はあっさりと火蓋を切って落とす。",
+		   NULL, "아직 마음의 준비도 마치지 못했는데, 미온이 시원스레 시작을 알렸다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　くそ、こうなりゃヤケだ！！",
+		   NULL, "제길, 이렇게 된 거 이판사판이다!! ", Line_WaitForInput);
+	OutputLine(NULL, "　行くぞ！",
+		   NULL, "해보자고!! ", Line_WaitForInput);
+	OutputLine(NULL, "　デザートにもいろいろあるからな。",
+		   NULL, "디저트에도 여러 종류가 있다. ", Line_WaitForInput);
+	OutputLine(NULL, "食べやすいもの食べにくいもの！",
+		   NULL, "먹기 쉬운 것과 먹기 어려운 것! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だとしたら、一番最初に、有利なデザートを確保したい！！！",
+		   NULL, "그렇다면 가장 먼저 유리한 디저트를 확보하자!!! ", Line_WaitForInput);
+	OutputLine(NULL, "　あれだ、ヨーグルトパフェなんかどうだ？！",
+		   NULL, "맞아! 요구르트 파르페 같은 건 어떨까?! ", Line_WaitForInput);
+	OutputLine(NULL, "　うおおおりゃあぁあぁあ！！",
+		   NULL, "우오오오오오오오!! ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE( 0, "s_furu", 56, 64 );
+	DrawScene( "black", 200 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…だが、当然、同じことはみんな考えているようだった。",
+		   NULL, "...그러나 당연하게도, 다른 녀석들도 같은 생각을 하고 있었다. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 200 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_Down", 56, 64 );
+	DrawScene( "background/furiker_a", 50 );
+	StartShakingOfWindow( 248, 40, 0, 2, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 2*2, FALSE );
+	PlaySE( 0, "s_Down", 56, 64 );
+	DrawScene( "background/furiker_b", 50 );
+	StartShakingOfWindow( 248, 40, 0, 0, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 0, 2*2, FALSE );
+	PlaySE( 0, "s_daidageki", 56, 64 );
+	DrawScene( "background/furiker_c", 50 );
+	StartShakingOfWindow( 248, 40, 0, 2, 4*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 4*2, FALSE );
+	DrawScene( "black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　スパ、スパパ、スパパパパーン！！！",
+		   NULL, "샤샥, 샤샤샥, 샤샤샤샤샤샤샥!!! ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　誰もが同じ器に手を伸ばした時、白い稲妻が閃き、狙ったパフェが掻き消える。",
+		   NULL, "너나할 거 없이 동시에 그릇으로 손을 뻗었지만, 하얀 섬광이 번쩍이더니 파르페 그릇이 사라진다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その消えた後の虚空に、伸ばした全員の手がぶつかり合った。",
+		   NULL, "그릇이 사라진 빈자리에는 목표를 잃은 손들만이 맞부딪히고 있었다. ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(1, 2, "sprite/re2a_warai_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
+	DrawSceneWithMask( "background/res1", "maskup", 1, 0, 300 );
+	PlaySE( 0, "wa_011", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200111", 256, TRUE);
+	OutputLine(NULL, "「あははははは、みんな遅いよ〜〜。",
+		   NULL, "\"아하하하하하, 다들 느리네~~. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200112", 256, TRUE);
+	OutputLine(NULL, "レナがお持ち帰っちゃった〜。",
+		   NULL, "레나가 가져가 버렸다구~. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s09/02/170200113", 256, TRUE);
+	OutputLine(NULL, "はぅ！」",
+		   NULL, "하우!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　文字通りの電光石火はレナだった。",
+		   NULL, "문자 그대로 전광석화였다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　くそ、やっぱりなぁ！！",
+		   NULL, "제길, 역시나인가!! ", Line_WaitForInput);
+	OutputLine(NULL, "　初手でレナに勝てるわけがない！！",
+		   NULL, "첫 움직임에서 레나를 이길 수 있을 리 없다!! ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	ModDrawCharacter(1, 2, "sprite/re2a_kaii_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レナはまるでハエを捕らえるカエルの舌のようにデザートの器を奪うと、まさにカエル並みの舌で、ベロリベロリと丸呑みにしてしまう！！",
+		   NULL, "레나가 마치 파리를 잡아먹는 개구리의 혀처럼 디저트 그릇을 빼앗더니, 그대로 낼름낼름 통째로 삼켜버린다!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　器を奪ってから呑み込むまでのあまりの素早さが、普段のしおらしい姿と重ならず、それはそれで恐ろしい。",
+		   NULL, "그릇을 뺏고 나서 삼키기까지의 날렵한 모습은, 평소 느긋한 레나의 모습과는 도저히 매치가 되지 않아 무섭기까지 하다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　なるほど、これが女の子のよく言う、デザートは別腹というヤツなのかー！！！",
+		   NULL, "과연, 디저트 배는 따로 있다던 여자애들의 말은 이런 의미였나-!!! ", Line_Normal);
+	ClearMessage();
+
+	ModDrawCharacter(2, 23, "sprite/kameda1a_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawSceneWithMask( "background/res5", "maskright", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だがエンジェルモートという特殊環境においては、レナに対しても一歩も引けを取らないのが亀田くんだ！！",
+		   NULL, "하지만 엔젤모트라는 특수한 환경에서라면, 카메다 군도 레나와 맞설 수 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 200 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_Down", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 2, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 2, 2*2, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　しかも彼は、フルーツパフェの器を引っ掴むと、まるでビールジョッキを飲み干すかのように、豪快に丸呑みしてしまう！！",
+		   NULL, "카메다 군이 후르츠 파르페가 담긴 그릇을 움켜쥐더니, 마치 맥주잔을 비우듯이 호쾌하게 입에 부어버린다! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何とも漢気溢れる迫力満点の食い方だ！！",
+		   NULL, "정말로 박력 만점, 시원스럽다!! ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlayBGM( 0, "kaze", 56, 0 );
+	ModDrawCharacter(2, 23, "sprite/kameda1a_niyari_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5a5e5e>亀田</color>", NULL, "<color=#5a5e5e>카메다</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 23, "ps3/s09/23/172800024", 256, TRUE);
+	OutputLine(NULL, "「……ぐふぅ。",
+		   NULL, "\"......끄윽. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 23, "ps3/s09/23/172800025", 256, TRUE);
+	OutputLine(NULL, "…くっくっく！！",
+		   NULL, "크크큭!! ", Line_WaitForInput);
+
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+
+	ModPlayVoiceLS(4, 23, "ps3/s09/23/172800026", 256, TRUE);
+	OutputLine(NULL, "　無駄ですよＫさん、エンジェルモートでの戦いで、俺に勝てる可能性は１％もないんす！！",
+		   NULL, "소용없습니다, K 씨. 엔젤모트에서 붙는다면 당신이 제게 이길 가능성은 단 1%도 없습니다!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 23, "ps3/s09/23/172800027", 256, TRUE);
+	OutputLine(NULL, "　まだまだ行くっすよー！！！」",
+		   NULL, "자 자, 계속해서 갑니다-!!\" ", Line_Normal);
+	ClearMessage();
+
+	DrawSceneWithMask( "background/res4", "maskleft", 1, 0, 300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんな超人たちの暴れっぷりを見ても、富田くん岡村くんコンビは焦らなかった。",
+		   NULL, "인간을 초월한 레나와 카메다 군을 보고도 토미타 군과 오카무라 군 콤비는 초조해하지 않는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何しろ二人掛かりなんだからな。",
+		   NULL, "뭐라 해도 두 명이 한 조니까. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ペースを乱しさえしなければ基本的に早い！",
+		   NULL, "페이스만 유지한다면 당연히 이쪽이 빠르다! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　レナや亀田くんは序盤こそ飛ばしているが、中盤以降、息切れするようなことがあれば、勝負はわからないぞ…！！",
+		   NULL, "레나나 카메다 군이 초반에 앞서고 있다 하더라도, 중반 이후에 한풀 꺾이게 되면 승부는 모른다...!! ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　畜生、俺も負けてられないぜ！！",
+		   NULL, "젠장, 나도 질 수 없지!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	SetSpeedOfMessage( TRUE, 128 );
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　内角からえぐり込むように、",
+		   NULL, "입 안으로 욱여넣듯이, ", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 300 );
+	SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "食うべし、",
+		   NULL, "먹는다, ", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "s_Down", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 0, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 0, 2*2, TRUE );
+
+	OutputLine(NULL, "食うべし、",
+		   NULL, "먹는다, ", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "s_Down", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 0, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 0, 2*2, TRUE );
+
+	OutputLine(NULL, "食うべし！！",
+		   NULL, "먹는다!! ", Line_ContinueAfterTyping);
+
+	PlaySE( 0, "s_Down", 56, 64 );
+	StartShakingOfWindow( 248, 40, 0, 0, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 0, 2*2, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	SetSpeedOfMessage( FALSE, 0 );
+
+	DisableWindow();
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+	DrawScene( "white", 200 );
+	DrawScene( "background/res4", 50 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あうあうあぅ！",
+		   NULL, "아으으으! ", Line_WaitForInput);
+	OutputLine(NULL, "　くそ、アイスの丸呑みをやると、口ん中がとんでもない冷たさだ！！",
+		   NULL, "빌어먹을, 아이스크림을 통째로 삼켰더니 입 안이 얼얼하다!! ", Line_WaitForInput);
+	OutputLine(NULL, "　レナたちはよく平気だなぁ！",
+		   NULL, "다들 이 차가운 걸 잘도 먹는구만! ", Line_WaitForInput);
+	OutputLine(NULL, "　……ん？",
+		   NULL, "......응? ", Line_WaitForInput);
+
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+
+	OutputLine(NULL, "　そうだ。",
+		   NULL, "맞다. ", Line_WaitForInput);
+	OutputLine(NULL, "解かせばいいんだ！",
+		   NULL, "녹이면 되잖아! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　熱で解かして一気に飲み込めばいい！",
+		   NULL, "열로 녹여서 단숨에 마셔버리면 돼! ", Line_WaitForInput);
+
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 200 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+	SetValidityOfInput( FALSE );
+	Wait( 200 );
+	SetValidityOfInput( TRUE );
+	PlaySE( 0, "s_furu", 56, 64 );
+
+	OutputLine(NULL, "　しかも冷たさがなくなればお腹も冷えにくいから、長丁場にも都合がいいはず！！",
+		   NULL, "녹여서 차가움이 가시면 배에도 무리가 안 갈 테고, 장기전에도 유리할 터!! ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　で、でも、どうやって溶かせばいい？！",
+		   NULL, "하, 하지만 어떻게 녹이지?! ", Line_WaitForInput);
+	OutputLine(NULL, "　体温で解かすには気が遠くなるし、温かいものはないし…。",
+		   NULL, "체온으로 녹이려면 한참 걸릴 테고, 따뜻한 것은 안 보이는데.... ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	PlaySE( 0, "wa_011", 56, 64 );
+	DrawScene( "white", 200 );
+	ModDrawCharacter(2, 10, sprite_iri_def2, "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
+	DrawScene( "background/res1", 100 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000020", 256, TRUE);
+	OutputLine(NULL, "「すみませんウェイトレスさん、注文をいいでしょうか。",
+		   NULL, "\"저기 웨이트리스 씨, 주문 좀 해도 될까요? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(2, 10, sprite_iri_majime, "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000021", 256, TRUE);
+	OutputLine(NULL, "ホットコーヒーをお願いします。",
+		   NULL, "뜨거운 커피로 부탁합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000022", 256, TRUE);
+	OutputLine(NULL, "できれば器は鍋だと助かります。」",
+		   NULL, "가능하다면 용기는 냄비였으면 좋겠군요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 1, "ps3/s09/01/170100115", 256, TRUE);
+	OutputLine(NULL, "「う、監督……！！」",
+		   NULL, "\"큭, 감독......!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	PlaySE( 0, "s_Kyupiin", 56, 64 );
+	ModDrawCharacter(2, 10, sprite_iri_majime2, "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#c89a80>入江</color>", NULL, "<color=#c89a80>이리에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000023", 256, TRUE);
+	OutputLine(NULL, "「甘いですよ前原さん。",
+		   NULL, "\"어설퍼요, 마에바라 씨. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 10, "ps3/s09/10/171000024", 256, TRUE);
+	OutputLine(NULL, "熱で解かすなんて手、私だって思いついていました。」",
+		   NULL, "열로 녹인다는 생각쯤은 저도 이미 하고 있었습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　あぁあぁ畜生〜！！",
+		   NULL, "아아 제길~!! ", Line_WaitForInput);
+	OutputLine(NULL, "　監督にやられた…！",
+		   NULL, "감독에게 선수를 빼앗기다니...! ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もちろん今から俺もコーヒーを頼んだっていい。",
+		   NULL, "물론 지금이라도 감독을 따라 커피를 주문해도 상관없겠지만... ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　でもそれじゃ駄目なんだ。",
+		   NULL, "그래서는 늦는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　監督よりもはるかに早い別の手を考えなくてはッ！！",
+		   NULL, "감독보다 더 빨리 녹일 수 있는... 다른 수단은 없을까? ", Line_Normal);
+	ClearMessage();
+
+}

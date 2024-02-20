@@ -1,0 +1,68 @@
+void main()
+{
+	EnableJumpingOfReturnIcon();
+
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, TRUE );
+
+	Wait( 100 );
+
+	DrawSceneWithMask( "background/nort", "maskleft", 1, 0, 300 );
+
+	PlayBGM( 0, "amber", 56, 0 );
+
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　きょうは、お母さんといっしょにプールリゾートにあそびに行きました。",
+		   NULL, "오늘은 엄마와 함께 수영장 리조트에 놀러 갔습니다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そしたらアキヒトおじさんもいっしょでした。",
+		   NULL, "아키히토 아저씨도 함께였습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　たまに礼奈にいじわるするからきらいだけど、とてもやさしくておもしろいおじさんです。",
+		   NULL, "가끔 레이나에게 심술궂은 행동을 하는 건 싫지만, 무척 다정하고 재미있는 아저씨입니다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　プールにいるときはアキヒトおじさんがお父さんになってあげるから、礼奈ちゃんはおじさんのことをパパってよぶんだよと言われました。",
+		   NULL, "수영장에서 아키히토 아저씨가 '아빠가 되어 줄 테니까 레이나쨩, 아저씨를 파파라고 불러볼래?' 라고 말했습니다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　お母さんもパパってよんだので礼奈もパパとよんだら、",
+		   NULL, "엄마도 파파라고 불렀기 때문에 레이나도 파파라고 불렀더니, ", Line_WaitForInput);
+	OutputLine(NULL, "アキヒトおじさんはすごいうれしそうで、礼奈にいっぱいいっぱいおこずかいをくれました。",
+		   NULL, "아키히토 아저씨는 무척 기뻐하며 레이나에게 정~말 많은 용돈을 주었습니다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　お母さんもすごいうれしそうで、礼奈もすごいうれしかったです。",
+		   NULL, "엄마도 기뻐하셔서, 레이나도 무척 기뻤습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　またあそびにきたいです。",
+		   NULL, "또 놀러 오고 싶습니다. ", Line_WaitForInput);
+	OutputLine(NULL, "こんどはお父さんもいっしょがいいなと思いました。",
+		   NULL, "다음에는 아빠도 함께 오면 좋겠다고 생각했습니다. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene( "black", 1000 );
+}

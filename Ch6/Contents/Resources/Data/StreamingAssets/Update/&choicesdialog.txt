@@ -1,0 +1,28 @@
+void main()
+{
+	DrawScene("black", 1000 );
+	OutputLine(NULL, "この編には、会話の変更をもたらし、悪い結末を招く可能性のある選択が含まれます。このコンソール版に追加した選択を見たいですか？",
+		   NULL, "<size=-8>이 시나리오는 콘솔 버전의 선택지를 포함합니다. 선택지들은 콘솔에서 추가된 배드 엔딩으로 이어집니다. 정식 발매된 콘솔 버전에서 배드 엔딩은 다른 루트로 이어지는 분기였지만, 다른 루트로 분기할 수 없는 스팀 버전에서는 시나리오의 일관성을 해칠 수 있습니다. 선택지를 활성화시키겠습니까?", Line_Normal);
+
+	DrawBustshotWithFiltering( 6, "3choices", "left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
+
+	char ChoiceMode[3];
+
+	if (GetGlobalFlag(GLanguage) == 1) {
+		ChoiceMode[0] = "<size=-4>선택지를 표시하지 않습니다. 게임은 콘솔판의 추가 요소를 버립니다.";
+		ChoiceMode[1] = "<size=-4>선택지를 표시합니다. 게임은 콘솔 버전의 콘텐츠들을 포함합니다.";
+		ChoiceMode[2] = "<size=-4>선택지를 표시하고 올바른 답안을 강조해 표시합니다.";
+	} else {
+		ChoiceMode[0] = "追加した選択を見せません。ＰＣ版内容だけ見せます";
+		ChoiceMode[1] = "コンソール版に追加した選択を見せます";
+		ChoiceMode[2] = "選択を見せながら正解に記号をつける";
+	}
+
+	Select( 3, ChoiceMode );
+
+	SetGlobalFlag(GChoiceMode, LoadValueFromLocalWork(SelectResult));
+
+	DisableWindow();
+	DrawScene("black", 250 );
+
+}

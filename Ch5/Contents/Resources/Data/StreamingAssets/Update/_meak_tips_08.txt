@@ -1,0 +1,72 @@
+void main()
+{
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 0, FALSE );
+	FadeOutBGM( 1, 0, FALSE );
+	FadeOutBGM( 2, 0, FALSE );
+	FadeOutBGM( 3, 0, FALSE );
+	ClearMessage();
+
+	DrawScene("background/nort", 1000 );
+	PlayBGM( 0, "z2_hig1", 56, 0 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　悟史くんが東京へ行った、という怪情報の裏付けは全く取れない。",
+		   NULL, "사토시 군이 도쿄에 갔다는 이상한 정보의 근거는 전혀 찾지 못했다. ", Line_Normal);
+	ClearMessage();
+	PlaySE( 0, "s_page", 56, 64 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そもそも情報の発端はこうだ。",
+		   NULL, "원래 정보의 발단은 이렇다. ", Line_Normal);
+	ClearMessage();
+	DrawScene("black", 1000 );
+	DrawSceneWithMask("background/eki", "maskup", 1, 0, 1300 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　名古屋駅の遺失物窓口に若者が訪れて、自分の財布が届けられてないかと騒いだのだ。",
+		   NULL, "나고야역의 유실물 창구에 젊은이가 찾아와, 자기 지갑이 있지 않냐고 소란을 일으켰다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それで駅の職員が、届け出がないか調べてきますからその間にこちらにお名前を書いてください、と用紙を渡した。",
+		   NULL, "역무원은 '신고된 물건이 있나 조사하고 올 테니 여기에 이름을 써 주세요.'라고 말하며 용지를 건넸다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そうしたらその若者は、北条と書きかけてからその用紙をくしゃくしゃにして捨て、もう１枚の用紙に全然違う名前を書いた、というのだ。",
+		   NULL, "그랬더니 그 젊은이는, 호죠라고 쓰다가 용지를 구겨서 버리고는, 다른 한 장의 용지에 전혀 다른 이름을 썼다고 했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　別の職員は、その遺失物窓口を訪れた若者と、服装が酷似した若者が東京行きの新幹線に駆け込むのを見ていた。",
+		   NULL, "다른 직원은 유실물 창구를 방문한 젊은이와 복장이 지나치게 닮은 젊은이가 도쿄행 신칸센에 뛰어 올라타는 모습을 목격했다. ", Line_Normal);
+	ClearMessage();
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　更衣室で遺失物窓口にいた職員が、不審な人物が来たと特徴を話したら、",
+		   NULL, "탈의실에서 유실물 창구에 있던 직원이, 수상한 사람이 왔다고 특징을 이야기하자, ", Line_WaitForInput);
+	OutputLine(NULL, "ホームにいた職員が、あぁ見た見た、東京行きの新幹線に飛び乗ったぜ、と。",
+		   NULL, "홈에 있던 직원이, 아 봤어, 도쿄행 신칸센에 뛰어 올라탔지, 하고. ", Line_WaitForInput);
+	OutputLine(NULL, "そう言い合ったらしい。",
+		   NULL, "서로 그렇게 말했다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……それだけのこと。",
+		   NULL, "...단지 이게 전부. ", Line_Normal);
+	ClearMessage();
+	DrawScene("black", 400 );
+
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その北条を名乗った男の申告する特徴の財布は、遺失物窓口には届いていなかった。",
+		   NULL, "호죠를 자칭한 남자가 분실신고한 지갑과 일치하는 지갑은, 유실물 창구에는 들어오지 않았다. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	Wait( 1000 );
+	DrawScene("black", 1000 );
+}

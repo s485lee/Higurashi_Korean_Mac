@@ -1,0 +1,186 @@
+void main()
+{
+
+//*Sub_Tips_059
+//gosub *tip_s
+//■タイトル：　地獄の業火
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+	PlayBGM( 2, "lsys17", 56, 0 );
+	SetValidityOfInput( FALSE );
+	Wait( 3000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawSceneWithMask("background/denwa", "up", 0, 0, 300 );
+	FadeOutBGM( 2, 10, TRUE );
+
+//「はいもしもし＠救急ですか、消防ですか。＠
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>救急情報センター</color>", NULL, "<color=#f5e6d3>소방서 직원</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/firea44001", 256, TRUE);
+	OutputLine(NULL, "「はいもしもし。",
+		   NULL, "\"여보세요? ", Line_Continue);
+	Wait(900);
+	OutputLine(NULL, "救急ですか、消防ですか。」",
+		   NULL, "네 여보세요. 응급 제보인가요, 화재 제보인가요?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「え、っと...消防です！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>通報者</color>", NULL, "<color=#f5e6d3>신고자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/watcha44001", 256, TRUE);
+	OutputLine(NULL, "「え、っと…消防です！」",
+		   NULL, "\"네... 그... 소방입니다!\" ", Line_Normal);
+	ClearMessage();
+
+	PlayBGM( 1, "msys15", 56, 0 );
+
+//「火事ですか、事故ですか＠　落ち着いて話してください。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>救急情報センター</color>", NULL, "<color=#f5e6d3>소방서 직원</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/firea44002", 256, TRUE);
+	OutputLine(NULL, "「火事ですか、事故ですか？",
+		   NULL, "\"화재입니까, 사고입니까? ", Line_Continue);
+	Wait(1000);
+	OutputLine(NULL, "　落ち着いて話してください。」",
+		   NULL, "침착하게 말씀해주세요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「た、多分、火事だと思います...＠こちらはＸＸ高速のＸＸサービスエリアなんですけどね、...裏の山から何だかすっごい火と煙が上がってるのが見えるんですよ＠あんなところ、誰も立ち入らないから、何で火がついてるのかよくわかんないですけど...＠とにかく、連絡した方がいいと思って...＠　山火事にならないとも限らないし！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>通報者</color>", NULL, "<color=#f5e6d3>신고자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/watcha44002", 256, TRUE);
+	OutputLine(NULL, "「た、多分、火事だと思います…。",
+		   NULL, "\"아, 아마도, 화재인 것 같습니다.... ", Line_Continue);
+	Wait(1500);
+	OutputLine(NULL, "こちらはＸＸ高速のＸＸサービスエリアなんですけどね、…裏の山から何だかすっごい火と煙が上がってるのが見えるんですよ。",
+		   NULL, "여기는 XXX 고속의 XX 휴게소 입니다만, ...뒷산에서 큰 불과 연기가 올라오는 모습이 보입니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>通報者</color>", NULL, "<color=#f5e6d3>신고자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/watcha44003", 256, TRUE);
+	OutputLine(NULL, "あんなところ、誰も立ち入らないから、何で火がついてるのかよくわかんないですけど…。",
+		   NULL, "인적이 드문 곳이라, 불이 왜 났는지는 잘 모르겠습니다... ", Line_Continue);
+	Wait(2000);
+	OutputLine(NULL, "とにかく、連絡した方がいいと思って…！",
+		   NULL, "아무튼, 바로 신고를 해야할 거 같아서요...! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/watcha44004", 256, TRUE);
+	OutputLine(NULL, "　山火事にならないとも限らないし！」",
+		   NULL, "산불로 번질수도 있고요!\" ", Line_Normal);
+	ClearMessage();
+
+//「わかりました＠すぐに現場を確認しますので、そちら様のお名前とすぐに連絡のつく電話番号、それから火災現場の詳細な場所をお願いします。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>救急情報センター</color>", NULL, "<color=#f5e6d3>소방서 직원</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/firea44003", 256, TRUE);
+	OutputLine(NULL, "「わかりました。",
+		   NULL, "\"알겠습니다. ", Line_Continue);
+	Wait(500);
+	OutputLine(NULL, "すぐに現場を確認しますので、そちら様のお名前とすぐに連絡のつく電話番号、それから火災現場の詳細な場所をお願いします。」",
+		   NULL, "곧바로 현장을 확인하겠습니다. 일단 연락 주신 분의 성함과 즉시 연락 가능한 전화번호, 그리고 화재 현장의 정확한 위치를 부탁드리겠습니다.\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("black", "left", 0, 0, 300 );
+
+//「消防司令部より通達＠ＸＸ山西側斜面にて不審火の通報あり＠街道から離れてることから、カップルの焚き火か、不法投棄のゴミに放火したかの可能性があります＠現場は深い森林地帯＠周辺に民家はないが、延焼の可能性あり＠直ちに現場を確認されたし。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>消防司令部</color>", NULL, "<color=#f5e6d3>소방사령부</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/fireb44001", 256, TRUE);
+	OutputLine(NULL, "「消防司令部より通達。",
+		   NULL, "\"소방 사령부로부터 통지. ", Line_Continue);
+	Wait(1000);
+	OutputLine(NULL, "ＸＸ山西側斜面にて不審火の通報あり。",
+		   NULL, "XX산 서측 경사면에서 원인모를 화재 신고 접수. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>消防司令部</color>", NULL, "<color=#f5e6d3>소방사령부</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/fireb44002", 256, TRUE);
+	OutputLine(NULL, "街道から離れてることから、カップルの焚き火か、不法投棄のゴミに放火したかの可能性があります。",
+		   NULL, "도로로부터 떨어진 장소기 때문에, 커플이 피운 모닥불이거나, 누군가가 쓰레기를 무단 소각했을 가능성 농후. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/fireb44003", 256, TRUE);
+	OutputLine(NULL, "現場は深い森林地帯。",
+		   NULL, "현장은 깊은 삼림지대. ", Line_Continue);
+	Wait(1000);
+	OutputLine(NULL, "周辺に民家はないが、延焼の可能性あり。",
+		   NULL, "주변에 민가는 없으나, 불이 번질 가능성이 있음. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/fireb44004", 256, TRUE);
+	OutputLine(NULL, "直ちに現場を確認されたし。」",
+		   NULL, "즉시 현장은 확인하기 바랍니다. 이상.\" ", Line_Normal);
+	ClearMessage();
+
+//「消防署ですか＠こちらはＸＸ地区消防分団です＠通報の現場にさっき到着＠ドラム缶がひとつ山中に放棄され、炎上しているのを確認しました＠火は鎮火しつつあり、延焼の可能性はなし＠/
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>団員</color>", NULL, "<color=#f5e6d3>소방관</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/villc44001", 256, TRUE);
+	OutputLine(NULL, "「消防署ですか。",
+		   NULL, "\"소방서 입니까? ", Line_Continue);
+	Wait(1000);
+	OutputLine(NULL, "こちらはＸＸ地区消防分団です。",
+		   NULL, "여기는 XX지역 소방분대 입니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/villc44002", 256, TRUE);
+	OutputLine(NULL, "通報の現場にさっき到着。",
+		   NULL, "신고된 현장에 방금 도착했습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>団員</color>", NULL, "<color=#f5e6d3>소방관</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/villc44003", 256, TRUE);
+	OutputLine(NULL, "ドラム缶がひとつ山中に放棄され、炎上しているのを確認しました。",
+		   NULL, "산중에 방치된 드럼통에서 올라오는 불길을 확인했습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/villc44004", 256, TRUE);
+	OutputLine(NULL, "火は鎮火しつつあり、延焼の可能性はなし。",
+		   NULL, "화재는 진화되었고, 번질 가능성은 없습니다. ", GetGlobalFlag(GLinemodeSp));
+
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//......で、!w1000......その、!w800.........ドラム缶の中に、...多分、人じゃないかと思うんです＠人らしきものが灯油か何かで焼かれた...という感じで＠......その、......警察の人にも連絡した方がいいんじゃないかと思いまして...。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>団員</color>", NULL, "<color=#f5e6d3>소방관</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/villc44005", 256, TRUE);
+	OutputLine(NULL, "………で、",
+		   NULL, ".........그런데, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "……その、",
+		   NULL, "......그게, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "………ドラム缶の中に、…多分、人じゃないかと思うんです。",
+		   NULL, "......... 드럼통 안에, 아마도, 사람이 아닐까 생각합니다. ", Line_Continue);
+	Wait( 4000 );
+	OutputLine(NULL, "人らしきものが灯油か何かで焼かれた…という感じで。",
+		   NULL, "사람이 등유... 같은 걸로 태워진 것 같습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/villc44006", 256, TRUE);
+	OutputLine(NULL, "……その、……警察の人にも連絡した方がいいんじゃないかと思いまして…。」",
+		   NULL, "......저기, 경찰 쪽에도 연락을 해야 할 것 같습니다....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+	PlayBGM( 1, "msys08", 56, 0 );
+
+//「わ、...わ！＠　まま、間違いねぇよ！＠　これ、人だよ！＠　ひぇえぇええ......！！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>団員</color>", NULL, "<color=#f5e6d3>소방관</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/villd44001", 256, TRUE);
+	OutputLine(NULL, "「わ、…わ！！",
+		   NULL, "\"아, ...아!! ", Line_Continue);
+	Wait(1700);
+	OutputLine(NULL, "　まま、間違いねぇよ！！",
+		   NULL, "트트, 틀림없어요!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/villd44002", 256, TRUE);
+	OutputLine(NULL, "　これ、人だよ！！",
+		   NULL, "이거, 사람이에요!! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/villd44003", 256, TRUE);
+	OutputLine(NULL, "　ひぇえぇええ……！！」",
+		   NULL, "히이이이이이......!!\" ", Line_Normal);
+	ClearMessage();
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+}

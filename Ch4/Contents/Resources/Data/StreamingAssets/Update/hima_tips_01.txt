@@ -1,0 +1,323 @@
+void main()
+{
+
+//■雪絵との電話
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 1, "msys13", 56, 0 );
+
+//「…そうですか＠急な出張は大変ですね…＠どうぞお気をつけて＠出張はどちらへですか＠　もう出張先なんですか？＠
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>유키에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44001", 256, TRUE);
+	OutputLine(NULL, "「…そうですか。",
+		   NULL, "\"... 그렇군요. ", Line_WaitForInput);
+	OutputLine(NULL, "急な出張は大変ですね…。",
+		   NULL, "갑작스런 출장이라 힘들겠네요.... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44002", 256, TRUE);
+	OutputLine(NULL, "どうぞお気をつけて。",
+		   NULL, "부디 몸조심해요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44003", 256, TRUE);
+	OutputLine(NULL, "出張はどちらへですか？",
+		   NULL, "출장은 어디로 가시나요? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44004", 256, TRUE);
+	OutputLine(NULL, "　もう出張先なんですか？」",
+		   NULL, "이미 출장지인가요?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「………………………。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300001", 256, TRUE);
+	OutputLine(NULL, "「………………………。」",
+		   NULL, "\"....................\" ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　私が出張へ出るなら、それはどこへか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私が出張へ出るなら、それはどこへか。",
+		   NULL, "내가 출장을 가면 어디로 가는지. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　…雪絵ならずとも、聞こうとする当り前な問い掛けだった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…雪絵ならずとも、聞こうとする当り前な問い掛けだった。",
+		   NULL, "...유키에가 아니더라도 물어볼 수 있는 당연한 질문이었다. ", Line_Normal);
+	ClearMessage();
+
+
+//　寒い地方へなら、厚めの上着を用意した方がいいとか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　寒い地方へなら、厚めの上着を用意した方がいいとか。",
+		   NULL, "추운 지방으로 간다면 두꺼운 외투를 준비하는 게 좋겠다거나. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　遠い地方へなら、道中をお気をつけてとか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　遠い地方へなら、道中をお気をつけてとか。",
+		   NULL, "먼 지방으로 간다면 가는 길에 조심하라거나. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　……そんなごくごく当り前の気遣いへと繋ぐ、当り前の問い掛け＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……そんなごくごく当り前の気遣いへと繋ぐ、当り前の問い掛け。",
+		   NULL, "......그런 정말로 당연한 걱정이 이어지는 당연한 질문. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　そんな当り前の問い掛けに答えられない自分が、少し悲しい￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そんな当り前の問い掛けに答えられない自分が、少し悲しい。",
+		   NULL, "그런 당연한 물음에 대답해 줄 수 없는 나 자신이 조금 서글펐다. ", Line_Normal);
+	ClearMessage();
+
+
+//「…ごめんなさい＠言ってはいけない規則でしたね…＠どうかお気をつけて。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>유키에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44005", 256, TRUE);
+	OutputLine(NULL, "「…ごめんなさい。",
+		   NULL, "\"...미안해요. ", Line_WaitForInput);
+	OutputLine(NULL, "言ってはいけない規則でしたね…。",
+		   NULL, "말해선 안 되는 규칙이었죠.... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44006", 256, TRUE);
+	OutputLine(NULL, "どうかお気をつけて。」",
+		   NULL, "부디 몸 조심하세요.\" ", Line_Normal);
+	ClearMessage();
+
+
+//「………すまん、雪絵。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300002", 256, TRUE);
+	OutputLine(NULL, "「………すまん、雪絵。」",
+		   NULL, "\"......... 미안, 유키에.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	PlayBGM( 1, "msysRe", 56, 0 );
+
+//「…あなたはいつの頃から、すぐに謝られるようになったんでしょう＠今のお仕事に就かれた最初は、あれだけ溌剌と充実しておられたのに＠…くすくす。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>유키에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44007", 256, TRUE);
+	OutputLine(NULL, "「…あなたはいつの頃から、すぐに謝られるようになったんでしょう。",
+		   NULL, "\"... 당신은 언제부터, 바로 사과하게 되는 버릇이 생겼을까요. ", Line_WaitForInput);
+	OutputLine(NULL, "今のお仕事に就かれた最初は、あれだけ溌剌と充実しておられたのに。",
+		   NULL, "지금 하는 일을 시작할 무렵에는, 그렇게나 활기차고 충실하게 보내셨으면서. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44008", 256, TRUE);
+	OutputLine(NULL, "…くすくす。」",
+		   NULL, "...후훗.\" ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　何かを見透かしたように雪絵が笑い出す＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　何かを見透かしたように雪絵が笑い出す。",
+		   NULL, "무언가를 알아챈 듯 유키에가 웃기 시작한다. ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　こういう時の雪絵には、私の胸の内を何でも見通してしまう魔法の力があった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　こういう時の雪絵には、私の胸の内を何でも見通してしまう魔法の力があった。",
+		   NULL, "이런 때 유키에는 내가 마음속으로 무슨 생각을 하는지 전부 간파해버리는 마법을 부리곤 했다. ", Line_Normal);
+	ClearMessage();
+
+
+//「…私が入院してもうずいぶんになりますものね＠あなたもそろそろ寂しくなってきましたか…？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>유키에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44009", 256, TRUE);
+	OutputLine(NULL, "「…私が入院してもうずいぶんになりますものね。",
+		   NULL, "\"... 제가 입원하고서 벌써 많은 시간이 흘렀어요. ", Line_Continue);
+	OutputLine(NULL, "あなたもそろそろ寂しくなってきましたか…？」",
+		   NULL, "당신도 슬슬 외로워진 건가요... ?\" ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「か、からかうなよ＠寂しがるような歳じゃないさ…。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300003", 256, TRUE);
+	OutputLine(NULL, "「か、からかうなよ。",
+		   NULL, "\"노, 놀리지마. ", Line_WaitForInput);
+	OutputLine(NULL, "寂しがるような歳じゃないさ…。」",
+		   NULL, "외로워하거나 할 나이는 이미 지났잖아....\" ", Line_Normal);
+	ClearMessage();
+
+
+//「…くすくす、さてさていかがでしょう＠　あなたは本当に甘えん坊さんですからね…＠私と一緒でないと、だんだん弱気になってきてしまうのでしょう…＠　くすくすくす。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>유키에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44010", 256, TRUE);
+	OutputLine(NULL, "「…くすくす、さてさていかがでしょう？",
+		   NULL, "\"...후훗, 글쎄요, 어떨까요? ", Line_WaitForInput);
+	OutputLine(NULL, "　あなたは本当に甘えん坊さんですからね…。",
+		   NULL, "당신은 정말로 응석받이 아기 같으니까요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44011", 256, TRUE);
+	OutputLine(NULL, "私と一緒でないと、だんだん弱気になってきてしまうのでしょう…？",
+		   NULL, "제가 곁에 없으면 점점 기운이 없어지는 거죠...? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44012", 256, TRUE);
+	OutputLine(NULL, "　くすくすくす。」",
+		   NULL, "후후후.\" ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「……あぁ、もぅ…＠今、雪絵の頭に小悪魔の角がにょっきりと生えているのが目に浮かぶよ…＠君は昔から、￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300004", 256, TRUE);
+	OutputLine(NULL, "「……あぁ、もぅ…。",
+		   NULL, "\"...... 아~ 정말... . ", Line_WaitForInput);
+	OutputLine(NULL, "今、雪絵の頭に小悪魔の角がにょっきりと生えているのが目に浮かぶよ…。",
+		   NULL, "지금 유키에의 머리에 꼬마악마 같은 뿔이 뾰족하게 나와 있는 것이 눈에 선해.... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300005", 256, TRUE);
+	OutputLine(NULL, "君は昔から、」",
+		   NULL, "당신은 옛날부터,\" ", Line_Normal);
+	ClearMessage();
+
+
+//「…はぐらかさない、はぐらかさない＠私にかまってもらえなくて、寂しい寂しい～って＠あなたがシッポを振っている音が、受話器を通しても聞こえてきますよ＠くすくすくす……。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>유키에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44013", 256, TRUE);
+	OutputLine(NULL, "「…はぐらかさない、はぐらかさない。",
+		   NULL, "\"... 말 돌리기 없기, 말 돌리기 없기. ", Line_Continue);
+	OutputLine(NULL, "私にかまってもらえなくて、寂しい寂しい〜って。",
+		   NULL, "제게 관심 받지 못해서 정말 외로워~라고. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44014", 256, TRUE);
+	OutputLine(NULL, "あなたがシッポを振っている音が、受話器を通しても聞こえてきますよ。",
+		   NULL, "당신이 꼬리를 흔드는 소리가 수화기를 통해서도 들려와요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44015", 256, TRUE);
+	OutputLine(NULL, "くすくすくす……。」",
+		   NULL, "후후후....\" ", Line_Normal);
+	ClearMessage();
+
+
+//　雪絵のこんな一面は、普段の貞淑な姿からはなかなか想像がつかなし、また絶対に私にしか見せない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雪絵のこんな一面は、普段の貞淑な姿からはなかなか想像がつかなし、また絶対に私にしか見せない。",
+		   NULL, "유키에의 이런 모습은 평상시의 정숙한 태도로부터는 좀처럼 상상할 수 없을 뿐더러, 나에게만 드러내는 태도다. ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　普段なら照れ隠しに小突いて、話を無理やり終わらせるのだが、電話越しではそれもままならない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　普段なら照れ隠しに小突いて、話を無理やり終わらせるのだが、電話越しではそれもままならない。",
+		   NULL, "평상시라면 수줍음을 감추기 위해 짓궂게 행동해서 이야기를 일부러 끝낼 테지만, 전화기 너머를 상대로는 그것도 여의치 않다. ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　……もちろん雪絵は賢い＠それを承知でからかっているのだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……もちろん雪絵は賢い。",
+		   NULL, "......물론 유키에는 현명하다. ", Line_WaitForInput);
+	OutputLine(NULL, "それを承知でからかっているのだ。",
+		   NULL, "그것을 알면서 놀리는 것이다. ", Line_Normal);
+	ClearMessage();
+
+
+//「…くすくすくす＠あなたを困らせるのが、こんなに楽しいと気付いたのはいつからだったでしょうねぇ…。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>유키에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44016", 256, TRUE);
+	OutputLine(NULL, "「…くすくすくす。",
+		   NULL, "\"... 후후후. ", Line_Continue);
+	OutputLine(NULL, "あなたを困らせるのが、こんなに楽しいと気付いたのはいつからだったでしょうねぇ…。」",
+		   NULL, "당신을 놀리는 게 이렇게 즐거운 줄 안 건 언제부터였을까요....\" ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「そろそろ許してくれよ…＠…とにかく、君の元気な声が聞けてよかった。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300006", 256, TRUE);
+	OutputLine(NULL, "「そろそろ許してくれよ…。",
+		   NULL, "\"이제 그만 봐주라.... ", Line_Continue);
+	Wait( 1500 );
+	OutputLine(NULL, "…とにかく、君の元気な声が聞けてよかった。」",
+		   NULL, "...아무튼, 당신의 건강한 목소리를 들어서 다행이야.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「…そうでしょう＠　…元気になれましたか？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>유키에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44017", 256, TRUE);
+	OutputLine(NULL, "「…そうでしょう？",
+		   NULL, "\"...그렇죠? ", Line_Continue);
+	Wait( 1000 );
+	OutputLine(NULL, "　…元気になれましたか？」",
+		   NULL, "...기운이 났나요?\" ", Line_Normal);
+	ClearMessage();
+
+
+//　ひとり病院に残してきた雪絵が寂しがらないように電話を＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ひとり病院に残してきた雪絵が寂しがらないように電話を。",
+		   NULL, "홀로 병원에 남겨두고 온 유키에가 쓸쓸해하지 않도록 전화를. ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　……そんなのは恥ずかしがり屋の私の口実に過ぎなかったわけで＠雪絵にはとっくにお見通しのようだった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……そんなのは恥ずかしがり屋の私の口実に過ぎなかったわけで。",
+		   NULL, "......그건 부끄럼쟁이인 나의 변명에 지나지 않았을 뿐이란 것을. ", Line_WaitForInput);
+	OutputLine(NULL, "雪絵にはとっくにお見通しのようだった。",
+		   NULL, "유키에는 진작에 눈치챈것 같았다. ", Line_Normal);
+	ClearMessage();
+
+//「……………うん。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#797d8a>赤坂</color>", NULL, "<color=#797d8a>아카사카</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 13, "ps3/s20/13/441300007", 256, TRUE);
+	OutputLine(NULL, "「……………うん。」",
+		   NULL, "\"............응.\" ", Line_Normal);
+	ClearMessage();
+
+
+//「また、電話をしてくださいな…＠私がだめな時はお父さんが相手をしてくれるでしょう＠…もっとも、お父さんが相手では、あなたのことだから、電話先でも直立不動でしゃべっていそう＠くすくすくす…。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>유키에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44018", 256, TRUE);
+	OutputLine(NULL, "「また、電話をしてくださいな…。",
+		   NULL, "\"또, 전화하세요.... ", Line_Continue);
+	Wait( 1000 );
+	OutputLine(NULL, "私がだめな時はお父さんが相手をしてくれるでしょう。",
+		   NULL, "제가 전화 받을 수 없을 때는 아버지가 받아주실 거예요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>雪絵</color>", NULL, "<color=#f5e6d3>유키에</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44019", 256, TRUE);
+	OutputLine(NULL, "…もっとも、お父さんが相手では、あなたのことだから、電話先でも直立不動でしゃべっていそう。",
+		   NULL, "...무엇보다 아버지가 상대라면 당신은 분명 전화하면서도 차렷 자세로 이야기 할 것 같아요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/yukie44020", 256, TRUE);
+	OutputLine(NULL, "くすくすくす…。」",
+		   NULL, "후후후....\" ", Line_Normal);
+	ClearMessage();
+
+//　雪絵はしばらくの間、電話を切るタイミングを与えずに私をからかい続けるのだった……￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雪絵はしばらくの間、電話を切るタイミングを与えずに私をからかい続けるのだった……。",
+		   NULL, "유키에는 그 후 얼마간 전화를 끊을 타이밍을 주지 않은 채 계속해서 나를 놀려대고 있었다. ", Line_Normal);
+	ClearMessage();
+
+
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	FadeOutBGM( 1, 1000, TRUE );
+	DrawScene("black", 1000 );
+//gosub *tip_e
+//return
+
+
+
+
+
+
+}

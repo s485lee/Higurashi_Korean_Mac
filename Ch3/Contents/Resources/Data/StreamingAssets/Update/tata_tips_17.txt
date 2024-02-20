@@ -1,0 +1,259 @@
+void main()
+{
+
+//*Sub_Tips_061
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+
+
+	PlayBGM( 1, "msys13", 56, 0 );
+//■タイトル：　照会要請
+//!s50
+	PlayBGM( 2, "lsys24", 56, 0 );
+//興宮警察署　指令センター通信記録
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "興宮警察署　指令センター通信記録",
+		   NULL, "오키노미야 경찰서 지령 센터 통보기록 ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//６月２０日２０時８分
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "６月２０日２０時８分",
+		   NULL, "6. 20. 오후 8:08:00 ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+//!sd
+	DisableWindow();
+	DrawScene("background/kuruma4", 400 );
+
+//「こちら興宮ＳＰ、感度良好でーす。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3001", 256, TRUE);
+	OutputLine(NULL, "「こちら興宮ＰＳ、感度良好でーす。」",
+		   NULL, "\"여기는 오키노미야 경찰서, 수신 양호합니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「あー、車両ナンバー照会をお願いします＠ＸＸ、ＸのＸＸＸＸ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700232", 256, TRUE);
+	OutputLine(NULL, "「あー、車両ナンバー照会をお願いします。",
+		   NULL, "\"아~, 차량 번호 조회를 부탁합니다. ", Line_Continue);
+	Wait(1500);
+	OutputLine(NULL, "鹿骨、はの４３４４。」",
+		   NULL, "시시보네시, H의 4344.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「復唱、ＸＸ、ＸのＸＸＸＸ＠少々お時間もらいますがよろしいですかー？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3002", 256, TRUE);
+	OutputLine(NULL, "「復唱、鹿骨、はの４３４４。",
+		   NULL, "\"확인합니다, 시시보네시, H의 4344. ", Line_Continue);
+	Wait(3300);
+	OutputLine(NULL, "少々お時間もらいますがよろしいですかー？」",
+		   NULL, "조금 시간이 걸릴 텐데 괜찮으신가요~?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「お願いします。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700233", 256, TRUE);
+	OutputLine(NULL, "「お願いします。」",
+		   NULL, "\"부탁드립니다.\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawSceneWithMask("black", "down", 0, 0, 300 );
+//!s50
+	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+//ナンバー照会
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "ナンバー照会",
+		   NULL, "번호 조회 ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//ＸＸ　ＸーＸＸＸＸ
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "鹿骨 はの４３４４",
+		   NULL, "시시보네 H-4344 ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//所有者　ＸＸＸＸ
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "所有者　ＸＸＸＸ",
+		   NULL, "소유자 XXXX ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//（鹿骨市雛見沢村Ｘ丁目ＸＸＸ番地在住）
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（鹿骨市雛見沢村Ｘ丁目ＸＸＸ番地在住）",
+		   NULL, "(시시보네시 히나미자와 마을 X동 XXX번지 주재) ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//車種：　ＸＸＸＸＸＸＸ
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "車種：　ＸＸＸＸＸＸＸ",
+		   NULL, "차종 : XXXXXXX ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//盗難届け：無
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "盗難届け：無",
+		   NULL, "도난신고 : 없음 ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+	PlayBGM( 2, "lsys24", 56, 0 );
+
+//特記事項：特に無し/
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "特記事項：特に無し",
+		   NULL, "특기사항 : 없음 ", Line_ContinueAfterTyping);
+
+	FadeOutBGM( 2, 10, TRUE );
+	OutputLineAll(NULL, "", Line_Normal);
+	ClearMessage();
+//!sd
+	DrawScene("background/ke_s2", 400 );
+
+//「興宮ＳＰより大石車どうぞー＠先ほどのナンバーが判明しましたー＠........................大石車どうぞー＠　.................................大石車、応答願います＠..................あれ＠　............電波、悪いのかな.....................＠......大石車応答ねが..................。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3003", 256, TRUE);
+	OutputLine(NULL, "「興宮ＰＳより大石車どうぞー。",
+		   NULL, "\"오키노미야 경찰서입니다. 오오이시 차 나오세요~. ", Line_Continue);
+	Wait(1500);
+	OutputLine(NULL, "先ほどのナンバーが判明しましたー。",
+		   NULL, "조금 전의 차량번호가 확인되었습니다~. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3004", 256, TRUE);
+	OutputLine(NULL, "……………………大石車どうぞー？",
+		   NULL, "...오오이시 차 듣고 있습니까~? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3005", 256, TRUE);
+	OutputLine(NULL, "　……………………………大石車、応答願います。",
+		   NULL, ".........오오이시 차, 응답 바랍니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3006", 256, TRUE);
+	OutputLine(NULL, "………………あれ？",
+		   NULL, "......어? ", Line_Continue);
+	Wait(2000);
+	OutputLine(NULL, "　…………電波、悪いのかな…………………。",
+		   NULL, ".......전파 상태가 이상한가? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3007", 256, TRUE);
+	OutputLine(NULL, "……大石車応答ねが………………。」",
+		   NULL, "... 오오이시 차 응답 바랍니......\" ", Line_Normal);
+	ClearMessage();
+
+//「出ませんね。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3008", 256, TRUE);
+	OutputLine(NULL, "「出ませんね。」",
+		   NULL, "\"응답이 없네요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「大石さんが車両照会＠　誰の車だよ。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijib_3001", 256, TRUE);
+	OutputLine(NULL, "「大石さんが車両照会？",
+		   NULL, "\"오오이시 씨가 차량조회? ", Line_Continue);
+	Wait(1400);
+	OutputLine(NULL, "　誰の車だよ。」",
+		   NULL, "무슨 차야?\" ", Line_Normal);
+	ClearMessage();
+
+//「村人の車ですね＠......至って平凡な。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3009", 256, TRUE);
+	OutputLine(NULL, "「村人の車ですね。",
+		   NULL, "\"마을 주민의 차네요. ", Line_Continue);
+	Wait(1500);
+	OutputLine(NULL, "……至って平凡な。」",
+		   NULL, "...그냥 평범한 차구요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「...何者だよ＠大石さんが聞いてくるからには、只者じゃないんだろ？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijib_3002", 256, TRUE);
+	OutputLine(NULL, "「…何者だよ。",
+		   NULL, "\"...누굴까요? ", Line_Continue);
+	Wait(1200);
+	OutputLine(NULL, "大石さんが聞いてくるからには、只者じゃないんだろ？」",
+		   NULL, "오오이시 씨가 물어본 걸 보면 평범한 놈은 아닐걸?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「特記事項欄は完全に空欄ですね＠Ｓ号指定もなし＠減点もなしだし。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>興宮ＰＳ</color>", NULL, "<color=#f5e6d3>오키노미야 경찰서</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3010", 256, TRUE);
+	OutputLine(NULL, "「特記事項欄は完全に空欄ですね。",
+		   NULL, "\"특기사항 란은 완전히 공란이던데요? ", Line_Continue);
+	Wait(1800);
+	OutputLine(NULL, "Ｓ号指定もなし。",
+		   NULL, "S호 지정도 없고. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijia_3011", 256, TRUE);
+	OutputLine(NULL, "減点もなしだし。」",
+		   NULL, "감점도 없었고.\" ", Line_Normal);
+	ClearMessage();
+
+//「...ははは、パッシングでもされて腹が立ったんじゃないの＠　あの人、根に持つとなかなか忘れないタイプなんだよ。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事</color>", NULL, "<color=#f5e6d3>형사</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/vtp_okeijic_3001", 256, TRUE);
+	OutputLine(NULL, "「…ははは、パッシングでもされて腹が立ったんじゃないの？",
+		   NULL, "\"...하하, 추월이라도 당해서 뚜껑 열린거 아냐? ", Line_Continue);
+	Wait(2500);
+	OutputLine(NULL, "　あの人、根に持つとなかなか忘れないタイプなんだよ。」",
+		   NULL, "그 인간, 빚은 안 까먹는 성격이거든.\" ", Line_Normal);
+	ClearMessage();
+	SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+//gosub *tip_e
+//return
+
+
+}

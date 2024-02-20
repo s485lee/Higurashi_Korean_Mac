@@ -1,0 +1,53 @@
+void main()
+{
+}
+
+void OpeningQuestion()
+{
+	if (GetGlobalFlag(GVideoOpening) == 0) {
+		OutputLine(NULL, "オープニング動画は多少のネタバレ要素を含んでいますが、再生を有効にしますか？",
+			   NULL, "<size=-8>오프닝 동영상은 경미한 스포일러를 포함합니다. 재생하시겠습니까? (게임의 일정 부분에 도달하기 전까지는 재생되지 않습니다. 게임 내부의 동영상 재생에도 영향을 미치므로, 가급적 재생을 권합니다.)", Line_Normal);
+
+		char Item[2];
+
+		if (GetGlobalFlag(GLanguage) == 1) {
+			Item[0] = "오프닝 활성화";
+			Item[1] = "오프닝 비활성화";
+		} else {
+			Item[0] = "動画再生を有効化";
+			Item[1] = "動画再生を無効化";
+		}
+
+		Select( 2, Item );
+
+		if (LoadValueFromLocalWork(SelectResult) == 0) {
+			SetGlobalFlag(GVideoOpening, 2);
+		} else {
+			SetGlobalFlag(GVideoOpening, 1);
+		}
+
+		DisableWindow();
+	}
+}
+
+void OpeningLaunch()
+{
+	if (GetGlobalFlag(GVideoOpening) == 3) {
+		ModPlayMovie("mv05");
+	}
+	else if (GetGlobalFlag(GVideoOpening) == 4) {
+		ModPlayMovie("mv04");
+	}
+}
+
+void OpeningStory()
+{
+	if (GetGlobalFlag(GVideoOpening) == 3) {
+		SetGlobalFlag(GVideoOpening, 4);
+		ModPlayMovie("mv04");
+	}
+	else if (GetGlobalFlag(GVideoOpening) == 2) {
+		SetGlobalFlag(GVideoOpening, 3);
+		ModPlayMovie("mv05");
+	}
+}

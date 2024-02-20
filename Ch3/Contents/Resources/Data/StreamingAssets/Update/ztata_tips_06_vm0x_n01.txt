@@ -1,0 +1,29 @@
+void main()
+{
+}
+
+void dialog000()
+{
+//「噂じゃホトケさん、上納金とヤクに手を付けちゃったらしいっす＠話じゃ、かなりシャレにならない規模らしいっす。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100044", 256, TRUE);
+	OutputLine(NULL, "「噂じゃホトケさん、園崎の上納金に手を付けちゃったらしいっす。",
+		   NULL, "\"소문으로는 호토케 씨, 소노자키의 상납금에 손을 대었다고 함다. ", Line_Continue);
+	Wait(2500);
+	OutputLine(NULL, "話じゃ、かなりシャレにならない規模らしいっす。」",
+		   NULL, "듣기로는 규모가 장난이 아니라더군요.\" ", Line_Normal);
+	ClearMessage();
+}
+
+void dialog001()
+{
+//「そうそう...、大石さん＠女のヒモ、生きてるみたいですよ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100045", 256, TRUE);
+	OutputLine(NULL, "「そうそう…、大石さん。",
+		   NULL, "\"아 맞다..., 오오이시 씨. ", Line_Continue);
+	Wait(1300);
+	OutputLine(NULL, "女の同居人、生きてるみたいですよ。」",
+		   NULL, "그 여자의 동거인, 살아있는 것 같슴다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
