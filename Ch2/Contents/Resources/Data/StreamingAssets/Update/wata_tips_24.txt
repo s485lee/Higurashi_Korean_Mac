@@ -1,0 +1,343 @@
+void main()
+{
+
+
+//１１■雀荘「鈴」
+//*Sub_Tips_044
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 1, "msys13", 56, 0 );
+
+//『本日は貸切です。～雀荘「鈴」～￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「本日は貸切です。〜雀荘「鈴」〜」",
+		   NULL, "\"오늘은 전세입니다. ~ 마작장'린'~\" ", Line_Normal);
+	ClearMessage();
+
+
+//　カランカラ～ン￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　カランカラ〜ン。",
+		   NULL, "딸그랑 딸그랑. ", Line_Normal);
+	ClearMessage();
+
+
+//「あんりゃ、蔵ちゃん。あんたが一番遅いよ～＠　若い人はみんな揃ってる。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>マスター</color>", NULL, "<color=#f5e6d3>가게 주인 아저씨</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/master44001", 256, TRUE);
+	OutputLine(NULL, "「あんりゃ、蔵ちゃん。あんたが一番遅いよ〜？",
+		   NULL, "\"어머, 쿠라쨩. 네가 제일 늦었는데~? ", Line_Continue);
+	OutputLine(NULL, "　若い人はみんな揃ってる。」",
+		   NULL, "젊은 사람들은 모두 모였어.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「なっはっはっは...＠じゃあお母さん、すみませんね。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700179", 256, TRUE);
+	OutputLine(NULL, "「なっはっはっは…。",
+		   NULL, "\"아하하하... ", Line_Continue);
+	OutputLine(NULL, "じゃあお母さん、すみませんね。」",
+		   NULL, "그럼 아주머니, 실례하겠습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　大石が、タバコが１カートン入ったコンビニの袋を渡すと、雀荘の主である婆さんは要領よく姿を消した＠...もう慣れっこなのだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石が、タバコが１カートン入ったコンビニの袋を渡すと、雀荘の主である婆さんは要領よく姿を消した。",
+		   NULL, "오오이시가 담배 한 갑이 든 편의점 봉지를 건네자, 마작장 주인 할머니는 눈치 좋게 자리를 피한다. ", Line_WaitForInput);
+	OutputLine(NULL, "…もう慣れっこなのだ。",
+		   NULL, "...상대도 이제 익숙한 기색이다. ", Line_Normal);
+	ClearMessage();
+
+	DisableWindow();
+	DrawSceneWithMask("background/jansou", "up", 0, 0, 1300 );
+
+//「大石さん＠　お疲れさまっす！！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100036", 256, TRUE);
+	OutputLine(NULL, "「大石さん！",
+		   NULL, "\"오오이시 씨! ", Line_Continue);
+	OutputLine(NULL, "　お疲れさまっす！！」",
+		   NULL, "수고하셨슴다!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「なんだ、みんな真面目に待ってたんですか＠　サンマでもやってりゃ良かったのに。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700180", 256, TRUE);
+	OutputLine(NULL, "「なんだ、みんな真面目に待ってたんですか？",
+		   NULL, "\"뭐야, 모두 착실하게 기다리고 있었나요? ", Line_Continue);
+	OutputLine(NULL, "　サンマでもやってりゃ良かったのに。」",
+		   NULL, "삼인 마작이라도 하고 있지 그랬나요.\" ", Line_Normal);
+	ClearMessage();
+
+//　狭い店内に並べられた雀卓には皆、大石の部下たちが座っているが、どの卓にも麻雀牌は出ていない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　狭い店内に並べられた雀卓には皆、大石の部下たちが座っているが、どの卓にも麻雀牌は出ていない。",
+		   NULL, "좁은 가게 안에 진열된 탁자에는 모두 오오이시의 부하들이 앉아 있지만, 어느 곳에도 마작패는 없다. ", Line_Normal);
+	ClearMessage();
+
+//「皆さん、連日の不眠不休の捜査、本当にお疲れさまです。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700181", 256, TRUE);
+	OutputLine(NULL, "「皆さん、連日の不眠不休の捜査、本当にお疲れさまです。」",
+		   NULL, "\"여러분, 연일 불철주야로 수사하느라 정말 수고가 많으십니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「「「ぅおおっす！！」」＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事たち</color>", NULL, "<color=#f5e6d3>형사들</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442500011", 256, TRUE);
+	ModPlayVoiceLS(5, 0, "ps3/s20/00/keijib44008", 256, TRUE);
+	ModPlayVoiceLS(6, 19, "ps3/s20/19/443100037", 256, TRUE);
+	OutputLine(NULL, "「「「ぅおおっす！！」」」",
+		   NULL, "\"\"\"옙!!\"\"\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　威勢のいい返事が雀荘を満たす＠...そこはすでに娯楽場の雰囲気ではない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　威勢のいい返事が雀荘を満たす。",
+		   NULL, "위세 좋은 대답이 마작장을 가득 채운다. ", Line_WaitForInput);
+	OutputLine(NULL, "…そこはすでに娯楽場の雰囲気ではない。",
+		   NULL, "...이미 도박장 분위기가 아니다. ", Line_Normal);
+	ClearMessage();
+
+//「状況は芳しくありません＠署長が園崎系議員の恫喝に屈したそうです＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700182", 256, TRUE);
+	OutputLine(NULL, "「状況は芳しくありません。",
+		   NULL, "\"상황이 좋지 않습니다. ", Line_Continue);
+	OutputLine(NULL, "署長が園崎系議員の恫喝に屈したそうです。",
+		   NULL, "서장이 소노자키 의원의 공갈에 굴복했다고 합니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　近日中に鷹野殺しは岐阜県警に譲り、村長たちの失踪は行方不明扱いで生活課に委ねるようです。＠
+	//VoiceMatching
+	if(GetGlobalFlag(GCensor) >= 2){ModCallScriptSection("zwata_tips_24_vm0x_n01","dialog002");}
+	if(GetGlobalFlag(GCensor) <= 1){ModCallScriptSection("zwata_tips_24_vm00_n01","dialog002");}
+	//VoiceMatchingEnd
+
+
+//　...あの若造署長が＠ベテランたちが吐き捨てる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…あの若造署長が。",
+		   NULL, "...그 풋내기 서장이. ", Line_WaitForInput);
+	OutputLine(NULL, "ベテランたちが吐き捨てる。",
+		   NULL, "베테랑들이 내뱉었다. ", Line_Normal);
+	ClearMessage();
+
+//「請求した令状も全て却下されました＠課長からは園崎家界隈には近付くなとまで言われてます＠...いやいや、困ったモンです＠
+//　ちなみに、私には来週から警視庁への研修命令が出るそうです＠その後は余った有給を伊豆で消化しろとまで言われてます＠...いやぁ、そういうのも悪くないですねぇ～。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700184", 256, TRUE);
+	OutputLine(NULL, "「請求した令状も全て却下されました。",
+		   NULL, "\"청구한 영장도 모두 기각되었습니다. ", Line_Continue);
+	OutputLine(NULL, "課長からは園崎家界隈には近付くなとまで言われてます。",
+		   NULL, "과장에게는 소노자키가 근처에는 접근하지 말라는 말까지 들었습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700185", 256, TRUE);
+	OutputLine(NULL, "…いやいや、困ったモンです。",
+		   NULL, "...이거 참, 곤란하게 됐습니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700186", 256, TRUE);
+	OutputLine(NULL, "　ちなみに、私には来週から警視庁への研修命令が出るそうです。",
+		   NULL, "덧붙여서 저에게는 다음주부터 경시청의 연수 명령이 나온다네요. ", Line_Continue);
+	OutputLine(NULL, "その後は余った有給を伊豆で消化しろとまで言われてます。",
+		   NULL, "그 다음에는 유급휴가로 이즈에서 푹 쉬고 오라던가 하더군요. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700187", 256, TRUE);
+	OutputLine(NULL, "…いやぁ、そういうのも悪くないですねぇ〜。」",
+		   NULL, "...뭐, 그것도 나쁘진 않겠네요~\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　苦笑が漏れる＠...笑い事ではないが、笑うしかなかった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　苦笑が漏れる。",
+		   NULL, "쓴웃음을 흘린다. ", Line_WaitForInput);
+	OutputLine(NULL, "…笑い事ではないが、笑うしかなかった。",
+		   NULL, "...웃을 일은 아니지만 웃을 수밖에 없었다. ", Line_Normal);
+	ClearMessage();
+
+//「いつもそうですが、事件と車のキーの閉じ込めはよく似てます＠開けるためのカギはいつもその中に閉じ込められているんです＠車ならＪＡＦを呼んで扉をこじ開ける＠事件なら＠　熊ちゃん、図面を。＠
+
+	//VoiceMatching
+	if(GetGlobalFlag(GCensor) >= 2){ModCallScriptSection("zwata_tips_24_vm0x_n01","dialog001");}
+	if(GetGlobalFlag(GCensor) <= 1){ModCallScriptSection("zwata_tips_24_vm00_n01","dialog001");}
+	//VoiceMatchingEnd
+
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700190", 256, TRUE);
+	OutputLine(NULL, "事件なら？",
+		   NULL, "사건은? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700191", 256, TRUE);
+	OutputLine(NULL, "　熊ちゃん、図面を。」",
+		   NULL, "쿠마쨩, 도면을.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　熊谷がホワイトボードをひっくり返す＠裏には磁石で邸内の図面が貼られていた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　熊谷がホワイトボードをひっくり返す。",
+		   NULL, "쿠마가이가 화이트보드를 휙 뒤집는다. ", Line_WaitForInput);
+	OutputLine(NULL, "裏には磁石で邸内の図面が貼られていた。",
+		   NULL, "뒷면에는 자석으로 저택의 도면이 붙어 있었다. ", Line_Normal);
+	ClearMessage();
+
+//「私もずーーっとこの商売をやってます＠勘には自信があるつもりですがね、今回ばかりはハズレるかもしれませんよ＠　退職金が惜しい方は私が１０数える間に席を外してください。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700192", 256, TRUE);
+	OutputLine(NULL, "「私もずーーっとこの商売をやってます。",
+		   NULL, "\"저도 계~속 이 장사를 해왔습니다. ", Line_Continue);
+	OutputLine(NULL, "勘には自信があるつもりですがね、今回ばかりはハズレるかもしれませんよ？",
+		   NULL, "감은 자신있지만, 이번만큼은 틀렸을지도 모릅니다? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700193", 256, TRUE);
+	OutputLine(NULL, "　退職金が惜しい方は私が１０数える間に席を外してください。」",
+		   NULL, "퇴직금이 아까운 분은 제가 10을 세는 동안 자리를 비워주세요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　大石が１０を数え始めると、皆も同じように数え始める＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　大石が１０を数え始めると、皆も同じように数え始める。",
+		   NULL, "오오이시가 10을 세기 시작하자, 모두 다같이 수를 세기 시작한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　......大石たちの名物、覚悟の１０カウントだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……大石たちの名物、覚悟の１０カウントだ。",
+		   NULL, "......오오이시 그룹의 명물, 각오를 다지는 10카운트이다. ", Line_Normal);
+	ClearMessage();
+
+//「９、１０！＠　あ～あ～、誰も出てかないよ＠皆さん、ご家族はもっと大切にして下さいよ？　んっふっふっふ！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700194", 256, TRUE);
+	OutputLine(NULL, "「９、１０！！",
+		   NULL, "\"9, 10!! ", Line_Continue);
+	Wait ( 7000 );
+	OutputLine(NULL, "　あ〜あ〜、誰も出てかないよ。",
+		   NULL, "아~아~, 아무도 안 나갔네요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700195", 256, TRUE);
+	OutputLine(NULL, "皆さん、ご家族はもっと大切にして下さいよ？　んっふっふっふ！」",
+		   NULL, "다들, 가족을 좀 더 소중히 여겨주세요, 음후후후!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「「「わっはっはっはっはっは...！！」」＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事たち</color>", NULL, "<color=#f5e6d3>형사들</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442500012", 256, TRUE);
+	ModPlayVoiceLS(5, 0, "ps3/s20/00/keijib44009", 256, TRUE);
+	ModPlayVoiceLS(6, 19, "ps3/s20/19/443100038", 256, TRUE);
+	OutputLine(NULL, "「「「わっはっはっはっはっは…！！」」」",
+		   NULL, "\"\"\"와하하하하하...!!\"\"\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　一同も豪快に笑って景気付けをする￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　一同も豪快に笑って景気付けをする。",
+		   NULL, "일동도 호쾌하게 웃으며 기세를 올렸다. ", Line_Normal);
+	ClearMessage();
+
+//「各自、手元の資料を確認＠監視カメラの所在と死角を叩き込んでください＠熊ちゃんは指揮車で待機＠非常時は私に代わって指揮をお願いしますよ＠小宮山くんは突入Ａ班＠敦くんは突入Ｂ班を指揮＠監視班は１から８まで所定の位置で監視を＠盆地くんはタイムテーブルを厳守＠署に怪しまれないようローテを管理して下さい＠さて、待機中の班が一番大仕事ですよ＠　課長に私の所在を聞かれたらとぼけて下さい。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700196", 256, TRUE);
+	OutputLine(NULL, "「各自、手元の資料を確認。",
+		   NULL, "\"각자, 자기 앞의 자료를 확인. ", Line_Continue);
+	OutputLine(NULL, "監視カメラの所在と死角を叩き込んでください。",
+		   NULL, "감시카메라의 위치와 사각을 머릿속에 새겨 주세요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700197", 256, TRUE);
+	OutputLine(NULL, "熊ちゃんは指揮車で待機。",
+		   NULL, "쿠마쨩은 지휘차에서 대기. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700198", 256, TRUE);
+	OutputLine(NULL, "非常時は私に代わって指揮をお願いしますよ。",
+		   NULL, "비상시에는 저를 대신해 지휘를 부탁합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700199", 256, TRUE);
+	OutputLine(NULL, "小宮山くんは突入Ａ班。",
+		   NULL, "코미야마 군은 돌입 A반. ", Line_Continue);
+	OutputLine(NULL, "敦くんは突入Ｂ班を指揮。",
+		   NULL, "아츠시 군은 돌입 B반을 지휘. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700200", 256, TRUE);
+	OutputLine(NULL, "監視班は１から８まで所定の位置で監視を。",
+		   NULL, "감시 팀은 1부터 8까지 소정의 위치에서 감시를. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700201", 256, TRUE);
+	OutputLine(NULL, "盆地くんはタイムテーブルを厳守。",
+		   NULL, "본치군은 시간표를 엄수. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700202", 256, TRUE);
+	OutputLine(NULL, "署に怪しまれないようローテを管理して下さい。",
+		   NULL, "서에 의심받지 않도록 로테이션을 관리해 주세요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700203", 256, TRUE);
+	OutputLine(NULL, "さて、待機中の班が一番大仕事ですよ？",
+		   NULL, "그런데, 대기 중인 반이 가장 중요하거든요? ", Line_Continue);
+	OutputLine(NULL, "　課長に私の所在を聞かれたらとぼけて下さい。」",
+		   NULL, "과장님이 제 소재를 물으면 시치미를 떼주세요.\" ", Line_Normal);
+	ClearMessage();
+//長文につき＠を￥に変換
+
+//「「「わっはっはっはっはっは！！」」￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>刑事たち</color>", NULL, "<color=#f5e6d3>형사들</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/442500013", 256, TRUE);
+	ModPlayVoiceLS(5, 0, "ps3/s20/00/keijib44010", 256, TRUE);
+	ModPlayVoiceLS(6, 19, "ps3/s20/19/443100039", 256, TRUE);
+	OutputLine(NULL, "「「「わっはっはっはっはっは！！」」」",
+		   NULL, "\"\"\"와하하하하하!!\"\"\" ", Line_Normal);
+	ClearMessage();
+
+//「ゲストのエスコート役は私がやります＠きっと会場へ連れて行きますので皆さん、気長に待ってください。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700204", 256, TRUE);
+	OutputLine(NULL, "「ゲストのエスコート役は私がやります。",
+		   NULL, "\"게스트의 에스코트 역은 제가 하겠습니다. ", Line_Continue);
+	OutputLine(NULL, "きっと会場へ連れて行きますので皆さん、気長に待ってください。」",
+		   NULL, "반드시 회장에 데리고 갈 테니, 모두 느긋하게 기다려 주세요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「.........落ちるっすかね＠前原圭一は。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100040", 256, TRUE);
+	OutputLine(NULL, "「………落ちるっすかね。",
+		   NULL, "\"...실토할까요. ", Line_Continue);
+	OutputLine(NULL, "前原圭一は。」",
+		   NULL, "마에바라 케이이치는.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「私の見たとこじゃあ、明日明後日にはイケそうですよ＠もうコロっとね＠んっふっふっふ！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700205", 256, TRUE);
+	OutputLine(NULL, "「私の見たとこじゃあ、明日明後日にはイケそうですよ。",
+		   NULL, "\"제가 보기에는, 내일이나 모레쯤이면 될 것 같아요. ", Line_Continue);
+	OutputLine(NULL, "もうコロっとね。",
+		   NULL, "잘 될 겁니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700206", 256, TRUE);
+	OutputLine(NULL, "んっふっふっふ！」",
+		   NULL, "음후후후!\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+}

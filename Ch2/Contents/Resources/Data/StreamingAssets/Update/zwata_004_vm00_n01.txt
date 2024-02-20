@@ -1,0 +1,139 @@
+void main()
+{
+}
+
+void dialog000()
+{
+}
+
+void dialog001()
+{
+	DisableWindow();
+	ModSetLayerFilter(3, 256, "none");
+	ModDrawCharacterWithFiltering(3, 2, "sprite/re3a_def_a1_", "0", "right", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, TRUE );
+
+//「梨花ちゃんは綿流しの巫女さんだから、奉納の演舞をすることになっててね＠その練習なの。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 2, "ps3/s19/02/500200081", 256, TRUE);
+	OutputLine(NULL, "「梨花ちゃんは綿流しの巫女さんだから、奉納の演舞をすることになっててね。",
+		   NULL, "\"리카짱은 와타나가시 축제의 무녀라서 봉납연무를 춰야 해. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s19/02/500200082", 256, TRUE);
+	OutputLine(NULL, "その練習なの。」",
+		   NULL, "그 연습이야.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「...順を追って説明してくれ＠まず綿流しって何だ＠次に巫女さんって何だ＠最後に奉納演舞って何だ。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「…順を追って説明してくれ。",
+		   NULL, "\"...순서대로 설명해줘. ", Line_WaitForInput);
+	OutputLine(NULL, "まず綿流しって何だ。",
+		   NULL, "우선 와타나가시가 뭐야? ", Line_WaitForInput);
+	OutputLine(NULL, "次に巫女さんって何だ。",
+		   NULL, "그 다음으로 무녀는 또 뭐고. ", Line_WaitForInput);
+	OutputLine(NULL, "最後に奉納演舞って何だ。」",
+		   NULL, "마지막으로 봉납연무는 대체 뭐야?\" ", Line_Normal);
+	ClearMessage();
+}
+
+void dialog002()
+{
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog003()
+{
+//　そう言えば...お袋が夕飯の時、そんな話をしていたような気がする￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　そう言えば…お袋が夕飯の時、そんな話をしていたような気がする。",
+		   NULL, "그러고 보니 어제 저녁을 먹을 때 어머니가 비슷한 말을 하셨던 기분이 든다. ", Line_Normal);
+	ClearMessage();
+
+//「綿流しはね、毎年６月の日曜日に神社でやるお祭りなの＠とってもにぎわうんだよ！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「綿流しはね、毎年６月の日曜日に神社でやるお祭りなの。",
+		   NULL, "\"와타나가시는 매년 6월 일요일에 신사에서 하는 축제야. ", Line_WaitForInput);
+	OutputLine(NULL, "とってもにぎわうんだよ！」",
+		   NULL, "사람들도 굉장히 많이 와!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+//「なるほどな＠しかし綿流しってのは変わった名称だな＠...あれか＠　灯篭流しみたいに、何かを供養して川に流すのか？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「なるほどな。",
+		   NULL, "\"그렇구나. ", Line_WaitForInput);
+	OutputLine(NULL, "しかし綿流しってのは変わった名称だな。",
+		   NULL, "하지만 와타나가시(솜 흘리기)라는 이름은 조금 특이하네. ", Line_WaitForInput);
+	OutputLine(NULL, "…あれか？",
+		   NULL, "...혹시 그건가? ", Line_WaitForInput);
+	OutputLine(NULL, "　灯篭流しみたいに、何かを供養して川に流すのか？」",
+		   NULL, "등불 흘리기 같이 뭔가를 공양해서 강에 흘려보내는, 그런 행사?\" ", Line_Normal);
+}
+
+void dialog004()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「綿ってのはね、お布団や半纏なんかの綿のことなの。",
+		   NULL, "\"솜은 이불이나 방한복 같은 데서 꺼내. ", Line_WaitForInput);
+	OutputLine(NULL, "だから、お布団の供養になるのかな？",
+		   NULL, "그러니까, 이불 공양일까나? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 2, "ps3/s19/02/500200087", 256, TRUE);
+	OutputLine(NULL, "　…祭壇にもお布団を積み上げているし。」",
+		   NULL, "...제단에도 이불을 쌓아 올리거든.\" ", Line_Normal);
+	ClearMessage();
+}
+
+void dialog005()
+{
+//「ご先祖様とか戦没者とか、針とか包丁とかの供養ってのは聞いたことあるけど＠布団の供養っては初耳だな＠どんな謂れがあるんだ？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "「ご先祖様とか戦没者とか、針とか包丁とかの供養ってのは聞いたことあるけど。",
+		   NULL, "\"선조님이나 전몰자, 바늘이라던가 식칼 따위를 공양한다는 말은 들어본 적 있지만. ", Line_WaitForInput);
+	OutputLine(NULL, "布団の供養っては初耳だな。",
+		   NULL, "이불을 공양한다는 말은 처음 듣네. ", Line_WaitForInput);
+	OutputLine(NULL, "どんな謂れがあるんだ？」",
+		   NULL, "무슨 사연이라도 있어?\" ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+	DisableWindow();
+	ModDrawCharacter(3, 2, "sprite/re3a_warai_a1_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+
+}
+
+void dialog006()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>不良</color>", NULL, "<color=#f5e6d3>불량배</color>", NULL, Line_ContinueAfterTyping); }
+
+	ModPlayVoiceLS(4, 0, "ps3/s19/00/badb50006", 256, TRUE);
+	OutputLine(NULL, "「クソ女がぁあぁぁあぁああ！！！",
+		   NULL, "\"망할 계집년이이이이이이!! ", Line_WaitForInput);
+
+	ModPlayVoiceLS(4, 0, "ps3/s19/00/badb50007", 256, TRUE);
+	OutputLine(NULL, "　ッくぞンにゃろぉおおおぉおお！！」",
+		   NULL, "이 새끼가아아아아아!!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}
+
+void dialog007()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女</color>", NULL, "<color=#f5e6d3>아주머니</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s19/00/womb50004", 256, TRUE);
+	OutputLine(NULL, "　ブツブツ！」",
+		   NULL, "*중얼거림*\" ", GetGlobalFlag(GLinemodeSp));
+}
+
+void dialog008()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>시온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 6, "ps3/s19/06/500600093", 256, TRUE);
+	OutputLine(NULL, "「それよりもさっきのあれ。",
+		   NULL, "\"그것보다도 아까 전 그거. ", Line_WaitForInput);
+
+	ModPlayVoiceLS(4, 6, "ps3/s19/06/500600094", 256, TRUE);
+	OutputLine(NULL, "……驚きましたか？",
+		   NULL, "...놀랐었나요? ", Line_WaitForInput);
+	OutputLine(NULL, "　みんながどんどん集まってきて。」",
+		   NULL, "다들 계속해서 몰려들었으니까요.\" ", GetGlobalFlag(GLinemodeSp));
+
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}

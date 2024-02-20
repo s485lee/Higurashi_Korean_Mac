@@ -1,0 +1,21 @@
+void main()
+{
+}
+
+void dialog000()
+{
+}
+
+void dialog001()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700174", 256, TRUE);
+	OutputLine(NULL, "「園崎家絡みの闇市場関係が有力候補ですなぁ。",
+		   NULL, "\"소노자키 가문이 관리하는 암시장과 얽혀 있을 겁니다. ", Line_Continue);
+	OutputLine(NULL, "拳銃とか、ご禁制の品とか。",
+		   NULL, "총이라든가, 금지된 품목이라든가. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700175", 256, TRUE);
+	OutputLine(NULL, "園崎家の隠し資産ってのも捨てがたい辺りです。」",
+		   NULL, "소노자키가의 숨겨진 자산일 가능성도 있죠.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}

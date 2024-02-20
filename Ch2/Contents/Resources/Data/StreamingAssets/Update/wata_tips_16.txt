@@ -1,0 +1,290 @@
+void main()
+{
+
+//９■深夜の電話
+//*Sub_Tips_036
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 2, "lsys17", 56, 0 );
+	SetValidityOfInput( FALSE );
+	Wait( 2000 );
+	SetValidityOfInput( TRUE );
+	FadeOutBGM( 2, 10, TRUE );
+
+//「夜分遅くに失礼いたします...＠公由と申しますが、ご主人でいらっしゃいますか＠　......はい＠　いえいえ、その節は本当にありがとうございます＠えぇ＠............それでですね＠...こんな時間に大変恐縮なのですが＠...ウチのお爺ちゃんがお邪魔してないかと思いまして＠.........ですよねぇ＠　はい＠　こんな時間に申し訳ありませんでした＠それでは失礼いたします＠ごめんください......。￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f3cfb5>公由</color>", NULL, "<color=#f3cfb5>키미요시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44001", 256, TRUE);
+	OutputLine(NULL, "「夜分遅くに失礼いたします…。",
+		   NULL, "\"밤늦게 죄송합니다.... ", Line_Continue);
+	OutputLine(NULL, "公由と申しますが、ご主人でいらっしゃいますか？",
+		   NULL, "키미요시라고 합니다만, 남편분 계십니까? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44002", 256, TRUE);
+	OutputLine(NULL, "　……はい！",
+		   NULL, "......예! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44003", 256, TRUE);
+	OutputLine(NULL, "　いえいえ、その節は本当にありがとうございます。",
+		   NULL, "아뇨아뇨, 그때는 정말로 감사했습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44004", 256, TRUE);
+	OutputLine(NULL, "えぇ。",
+		   NULL, "네에. ", Line_Continue);
+	OutputLine(NULL, "…………それでですね、",
+		   NULL, ".........그래서 말입니다만. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44005", 256, TRUE);
+	OutputLine(NULL, "…こんな時間に大変恐縮なのですが、",
+		   NULL, "...이런 시간에 정말로 죄송합니다만, ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f3cfb5>公由</color>", NULL, "<color=#f3cfb5>키미요시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44006", 256, TRUE);
+	OutputLine(NULL, "…ウチのお爺ちゃんがお邪魔してないかと思いまして。",
+		   NULL, "저희 할아버지가 방문하지 않았나 해서요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44007", 256, TRUE);
+	OutputLine(NULL, "………ですよねぇ！",
+		   NULL, "......그렇죠! ", Line_Continue);
+	OutputLine(NULL, "　はい！",
+		   NULL, "예! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44008", 256, TRUE);
+	OutputLine(NULL, "　こんな時間に申し訳ありませんでした。",
+		   NULL, "이런 시간에 죄송했습니다, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44009", 256, TRUE);
+	OutputLine(NULL, "それでは失礼いたします。",
+		   NULL, "그럼 실례하겠습니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44010", 256, TRUE);
+	OutputLine(NULL, "ごめんください……。」",
+		   NULL, "안녕히 계십시오....\" ", Line_Normal);
+	ClearMessage();
+
+
+	PlayBGM( 1, "msys13", 56, 0 );
+
+//　チン￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　チン。",
+		   NULL, "치링. ", Line_Normal);
+	ClearMessage();
+
+
+//「どうだい＠　ダメ？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女性</color>", NULL, "<color=#f5e6d3>여자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimif44001", 256, TRUE);
+	OutputLine(NULL, "「どうだい？",
+		   NULL, "\"어때? ", Line_Continue);
+	OutputLine(NULL, "　ダメ？」",
+		   NULL, "아니야?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「参ったなぁ...。...@
+// どんなに熱中しても、電話くらいはしてくれる人なんだけれどなぁ！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f3cfb5>公由</color>", NULL, "<color=#f3cfb5>키미요시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44011", 256, TRUE);
+	OutputLine(NULL, "「参ったなぁ…。…",
+		   NULL, "\"큰일이네... ", Line_Continue);
+	OutputLine(NULL, "どんなに熱中しても、電話くらいはしてくれる人なんだけれどなぁ！」",
+		   NULL, "아무리 다른 일에 열중해도 전화 정도는 해 주시는 분인데!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「囲碁の人の家は全部、電話したんでしょ？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女性</color>", NULL, "<color=#f5e6d3>여자</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimif44002", 256, TRUE);
+	OutputLine(NULL, "「囲碁の人の家は全部、電話したんでしょ？」",
+		   NULL, "\"바둑 친구들의 집엔 전부 전화했지?\" ", Line_Normal);
+	ClearMessage();
+
+	FadeOutBGM( 1, 1000, TRUE );
+	PlayBGM( 2, "lsys17", 56, 0 );
+
+//　ジリリリリリリ...ン！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　ジリリリリリリ…ン！！",
+		   NULL, "따르르르르르르...릉!! ", Line_Normal);
+	ClearMessage();
+
+
+	FadeOutBGM( 2, 10, TRUE );
+	PlayBGM( 1, "msys13", 56, 0 );
+
+//「はい＠　公由です。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f3cfb5>公由</color>", NULL, "<color=#f3cfb5>키미요시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44012", 256, TRUE);
+	OutputLine(NULL, "「はい！",
+		   NULL, "\"예! ", Line_Continue);
+	OutputLine(NULL, "　公由です。」",
+		   NULL, "키미요시입니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「園崎です＠どうです＠　村長さんは見つかりましたか？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300078", 256, TRUE);
+	OutputLine(NULL, "「園崎です。",
+		   NULL, "\"소노자키입니다. ", Line_Continue);
+	OutputLine(NULL, "どうです？",
+		   NULL, "어떻습니까? ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300079", 256, TRUE);
+	OutputLine(NULL, "　村長さんは見つかりましたか？」",
+		   NULL, "촌장님은 찾으셨나요?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「あぁ、魅音ちゃんか＠...片っ端から電話をかけてみたけど、だめだよ＠見つからないんだ...＠参ったなぁ...＠　どこで油を売ってるのかなぁ...！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f3cfb5>公由</color>", NULL, "<color=#f3cfb5>키미요시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44013", 256, TRUE);
+	OutputLine(NULL, "「あぁ、魅音ちゃんか。",
+		   NULL, "\"아아, 미온쨩이구나. ", Line_Continue);
+	OutputLine(NULL, "…片っ端から電話をかけてみたけど、だめだよ。",
+		   NULL, "...있는데로 다 전화를 돌려 봤지만, 틀렸어 ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44014", 256, TRUE);
+	OutputLine(NULL, "見つからないんだ…。",
+		   NULL, "찾을 수가 없어... ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44015", 256, TRUE);
+	OutputLine(NULL, "参ったなぁ…！",
+		   NULL, "큰일인걸...! ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44016", 256, TRUE);
+	OutputLine(NULL, "　どこで油を売ってるのかなぁ…！」",
+		   NULL, "대체 어디서 노닐고 계시는지...!\" ", Line_Normal);
+	ClearMessage();
+
+
+//「こっちでも心当たりにいろいろと問い合わせましたけど、!w800...全然。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300080", 256, TRUE);
+	OutputLine(NULL, "「こっちでも心当たりにいろいろと問い合わせましたけど、",
+		   NULL, "\"이쪽에서도 짐작가는 곳을 여기저기 알아봤지만... ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 800 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "…全然。」",
+		   NULL, "전혀 실마리가.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「.................................。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f3cfb5>公由</color>", NULL, "<color=#f3cfb5>키미요시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44017", 256, TRUE);
+	OutputLine(NULL, "「……………………………。」",
+		   NULL, "\"............\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//「婆っちゃにも相談したんですが、青年団を召集して探し回った方がいいだろうということです。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300081", 256, TRUE);
+	OutputLine(NULL, "「婆っちゃにも相談したんですが、青年団を召集して探し回った方がいいだろうということです。」",
+		   NULL, "\"할머니와도 상담했습니다만, 청년단을 소집해서 찾아보는 편이 좋겠다고 하셨습니다.\" ", Line_Normal);
+	ClearMessage();
+
+
+//「こ、こんな時間にかい...＠　それに、別に行方不明になったと決まったわけでもないし...、＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f3cfb5>公由</color>", NULL, "<color=#f3cfb5>키미요시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44018", 256, TRUE);
+	OutputLine(NULL, "「こ、こんな時間にかい…？",
+		   NULL, "\"이, 이런 시간에...? ", Line_Continue);
+	OutputLine(NULL, "　それに、別に行方不明になったと決まったわけでもないし…、」",
+		   NULL, "게다가 딱히 행방불명 됐다고 정해진 것도 아니고...\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+	PlaySE( 3, "wa_026", 56, 64 );
+
+//「綿流しの直後ですから＠少し慎重に扱った方がいいとのことです＠それでも見つからないなら、明朝、警察に通報しましょう＠見つかる見つからないは別にして、痛くない腹を探られない方がいいでしょうから。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300082", 256, TRUE);
+	OutputLine(NULL, "「綿流しの直後ですから。",
+		   NULL, "\"와타나가시 직후니까요. ", Line_Continue);
+	OutputLine(NULL, "少し慎重に扱った方がいいとのことです。",
+		   NULL, "조금 신중한 대응이 좋다고 합니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300083", 256, TRUE);
+	OutputLine(NULL, "それでも見つからないなら、明朝、警察に通報しましょう。",
+		   NULL, "그래도 발견되지 않는다면, 내일 경찰에 통보하도록 하죠. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300084", 256, TRUE);
+	OutputLine(NULL, "見つかる見つからないは別にして、痛くない腹を探られない方がいいでしょうから。」",
+		   NULL, "발견될지 어떨지는 제쳐놓고서라도, 괜한 의심은 받지 않는 편이 좋으니까.\" ", Line_Normal);
+	ClearMessage();
+
+//「...お魎さんがそう言ったのかい？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f3cfb5>公由</color>", NULL, "<color=#f3cfb5>키미요시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44019", 256, TRUE);
+	OutputLine(NULL, "「…お魎さんがそう言ったのかい？」",
+		   NULL, "\"...오료 씨가 그렇게 말했니?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「はい＠直接、声を聞かないと信用できないなら、電話先に出させますよ？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300085", 256, TRUE);
+	OutputLine(NULL, "「はい。",
+		   NULL, "\"예. ", Line_Continue);
+	OutputLine(NULL, "直接、声を聞かないと信用できないなら、電話先に出させますよ？」",
+		   NULL, "직접 목소리를 듣지 않고서는 믿을 수 없으시다면, 전화를 바꿔드릴까요?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「い、いえ...＠　わかりました＠青年団を集めて探しましょう＠それで見つからなければ...翌朝に警察に通報します。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f3cfb5>公由</color>", NULL, "<color=#f3cfb5>키미요시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44020", 256, TRUE);
+	OutputLine(NULL, "「い、いえ…！",
+		   NULL, "\"아, 아니...! ", Line_Continue);
+	OutputLine(NULL, "　わかりました。",
+		   NULL, "알겠다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44021", 256, TRUE);
+	OutputLine(NULL, "青年団を集めて探しましょう。",
+		   NULL, "청년단을 모아서 찾아보자. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44022", 256, TRUE);
+	OutputLine(NULL, "それで見つからなければ…翌朝に警察に通報します。」",
+		   NULL, "그래도 발견되지 않는다면... 내일 아침 경찰에 신고하마.\" ", Line_Normal);
+	ClearMessage();
+
+//「青年団の連絡網、よろしくお願いしますね＠私も婆っちゃの代行ということでそちらに参ります。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300086", 256, TRUE);
+	OutputLine(NULL, "「青年団の連絡網、よろしくお願いしますね。",
+		   NULL, "\"청년단 연락망, 잘 부탁드립니다. ", Line_Continue);
+	OutputLine(NULL, "私も婆っちゃの代行ということでそちらに参ります。」",
+		   NULL, "저도 할머니의 대행으로 그쪽에 가도록 하겠습니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「あ、ありがとう＠すぐにみんなを集めます...。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f3cfb5>公由</color>", NULL, "<color=#f3cfb5>키미요시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 0, "ps3/s20/00/kimim44023", 256, TRUE);
+	OutputLine(NULL, "「あ、ありがとう。",
+		   NULL, "\"고, 고마워. ", Line_Continue);
+	OutputLine(NULL, "すぐにみんなを集めます…。」",
+		   NULL, "곧장 모두를 모으도록 하지....\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「えぇ＠では。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 3, "ps3/s20/03/440300087", 256, TRUE);
+	OutputLine(NULL, "「えぇ。",
+		   NULL, "\"예. ", Line_Continue);
+	OutputLine(NULL, "では。」",
+		   NULL, "그럼.\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+
+}

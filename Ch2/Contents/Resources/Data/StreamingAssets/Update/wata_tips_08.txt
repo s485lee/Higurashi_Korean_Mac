@@ -1,0 +1,98 @@
+void main()
+{
+
+
+//７■スクラップ帳よりⅡ
+//*Sub_Tips_028
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlaySE( 3, "wa_021", 56, 64 );
+	DrawScene("background/simen3", 400 );
+	PlayBGM( 1, "msys13", 56, 0 );
+
+//locate 4,6
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	SetStyleOfMessageSwinging( 1 );
+
+//＜生贄の儀式について￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜生贄の儀式について＞",
+		   NULL, "<산 제물의 의식에 대하여> ", Line_Normal);
+	ClearMessage();
+
+	SetStyleOfMessageSwinging( 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　生贄の儀式は、最もシンプルな溺死型で、神聖な沼である鬼ヶ淵沼に犠牲者を沈めることで成立した￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　生贄の儀式は、最もシンプルな溺死型で、神聖な沼である鬼ヶ淵沼に犠牲者を沈めることで成立した。",
+		   NULL, "산 제물의 의식은 아주 간결한 익사형으로서, 신성한 공간인 오니가후치 늪에 희생자를 가라앉히는 방식으로 이뤄졌다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　鬼ヶ淵村における儀式で特徴的なのは、犠牲者を三日三晩もの長い時間をかけてゆっくりと沈める点にある＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鬼ヶ淵村における儀式で特徴的なのは、犠牲者を三日三晩もの長い時間をかけてゆっくりと沈める点にある。",
+		   NULL, "오니가후치 마을의 의식의 특징은, 희생자를 3일 밤낮이라는 긴 시간에 걸쳐 천천히 가라앉힌다는 점이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　犠牲者を沈めて「殺す」ことよりも＠「沈める（鎮める）」行為に重きが置かれていたと考えられる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　犠牲者を沈めて「殺す」ことよりも、",
+		   NULL, "희생자를 가라앉혀서 '죽인다'는 점보다도, ", Line_WaitForInput);
+	OutputLine(NULL, "「沈める（鎮める）」行為に重きが置かれていたと考えられる。",
+		   NULL, "'(분노를)가라앉힌다' 는 의미에 무게를 둔 행위로 보인다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　その為、放って置けばあっという間に沈んでしまう犠牲者をいかに緩慢に沈めるかに、様々な工夫が凝らされたはずである＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その為、放って置けばあっという間に沈んでしまう犠牲者をいかに緩慢に沈めるかに、様々な工夫が凝らされたはずである。",
+		   NULL, "따라서, 가만히 두면 순식간에 가라앉아 버릴 희생자를 어떻게 긴 시간에 걸쳐 가라앉힐지, 여러 가지 공들여 궁리된 방법이 있을 것이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　残念だが、その方法は知る限りの文献には載せられていない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　残念だが、その方法は知る限りの文献には載せられていない。",
+		   NULL, "유감스럽게도 그 방법은 확인 가능한 어떠한 문헌에도 기재되지 않았다 ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　私の想像では、丸太等で巨大なイカダを組み＠そこに処刑台を設え、縄で犠牲者を吊り上げ、時の刻みに合わせて少しずつ沼へ沈めていったのではないかと思う＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私の想像では、丸太等で巨大なイカダを組み、",
+		   NULL, "내 견해로서는 통나무 등으로 거대한 뗏목을 만들어, ", Line_WaitForInput);
+	OutputLine(NULL, "そこに処刑台を設え、縄で犠牲者を吊り上げ、時の刻みに合わせて少しずつ沼へ沈めていったのではないかと思う。",
+		   NULL, "거기에 희생자를 밧줄로 매달아 올릴 처형대를 설치하고, 시간의 경과에 따라 희생자를 조금씩 늪에 가라앉히지 않았을까 생각한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　だがそうだとするのならば、その儀式に使った「祭具」は神聖なものとして崇められ、どこかに祀られていてもおかしくない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だがそうだとするのならば、その儀式に使った「祭具」は神聖なものとして崇められ、どこかに祀られていてもおかしくない。",
+		   NULL, "만약 내 견해가 옳다면, 의식에 사용된 신성한 '제구'는 그 자체로 숭배의 대상으로서, 어딘가에 모셔져 있어도 이상하지 않다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+
+}

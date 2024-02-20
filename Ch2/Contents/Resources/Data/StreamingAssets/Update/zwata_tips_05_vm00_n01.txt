@@ -1,0 +1,36 @@
+void main()
+{
+}
+
+void dialog000()
+{
+}
+
+void dialog001()
+{
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700099", 256, TRUE);
+	OutputLine(NULL, "「熊ちゃん。",
+		   NULL, "\"쿠마짱. ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 1000 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "ゲート車に同行してバイク持ってきてあげて。",
+		   NULL, "차에 동행해서 오토바이를 가져와 주세요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700100", 256, TRUE);
+	OutputLine(NULL, "ヤマハのごつい赤いヤツと、テールランプの右側が割れたヤツ。",
+		   NULL, "투박하게 생긴 빨간 야마하 하나랑, 후미등 우측이 부서진 녀석 하나. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700101", 256, TRUE);
+	OutputLine(NULL, "あとシートにガムテ貼ってあった白いヤツ。",
+		   NULL, "그리고 시트에 테이프를 붙인 하얀 녀석. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700102", 256, TRUE);
+	OutputLine(NULL, "それだろ？",
+		   NULL, "그것들 맞지? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700103", 256, TRUE);
+	OutputLine(NULL, "　兄さんたちのバイク。」",
+		   NULL, "형씨들의 오토바이.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+}

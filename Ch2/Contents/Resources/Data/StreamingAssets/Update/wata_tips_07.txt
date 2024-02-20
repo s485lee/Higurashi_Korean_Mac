@@ -1,0 +1,99 @@
+void main()
+{
+
+//７■スクラップ帳よりⅠ
+
+//*Sub_Tips_027
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlaySE( 3, "wa_021", 56, 64 );
+	DrawScene("background/simen3", 400 );
+	PlayBGM( 1, "msys09", 56, 0 );
+
+//locate 4,6
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	SetStyleOfMessageSwinging( 1 );
+
+
+//＜オヤシロさまの祟りについて￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜オヤシロさまの祟りについて＞",
+		   NULL, "<오야시로님의 저주에 대하여> ", Line_Normal);
+	ClearMessage();
+	SetStyleOfMessageSwinging( 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　古代鬼ヶ淵村では、オヤシロさまの怒り（祟り）は何よりも恐れられていた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　古代鬼ヶ淵村では、オヤシロさまの怒り（祟り）は何よりも恐れられていた。",
+		   NULL, "고대 오니가후치에서는 오야시로님의 분노(저주)가 무엇보다도 두려운 일이었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//　だが、オヤシロさまが怒ると最終的にどのような神罰（祟り）が下されるのかは記述が少ない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、オヤシロさまが怒ると最終的にどのような神罰（祟り）が下されるのかは記述が少ない。",
+		   NULL, "하지만 오야시로님이 분노했을 때, 최종적으로 어떠한 신벌(저주)이 내려지는지에 대한 기록은 적다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　伝聞から調べる限りでは＠「地獄の釜が開く＠「鬼が溢れ出す＠「地獄の瘴気が溢れ出し、村人たちことごとく逃れることも叶わず、息絶えるなり＠といった、村の全滅を想起させる物騒なものが目立つ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　伝聞から調べる限りでは、",
+		   NULL, "전문에 의하면, ", Line_WaitForInput);
+	OutputLine(NULL, "「地獄の釜が開く」",
+		   NULL, "\"지옥의 솥이 열린다\" ", Line_WaitForInput);
+	OutputLine(NULL, "「鬼が溢れ出す」",
+		   NULL, "\"귀신이 넘쳐나온다\" ", Line_WaitForInput);
+	OutputLine(NULL, "「地獄の瘴気が溢れ出し、村人たちことごとく逃れることも叶わず、息絶えるなり」",
+		   NULL, "\"지옥의 독기가 흘러나와, 마을 사람들 전원이 도망칠 수조차 없이 숨이 끊긴다\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "といった、村の全滅を想起させる物騒なものが目立つ。",
+		   NULL, "는 식의, 마을 전멸을 상기시키는 위험한 내용들이 눈에 띈다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　これらの恐ろしい神罰は、その他多くの宗教の終末（地獄）表現とほぼ同じで、これを回避するために教義に従わせようとする方便だと容易に想像できる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	if (GetGlobalFlag(GADVMode)) { OutputLine(NULL, "", NULL, "<size=-2>", Line_Continue); }
+	OutputLine(NULL, "　これらの恐ろしい神罰は、その他多くの宗教の終末（地獄）表現とほぼ同じで、これを回避するために教義に従わせようとする方便だと容易に想像できる。",
+		   NULL, "신벌의 표현방식은 기타 많은 종교의 종말(지옥)표현과 거의 같아서, 사람들이 교의를 따르게 하기 위한 방편임을 쉽게 상상할 수 있다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　オヤシロさまの怒りに触れる条件が、イコール鬼ヶ淵村における禁忌（タブー）と言えるだろう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　オヤシロさまの怒りに触れる条件が、イコール鬼ヶ淵村における禁忌（タブー）と言えるだろう。",
+		   NULL, "오야시로님의 분노를 일으키는 요인은 곧 오니가후치의 금기(터부)라고 할 수 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+//　この禁忌を犯す行為が行なわれた時、オヤシロさまは「怒った」と称され＠その怒りを鎮めるために、前述の「生贄の儀式」が行なわれたと考えられる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この禁忌を犯す行為が行なわれた時、オヤシロさまは「怒った」と称され、",
+		   NULL, "누군가 금기를 범할 경우, 오야시로님은 '분노했다'라고 전해진다. ", Line_WaitForInput);
+	OutputLine(NULL, "その怒りを鎮めるために、前述の「生贄の儀式」が行なわれたと考えられる。",
+		   NULL, "그 분노를 가라앉히기 위해, 앞서 기술한 '산 제물의 의식'이 행해졌다고 추정된다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+
+}

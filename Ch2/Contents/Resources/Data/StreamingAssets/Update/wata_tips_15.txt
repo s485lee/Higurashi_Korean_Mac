@@ -1,0 +1,189 @@
+void main()
+{
+
+
+//９■スクラップ帳よりⅦ
+//*Sub_Tips_035
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 1, "msys13", 56, 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+	DrawScene("background/simen3", 1000 );
+
+//locate 5,6
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	SetStyleOfMessageSwinging( 1 );
+
+//＜御三家について￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜御三家について＞",
+		   NULL, "<세 가문에 대하여> ", Line_Normal);
+	ClearMessage();
+
+	SetStyleOfMessageSwinging( 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　御三家は鬼ヶ淵村を実効支配してきた３つの旧家を指す＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　御三家は鬼ヶ淵村を実効支配してきた３つの旧家を指す。",
+		   NULL, "\"삼가\"는 오니가후치 마을을 실질적으로 지배해 온 세 개의 오랜 가문을 가리킨다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　内訳は公由家、古手家、園崎家で、いずれも現存している＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　内訳は公由家、古手家、園崎家で、いずれも現存している。",
+		   NULL, "더 자세하게는 키미요시가, 후루데가, 소노자키가로, 모두 지금까지 명맥이 이어진다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+
+//（古代ほどの支配力はないにせよ、今日でも強い影響力を堅持しているようである。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（古代ほどの支配力はないにせよ、今日でも強い影響力を堅持しているようである。）",
+		   NULL, "(고대만큼의 지배력은 없지만, 오늘날에도 막강한 영향력을 유지하는 듯 보인다.) ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　御三家は、鬼ヶ淵沼より現れた鬼の血を最も濃く残すと伝えられている￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　御三家は、鬼ヶ淵沼より現れた鬼の血を最も濃く残すと伝えられている。",
+		   NULL, "삼가는 오니가후치 늪에서 나타난 귀신의 피를 가장 진하게 이었다고 전해진다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//＜公由（キミヨシ）家＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜公由（キミヨシ）家＞",
+		   NULL, "<키미요시 가문> ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　公由家は御三家の筆頭家として大きな力を持っていたらしいが、今日にあっては御三家をリードするほどではない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　公由家は御三家の筆頭家として大きな力を持っていたらしいが、今日にあっては御三家をリードするほどではない。",
+		   NULL, "키미요시가는 삼가의 우두머리로서 커다란 힘을 가졌던 듯 하지만, 오늘날에는 삼가를 이끌 정도는 아니다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　現村長（公由喜一郎）はこの家の出身である＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　現村長（公由喜一郎）はこの家の出身である。",
+		   NULL, "현 촌장(키미요시 키이치로)은 이 집안 출신이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　公選制が導入されるまで、自動的に公由家が代々村長に就任してきたのは、古い体制の名残だと思われる＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　公選制が導入されるまで、自動的に公由家が代々村長に就任してきたのは、古い体制の名残だと思われる。",
+		   NULL, "선거제가 도입되기 전까지 키미요시 가문의 사람이 대대로 촌장에 취임해 온 것은, 낡은 체제의 흔적으로 보인다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　もっとも対抗馬が出ないため、戦後の公選制導入後も公由家が村長に就くことは変わっていない￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もっとも対抗馬が出ないため、戦後の公選制導入後も公由家が村長に就くことは変わっていない。",
+		   NULL, "그렇다고는 해도 대항마가 없기 때문에, 전후 선거제 도입 후에도 키미요시 가문이 지금까지 촌장직을 맡고 있다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//＜古手（フルデ）家＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜古手（フルデ）家＞",
+		   NULL, "<후루데 가문> ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　古代から信仰の中心となり、オヤシロさまを祀る唯一の神社を守ってきた一族である＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　古代から信仰の中心となり、オヤシロさまを祀る唯一の神社を守ってきた一族である。",
+		   NULL, "고대부터 신앙의 중심으로 오야시로님을 모셔온, 유일하게 신사를 지켜온 일족이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　オヤシロさまの声を代弁する唯一の存在として、長く崇められてきたが、戦争で分家筋がほとんど絶え、今では本家のみとなっている￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　オヤシロさまの声を代弁する唯一の存在として、長く崇められてきたが、戦争で分家筋がほとんど絶え、今では本家のみとなっている。",
+		   NULL, "오야시로님의 소리를 대변하는 유일한 존재로서 오랫동안 숭배되었지만, 전쟁에서 분가 혈통이 대부분 끊겨 지금은 오로지 본가만이 살아남았다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　その本家も、現在では一人娘（古手梨花）を残すのみなので、この代で潰えるかもしれない＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その本家も、現在では一人娘（古手梨花）を残すのみなので、この代で潰えるかもしれない。",
+		   NULL, "그 본가도 현재는 외동딸(후루데 리카)만이 남았기에 이번 대에서 끊기게 될지도 모른다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　古手家の女子を尊ぶ古い習慣があるらしく、一人娘の梨花は、年寄り連中に崇められている様子だ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　古手家の女子を尊ぶ古い習慣があるらしく、一人娘の梨花は、年寄り連中に崇められている様子だ。",
+		   NULL, "마을에는 후루데가의 여자를 공경하는 오래된 관습이 있는 모양이라, 외동딸인 리카는 노인들에게 숭배되는 듯 하다. ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//＜園崎（ソノザキ）家＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜園崎（ソノザキ）家＞",
+		   NULL, "<소노자키 가문> ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　鬼ヶ淵村の戒律を守るある種の警察官的な役割を担ったと伝えられている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鬼ヶ淵村の戒律を守るある種の警察官的な役割を担ったと伝えられている。",
+		   NULL, "오니가후치 마을의 계율을 지키는 일종의 경찰 역할을 했다고 전해진다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　御三家の中では比較的、弱い立場であったことが、御三家の末番に数えられることから見てとれる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　御三家の中では比較的、弱い立場であったことが、御三家の末番に数えられることから見てとれる。",
+		   NULL, "삼가 중에서는 비교적 입지가 약한 편이었다는 점은, 그들이 항상 삼가 중 마지막에 열거되었다는 점을 봐도 알 수 있다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　もっとも、今日の園崎家は隆盛を極め、御三家内における立場は完全に逆転している＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もっとも、今日の園崎家は隆盛を極め、御三家内における立場は完全に逆転している。",
+		   NULL, "다만 오늘날 소노자키 가문은 굉장히 융성하여, 삼가에서 그들의 입장은 완전히 역전되었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　今や雛見沢を牛耳っているとまで言えるだろう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　今や雛見沢を牛耳っているとまで言えるだろう。",
+		   NULL, "지금은 히나미자와를 좌지우지한다고 말해도 좋다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　御三家で合議することが名残となっているだけで、村内の取り決めは事実上、現当主の園崎お魎がひとりで決めていると言っていい￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　御三家で合議することが名残となっているだけで、村内の取り決めは事実上、現当主の園崎お魎がひとりで決めていると言っていい。",
+		   NULL, "삼가의 합의란 이제는 형식으로만 남았을 뿐, 마을 내부의 일들은 사실상 현 당주인 소노자키 오료 혼자서 결정한다 ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+
+}

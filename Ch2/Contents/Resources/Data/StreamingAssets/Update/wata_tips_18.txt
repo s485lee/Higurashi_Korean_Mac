@@ -1,0 +1,246 @@
+void main()
+{
+
+//１０■４人だけの罪に終わらない？
+//（おでん屋の屋台で情報屋と接触してた感じで）
+//*Sub_Tips_038
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 1, "msys13", 56, 0 );
+	DrawScene("background/mati7", 1000 );
+	PlayBGM( 2, "lsys20", 56, 0 );
+
+//「いえいえ、気にしないで下さいよ＠この店でおでんを食べるとですね＠なぜか、年契のガソリンスタンドの請求書に化けちゃうんですよ＠だから遠慮しないでもう一杯飲んでいけばいいのに。￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700140", 256, TRUE);
+	OutputLine(NULL, "「いえいえ、気にしないで下さいよ。",
+		   NULL, "\"아뇨 아뇨, 신경 쓰지 말아 주세요. ", Line_Continue);
+	OutputLine(NULL, "この店でおでんを食べるとですね。",
+		   NULL, "이 가게에서 오뎅을 먹으면 말이죠. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700141", 256, TRUE);
+	OutputLine(NULL, "なぜか、年契のガソリンスタンドの請求書に化けちゃうんですよ。",
+		   NULL, "어째선지 영수증이 주유소의 연간 청구서로 변해버린다니까요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700142", 256, TRUE);
+	OutputLine(NULL, "だから遠慮しないでもう一杯飲んでいけばいいのに。」",
+		   NULL, "그러니까 사양하지 말고 한 잔 더 드셔도 좋은데.\" ", Line_Normal);
+	ClearMessage();
+
+//　男は、これでもう充分と赤ら顔で手を振り、駅前の華やかなネオンの中に消えていった￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　男は、これでもう充分と赤ら顔で手を振り、駅前の華やかなネオンの中に消えていった。",
+		   NULL, "남자는 이제 충분하다고 상기된 얼굴로 손을 흔들며, 역 앞의 화려한 네온 불빛 속으로 사라졌다. ", Line_Normal);
+	ClearMessage();
+
+
+//「......熊ちゃんも勉強しといて下さいよ＠謙虚な人が結局、一番長生きするんです。んっふっふっふ！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700143", 256, TRUE);
+	OutputLine(NULL, "「……熊ちゃんも勉強しといて下さいよ。",
+		   NULL, "\"...쿠마쨩도 공부해 두도록 하세요. ", Line_Continue);
+	OutputLine(NULL, "謙虚な人が結局、一番長生きするんです。んっふっふっふ！」",
+		   NULL, "겸허한 사람이 결국, 가장 오래 살아남는 겁니다. 음훗훗후!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「さっきの話、...本当っすかね。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100025", 256, TRUE);
+	OutputLine(NULL, "「さっきの話、…本当っすかね。」",
+		   NULL, "\"조금 전 이야기... 정말일까요.\" ", Line_Normal);
+	ClearMessage();
+
+//「さぁて、それはわからないですけどね＠真偽はともかく、そういう話がまことしやかに流れてるということには意味があると思いますよ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700144", 256, TRUE);
+	OutputLine(NULL, "「さぁて、それはわからないですけどね。",
+		   NULL, "\"글쎄요, 그건 모르겠지만요. ", Line_Continue);
+	OutputLine(NULL, "真偽はともかく、そういう話がまことしやかに流れてるということには意味があると思いますよ。」",
+		   NULL, "진위는 어쨌든 간에, 그런 이야기가 그럴싸하게 돈다는 점에 의미가 있다고 생각해요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「...そんなのが村長を狙う動機になりうるんすかね...？＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100026", 256, TRUE);
+	OutputLine(NULL, "「…そんなのが村長を狙う動機になりうるんすかね…？」",
+		   NULL, "\"...그런 게 촌장을 노릴 동기가 되는 검까...?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「熊ちゃん、いつも言ってるでしょ＠動機ってのは、その本人に充分でありさえすれば足りるんです＠価値観の違いをよく考えなくちゃ＠...お母さん、!w700もう一杯ください。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700145", 256, TRUE);
+	OutputLine(NULL, "「熊ちゃん、いつも言ってるでしょ。",
+		   NULL, "\"쿠마쨩, 언제나 말하잖아요. ", Line_Continue);
+	OutputLine(NULL, "動機ってのは、その本人に充分でありさえすれば足りるんです。",
+		   NULL, "동기라는 것은, 그 본인에게 충분하다면 충분한 겁니다. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700146", 256, TRUE);
+	OutputLine(NULL, "価値観の違いをよく考えなくちゃ。",
+		   NULL, "가치관의 차이를 잘 생각해야죠. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700147", 256, TRUE);
+	OutputLine(NULL, "…お母さん、",
+		   NULL, "...아주머니, ", Line_Continue);
+
+	// (backup) SetValidityOfInput( FALSE );
+	Wait( 700 );
+	// (backup) SetValidityOfInput( TRUE );
+
+	OutputLine(NULL, "もう一杯ください。」",
+		   NULL, "한 잔 더 주세요.\" ", Line_Normal);
+	ClearMessage();
+
+
+//　情報を伏せているにも関わらず、すでに雛見沢中で知られている、富竹と鷹野の死￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　情報を伏せているにも関わらず、すでに雛見沢中で知られている、富竹と鷹野の死。",
+		   NULL, "정보를 엄폐하고 있음에도 불구하고, 이미 히나미자와 전체에 알려진 토미타케와 타카노의 죽음. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("background/jysa1", 400 );
+	PlayBGM( 1, "msys07", 56, 0 );
+
+//　その死は、禁断の神殿「祭具殿」に踏み入ったためにオヤシロさまの怒りに触れた、というのがもっぱらの噂だ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その死は、禁断の神殿「祭具殿」に踏み入ったためにオヤシロさまの怒りに触れた、というのがもっぱらの噂だ。",
+		   NULL, "금단의 신전 '제구전'에 발을 들여놓았기에 오야시로님의 분노를 사 죽었다... 는 것이 일반적인 소문이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　その噂によれば、踏み入った人間はまだ２人いる＠...園崎詩音と＠前原圭一＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　その噂によれば、踏み入った人間はまだ２人いる。",
+		   NULL, "그 소문에 의하면 제구전에 발을 들여 놓은 자는 아직 두 사람이 남았다. ", Line_WaitForInput);
+	OutputLine(NULL, "…園崎詩音と、",
+		   NULL, "...소노자키 시온과, ", Line_WaitForInput);
+	OutputLine(NULL, "前原圭一。",
+		   NULL, "마에바라 케이이치. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　この２人にも「オヤシロさまの祟り」があるかもしれないと、影で囁く声があるという￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この２人にも「オヤシロさまの祟り」があるかもしれないと、影で囁く声があるという。",
+		   NULL, "이 두 사람에게도 오야시로님의 저주가 닥칠지 모른다고, 조용한 속삭임이 마을 뒷편에서 떠돌고 있다. ", Line_Normal);
+	ClearMessage();
+
+//　だが、責任は祭具殿に踏み入った４人だけに留まらないらしいのだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、責任は祭具殿に踏み入った４人だけに留まらないらしいのだ。",
+		   NULL, "하지만 책임은 제구전에 발을 들여놓은 4명만으로 끝나지 않을 기색이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　昨年までは厳重な施錠だったのだが、今年からは簡単な施錠になったため、簡単に賊の侵入を許してしまったのではないか＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　昨年までは厳重な施錠だったのだが、今年からは簡単な施錠になったため、簡単に賊の侵入を許してしまったのではないか。",
+		   NULL, "작년까지는 엄중한 자물쇠였지만, 금년부터는 간단한 자물쇠로 바꿨기에 도둑이 간단히 침입한 건 아닌가? ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　...そういう噂が流れているのだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…そういう噂が流れているのだ。",
+		   NULL, "...그런 소문이 돈다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	DrawScene("background/mati7", 400 );
+	PlayBGM( 2, "lsys20", 56, 0 );
+	PlayBGM( 0, "lsys13", 56, 0 );
+//dwaveplayloop 1
+
+//「熊ちゃんは見たことありませんか＠　私はずいぶん前に何かの用で行った時に見たことをよく覚えてますよ。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700148", 256, TRUE);
+	OutputLine(NULL, "「熊ちゃんは見たことありませんか？",
+		   NULL, "\"쿠마쨩은 본 적 없나요? ", Line_Continue);
+	OutputLine(NULL, "　私はずいぶん前に何かの用で行った時に見たことをよく覚えてますよ。」",
+		   NULL, "저는 오래전에 무슨 일로 갔을 때 봤던 걸 똑똑히 기억하고 있어요.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「すみません、ちょっと思い出せないっす。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100027", 256, TRUE);
+	OutputLine(NULL, "「すみません、ちょっと思い出せないっす。」",
+		   NULL, "\"죄송함다, 생각이 잘 안나지 말임다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「それはもう、おっかないくらいに厳重に施錠してありましてね＠重そうなカンヌキでどっかりと塞がれていて＠まるで大金庫みたいに厳重な蔵だったんですよ。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700149", 256, TRUE);
+	OutputLine(NULL, "「それはもう、おっかないくらいに厳重に施錠してありましてね。",
+		   NULL, "\"그건 정말, 무서울 정도로 엄중하게 잠겨 있어서요. ", Line_Continue);
+	OutputLine(NULL, "重そうなカンヌキでどっかりと塞がれていて。",
+		   NULL, "무거워 보이는 빗장으로 단단하게 닫혀서는, ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700150", 256, TRUE);
+	OutputLine(NULL, "まるで大金庫みたいに厳重な蔵だったんですよ。」",
+		   NULL, "마치 커다란 금고 같은 엄중한 창고였어요.\" ", Line_Normal);
+	ClearMessage();
+
+//　それが今年から、本当に簡単な、安っぽい南京錠ひとつだけになった＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それが今年から、本当に簡単な、安っぽい南京錠ひとつだけになった。",
+		   NULL, "그러던 게 올해부터, 정말로 간단한 싸구려 자물쇠 하나로 바뀌게 되었다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　......神社を守る一人娘、古手梨花が重い施錠を嫌い、村長に相談＠...簡単な南京錠に付け替えたというのだ￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……神社を守る一人娘、古手梨花が重い施錠を嫌い、村長に相談。",
+		   NULL, "......신사를 지키는 외동딸, 후루데 리카가 무거운 자물쇠를 버거워해서 촌장에게 상담했다. ", Line_WaitForInput);
+	OutputLine(NULL, "…簡単な南京錠に付け替えたというのだ。",
+		   NULL, "...그래서 결국 간단한 자물쇠로 바꿔 달게 되었다. ", Line_Normal);
+	ClearMessage();
+
+//「...だから、村長と古手梨花も同罪、ってことなんすか...＠　だとしたら、...村長に続いて、古手梨花もまずいじゃないっすか？！＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100028", 256, TRUE);
+	OutputLine(NULL, "「…だから、村長と古手梨花も同罪、ってことなんすか…？",
+		   NULL, "\"...말하자면 그건, 촌장과 후루데 리카도 같은 죄라는 말임까...? ", Line_Continue);
+	OutputLine(NULL, "　だとしたら、…村長に続いて、古手梨花もまずいじゃないっすか？！」",
+		   NULL, "그러면... 촌장에 이어서 후루데 리카도 위험한 거 아님까?!\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「その可能性は大ですねぇ＠......熊ちゃん＠雛見沢を巡回してる覆面車に至急連絡＠古手神社近辺に張り付かせてください。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700151", 256, TRUE);
+	OutputLine(NULL, "「その可能性は大ですねぇ。",
+		   NULL, "\"그럴 가능성은 크네요. ", Line_Continue);
+	Wait (5000);
+	OutputLine(NULL, "……熊ちゃん。",
+		   NULL, "...쿠마쨩. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700152", 256, TRUE);
+	OutputLine(NULL, "雛見沢を巡回してる覆面車に至急連絡。",
+		   NULL, "히나미자와를 순찰중인 경찰차에 긴급연락을 보내세요. ", Line_WaitForInput);
+	ModPlayVoiceLS(4, 11, "ps3/s20/11/440700153", 256, TRUE);
+	OutputLine(NULL, "古手神社近辺に張り付かせてください。」",
+		   NULL, "후루데 신사 근처에 감시를 붙입니다.\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//「りょ、了解っす！！！￥
+	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#8f6d8f>熊谷</color>", NULL, "<color=#8f6d8f>쿠마가이</color>", NULL, Line_ContinueAfterTyping); }
+	ModPlayVoiceLS(4, 19, "ps3/s20/19/443100029", 256, TRUE);
+	OutputLine(NULL, "「りょ、了解っす！！！」",
+		   NULL, "\"아, 알겠슴다!!!\" ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+}

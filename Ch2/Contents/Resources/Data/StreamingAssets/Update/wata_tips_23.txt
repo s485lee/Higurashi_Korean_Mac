@@ -1,0 +1,120 @@
+void main()
+{
+
+//１１■スクラップ帳よりⅩⅠ
+//*Sub_Tips_043
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 1, "msys11", 56, 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+	DrawScene("background/simen3", 1000 );
+
+//locate 4,6
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	SetStyleOfMessageSwinging( 1 );
+
+//＜双子の忌避について￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜双子の忌避について＞",
+		   NULL, "<쌍둥이를 기피하는 관습> ", Line_Normal);
+	ClearMessage();
+
+	SetStyleOfMessageSwinging( 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　雛見沢に限ったことではないのだろうが、とりわけ、鬼ヶ淵村の御三家は当主跡継ぎに双子が生まれることを嫌った＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　雛見沢に限ったことではないのだろうが、とりわけ、鬼ヶ淵村の御三家は当主跡継ぎに双子が生まれることを嫌った。",
+		   NULL, "히나미자와에 한정된 인식은 아니지만, 오니가후치 마을의 세 가문은 특히나 당주 후계자에 쌍둥이가 태어나는 것을 싫어했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　御三家の微妙なバランスの上に成り立った長期独裁体制が、お家騒動などの内紛で瓦解することを恐れたのだろう￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　御三家の微妙なバランスの上に成り立った長期独裁体制が、お家騒動などの内紛で瓦解することを恐れたのだろう。",
+		   NULL, "세 가문의 미묘한 균형 위에 성립된 장기 독재 체제가, 집안 소동 등의 내분으로 와해될까 두려웠으리라. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　文献には、双子が生まれたなら直ちに間引くべしとまで記されている＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　文献には、双子が生まれたなら直ちに間引くべしとまで記されている。",
+		   NULL, "문헌에는, 쌍둥이가 태어났다면 즉시 솎아내야 한다는 기록마저 보인다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　それを思うと、園崎家の当主跡継ぎである園崎魅音と詩音の双子がこの世に生を受けていること自体、興味深いと言わざるを得ない。（現当主お魎の情けだろうか？￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それを思うと、園崎家の当主跡継ぎである園崎魅音と詩音の双子がこの世に生を受けていること自体、興味深いと言わざるを得ない。（現当主お魎の情けだろうか？）",
+		   NULL, "이와 같은 인식을 고려할 때, 소노자키 가문의 당주 후계자인 소노자키 미온과 쌍둥이인 시온이 이 세상에 존재하는 것은 그 자체로 흥미로운 일이다. (현 당주 오료의 자비일까?) ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　もっとも、この双子は公平には扱われず、跡継ぎの魅音は別格の扱いを受けているそうだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　もっとも、この双子は公平には扱われず、跡継ぎの魅音は別格の扱いを受けているそうだ。",
+		   NULL, "물론 쌍둥이는 가문 내에서 공평한 대접을 받지 못하고, 후계자인 미온 쪽만 특별한 대우를 받는다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//（聞くところでは、魅音と詩音は酷似した外見を持ちながらも、才能のほとんどは魅音が持つと聞く＠...私の知る両者のイメージではそんな偏りは感じられない。＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（聞くところでは、魅音と詩音は酷似した外見を持ちながらも、才能のほとんどは魅音が持つと聞く。",
+		   NULL, "(미온과 시온의 외양은 대단히 닮았지만 재능의 대부분은 미온이 가졌다는 풍문이 떠돈다. ", Line_WaitForInput);
+	OutputLine(NULL, "…私の知る両者のイメージではそんな偏りは感じられない。）",
+		   NULL, "...내가 아는 한 두 사람에게 그런 편향은 느껴지지 않는다.). ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　伝承では、園崎家の当主は「鬼を継ぐ」と称して、背中に立派な鬼の刺青を彫るという＠しきたりに従い、魅音にはこの刺青が入れられている可能性が極めて高い￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　伝承では、園崎家の当主は「鬼を継ぐ」と称して、背中に立派な鬼の刺青を彫るという。",
+		   NULL, "전승에서 소노자키 가문의 당주는 '귀신을 잇는다'고 칭하고, 등에 훌륭한 귀신(오니)의 문신을 새긴다고 전한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "しきたりに従い、魅音にはこの刺青が入れられている可能性が極めて高い。",
+		   NULL, "아직까지 오랜 관습을 고수하는 소노자키 가문의 특성상, 미온에게는 이 문신이 있을 가능성이 매우 높다. ", Line_Normal);
+	ClearMessage();
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　伝え聞く話では、現当主お魎の背中にも、それはそれは立派な鬼の刺青が入れられているそうである＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　伝え聞く話では、現当主お魎の背中にも、それはそれは立派な鬼の刺青が入れられているそうである。",
+		   NULL, "전해 듣기로는, 현 당주인 오료도 등에 아주 훌륭한 귀신 문신을 새겼다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　では...跡継ぎの魅音には一体、どんな刺青が彫られているのだろう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　では…跡継ぎの魅音には一体、どんな刺青が彫られているのだろう。",
+		   NULL, "그럼... 후계자인 미온에게는 도대체 어떤 문신이 새겨져 있을까. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　......魅音の背中に興味が湧く￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　……魅音の背中に興味が湧く。",
+		   NULL, "...미온의 등에 흥미가 솟는다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+
+}

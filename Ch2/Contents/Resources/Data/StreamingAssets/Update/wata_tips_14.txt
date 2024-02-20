@@ -1,0 +1,145 @@
+void main()
+{
+
+//９■スクラップ帳よりⅥ
+//*Sub_Tips_034
+//gosub *tip_s
+	EnableJumpingOfReturnIcon();
+	FadeOutBGM( 0, 1000, FALSE );
+	FadeOutBGM( 1, 1000, FALSE );
+	FadeOutBGM( 2, 1000, TRUE );
+	DisableWindow();
+	DrawScene("black", 1000 );
+	PlayBGM( 1, "msys15", 56, 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+	DrawScene("background/simen3", 1000 );
+
+//locate 4,6
+
+	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 6 ); }
+	SetStyleOfMessageSwinging( 1 );
+
+//＜綿流しの意義について￥
+	ClearMessage();
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "＜綿流しの意義について＞",
+		   NULL, "<와타나가시 의식에 대하여> ", Line_Normal);
+	ClearMessage();
+
+	SetStyleOfMessageSwinging( 0 );
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　犠牲者を狩り、それを食す宴、綿流し＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　犠牲者を狩り、それを食す宴、綿流し。",
+		   NULL, "희생자를 사냥해 먹는 연회, 와타나가시. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　それ自体は異常なものでありながらも、同時に娯楽性を伴うものだと考えられてきた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それ自体は異常なものでありながらも、同時に娯楽性を伴うものだと考えられてきた。",
+		   NULL, "그 자체는 비정상적이면서도, 동시에 오락성을 수반하는 제의로 추정된다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//（異常な行為に娯楽性を感じるという「無理」によって、自分たちが人間を超越した存在だと信じこもうとしたのかもしれない。￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "（異常な行為に娯楽性を感じるという「無理」によって、自分たちが人間を超越した存在だと信じこもうとしたのかもしれない。）",
+		   NULL, "(비정상적인 행위에 오락성을 부여하는 '부조리'를 통해, 자신들이 인간을 초월한 존재라는 믿음을 강화했을지도 모른다.) ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　だが、その説に一石を投じる興味深い文献を見つけた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、その説に一石を投じる興味深い文献を見つけた。",
+		   NULL, "하지만 그 가설에 파문을 일으키는 흥미로운 문헌을 발견했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　口伝らしく、鵜呑みにできるものではなさそうだが、その内容は少し興味を惹く＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　口伝らしく、鵜呑みにできるものではなさそうだが、その内容は少し興味を惹く。",
+		   NULL, "구전을 기록한 문헌이기에 그대로 받아들일 수는 없지만, 적힌 내용은 생각해볼 여지가 있다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　それによると、鬼ヶ淵村の住人にも、この儀式を「恐れる」感情があったと言うのだ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　それによると、鬼ヶ淵村の住人にも、この儀式を「恐れる」感情があったと言うのだ。",
+		   NULL, "전승에 따르면, 오니가후치 마을의 주민들 역시 이 의식을 '두려워' 했다고 한다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　女子供は蒼白になりながら震え、血に弱い者は嘔吐しながらも、それでもなお、宴（解体作業）を見ることを強要されたのだと言う￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　女子供は蒼白になりながら震え、血に弱い者は嘔吐しながらも、それでもなお、宴（解体作業）を見ることを強要されたのだと言う。",
+		   NULL, "여자나 어린아이는 창백한 모습으로 몸을 떨고, 피에 약한 자는 구토하는데도, 강제로 연회(해체 작업)를 끝까지 봐야만 했다고 전해진다. ", Line_Normal);
+	ClearMessage();
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　これは非常に面白い異聞だ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　これは非常に面白い異聞だ。",
+		   NULL, "이 기록은 굉장히 흥미로운 의문들을 연달아 낳는다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　私はこれまで、鬼ヶ淵村の住人は綿流しの儀式にある種の陶酔を得ていると考えてきた＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　私はこれまで、鬼ヶ淵村の住人は綿流しの儀式にある種の陶酔を得ていると考えてきた。",
+		   NULL, "나는 이제까지 오니가후치 마을의 주민은 와타나가시 의식에서 모종의 도취감을 느꼈다고 생각했다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　自分たちが見下す「卑しい人間風情」を魚を下ろすように解体し＠それを食すことによって自分たちの神聖性を確認してきた、...そう考えてきた￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　自分たちが見下す「卑しい人間風情」を魚を下ろすように解体し、",
+		   NULL, "자신들이 멸시하는 '천한 인간 따위'를 물고기처럼 해체한다. ", Line_WaitForInput);
+	OutputLine(NULL, "それを食すことによって自分たちの神聖性を確認してきた、…そう考えてきた。",
+		   NULL, "그리고 그 살을 먹음으로써 자신들의 신성함을 확인했다... 그렇게 생각했다. ", Line_Normal);
+	ClearMessage();
+
+
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　だが、この儀式によって村人が得ていたものが陶酔でなく恐怖だったとすると、儀式の意味するところは大きく変わってしまう＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　だが、この儀式によって村人が得ていたものが陶酔でなく恐怖だったとすると、儀式の意味するところは大きく変わってしまう。",
+		   NULL, "그러나 이 의식을 수행하는 마을 사람들이 느낀 감정이 도취가 아닌 공포였다면, 의식의 의미는 크게 바뀐다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　つまり、有力者たちが自分たちの都合のいいように組み上げた戒律を厳守させるために催した、見せしめ処刑だった可能性が出てくる￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　つまり、有力者たちが自分たちの都合のいいように組み上げた戒律を厳守させるために催した、見せしめ処刑だった可能性が出てくる。",
+		   NULL, "즉 마을의 계율을 만들어낸 유력자들이 시스템을 유지시키기 위해 행한, 본보기 처형이었을 가능성이 있다. ", Line_Normal);
+	ClearMessage();
+	PlaySE( 3, "wa_021", 56, 64 );
+
+//　鬼ヶ淵村を実効支配してきたのは御三家と呼ばれる３つの旧家だ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　鬼ヶ淵村を実効支配してきたのは御三家と呼ばれる３つの旧家だ。",
+		   NULL, "오니가후치 마을을 실질적으로 지배해 온 것은 삼가라고 불리는 세 개의 오랜 가문이다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+
+
+//　この御三家の研究なくして、鬼ヶ淵村の真実には迫れまい￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　この御三家の研究なくして、鬼ヶ淵村の真実には迫れまい。",
+		   NULL, "이 삼가를 연구하지 않고는, 오니가후치 마을의 진실에 다가설 수 없다. ", Line_Normal);
+	ClearMessage();
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	DrawBustshotWithFiltering(6, "cinema", "x", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
+	DrawBustshot(7, "title02", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 26, 3000, TRUE );
+	Wait( 2000 );
+	DrawBustshot(5, "black", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 25, 3000, TRUE );
+	Wait( 1000 );
+	FadeBustshotWithFiltering( 7, "x", 1, FALSE, 0, 0, 1000, TRUE );
+	DrawScene("black", 1000 );
+	SetValidityOfInput( TRUE );
+
+}
