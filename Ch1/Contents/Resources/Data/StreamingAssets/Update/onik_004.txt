@@ -2261,12 +2261,12 @@ void main()
 
 //「気取っている場合じゃありませんわ！＠　レナを捕まえるですのー！！！＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#fcdb77>沙都子</color>", NULL, "<color=#fcdb77>사토코</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(3, 4, "ps3/s19/04/990400104", 256, TRUE);
+	ModPlayVoiceLS(3, 4, "org/satoko0003", 256, TRUE);
 	OutputLine(NULL, "「気取っている場合じゃありませんわ！！",
 		   NULL, "\"감탄할 때가 아니에요!! ", Line_WaitForInput);
-	ModPlayVoiceLS(3, 4, "ps3/s19/04/990400105", 256, TRUE);
-	OutputLine(NULL, "　レナを捕まえるのですのー！！！」",
-		   NULL, "레나를 잡아야 해요-!!!\" ", GetGlobalFlag(GLinemodeSp));
+	ModPlayVoiceLS(3, 4, "org/satoko0004", 256, TRUE);
+	OutputLine(NULL, "　レナさんを捕まえるのですのー！！！」",
+		   NULL, "레나씨를 잡아야 해요-!!!\" ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
@@ -2973,7 +2973,7 @@ void main()
 //　レナと例の宝の山のケンタくん人形を発掘する約束だ￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　レナと例の宝の山のケンタくん人形を発掘する約束だ。",
-		   NULL, "레나와 전의 보물 산에 있는 란디군 인형을 발굴하자는 약속이다.", Line_Normal);
+		   NULL, "레나와 전의 보물 산에 있는 켄타군 인형을 발굴하자는 약속이다.", Line_Normal);
 	ClearMessage();
 
 
@@ -3018,10 +3018,14 @@ void main()
 	ClearMessage();
 
 
-	//VoiceMatching
-	if(GetGlobalFlag(GCensor) >= 2){ModCallScriptSection("zonik_004_vm0x_n01","dialog007");}
-	if(GetGlobalFlag(GCensor) <= 1){ModCallScriptSection("zonik_004_vm00_n01","dialog007");}
-	//VoiceMatchingEnd
+//　不法投棄のダンプがまたゴミを捨てていって、今度こそ完全に埋って救出不能＠なんてことになれば……間違いなくレナは町のフライドチキン屋のケンタくん人形を狙うだろう￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　不法投棄のダンプがまたゴミを捨てていって、今度こそ完全に埋って救出不能、",
+		   NULL, "덤프트럭이 또 쓰레기를 불법투기해서 이번에야말로 완전히 파묻혀 구출 불능. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "なんてことになれば……間違いなくレナは町のフライドチキン屋のケンタくん人形を狙うだろう。",
+		   NULL, "같은 상황이 되면...... 분명히 레나는 마을 프라이드 치킨 가게에 있는 켄타 군 인형을 노린다. ", Line_Normal);
+	ClearMessage();
 
 
 //「ちょっと発掘に＠クラスメートを犯罪者にしないために。＠
@@ -3459,7 +3463,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 2, "org/rena0013", 256, TRUE);
 	OutputLine(NULL, "「待っててね、ケンタくん。",
-		   NULL, "\"기다려줘 란디 군.", Line_WaitForInput);
+		   NULL, "\"기다려줘 켄타 군.", Line_WaitForInput);
 	ModPlayVoiceLS(3, 2, "org/rena0014", 256, TRUE);
 	OutputLine(NULL, "…今、圭一くんが助け出してくれるからね…☆」",
 		   NULL, " ... 지금 케이이치 군이 구해줄 테니까...☆\"", GetGlobalFlag(GLinemodeSp));
@@ -3584,7 +3588,7 @@ void main()
 		   NULL, " 이제 조금 남았어.", Line_WaitForInput);
 	ModPlayVoiceLS(3, 1, "org/keiichi0020", 256, TRUE);
 	OutputLine(NULL, "今夜レナが寝るときにはケンタくんにお休みのキスができるようになってるさ。」",
-		   NULL, " 오늘 밤 레나가 잠들 때는 란디 군에게 굿나잇 키스를 할 수 있을 정도는 됐다구.\"", GetGlobalFlag(GLinemodeSp));
+		   NULL, " 오늘 밤 레나가 잠들 때는 켄타 군에게 굿나잇 키스를 할 수 있을 정도는 됐다구.\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 	DisableWindow();
@@ -3601,7 +3605,7 @@ void main()
 		   NULL, " ......고마워.", Line_WaitForInput);
 	ModPlayVoiceLS(3, 2, "org/rena0017", 256, TRUE);
 	OutputLine(NULL, "……ケンタくん……お休みのキス……はぅ……。」",
-		   NULL, " ......란디 군...... 굿나잇 키스...... 하우.......\"", Line_Normal);
+		   NULL, " ......켄타 군...... 굿나잇 키스...... 하우.......\"", Line_Normal);
 	ClearMessage();
 
 
@@ -4037,10 +4041,18 @@ void main()
 	DisableWindow();
 	FadeBustshot( 2, FALSE, 0, 0, 0, 0, 1000, TRUE );
 
-	//VoiceMatching
-	if(GetGlobalFlag(GCensor) >= 5){ModCallScriptSection("zonik_004_vm0x_n01","dialog021");}
-	if(GetGlobalFlag(GCensor) <= 4){ModCallScriptSection("zonik_004_vm00_n01","dialog021");}
-	//VoiceMatchingEnd
+//"... 腕が一本、まだ見つかってないんだろ？"@
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "“…腕が一本、まだ見つかってないんだろ？”",
+		   NULL, "\"... 팔 한 개가 아직 발견 안됐다지?\" ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　さっきのごろんと転がった腕がやけに不吉に思えたが、そこでふと気付き、俺はちょっと自分の情けなさに苦笑した￥
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　さっきのごろんと転がった腕がやけに不吉に思えたが、そこでふと気付き、俺はちょっと自分の情けなさに苦笑した。",
+		   NULL, "조금 전 쿵 하고 떨어졌던 팔이 어쩐지 불길하게 느껴졌지만, 금방 정신을 차리고 스스로의 한심함을 비웃었다. ", Line_Normal);
+	ClearMessage();
 
 
 //　胸くその悪くなる事件だってことはレナも魅音も知っていた＠
@@ -4128,7 +4140,7 @@ void main()
 	//　ツイてたなケンタくん。次のご主人様がいい人で￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　ツイてたなケンタくん。次のご主人様がいい人で。",
-		   NULL, "다행이야 란디 군. 이번 주인은 좋은 사람이라서.", Line_Normal);
+		   NULL, "다행이야 켄타 군. 이번 주인은 좋은 사람이라서.", Line_Normal);
 	ClearMessage();
 
 	DisableWindow();
@@ -4138,7 +4150,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 2, "org/rena0018", 256, TRUE);
 	OutputLine(NULL, "「…わぁあ…ケンタくんだ…やっぱ、かぁいいよぅ！！」",
-		   NULL, "\"와아아... 란디 군이다... 역시 기여어어어어!!\"", GetGlobalFlag(GLinemodeSp));
+		   NULL, "\"와아아... 켄타 군이다... 역시 기여어어어어!!\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
