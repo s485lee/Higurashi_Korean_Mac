@@ -10,35 +10,19 @@ macOS용 한글패치는 Steam판을 지원합니다.<br />
 Retina 디스플레이를 지원하기 위한 라이브러리 파일이 포함되었습니다. [higurashi-retinizer](https://github.com/TellowKrinkle/higurashi-retinaizer)<br />
 
 # 다운로드
-오니카쿠시편:<br /> 
-[다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)<br /> 
+| 시나리오  | 링크 | Version |
+| :---:  | :---:  | :---:  |
+| 오니카쿠시  | [다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)  | 1.1  |
+| 와타나가시 | [다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)  | 1.1  |
+| 타타리고로시  | [다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)  | 1.1  |
+| 히마츠부시  | [다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)  | 1.1  |
+| 메아카시  | [다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)  | 1.1  |
+| 츠미호로보시  | [다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)  | 1.1  |
+| 미나고로시  | [다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)  | 1.1  |
+| 마츠리바야시  | [다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)  | 1.1  |
+| 쓰르라미 울 적에: 례  | [다운로드](https://mega.nz/file/bNIlEYLa#gH5D3otBJVyzbuTQVyJ4ZQ_l7Q9jS_HNL-p-ZK4Xg94)  | 1.1  |
+| 콘솔아크 미오츠쿠시/타라이마와시  | [다운로드](https://github.com/s485lee/Miot_Omot_Korean/releases/tag/Release)  | 1.0  |
 
-와타나가시편:<br /> 
-[다운로드](https://mega.nz/file/qIom1DjQ#OsjMoShX-YmqXAiN6AA_wK3bLWLZh72NIy45g6u5n80)<br /> 
-
-타타리고로시편:<br /> 
-[다운로드](https://mega.nz/file/3MBCCaDY#Szd6J0o-GtUEHA9NTRfW4m66Bhg00UmeTw1QFmoRNKc)<br /> 
-
-히마츠부시편:<br /> 
-[다운로드](https://mega.nz/file/WRpVnAaQ#_Hko4ml1Ebu6Kv1huDB_QVG8L-H3xuuqfGp0i-CbDyU)<br /> 
-
-메아카시편:<br /> 
-[다운로드](https://mega.nz/file/WNIhjIyY#snTj53JxcTlxEfKmkJtLjTwntg3vkvggxaCwuHnaqjI)<br /> 
-
-츠미호로보시편:<br /> 
-[다운로드](https://mega.nz/file/GZhl3BIL#kfG-UYbG-q96cgzHz3X5U3L3DZwI0aA6bKVyrd-Isu0)<br /> 
-
-미나고로시편:<br /> 
-[다운로드](https://mega.nz/file/vIARSLjI#6N2noUPe0SGlU9ygC_tO35sUlZ5FB9tsDDWab9vL4ZI)<br /> 
-
-마츠리바야시편:<br /> 
-[다운로드](https://mega.nz/file/6QoQSawJ#E3OshBDXPNNjHZ7lrsKcbBAK-34E3ZjxPucMVcdzbmM)<br /> 
-
-쓰르라미 울 적에: 례:<br /> 
-[다운로드](https://mega.nz/file/Oc4RzaCS#0_rML1qcCe35ZC0p2hHgW1eTk-JAy5P0Knb0r7LdaVA)<br /> 
-
-콘솔아크 미오츠쿠시 / 타라이마와시편:<br /> 
-https://github.com/s485lee/Miot_Omot_Korean/releases/tag/Release<br /> 
 
 # 설치 방법
 07th모드 통합패치이기 때문에 따로 07th 모드를 다운로드 할 필요는 없습니다. <br />
@@ -47,4 +31,20 @@ https://github.com/s485lee/Miot_Omot_Korean/releases/tag/Release<br />
 <img width="712" alt="image" src="https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/4c933404-6fea-44db-a629-b528e73077ff"><br /> 
 
 수동패치 방법은 동봉된 설명서를 봐주세요.
+
+# FAQ
+Q. 게임이 일본어로 실행되는 경우:<br />
+
+A. 게임 실행후 환경설정에서 언어를 English로 설정해주세요.<br />
+<br />
+<br />
+Q. 게임 화면이 너무 작은 경우<br />
+
+A. 게임 실행후 환경설정에서 높은 해상도로 설정해주세요.<br />
+<br />
+<br />
+Q. 게임 오프닝이 재생이 안되는 경우<br />
+
+A. 게임 실행후 모드 메뉴 (F10)에서 오프닝을 활성화해주세요.<br />
+
 
