@@ -2150,11 +2150,10 @@ void main()
 	DisableWindow();
 	ModDrawCharacter(0, 20, "sprite/rina_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
 
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#cd74a7>リナ</color>", NULL, "<color=#cd74a7>리나</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 20, "ps3/s09/20/172100132", 256, TRUE);
-	OutputLine(NULL, "「私ね、妊娠してるの。」",
-		   NULL, "\"나 있지, 임신했어.\" ", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	//VoiceMatching
+	if(GetGlobalFlag(GCensor) >= 4){ModCallScriptSection("_ztsum_008_vm0x_n01","dialog001");}
+	if(GetGlobalFlag(GCensor) <= 3){ModCallScriptSection("_ztsum_008_vm00_n01","dialog001");}
+	//VoiceMatchingEnd
 
 	SetSpeedOfMessage( TRUE, 128 );
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
@@ -2182,41 +2181,18 @@ void main()
 		   NULL, "거짓말 거짓말 거짓말... 임신이라니 거짓말이다...!! ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "　妊娠したから離婚しなくちゃならない、妊娠したから再婚しなくちゃならないなんて、",
-		   NULL, "임신했으니까 이혼해야만 한다, 임신했으니까 재혼해야만 한다니, ", Line_ContinueAfterTyping);
-	SetValidityOfInput( FALSE );
-	Wait( 800 );
-	SetValidityOfInput( TRUE );
-	OutputLine(NULL, "嘘だ嘘だ、",
-		   NULL, "거짓말 거짓말, ", Line_ContinueAfterTyping);
-	SetValidityOfInput( FALSE );
-	Wait( 1000 );
-	SetValidityOfInput( TRUE );
-	OutputLine(NULL, "大嘘だ…！！",
-		   NULL, "거짓말이야...!! ", Line_Normal);
-	ClearMessage();
-
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#cd74a7>リナ</color>", NULL, "<color=#cd74a7>리나</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 20, "ps3/s09/20/172100135", 256, TRUE);
-	OutputLine(NULL, "「私、クリスチャンだから中絶は出来ないのよねー。",
-		   NULL, "\"나, 기독교인이니까 낙태는 못 하지~. ", Line_WaitForInput);
-	ModPlayVoiceLS(4, 20, "ps3/s09/20/172100136", 256, TRUE);
-	OutputLine(NULL, "認知してもらわざるを得ないしー。",
-		   NULL, "받아들이지 않을 수도 없고~. ", Line_WaitForInput);
-	ModPlayVoiceLS(4, 20, "ps3/s09/20/172100137", 256, TRUE);
-	OutputLine(NULL, "それに結婚を前提の性交渉だったわけだしね。",
-		   NULL, "게다가 결혼을 전제로 한 성관계였으니까. ", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	//VoiceMatching
+	if(GetGlobalFlag(GCensor) >= 4){ModCallScriptSection("_ztsum_008_vm0x_n01","dialog002");}
+	if(GetGlobalFlag(GCensor) <= 3){ModCallScriptSection("_ztsum_008_vm00_n01","dialog002");}
+	//VoiceMatchingEnd
 
 	DisableWindow();
 	ModDrawCharacter(0, 20, "sprite/rina_warai_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 5, 200, TRUE );
-
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#cd74a7>リナ</color>", NULL, "<color=#cd74a7>리나</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(4, 20, "ps3/s09/20/172100138", 256, TRUE);
-	OutputLine(NULL, "妊娠までさせといて、今さらちゃぶ台返しなんてことになるとー、最近は問題が多いわよねぇ？」",
-		   NULL, "임신까지 시켜놓고, 이제 와서 나 몰라라 하면~, 요즘 그런 문제가 많지?\" ", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
+	
+	//VoiceMatching
+	if(GetGlobalFlag(GCensor) >= 4){ModCallScriptSection("_ztsum_008_vm0x_n01","dialog003");}
+	if(GetGlobalFlag(GCensor) <= 3){ModCallScriptSection("_ztsum_008_vm00_n01","dialog003");}
+	//VoiceMatchingEnd
 
 	DrawScene( "black", 400 );
 
