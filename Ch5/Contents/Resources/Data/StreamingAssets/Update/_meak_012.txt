@@ -427,10 +427,10 @@ void main()
 		   NULL, "이 안쪽에 무엇이 있는지... 나도 막연한 소문은 들어서 안다. ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-	//VoiceMatching
-	if(GetGlobalFlag(GCensor) >= 5){ModCallScriptSection("_zmeak_012_vm0x_n01","dialog000");}
-	if(GetGlobalFlag(GCensor) <= 4){ModCallScriptSection("_zmeak_012_vm00_n01","dialog000");}
-	//VoiceMatchingEnd
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　秘密の地下の入口があり、園崎家に刃向かう者を苛め殺すための拷問室があると言われている。",
+		   NULL, "숨겨진 지하입구가 있어, 소노자키가에 거스르는 자를 괴롭히고 죽이기 위한 방으로 연결된다는 소문이 돌고 있다. ", Line_Normal);
+	ClearMessage();
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　園崎本家にまつわる黒い噂の数々を知れば知るほど、その噂は信憑性を増していく。",
