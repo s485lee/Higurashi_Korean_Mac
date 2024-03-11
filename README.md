@@ -19,7 +19,7 @@ Retina 디스플레이를 지원하기 위한 라이브러리 파일이 포함�
 | 메아카시  | [다운로드](https://mega.nz/file/KYIDSTbR#AWXR3gwcGSjitb8YzxdxMDMk1olJ6Vt1MvvPwoP4sU8)  | 1.1  |
 | 츠미호로보시  | [다운로드](https://mega.nz/file/zQYCzTqb#iNF7qLBMnIFjvRX9Il6zO7UqaBx5Qi2Ci4Q2HIvr1mE)  | 1.1  |
 | 미나고로시  | [다운로드](https://mega.nz/file/LIJAHCKY#pf9VHmbVnD7mogPzpGQtIQo4WCbBfM7UkgeBCODW9YI)  | 1.1  |
-| 마츠리바야시  | [다운로드](https://mega.nz/file/Odo1WIbR#Urk9Qeq3WSMm8Lwi8UIIE7oDITwmZTUKzvj4v2bqbF8)  | 2.0  |
+| 마츠리바야시  | [다운로드](https://mega.nz/file/2BAhUbII#HPAILJ1yURLb4eCWnxNcQP25JyuLCcec5cyOyQ1WzCI)  | 2.0  |
 | 쓰르라미 울 적에: 례  | [다운로드](https://mega.nz/file/eF5FjRbS#WM69Km8eJ-ISlOp5jbRNLOZorQzc8gX5v_fBQ-1hOHQ)  | 2.0  |
 | 콘솔아크 미오츠쿠시/타라이마와시  | [다운로드](https://github.com/s485lee/Miot_Omot_Korean/releases/tag/Release)  | 1.0  |
 
