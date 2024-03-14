@@ -368,6 +368,15 @@ void main()
 			NULL, "케이이치 군, 뭔가 나쁜 짓 한 걸까나? 까나?\" ", Line_Normal);
 	ClearMessage();
 
-	CallScript("&eye");
+	DisableWindow();
+	SetValidityOfInput( FALSE );
+	FadeOutBGM(2, 2000, FALSE);
+	DrawScene("black", 2000 );
+	PlaySE( 4, "wa_022", 56, 64 );
+	DrawScene("bad_end", 3000 );
+	Wait( 2000 );
+	DrawScene("black", 3000 );
+	Wait( 1000 );
+	SetValidityOfInput( TRUE );
 
 }
