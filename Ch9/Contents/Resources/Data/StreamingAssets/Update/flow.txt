@@ -3,7 +3,7 @@ void main()
 {
 	SetValidityOfSaving( FALSE );
 
-	//ModGenericCall("ShowSetupMenuIfRequired", "");
+	ModGenericCall("ShowSetupMenuIfRequired", "");
 
 	CallSection("BrandLogo");
 	JumpSection("Title");
@@ -176,7 +176,19 @@ void HiruChooseVersion()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "「昼壊し編」コンシューマー版は、同人PC版とは大きく異なります。ほとんど新しい話になっています。どっちの方をプレイしたいですか？",
-			NULL, "콘솔판의 히루코와시 편은 메아카시 편과 츠미호로보시 편 사이에 배치되어서 스포일러 방지를 위해 동인판 원작에서 많은 대사와 등장인물이 대체되었으며 중반 이후부터는 서로 다른 이벤트가 일어납니다. 이러한 사항은 원작자가 쓴 동인판에 비해 위화감을 줄 수 있으나 성우 더빙은 콘솔 버전에만 있습니다.  어떤 버전을 플레이하시겠습니까?", Line_Normal);
+			NULL, "히루코와시 편은 원작 버전과 콘솔 버전 두 종류의 시나리오를 지원합니다.", Line_ContinueAfterTyping);
+
+	OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping);
+
+	OutputLineAll(NULL, "원작 시나리오는 용기사07이 집필하였으며 마츠리바야시 편 이후에 발매되었습니다.", Line_ContinueAfterTyping);
+
+	OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping);
+
+	OutputLineAll(NULL, "반면에 콘솔 버전은 메아카시 편과 츠미호로보시 편 사이에 배치되어서 스포일러 방지를 위해 원작에서 많은 대사와 등장인물이 대체되었으며 중반 이후부터는 서로 다른 이벤트가 일어납니다.", Line_ContinueAfterTyping);
+
+	OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping);
+
+	OutputLineAll(NULL, "이러한 사항은 원작자가 쓰지 않았기에 위화감을 줄 수 있으나 성우 더빙은 콘솔 시나리오만 지원합니다. 어떤 버전을 플레이하시겠습니까?", Line_Normal);
 	ClearMessage();
 
 	DrawBustshotWithFiltering( 6, "effect/2choices", "effect/left", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 250, TRUE );
@@ -184,8 +196,8 @@ void HiruChooseVersion()
 
 	if(GetGlobalFlag(GLanguage) == 1)
 	{
-		HiruChoice0[0] = "동인판 원작을 플레이한다";
-		HiruChoice0[1] = "콘솔 버전을 플레이한다";
+		HiruChoice0[0] = "원작 시나리오를 플레이한다";
+		HiruChoice0[1] = "콘솔 시나리오를 플레이한다";
 	}
 	else
 	{
@@ -398,7 +410,7 @@ void HiruConsoleBadEnd()
 	CallScript( "hiruconsole_011_tobadend" );
 	CallScript( "hiruconsole_badend" );
 
-	JumpScript( "flow" );
+	JumpSection("ReturnToTitle");
 }
 
 void Batsukoishi()
