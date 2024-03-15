@@ -158,10 +158,18 @@ void main()
 		   NULL, "어째서?!\" ", Line_Normal);
 	ClearMessage();
 
-	//VoiceMatching
-	if(GetGlobalFlag(GCensor) >= 3){ModCallScriptSection("zonik_tips_01_vm0x_n01","dialog001");}
-	if(GetGlobalFlag(GCensor) <= 2){ModCallScriptSection("zonik_tips_01_vm00_n01","dialog001");}
-	//VoiceMatchingEnd
+//　突然、賭けにされて狼狽するレナ＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　突然、賭けにされて狼狽するレナ。",
+		   NULL, "갑자기 내기가 되자 당황하는 레나. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
+
+
+//　...うろたえ具合から今月の小遣いは残り少ないと断定する＠
+	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+	OutputLine(NULL, "　…うろたえ具合から今月の小遣いは残り少ないと断定する。",
+		   NULL, "... 당황하는 모습을 봐선 이번 달 용돈이 얼마 남지 않았음이 틀림없다. ", GetGlobalFlag(GLinemodeSp));
+	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 
 //　しかし...、たかだか誕生日程度でこうもうろたえてくれると、楽しくて仕方がないぞ￥

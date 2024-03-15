@@ -236,23 +236,10 @@ void dialog005()
 
 void dialog006()
 {
-//　レナと例の宝の山のランディーくん人形を発掘する約束だ￥
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "　レナと例の宝の山のランディーくん人形を発掘する約束だ。",
-		   NULL, "레나와 전의 보물 산에 있는 란디군 인형을 발굴하자는 약속이다. ", Line_Normal);
-	ClearMessage();
 }
 
 void dialog007()
 {
-//　不法投棄のダンプがまたゴミを捨てていって、今度こそ完全に埋って救出不能＠なんてことになれば……間違いなくレナは町のフライドチキン屋のランディーくん人形を狙うだろう￥
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "　不法投棄のダンプがまたゴミを捨てていって、今度こそ完全に埋って救出不能、",
-		   NULL, "덤프트럭이 또 쓰레기를 불법투기해서 이번에야말로 완전히 파묻혀 구출 불능. ", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "なんてことになれば……間違いなくレナは町のフライドチキン屋のランディーくん人形を狙うだろう。",
-		   NULL, "같은 상황이 되면...... 분명히 레나는 마을 프라이드 치킨 가게에 있는 란디 군 인형을 노린다. ", Line_Normal);
-	ClearMessage();
 }
 
 void dialog008()
@@ -311,26 +298,6 @@ void dialog011()
 
 void dialog012()
 {
-//　レナから斧を受け取り、不安定な斜面を降りて行く￥
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "　レナから鉈を受け取り、不安定な斜面を降りて行く。",
-		   NULL, "레나에게 손도끼를 건네받고 불안정한 경사면을 내려간다. ", Line_Normal);
-	ClearMessage();
-
-	DisableWindow();
-	ModSetLayerFilter(3, 256, "none");
-	ModDrawCharacterWithFiltering(3, 2, "sprite/re2a_warai_a1_", "2", "up", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 20, 0, FALSE );
-	DrawSceneWithMask("background/mo_g2", "right", 0, 0, 1300 );
-
-//「待っててね、ランディーくん＠…今、圭一くんが助け出してくれるからね…☆＠
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(3, 2, "ps3/s19/02/990200272", 256, TRUE);
-	OutputLine(NULL, "「待っててね、ランディーくん。",
-		   NULL, "\"기다려줘 란디 군. ", Line_WaitForInput);
-	ModPlayVoiceLS(3, 2, "ps3/s19/02/990200273", 256, TRUE);
-	OutputLine(NULL, "…今、圭一くんが助け出してくれるからね…☆」",
-		   NULL, "... 지금 케이이치 군이 구해줄 테니까...☆\" ", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 }
 
 void dialog013()
@@ -344,35 +311,6 @@ void dialog013()
 
 void dialog014()
 {
-//「大丈夫＠　もう一息＠今夜レナが寝るときにはランディーくんにお休みのキスができるようになってるさ。＠
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei06410", 256, TRUE);
-	OutputLine(NULL, "「大丈夫！",
-		   NULL, "\"괜찮아! ", Line_WaitForInput);
-	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei06420", 256, TRUE);
-	OutputLine(NULL, "　もう一息。",
-		   NULL, "이제 조금 남았어. ", Line_WaitForInput);
-	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei06430", 256, TRUE);
-	OutputLine(NULL, "今夜レナが寝るときにはランディーくんにお休みのキスができるようになってるさ。」",
-		   NULL, "오늘 밤 레나가 잠들 때는 란디 군에게 굿나잇 키스를 할 수 있을 정도는 됐다구.\" ", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
-
-	DisableWindow();
-	ModSetLayerFilter(2, 256, "none");
-	ModDrawCharacter(2, 2, "sprite/re2b_hau_b1_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
-
-//「…うん＠……ありがとぅ＠……ランディーくん……お休みのキス……はぅ……。￥
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(3, 2, "ps3/s19/02/990200277", 256, TRUE);
-	OutputLine(NULL, "「…うん。",
-		   NULL, "\"...응. ", Line_WaitForInput);
-	ModPlayVoiceLS(3, 2, "ps3/s19/02/990200278", 256, TRUE);
-	OutputLine(NULL, "……ありがとぅ。",
-		   NULL, "......고마워. ", Line_WaitForInput);
-	ModPlayVoiceLS(3, 2, "ps3/s19/02/990200279", 256, TRUE);
-	OutputLine(NULL, "……ランディーくん……お休みのキス……はぅ……。」",
-		   NULL, "......란디 군...... 굿나잇 키스...... 하우.......\" ", Line_Normal);
-	ClearMessage();
 }
 
 void dialog015()
@@ -408,21 +346,6 @@ void dialog017()
 
 void dialog018()
 {
-//　ツイてたなランディーくん。次のご主人様がいい人で￥
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "　ツイてたなランディーくん。次のご主人様がいい人で。",
-		   NULL, "다행이야 란디 군. 이번 주인은 좋은 사람이라서. ", Line_Normal);
-	ClearMessage();
-
-	DisableWindow();
-	ModDrawCharacter(2, 2, "sprite/re2b_warai_b1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
-
-//「…わぁあ…ランディーくんだ…やっぱ、かぁいいよぅ！！＠
-	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
-	ModPlayVoiceLS(3, 2, "ps3/s19/02/990200298", 256, TRUE);
-	OutputLine(NULL, "「…わぁあ…ランディーくんだ…やっぱ、かぁいいよぅ！！」",
-		   NULL, "\"와아아... 란디 군이다... 역시 기여어어어어!!\" ", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 }
 
 void dialog019()
@@ -462,16 +385,4 @@ void dialog020()
 
 void dialog021()
 {
-//"... 腕が一本、まだ見つかってないんだろ？"@
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "“……嫌な事件だったね。…………まだ見つかってないんだろ？”",
-		   NULL, "\"......무서운 사건이었지...... 아직 못 찾았잖아?\" ", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
-
-
-//　さっきのごろんと転がった腕がやけに不吉に思えたが、そこでふと気付き、俺はちょっと自分の情けなさに苦笑した￥
-	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
-	OutputLine(NULL, "　薄暗さから、目の前に横たわる人形がやけにリアルに感じて、なんとなく不吉にも思えたが……そこでふと思い返し、俺はちょっと自分の情けなさに苦笑した。",
-		   NULL, "어둠 속에서 눈앞에 떠오르는 사람의 모습이 너무 리얼해서 왠지 불길했지만...... 금방 정신을 차리고 스스로의 한심함을 비웃었다. ", Line_Normal);
-	ClearMessage();
 }
