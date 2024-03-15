@@ -857,7 +857,7 @@ void main()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　そうさ、次の世界で活かそうと思うこと自体が百の世界に生きる魔女の考え！",
-		   NULL, "그래100년의 세계를 살아온 마녀라면, 이 기억으로 다음 세계를 기약해야지! ", GetGlobalFlag(GLinemodeSp));
+		   NULL, "그래, 100년의 세계를 살아온 마녀라면 이 기억으로 다음 세계를 기약해야지! ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -901,13 +901,19 @@ void main()
 	DrawScene( "black", 300 );
 	Wait( 1300 );
 	DrawScene( "text/menu", 200 );
-	Wait( 2000 );
+	Wait( 2500 );
 	DrawScene( "text/menu_b", 200 );
 	Wait( 1000 );
 	DrawScene( "text/menu_a", 200 );
 	Wait( 800 );
+	StartShakingOfWindow( 248, 40, 0, 0, 2*2, FALSE );
+	StartShakingOfAllObjects( 248, 40, 0, 0, 2*2, TRUE );
+	Wait( 500 );
 	DrawScene( "text/menu_b", 200 );
 	Wait( 1000 );
+	DrawScene( "text/menu_b_edit", 200 );
+	Wait( 1000 );
+
 	FadeOutBGM( 0, 1000, FALSE );
 	FadeOutBGM( 1, 1000, FALSE );
 	FadeOutBGM( 3, 1000, FALSE );
@@ -2422,7 +2428,7 @@ void main()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　目の前の敵を打ち倒すどころか手間取るうちに、",
-		   NULL, "눈앞의 적을 무찌르기는 커녕 이 순간에도, ", Line_WaitForInput);
+		   NULL, "눈앞의 적을 무찌르기는커녕 이 순간에도, ", Line_WaitForInput);
 	OutputLine(NULL, "新しい追っ手が駆け付け、組み合う仲間たちに後から組み付き圧倒していった。",
 		   NULL, "새로운 추격자가 달려와, 필사적으로 맞서는 친구들을 뒤에서 붙잡아 제압했다. ", Line_Normal);
 	ClearMessage();
