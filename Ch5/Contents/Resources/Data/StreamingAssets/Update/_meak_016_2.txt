@@ -24,7 +24,8 @@ void main()
 	ModSetLayerFilter(1, 256, "none");
 	ModDrawCharacter(1, 3, "sprite/me2_def_a1_", "2", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
 	DrawSceneWithMask("background/je1", "maskm1", 1, 0, 300 );
-	ModPlayBGM( 0, "4", 56, 0, 0 );
+	//ModPlayBGM( 0, "4", 56, 0, 0 );
+	ModPlayBGM( 3, "cafe", 56, 0, 0 );
 	ModPlayBGM( 0, "cafe", 56, 0, 1 );
 
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>屋台</color>", NULL, "<color=#f5e6d3>축제 노점상</color>", NULL, Line_ContinueAfterTyping); }
@@ -72,7 +73,7 @@ void main()
 	DisableWindow();
 	StartShakingOfWindow( 248, 20, 0, 2, 2*1, FALSE );
 	StartShakingOfAllObjects( 248, 20, 0, 2, 2*1, TRUE );
-	ModFadeOutBGM( 0, 300, FALSE, 0 );
+	//ModFadeOutBGM( 0, 300, FALSE, 0 );
 	ModDrawCharacter(2, 3, "portrait/me2_odoroki_a1_", "1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
 	ModPlayBGM( 0, "semi", 56, 0, 0 );
 	ModPlayBGM( 2, "suzume", 56, 0, 0 );
@@ -160,7 +161,7 @@ void main()
 	ModFadeOutBGM( 2, 300, FALSE, 0 );
 	ModDrawCharacter(1, 1, "sprite/kei2_def1_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
 	DrawSceneWithMask("background/je1", "maskright", 1, 0, 300 );
-	ModPlayBGM( 0, "cafe", 56, 0, 0 );
+	//ModPlayBGM( 0, "cafe", 56, 0, 0 );
 
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 1, "ps3/s06/01/150100084", 256, TRUE);
@@ -319,7 +320,7 @@ void main()
 		   NULL, "...그렇게 할 수 없어서, 조금 슬펐다. ", Line_Normal);
 	ClearMessage();
 
-	ModFadeOutBGM( 0, 1000, FALSE, 0 );
+	//ModFadeOutBGM( 0, 1000, FALSE, 0 );
 	DrawScene("black", 2000 );
 	PlaySE( 4, "wa_003", 56, 64 );
 
@@ -341,7 +342,7 @@ void main()
 	ModDrawCharacter(1, 9, "sprite/ta1_def_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );
 	ModDrawCharacter(2, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
 	DrawScene("background/jd4", 400 );
-	ModPlayBGM( 1, "mion", 56, 0, 0 );
+	//ModPlayBGM( 1, "mion", 56, 0, 0 );
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 9, "ps3/s06/09/150900096", 256, TRUE);
 	OutputLine(NULL, "「あら。",
@@ -603,6 +604,7 @@ void main()
 	OutputLine(NULL, "「実はね。",
 		   NULL, "\"실은. ", Line_WaitForInput);
 	FadeOutBGM( 0, 300, FALSE );
+	ModFadeOutBGM( 3, 300, FALSE, 0 );
 	PlayBGM( 1, "yoru", 56, 0 );
 
 	ModPlayVoiceLS(4, 9, "ps3/s06/09/150900111", 256, TRUE);
@@ -1057,7 +1059,7 @@ void main()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　圭一ととぼけた話をしている内に、私たちは祭具殿にたどり着いた。",
-		   NULL, "케이이치와 헛소리를 나누던 동안, 우리는 제구전에 도착했다. ", GetGlobalFlag(GLinemodeSp));
+		   NULL, "케이이치와 잡소리를 나누던 동안, 우리는 제구전에 도착했다. ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 
@@ -1103,7 +1105,7 @@ void main()
 		   NULL, "\"엄청 어둡네. ", Line_WaitForInput);
 	ModPlayVoiceLS(4, 8, "ps3/s06/08/150800015", 256, TRUE);
 	OutputLine(NULL, "みんな転ばないように気をつけるんだよ。」",
-		   NULL, "모두들 넘어지지 않게 조심해.\" ", GetGlobalFlag(GLinemodeSp));
+		   NULL, "모두들 넘어지지 않도록 조심해.\" ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
@@ -1120,13 +1122,13 @@ void main()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　楽しいことから富竹さんだけを閉め出すように、鷹野さんが意地悪に笑いながら、扉を閉めていく。",
-		   NULL, "재밌는 일에서 토미타케 씨만을 쫓아내듯, 타카노 씨가 심술궂은 웃음을 지으며 문을 닫았다. ", Line_Normal);
+		   NULL, "재밌는 일로부터 토미타케 씨만 따돌리는 것처럼, 타카노 씨가 장난스럽게 웃으면서 문을 조금씩 닫았다.", Line_Normal);
 	ClearMessage();
 
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>토미타케</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 8, "ps3/s06/08/150800016", 256, TRUE);
 	OutputLine(NULL, "「やれやれ…。",
-		   NULL, "\"정말이지.... ", Line_WaitForInput);
+		   NULL, "\"이거 참.... ", Line_WaitForInput);
 	ModPlayVoiceLS(4, 8, "ps3/s06/08/150800017", 256, TRUE);
 	OutputLine(NULL, "…じゃあみんな、ゆっくり楽しんでおいで。」",
 		   NULL, "그럼 모두들, 천천히 즐기다 와.\" ", Line_Normal);
@@ -1135,13 +1137,13 @@ void main()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　低く重い、よく響く音を立て、…外界と完全に遮断されると…シンシンとした闇が蝕んできた。",
-		   NULL, "낮고 무겁게 울려퍼지는 소리와 함께 외부와 완전히 차단되자... 오싹한 어둠이 주위를 침식한다. ", GetGlobalFlag(GLinemodeSp));
+		   NULL, "낮고 무겁게 울려퍼지는 소리와 함께 바깥과 완전히 차단되자... 오싹한 어둠이 덮쳐왔다. ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　…鷹野さんのランタンだけが頼りだ。",
-		   NULL, "...의지할 거라곤 타카노 씨의 랜턴 뿐이다. ", Line_Normal);
+		   NULL, "...타카노 씨의 랜턴만이 한 줄기 빛으로 남았다. ", Line_Normal);
 	ClearMessage();
 
 	ModDrawCharacter(2, 9, "sprite/ta1_def_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
@@ -1153,7 +1155,7 @@ void main()
 		   NULL, "\"괜찮아. ", Line_WaitForInput);
 	ModPlayVoiceLS(4, 9, "ps3/s06/09/150900132", 256, TRUE);
 	OutputLine(NULL, "予備電池も入ってるアウトドア仕様なんだから。",
-		   NULL, "예비 건전지도 들어있는 아웃도어용이니까. ", Line_WaitForInput);
+		   NULL, "예비 건전지도 들어있는 야외용이니까. ", Line_WaitForInput);
 	ModPlayVoiceLS(4, 9, "ps3/s06/09/150900133", 256, TRUE);
 	OutputLine(NULL, "消えたりなんかしないわよ。」",
 		   NULL, "꺼지거나 하지는 않아.\" ", GetGlobalFlag(GLinemodeSp));
@@ -1161,7 +1163,7 @@ void main()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　鷹野さんが圭一に嫌味っぽく言う。",
-		   NULL, "타카노 씨가 케이이치에게 빈정대며 말한다. ", GetGlobalFlag(GLinemodeSp));
+		   NULL, "타카노 씨가 케이이치에게 놀리듯이 말한다. ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 	DrawSceneWithMask("black", "maskright", 1, 0, 300 );
 
@@ -1223,13 +1225,13 @@ void main()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　祭具殿の正面一番奥には…仏像のようなご神体が立ち、侵入者である私たちを見下ろしていた。",
-		   NULL, "제구전의 정면 제일 안쪽에서, 불상같은 신상이 서서 침입자인 우리들을 내려다 보고 있었다. ", GetGlobalFlag(GLinemodeSp));
+		   NULL, "제구전의 정면 가장 안쪽에는... 불상 같은 신상이 서서 침입자인 우리들을 내려다보고 있었다. ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 	DrawSceneWithMask("black", "maskleft", 1, 0, 300 );
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　ランタンのか細い明かりに照らされたその迫力に思わず驚いてしまう。",
-		   NULL, "랜턴의 가느다란 빛이 드러낸 그 박력에 무심코 놀라버렸다. ", Line_Normal);
+		   NULL, "랜턴의 얇은 빛에 비춰진 그 위용에 무심코 놀라고 말았다. ", Line_Normal);
 	ClearMessage();
 
 	ModDrawCharacter(2, 9, "sprite/ta1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
@@ -1518,7 +1520,7 @@ void main()
 	OutputLine(NULL, "　そう。",
 		   NULL, "그래. ", Line_WaitForInput);
 	OutputLine(NULL, "オヤシロさまの祟りなんて曖昧なものは、妄信する村人たちの生み出した単なる妄想に過ぎないのだ。",
-		   NULL, "오야시로님의 신벌 같은 애매한 말은, 맹신하는 마을사람들이 만들어 낸 단순한 망상에 지나지 않아. ", GetGlobalFlag(GLinemodeSp));
+		   NULL, "오야시로님의 신벌 같은 애매한 말은, 맹신하는 마을 사람들이 만들어 낸 단순한 망상에 지나지 않아. ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -2219,7 +2221,7 @@ void main()
 		   NULL, "\"...이거, 정말로 비밀이야? ", Line_WaitForInput);
 	ModPlayVoiceLS(4, 9, "ps3/s06/09/150900141", 256, TRUE);
 	OutputLine(NULL, "　詩音ちゃんは理解のある人だから話したけど、他の村人には聞かれたくないの。",
-		   NULL, "시온쨩은 이해심이 있는 사람이니까 이야기했지만, 다른 마을사람들에게는 들려주고 싶지 않거든. ", GetGlobalFlag(GLinemodeSp));
+		   NULL, "시온쨩은 이해심이 있는 사람이니까 이야기했지만, 다른 마을 사람들에게는 들려주고 싶지 않거든. ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f6d9a8>鷹野</color>", NULL, "<color=#f6d9a8>타카노</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 9, "ps3/s06/09/150900142", 256, TRUE);
 	OutputLine(NULL, "…下手をしたら罰当たり者ってことで、袋叩きにされかねないんだから。」",
