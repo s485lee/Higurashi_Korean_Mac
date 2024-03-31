@@ -12,7 +12,7 @@ Retina 디스플레이를 지원하기 위한 라이브러리 파일이 포함�
 # 다운로드
 | 시나리오  | 링크 | Version |
 | :---:  | :---:  | :---:  |
-| 오니카쿠시  | [다운로드](https://mega.nz/file/qU4wjB6B#KOcjYQ96x4KspqjUiagp377PSo61wxNGZujNtMlMQGY)  | 2.2  |
+| 오니카쿠시  | [다운로드](https://mega.nz/file/rFhlgApD#H1FQpvjh5GcYONXPm8mT3Q4FhRB_LNlqsiGLTusFGHQ)  | 2.2  |
 | 와타나가시 | [다운로드](https://mega.nz/file/vBogFLRY#00YW6QuN8skFKPNICrzebC-2hfkpyxU00Srft9M_frk)  | 2.2  |
 | 타타리고로시  | [다운로드](https://mega.nz/file/jZgw3ZQZ#86nZJ55skVKCZgS7sIIQCc_R7COeHAqpuIHEHqv1Upw)  | 2.2  |
 | 히마츠부시  | [다운로드](https://mega.nz/file/DcwRyAJZ#_G205Q2i3zUIzhWive85h2QMThxZG5tcUu00pCVRVWI)  | 2.2  |
