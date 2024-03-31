@@ -12,15 +12,15 @@ Retina 디스플레이를 지원하기 위한 라이브러리 파일이 포함�
 # 다운로드
 | 시나리오  | 링크 | Version |
 | :---:  | :---:  | :---:  |
-| 오니카쿠시  | [다운로드](https://mega.nz/file/6Zoz3TxS#RYj8M2XTZea3nblYOdj4NNsZhXWNucMBCU-cscVKmAY)  | 2.1  |
-| 와타나가시 | [다운로드](https://mega.nz/file/TMgRGQyY#61Qo-hH_O132KOX_grDnvBv4cRaOseygOj1IB2jfqjE)  | 2.1  |
-| 타타리고로시  | [다운로드](https://mega.nz/file/DNBCWY7A#YEfrFwQGJ977z6_hJxved51kNGt7zIHBOnS8GBs8BFI)  | 2.1  |
-| 히마츠부시  | [다운로드](https://mega.nz/file/2NIlwLIK#8m2AVSuCtonOR51rxgu8_jhGULysvAXuBig7GTZ4SXE)  | 2.1  |
-| 메아카시  | [다운로드](https://mega.nz/file/6MpEnCjQ#-b3C65An24Y-EsP3D2UGswSbiV9KgVwkX656qw3vRGk)  | 2.1  |
-| 츠미호로보시  | [다운로드](https://mega.nz/file/yIZCFaBJ#1EMrhfZHmVuXXNj6whrq9A7V9nbnIsgMbI1DjkOrhCs)  | 2.1  |
-| 미나고로시  | [다운로드](https://mega.nz/file/rJQzmRaK#LbzxufnrqdIuH764StI_EOt2MF-tSih0G5qV8vSQucg)  | 2.1  |
-| 마츠리바야시  | [다운로드](https://mega.nz/file/PI4gkaSZ#SFSq_-eLAcCsGwg1-XR_rOLQyuh12fYvMhNzOKeDCxs)  | 2.1  |
-| 쓰르라미 울 적에: 례  | [다운로드](https://mega.nz/file/eF5FjRbS#WM69Km8eJ-ISlOp5jbRNLOZorQzc8gX5v_fBQ-1hOHQ)  | 2.0  |
+| 오니카쿠시  | [다운로드](https://mega.nz/file/qU4wjB6B#KOcjYQ96x4KspqjUiagp377PSo61wxNGZujNtMlMQGY)  | 2.2  |
+| 와타나가시 | [다운로드](https://mega.nz/file/vBogFLRY#00YW6QuN8skFKPNICrzebC-2hfkpyxU00Srft9M_frk)  | 2.2  |
+| 타타리고로시  | [다운로드](https://mega.nz/file/jZgw3ZQZ#86nZJ55skVKCZgS7sIIQCc_R7COeHAqpuIHEHqv1Upw)  | 2.2  |
+| 히마츠부시  | [다운로드](https://mega.nz/file/DcwRyAJZ#_G205Q2i3zUIzhWive85h2QMThxZG5tcUu00pCVRVWI)  | 2.2  |
+| 메아카시  | [다운로드](https://mega.nz/file/SMJ0EAiB#rujO_P4SzVaEa3LNYunQEItQNPMX03OALwdtRVE2P5A)  | 2.2  |
+| 츠미호로보시  | [다운로드](https://mega.nz/file/7dphUT5A#4tVqTjhbWeXa_WSsAFtmj2LzFv3fCg1Qn1kg8UUnW30)  | 2.2  |
+| 미나고로시  | [다운로드](https://mega.nz/file/rAZ23YBJ#AnDQjVfsV05CLPjAuiD64qI9Jqe9kjcg5ab4qMKHhoI)  | 2.2  |
+| 마츠리바야시  | [다운로드](https://mega.nz/file/CVIj2axJ#25XRHeoWPta4zLzKx81MC1GlrFVmAtOiZhtAh0lQPgY)  | 2.2  |
+| 쓰르라미 울 적에: 례  | [다운로드](https://mega.nz/file/OYAE1ZaD#ZWMKNdoC8Ke2_l03Xpv86_p7PipiplgpHjGgdNCs8Wc)  | 2.2  |
 | 콘솔아크 미오츠쿠시/타라이마와시  | [다운로드](https://github.com/s485lee/Miot_Omot_Korean/releases/tag/Release)  | 1.0  |
 
 
