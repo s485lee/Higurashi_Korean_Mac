@@ -28,7 +28,14 @@ Retina 디스플레이를 지원하기 위한 라이브러리 파일이 포함�
 07th모드 통합패치이기 때문에 따로 07th 모드를 다운로드 할 필요는 없습니다. <br />
 
 자동패치 (권장):<br /> 
-<img width="712" alt="image" src="https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/4c933404-6fea-44db-a629-b528e73077ff"><br /> 
+
+1. 다운로드한 DMG 이미지를 마운트한 후, Finder에서 DMG 이미지를 열어주세요. <br />
+
+2. 마운트한 DMG 이미지에서, 패치 인스톨러를 **우클릭** 한 후, Open/열기를 클릭해 패치 인스톨러를 실행해 주세요:<br />
+<img width="855" alt="Screenshot 2024-03-31 at 1 04 39 PM" src="https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/5279c053-7704-418e-8933-9173987553eb"><br /> 
+
+3. 패치 인스톨러의 안내에 따라 한글패치를 설치해 주세요: <br />
+<img width="1017" alt="Screenshot 2024-03-31 at 1 04 57 PM" src="https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/359871f8-3e4b-4b00-977a-95749536a27a"><br /> 
 
 수동패치 방법은 동봉된 설명서를 봐주세요.
 
