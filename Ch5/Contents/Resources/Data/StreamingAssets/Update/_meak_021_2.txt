@@ -321,7 +321,8 @@ void main()
 	DrawScene("white", 100 );
 	DrawScene("black", 50 );
 	Wait( 100 );
-	ModPlayBGM( 0, "msys23", 56, 0, 0 );
+	//ModPlayBGM( 0, "msys23", 56, 0, 0 );
+	ModPlayBGM( 3, "hig_sample_kyouki", 56, 0, 0 );
 	ModPlayBGM( 0, "hig_sample_kyouki", 56, 0, 1 );
 
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>詩音</color>", NULL, "<color=#5ec69a>시온</color>", NULL, Line_ContinueAfterTyping); }
@@ -1230,8 +1231,10 @@ void main()
 	ModFadeOutBGM( 1, 400, FALSE, 1 );
 	ModFadeOutBGM( 2, 400, FALSE, 1 );
 	ModFadeOutBGM( 3, 400, FALSE, 1 );
+	ModFadeOutBGM( 3, 400, FALSE, 0 );
 	DrawScene("black", 400 );
-	PlayBGM( 0, "higurashi_soundscape", 56, 0 );
+	//PlayBGM( 0, "higurashi_soundscape", 56, 0 );
+	ModPlayBGM( 3, "higurashi_soundscape", 56, 0, 0 );
 
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#6972c1>梨花</color>", NULL, "<color=#6972c1>리카</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 5, "org/rika4004", 256, TRUE);
@@ -1509,7 +1512,7 @@ void main()
 	OutputLine(NULL, "……笑ったように見えた。",
 		   NULL, "......웃은 것처럼 보였다. ", Line_Normal);
 	ClearMessage();
-	ModFadeOutBGM( 0, 300, FALSE, 0 );
+	//ModFadeOutBGM( 0, 300, FALSE, 0 );
 	PlaySE( 0, "wa_003", 56, 64 );
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -2194,6 +2197,7 @@ void main()
 	FadeOutBGM( 0, 2000, FALSE );
 	ModFadeOutBGM( 1, 2000, FALSE, 1 );
 	ModFadeOutBGM( 2, 2000, FALSE, 1 );
+	ModFadeOutBGM( 3, 2000, FALSE, 0 );
 	DrawScene("black", 3000 );
 	SetValidityOfInput( FALSE );
 	Wait( 4000 );

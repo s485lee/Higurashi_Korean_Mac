@@ -922,6 +922,7 @@ void main()
 		   NULL, "지금의 전화한 사람은 누구?! .....................읏!!! ", Line_Normal);
 	ClearMessage();
 	ModPlayBGM( 0, "hig_sample_kyouki", 56, 0, 1 );
+	ModPlayBGM( 3, "hig_sample_kyouki", 56, 0, 0 );
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　魅音は襟首を掴んだまま、私に額を寄せて……言った。",
@@ -1139,6 +1140,7 @@ void main()
 	FadeOutBGM( 0, 1000, FALSE );
 	FadeOutBGM( 1, 1000, FALSE );
 	ModFadeOutBGM( 2, 1000, FALSE, 1 );
+	ModFadeOutBGM( 3, 300, FALSE, 0 );
 	DrawScene("black", 1000 );
 	PlayBGM( 1, "suzu", 56, 0 );
 
@@ -1285,7 +1287,8 @@ void main()
 	SetValidityOfInput( FALSE );
 	Wait( 3000 );
 	SetValidityOfInput( TRUE );
-	ModPlayBGM( 0, "msys30", 56, 0, 0 );
+	//ModPlayBGM( 0, "msys30", 56, 0, 0 );
+	ModPlayBGM( 3, "higurashi_soundscape", 56, 0, 0 );
 	ModPlayBGM( 0, "higurashi_soundscape", 56, 0, 1 );
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -1578,6 +1581,7 @@ void main()
 
 	PlaySE( 0, "s_M_Door8k", 56, 64 );
 	FadeOutBGM( 0, 300, TRUE );
+	ModFadeOutBGM( 3, 300, FALSE, 0 );
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　扉を開けると、……何も見えない漆黒が広がっていた。",
@@ -1782,7 +1786,8 @@ void main()
 		   NULL, "나는 마귀할멈을 그대로 두고 눈을 뜬 쌍둥이 곁으로 향했다. ", Line_Normal);
 	ClearMessage();
 	DrawSceneWithMask("black", "maskleft", 1, 0, 300 );
-	ModPlayBGM( 0, "hig_sample_kyouki", 56, 0, 0 );
+	//ModPlayBGM( 0, "hig_sample_kyouki", 56, 0, 0 );
+	ModPlayBGM( 3, "depressive paranoia", 56, 0, 0 );
 	ModPlayBGM( 0, "depressive paranoia", 56, 0, 1 );
 
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>미온</color>", NULL, Line_ContinueAfterTyping); }
@@ -2499,4 +2504,5 @@ void main()
 	CallScript( "&eye" );
 	FadeOutBGM( 0, 1000, FALSE );
 	FadeOutBGM( 1, 1000, TRUE );
+	ModFadeOutBGM( 3, 1000, FALSE, 0 );
 }
