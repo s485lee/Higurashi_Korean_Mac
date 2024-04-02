@@ -3,6 +3,8 @@
 ![Static Badge](https://img.shields.io/badge/macOS-Sonoma-green?style=flat-square&link=https%3A%2F%2Fdeveloper.apple.com%2Fdocumentation%2Fmacos-release-notes)
 ![Static Badge](https://img.shields.io/badge/macOS-Ventura-green?style=flat-square)
 ![Static Badge](https://img.shields.io/badge/macOS-Monterey-green?style=flat-square)<br /> 
+![Static Badge](https://img.shields.io/badge/Supports-Apple%20Silicon%20%2F%20Intel-green?style=flat-square)<br /> 
+<br /> 
 ![GitHub Release](https://img.shields.io/github/v/release/s485lee/Higurashi_Korean_Mac?sort=date&display_name=release&style=flat-square)
 ![GitHub Release Date](https://img.shields.io/github/release-date/s485lee/Higurashi_Korean_Mac?display_date=published_at&style=flat-square&color=blue)<br /> 
 ![Static Badge](https://img.shields.io/badge/%EC%A0%95%EC%8B%A4%EC%9D%80%3F-%EB%A0%88%EB%82%98-orange?style=flat-square)
