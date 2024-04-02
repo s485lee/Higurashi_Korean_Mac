@@ -1,5 +1,14 @@
 # 쓰르라미 울 적에 macOS용 한글패치
 ![Higu_Kor_Pro1 copy](https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/fd296659-d00e-46b6-91d2-07773c39f01a)<br /> 
+![Static Badge](https://img.shields.io/badge/macOS-Sonoma-green?style=flat-square&link=https%3A%2F%2Fdeveloper.apple.com%2Fdocumentation%2Fmacos-release-notes)
+![Static Badge](https://img.shields.io/badge/macOS-Ventura-green?style=flat-square)
+![Static Badge](https://img.shields.io/badge/macOS-Monterey-green?style=flat-square)<br /> 
+![GitHub Release](https://img.shields.io/github/v/release/s485lee/Higurashi_Korean_Mac?sort=date&display_name=release&style=flat-square)
+![GitHub Release Date](https://img.shields.io/github/release-date/s485lee/Higurashi_Korean_Mac?display_date=published_at&style=flat-square&color=blue)<br /> 
+![Static Badge](https://img.shields.io/badge/%EC%A0%95%EC%8B%A4%EC%9D%80%3F-%EB%A0%88%EB%82%98-orange?style=flat-square)
+
+
+
 
 기존 쓰르라미 울 적에 한글패치 [[문제편]](https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=7077) [[해답편]](https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=11567) [[례]](https://gall.dcinside.com/m/higurashi/521638) [[콘솔]](https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=215292)[[아크]](https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=567828)를 바탕으로 한 macOS용 쓰르라미 울 적에 한글패치.<br /> 
 
