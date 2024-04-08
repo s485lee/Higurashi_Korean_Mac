@@ -4,10 +4,13 @@
 SOURCE="/Volumes/Higu_Ch8_Kor/Contents"
 # Define the destination directory
 DESTINATION="$HOME/Library/Application Support/Steam/steamapps/common/Higurashi When They Cry Hou - Ch.8 Matsuribayashi/HigurashiEp08.app/Contents"
+#Define the directory for steamgrid images
+GRID_IMAGES_SOURCE="/path/to/grid/images"
 
 # Ensure trailing slash for rsync behavior consistency
 SOURCE="${SOURCE}/"
 DESTINATION="${DESTINATION}/"
+GRID_IMAGES_SOURCE="${GRID_IMAGES_SOURCE}/"
 
 # Description of the operation
 echo "macOS용 쓰르라미 울 적에 한글패치 인스톨러"
@@ -20,21 +23,34 @@ echo "한글패치를 설치하려면 y 키를. 취소하려면 n 키를 눌러 
 read -r user_confirm
 
 if [[ $user_confirm == "y" || $user_confirm == "Y" ]]; then
-    # Check if the source directory exists
     if [ -d "$SOURCE" ]; then
-        # Using rsync to copy and replace files without deleting anything in the destination
         rsync -av "$SOURCE" "$DESTINATION"
+        echo "한글패치가 성공적으로 적용되었습니다."
+        
+        # New feature to install steamgrid images
+        USERDATA_DIR="$HOME/Library/Application Support/Steam/userdata/"
+        FOUND_USER_DIR=false # Flag to check if any user directory has been found
+        for USER_DIR in "$USERDATA_DIR"*/; do
+            if [[ $(basename "$USER_DIR") =~ ^[0-9]{8}$ ]]; then
+                FOUND_USER_DIR=true # Found at least one user directory
+                GRID_DESTINATION="${USER_DIR}config/grid/"
+                mkdir -p "$GRID_DESTINATION" # Ensure the destination directory exists
+                rsync -av "$GRID_IMAGES_SOURCE" "$GRID_DESTINATION"
+                echo "Steamgrid 이미지가 성공적으로 설치되었습니다."
+            fi
+        done
+        
+        if [ "$FOUND_USER_DIR" = false ]; then
+            echo "Steam 사용자 데이터 폴더를 찾을 수 없거나 유효한 Steam 사용자 ID가 없습니다."
+        fi
         echo "하우~☆! 오모치카에리~!."
-        echo "한글패치가 성공적으로 적용되었습니다. 게임을 Steam에서 실행해 주세요. 니파~☆"        
-        # Wait for the user to press enter before exiting
+        echo "한글패치가 성공적으로 적용되었습니다. 게임을 Steam에서 실행해 주세요. 니파~☆"          
         read -p "Return 이나 Enter 키를 눌러 패치 인스톨러를 종료할 까나, 까나...?"
     else
         echo "한글패치 파일을 찾을 수 없습니다."
-        # Wait for the user to press enter before exiting
         read -p "Return 이나 Enter 키를 누르면 패치 인스톨러를 종료합니다..."
     fi
 else
     echo "작업이 취소되었습니다."
-    # Wait for the user to press enter before exiting
     read -p "Return 이나 Enter 키를 누르면 패치 인스톨러를 종료합니다..."
 fi
