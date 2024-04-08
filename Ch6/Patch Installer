@@ -31,13 +31,11 @@ if [[ $user_confirm == "y" || $user_confirm == "Y" ]]; then
         USERDATA_DIR="$HOME/Library/Application Support/Steam/userdata/"
         FOUND_USER_DIR=false # Flag to check if any user directory has been found
         for USER_DIR in "$USERDATA_DIR"*/; do
-            if [[ $(basename "$USER_DIR") =~ ^[0-9]{8}$ ]]; then
-                FOUND_USER_DIR=true # Found at least one user directory
-                GRID_DESTINATION="${USER_DIR}config/grid/"
-                mkdir -p "$GRID_DESTINATION" # Ensure the destination directory exists
-                rsync -av "$GRID_IMAGES_SOURCE" "$GRID_DESTINATION"
-                echo "Steamgrid 이미지가 성공적으로 설치되었습니다."
-            fi
+            FOUND_USER_DIR=true # Found at least one user directory
+            GRID_DESTINATION="${USER_DIR}config/grid/"
+            mkdir -p "$GRID_DESTINATION" # Ensure the destination directory exists
+            rsync -av "$GRID_IMAGES_SOURCE" "$GRID_DESTINATION"
+            echo "Steamgrid 이미지가 성공적으로 설치되었습니다."
         done
         
         if [ "$FOUND_USER_DIR" = false ]; then
