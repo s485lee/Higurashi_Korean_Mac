@@ -1,31 +1,55 @@
 #!/bin/bash
 
 # Define the source directory (inside mounted dmg volume)
-SOURCE="/Volumes/Higu_Ch3_Kor/Contents"
+SOURCE="/Volumes/Higu_Ch3_Kor/Data/Contents"
 # Define the destination directory
-DESTINATION="$HOME/Library/Application Support/Steam/steamapps/common/Higurashi 03 - Tatarigoroshi/HigurashiEp03.app/Contents"
+DESTINATION="$HOME/Library/Application Support/Steam/steamapps/common/Higurashi 03 - Tatarigoroshi"
 #Define the directory for steamgrid images
-GRID_IMAGES_SOURCE="/path/to/grid/images"
+GRID_IMAGES_SOURCE="/Volumes/Higu_Ch3_Kor/Data/Steamgrid"
 
 # Ensure trailing slash for rsync behavior consistency
 SOURCE="${SOURCE}/"
-DESTINATION="${DESTINATION}/"
 GRID_IMAGES_SOURCE="${GRID_IMAGES_SOURCE}/"
 
 # Description of the operation
 echo "macOS용 쓰르라미 울 적에 한글패치 인스톨러"
+echo ""
 echo "인스톨러 제작자: Montmorency (https://github.com/s485lee/Higurashi_Korean_Mac)"
 echo "인스톨러 제작에 도움을 주신 분: Côte-Vertu"
+echo ""
 echo "macOS용 쓰르라미 울 적에 한글패치는 Steam판을 지원합니다."
+echo ""
+echo "GOG판이나 MangaGamer판이 설치된 경우, 인스톨러가 게임 .app 파일을 자동으로 찾을 수 없습니다. 게임 .app 파일을 필요한 경우, 인스톨러 창으로 드래그 해주세요."
+echo ""
+echo "주의: GOG판이나 MangaGamer판은 Compatibility Pack이 필요할 수 있습니다. 자세한 내용은 07th-Mod 위키를 참고하세요."
+echo ""
+echo "인스톨러는 자동으로 Steamgrid 이미지를 새로운 배경, 스탠딩 CG와 한글 로고로 교체합니다."
+echo ""
 echo "한글패치를 설치하려면 y 키를. 취소하려면 n 키를 눌러 주세요. (y/n)"
 
 # Wait for user confirmation
 read -r user_confirm
 
 if [[ $user_confirm == "y" || $user_confirm == "Y" ]]; then
+    # Check if HigurashiEp03.app exists
+    if [ ! -d "$BASE_DESTINATION/HigurashiEp03.app" ]; then
+        echo "패치 인스톨러가 자동으로 게임 파일을 찾을 수 없습니다. HigurashiEp03.app을 패치 인스톨러 창으로 드래그 해주세요:"
+        read -r app_path
+        app_path=$(echo "$app_path" | sed 's/\\//g')
+        app_name=$(basename "$app_path")
+        if [[ $app_name == "HigurashiEp03.app" ]]; then
+            DESTINATION="${app_path%/}/Contents" 
+        else
+            echo "드래그한 파일이 HigurashiEp03.app이 아닙니다. 패치 인스톨러를 다시 실행 후, 재시도 해주세요."
+            exit 1
+        fi
+    else
+        DESTINATION="$BASE_DESTINATION/HigurashiEp03.app/Contents/"
+    fi
+
     if [ -d "$SOURCE" ]; then
         rsync -av "$SOURCE" "$DESTINATION"
-        echo "한글패치가 성공적으로 적용되었습니다."
+        echo "한글패치가 성공적으로 설치되었습니다."
         
         # New feature to install steamgrid images
         USERDATA_DIR="$HOME/Library/Application Support/Steam/userdata/"
