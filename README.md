@@ -21,6 +21,7 @@ macOS용 한글패치는 Steam판을 지원합니다.<br />
 Retina 디스플레이를 지원하기 위한 라이브러리 파일이 포함되었습니다. [higurashi-retinizer](https://github.com/TellowKrinkle/higurashi-retinaizer)<br />
 
 # 다운로드
+<img src="https://github.com/s485lee/HouPlusKor/assets/155126361/00a5f857-584f-43ab-9c11-de0b7e792255" width="70"><br /> 
 | 시나리오  | 링크 | Version |
 | :---:  | :---:  | :---:  |
 | 오니카쿠시  | [다운로드](https://mega.nz/file/LcRWTbDA#vbJilomDQM-5UeiYOsbgO0TCml5py0nPfsrUp3ApUzs)  | 2.3  |
