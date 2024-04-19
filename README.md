@@ -12,13 +12,16 @@
 
 
 
-기존 쓰르라미 울 적에 한글패치 [[문제편]](https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=7077) [[해답편]](https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=11567) [[례]](https://gall.dcinside.com/m/higurashi/521638) [[콘솔]](https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=215292)[[아크]](https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=567828)를 바탕으로 한 macOS용 쓰르라미 울 적에 한글패치.<br /> 
+기존 쓰르라미 울 적에 한글패치 문제편[^1] 해답편[^2] 례[^3] 콘솔[^4] 아크[^5]를 바탕으로 한 macOS용 쓰르라미 울 적에 한글패치.<br /> 
 
 macOS용 한글패치는 2024년 2월 기준 가장 최신 버전의 07th-Mod를 포함합니다. 따라서, 따로 07th-Mod를 설치할 필요는 없습니다.<br />
 
 macOS용 한글패치는 Steam판을 지원합니다.<br />
 
+GOG, MangaGamer판을 사용하는 경우, 07th-Mod 위키에서 Compatibility Pack을 다운로드 해 주세요.<br />
+
 Retina 디스플레이를 지원하기 위한 라이브러리 파일이 포함되었습니다. [higurashi-retinizer](https://github.com/TellowKrinkle/higurashi-retinaizer)<br />
+
 
 # 다운로드
 <img src="https://github.com/s485lee/HouPlusKor/assets/155126361/00a5f857-584f-43ab-9c11-de0b7e792255" width="70"><br /> 
@@ -73,12 +76,13 @@ A. 게임 실행후 모드 메뉴 (F10)에서 오프닝을 활성화해주세요
 **yuulafe**: Windows용 최신 한글패치 업데이트. 오탈자 / 오역 수정
 
 # 기타:
-**사용된 폰트**:<br />
-- Pretendard JP: 텍스트 (한글, 가나, 한자, 영문, 특수문자 통합 폰트)<br />
-- Apple 산돌고딕Neo[^1]: 동영상 자막, 일부 UI 요소<br />
-- 빙그레체: 일부 UI 요소<br />
-- 나눔돋움: 일부 UI 요소<br />
-- 조선신명조: 로고<br />
-- 배달의민족 연성: 일부 UI 요소<br />
-[^1]: Apple 산돌고딕Neo의 저작권은 Apple Inc.에 있으며, 한글 패치 요소 중, Apple 산돌고딕Neo를 사용한 부분은 Macintosh 환경에서 Apple 소프트웨어로 제작되었음을 알립니다.
+**사용된 폰트중 일부**:<br />
+- 빙그레체II: 텍스트
+- Apple 산돌고딕Neo[^7]: 동영상 자막, 일부 UI 요소<br />
+[^1]: https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=7077
+[^2]: https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=11567
+[^3]: https://gall.dcinside.com/m/higurashi/521638
+[^4]: https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=215292
+[^5]: https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=567828
+[^6]: Apple 산돌고딕Neo의 저작권은 Apple Inc.에 있으며, 한글 패치 요소 중, Apple 산돌고딕Neo를 사용한 부분은 Macintosh 환경에서 Apple 소프트웨어로 제작되었음을 알립니다.
 
