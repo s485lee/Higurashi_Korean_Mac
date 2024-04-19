@@ -16,7 +16,7 @@
 
 버전 2.0 이후로 Windows용 한글패치와 통합되었습니다. Windows용 패치는 [이곳에서](https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=468608&page=1) 다운로드 할 수 있습니다.<br /> 
 
-macOS용 한글패치는 2024년 2월 기준 가장 최신 버전의 07th-Mod를 포함합니다. 따라서, 따로 07th-Mod를 설치할 필요는 없습니다.<br />
+macOS용 한글패치는 릴리즈 날짜를 기준으로 가장 최신 버전의 07th-Mod를 포함합니다. 따라서, 따로 07th-Mod를 설치할 필요는 없습니다.<br />
 
 macOS용 한글패치는 Steam판을 지원합니다.<br />
 
