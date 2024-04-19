@@ -78,11 +78,10 @@ A. 게임 실행후 모드 메뉴 (F10)에서 오프닝을 활성화해주세요
 # 기타:
 **사용된 폰트중 일부**:<br />
 - 빙그레체II: 텍스트
-- Apple 산돌고딕Neo[^7]: 동영상 자막, 일부 UI 요소<br />
+- Apple 산돌고딕Neo[^6]: 동영상 자막, 일부 UI 요소<br />
 [^1]: https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=7077
 [^2]: https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=11567
 [^3]: https://gall.dcinside.com/m/higurashi/521638
 [^4]: https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=215292
 [^5]: https://gall.dcinside.com/mgallery/board/view/?id=higurashi&no=567828
 [^6]: Apple 산돌고딕Neo의 저작권은 Apple Inc.에 있으며, 한글 패치 요소 중, Apple 산돌고딕Neo를 사용한 부분은 Macintosh 환경에서 Apple 소프트웨어로 제작되었음을 알립니다.
-
