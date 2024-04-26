@@ -27,18 +27,7 @@ Retina 디스플레이를 지원하기 위한 라이브러리 파일이 포함�
 
 # 다운로드
 <img src="https://github.com/s485lee/HouPlusKor/assets/155126361/00a5f857-584f-43ab-9c11-de0b7e792255" width="70"><br /> 
-| 시나리오  | 링크 | Version |
-| :---:  | :---:  | :---:  |
-| 오니카쿠시  | [다운로드](https://mega.nz/file/2cYRjZRA#ZM7uqt3fSaR_hq6DTBODAJKZGlBd07G3mWou1krN1yQ)  | 2.3.1  |
-| 와타나가시 | [다운로드](https://mega.nz/file/7M50ALia#6dtlPnOfuGOj42THEZOZIzs2IBSaKna0xLGL3B8xZBg)  | 2.3.1  |
-| 타타리고로시  | [다운로드](https://mega.nz/file/zFozFKxA#0zN6gK_txGxDT5iXq2URia36MS47VZh5UpDD7muery0)  | 2.3.1  |
-| 히마츠부시  | [다운로드](https://mega.nz/file/HMAk1bKK#w9cPObC1lRBQvaAjwIOxgEmjV9Bug4k3us-GSBdHt-c)  | 2.3.1  |
-| 메아카시  | [다운로드](https://mega.nz/file/2UpyTDpS#-AGnDlmiYWo2cw3aVBS4SNbxYSl5PDXe9EnAEwd7iAE)  | 2.3.1  |
-| 츠미호로보시  | [다운로드](https://mega.nz/file/aZYHVBbK#ncCUxahJMfHoYpUdwdmFLlVDsufM6XorvIqEJJtoN6k)  | 2.3.1  |
-| 미나고로시  | [다운로드](https://mega.nz/file/HRYynCYK#ZDea8zcG_1mntPbES72kYKXjUBEVkPLETEiOa-uOk38)  | 2.3.1  |
-| 마츠리바야시  | [다운로드](https://mega.nz/file/fYwXgISB#n0KdDYwb2-EByHENDKd2H_tZan7jNee376Nvtdy_490)  | 2.3.1  |
-| 쓰르라미 울 적에: 례  | [다운로드](https://mega.nz/file/mZAAyJjY#F9cM4Ae7rlGCN2d3P_5mb6yZ3e1N2Rs-lopg8X8tzDY)  | 2.3.1  |
-| 콘솔아크 미오츠쿠시/타라이마와시  | [다운로드](https://github.com/s485lee/Miot_Omot_Korean/releases/tag/Release)  | 1.0  |
+[최신버전 다운로드](https://github.com/s485lee/Higurashi_Korean_Mac/releases)
 
 
 # 설치 방법
