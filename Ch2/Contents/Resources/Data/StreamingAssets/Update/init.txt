@@ -131,9 +131,12 @@ void main()
 	ModAddArtset("Original", "オリジナル", "OGBackgrounds:OGSprites:CG");
 
 	// GAltBGM controls which of these are selected
-	ModAddBGMset("New BGM", "Placeholder", "BGM");
+	ModAddBGMset("New Mangagamer", "Placeholder", "April2019BGM:BGM");
 	ModAddBGMset("GIN's BGM", "Placeholder", "OGBGM:BGM");
-	ModAddBGMset("Hou+", "Placeholder", "HouPlusBGM:BGM");
+	ModAddBGMset("Hou+ Demo", "Placeholder", "HouPlusDemoBGM:BGM");
+	ModAddBGMset("Hou+ BGM", "Placeholder", "HouPlusBGM:BGM");
+	ModAddBGMset("Remake + New Mangagamer", "Placeholder", "RemakeBGM:BGM");
+	ModAddBGMset("Remake + Original BGM", "Placeholder", "RemakeBGM:OGBGM:BGM");
 
 	// GAltSE controls which of these are selected
 	ModAddSEset("New SE", "Placeholder", "SE");
@@ -141,10 +144,16 @@ void main()
 
 	// Audio presets the user can select, consisting of a combination of the BGM and SE flags
 	ModAddAudioset(
-		"스팀판 BGM/SE",
+		"스팀판 BGM/SE (한패팀 수정판)",
 		"2019년 4월 이후 추가된 스팀판 배경음악과 효과음을 사용합니다.",
-		"JP: New Mangagamer BGM/SE",
-		"JP: Use the new Background Music (BGM) and Sound Effects (SE) introduced by MangaGamer in the April 2019 update",
+
+		2014년에 출시된 동인판 봉 (2014)에서 처음 선보인 nerve의 BGM을 사용하지만, AI-D-IA가 작곡한 배경음악들은 새롭게 교체되었습니다. 대부분은 문제편과 례의 사운드트랙에서 교체된 BGM들이지만, 작곡가가 불명인 새로운 BGM도 몇 가지 있습니다.
+		
+		일부 BGM들은 한패팀이 더 나은 경험을 위해 동인판 BGM으로 교체했습니다. 기존 한국어판에 수록된 배경음악을 사용하려면 이 옵션을 사용하는 것을 추천합니다.",
+		"New Mangagamer (2019)",
+		"Use the new Background Music (BGM) and Sound Effects (SE) introduced by MangaGamer in the April 2019 update
+
+		It uses the conversions of nerve's tracks that made their debut in the original Japanese release of Hou Compilation (2014), but all of the AI-D-IA tracks were replaced. Most of the replacements are from the soundtracks of Kai and Rei, but there are also some new tracks whose composer is unknown.",
 		0, // GAltBGM
 		0, // GAltBGMFlow
 		0, // GAltSE
@@ -152,16 +161,27 @@ void main()
 	);
 
 	ModAddAudioset(
-		"동인판 BGM/SE",
-		"동인판 배경음악과 효과음을 사용합니다. (완전히 동일하지는 않으나 원작 동인판 배경음악과 효과음을 최대한 재현합니다.)
+		"동인판 (봉) BGM/SE",
+		"이 옵션은 2014년 출시된 동인판 봉(2014)과 거의 동일한 BGM과 효과음을 사용합니다.
 
-		BGM/SE FAQ 열기 버튼을 눌러서 07th-Mod Wiki의 설명을 열람할 수 있습니다.
+		07th-Mod 위키에서 자세한 내용을 확인하세요.
 
-		이 옵션은 업데이트 이전 'Original BGM/SE' 이나 'BGM/SE fix' 옵션이었습니다.",
-		"JP: GIN's BGM/SE",
-		"JP: This option uses GIN's Background Music (BGM) and Sound Effects (SE), which bring the BGM/SE closer (but definitely NOT identical to) the original Japanese release and/or Pre April Update.
+		오니카쿠시 편에 처음 등장하는 BGM과 캐릭터 테마들은 AI-D-IA가 작곡했으며, 동인판 히마츠부시 편에서 추출되었습니다. 그 외 대부분의 트랙은 nerve가 작업한 MIDI판 BGM을 기반으로 합니다.
+
+		그러나 기존 동인판 BGM 변환 품질이 매우 낮아, 이 옵션은 새롭게 개선된 스팀판 BGM과 같은 변환을 사용합니다.
+
+		이 옵션은 동인판 효과음을 사용합니다.
+
+		"GIN / Hou BGM (2014)",
+		"This option uses GIN's Background Music (BGM) and Sound Effects (SE), which is virtually identical to what was included in the original Japanese release of Hou Compilation (2014) in terms of BGM.
 
 		Please click on the 'Open BGM/SE FAQ' button to view the 07th-mod wiki for more details.
+
+		All of the tracks that make their debut in Onikakushi and the character themes are by AI-D-IA and were taken from the original Japanese release of Himatsubushi. Most of the remaining tracks are based on MIDIs from nerve.
+
+		However, because the original conversions of those were extremely poor, this pack instead uses the same conversions as the New MangaGamer BGM.
+
+		This option uses GIN's SE, which should be similar to the Pre-April Update SE.
 
 		This option was previously known as 'Original BGM/SE' or 'BGM/SE fix'.",
 		1, // GAltBGM
@@ -172,22 +192,139 @@ void main()
 
 	ModAddAudioset(
 		"봉+ 체험판 BGM",
-		"봉+ 체험판에 포함된 16가지의 배경음악을 사용합니다.
+		"봉+ 체험판에 포함된 16가지의 배경음악을 사용합니다. nerve의 BGM은 기존 스팀판 BGM과 동일하게 사용되지만, AI-D-IA가 작곡한 BGM은 다른 BGM으로 교체되었습니다.
 
-		기존 스팀판 BGM의 리마스터와 xaki가 새로 작곡한 BGM이 포함돼 있습니다.
+		U2 Akiyama가 작곡한 BGM은 하나를 제외하고 리메이크 되었으며, 다른 BGM들은 xaki가 새롭게 작곡한 BGM으로 교체되었습니다.
 
 		이 옵션은 챕터 5-8과 례에서는 사용할 수 없습니다.
 
-		미수록된 BGM은 스팀판과 원작 BGM을 사용합니다.",
-		"JP: Hou+ Demo BGM",
-		"JP: This option replaces 16 BGM with BGM from the Higurashi Hou+ Demo. It uses the same tracks from nerve as the New MangaGamer BGM, but the AI-D-IA tracks are different.
+		미수록된 BGM은 스팀판 BGM과 동인판 효과음을 사용합니다.",
 
-		Some are remastered versions of MangaGamer's replacements, while others were newly composed by xaki.
+		이 옵션은 동인판 효과음을 사용합니다.",
+		"Hou+ Demo (2020)",
+		"This option replaces 16 BGM with BGM from the Higurashi Hou+ demo (2020). It uses the same conversions of nerve's tracks as the New MangaGamer BGM, but the replacements for the AI-D-IA tracks are different.
+
+		Those by U2 Akiyama have been rearranged (except for one that's virtually unchanged), while the rest were replaced with new compositions by xaki.
 
 		This option is not available for Chapters 5-8 and Rei because most of their music isn't in the Hou+ demo.
 
-		All other tracks will use the New Mangagamer BGM and GIN's/Original SE.",
+		All other tracks will use the New Mangagamer BGM and GIN's/Original SE.
+
+		This option uses GIN's SE, which should be similar to the Pre-April Update SE.",
 		2, // GAltBGM
+		1, // GAltBGMFlow
+		1, // GAltSE
+		1  // GAltSEFlow
+	);
+
+	ModAddAudioset(
+		"봉+(2022) BGM",
+		"봉+(2022)판 BGM/효과음을 사용합니다.
+
+		봉+ 체험판(2022)과 비교하면, xaki가 작곡한 MIND THE GAP은 속도가 빨라졌고, nerve가 작곡한 Fascism과 Lie lies-lies lie는 새롭게 리메이크 되었습니다.
+
+		이 옵션은 동인판 효과음을 사용합니다.",
+		"Hou+ BGM (2022)",
+		"This option uses the BGM found in the full version of the Japanese release of Hou+ (2022).
+
+		Compared to the Hou+ demo (2020), the xaki track MIND THE GAP has been sped up, while the nerve tracks Fascism and Lie lies-lies lie were newly converted. Everything else is unchanged.
+
+		This option uses GIN's SE, which should be similar to the Pre-April Update SE.",
+		3, // GAltBGM
+		1, // GAltBGMFlow
+		1, // GAltSE
+		1  // GAltSEFlow
+	);
+
+	ModAddAudioset(
+		"팬 OST 리메이크 + 스팀판",
+		"이 옵션은 9개의 BGM을 새로 어레인지한 배경음악으로 교체합니다.
+
+		다른 BGM들은 기존 스팀판 BGM과 효과음을 사용합니다.
+
+		다음과 같은 배경음악들이 교체되었습니다:
+			- Tell a thing (piano solo ver.)
+			- Snow #3 'First snow'
+			- Days of Children #3
+			- Rainy Days
+			- Fascism
+			- Sunrise
+			- Gear
+			- Theme of Owner
+			- Dawn
+
+		샘플 BGM을 듣기 원한다면 'radiataalice hinamizawa'를 인터넷에 검색해 들을 수 있습니다.
+
+		이 옵션은 오니카쿠시 편에서는 적용이 되지 않습니다.
+		이 옵션은 해답편에서 적용할 수 없습니다.",
+		"Fan OST Remake + New Mangagamer",
+		"This option replaces nine BGM with handmade remakes of nine tracks from the original release (pre-2019).
+
+		All other tracks will use the New Mangagamer BGM/SE.
+
+		The following tracks are replaced:
+			- Tell a thing (piano solo ver.)
+			- Snow #3 'First snow'
+			- Days of Children #3
+			- Rainy Days
+			- Fascism
+			- Sunrise
+			- Gear
+			- Theme of Owner
+			- Dawn
+
+		Search online for 'radiataalice hinamizawa' to listen to audio samples and to get more details.
+
+		This option is not available for Onikakushi Ch.1, as the chapter does not use any of these tracks.
+		This option is not available for Chapters 5-8 as an OST remake for those chapters hasn't been created.",
+		4, // GAltBGM
+		0, // GAltBGMFlow
+		0, // GAltSE
+		0  // GAltSEFlow
+	);
+
+	ModAddAudioset(
+		"팬 OST 리메이크 + 동인판",
+		"이 옵션은 9개의 BGM을 새로 어레인지한 배경음악으로 교체합니다.
+
+		다른 BGM들은 기존 동인판 BGM과 효과음을 사용합니다.
+
+		The following tracks are replaced:
+			- Tell a thing (piano solo ver.)
+			- Snow #3 'First snow'
+			- Days of Children #3
+			- Rainy Days
+			- Fascism
+			- Sunrise
+			- Gear
+			- Theme of Owner
+			- Dawn
+
+		Search online for 'radiataalice hinamizawa' to listen to audio samples and to get more details.
+
+		This option is not available for Onikakushi Ch.1, as the chapter does not use any of these tracks.
+		This option is not available for Chapters 5-8 as an OST remake for those chapters hasn't been created.",
+		"Fan OST Remake + GIN",
+		"This fan-made option replaces nine BGM with handmade remakes of nine tracks from the original release (pre-2019).
+
+		All other tracks will use the GIN's/OG BGM BGM/SE.
+
+		다음과 같은 배경음악들이 교체되었습니다:
+			- Tell a thing (piano solo ver.)
+			- Snow #3 'First snow'
+			- Days of Children #3
+			- Rainy Days
+			- Fascism
+			- Sunrise
+			- Gear
+			- Theme of Owner
+			- Dawn
+
+		샘플 BGM을 듣기 원한다면 'radiataalice hinamizawa'를 인터넷에 검색해 들을 수 있습니다.
+
+		이 옵션은 오니카쿠시 편에서는 적용이 되지 않습니다.
+		이 옵션은 해답편에서 적용할 수 없습니다.",
+		5, // GAltBGM
 		1, // GAltBGMFlow
 		1, // GAltSE
 		1  // GAltSEFlow
