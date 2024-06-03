@@ -2,10 +2,121 @@
 
 # Define the source directory (inside mounted dmg volume)
 SOURCE="/Volumes/Higu_Ch6_Kor/Data/Contents"
-# Define the destination directory
-BASE_DESTINATION="$HOME/Library/Application Support/Steam/steamapps/common/Higurashi When They Cry Hou - Ch.6 Tsumihoroboshi"
-#Define the directory for steamgrid images
-GRID_IMAGES_SOURCE="/Volumes/Higu_Ch6_Kor/Data/Steamgrid"
+# Define the file location for the libraryfolders.vdf
+FILE_PATH="$HOME/Library/Application Support/Steam/config/libraryfolders.vdf"
+
+# Function to find the installation path for a given app ID
+find_game_path() {
+  local app_id=$1
+  local file_path=$2
+
+  # Check if the file exists
+  if [[ ! -f "$file_path" ]]; then
+    return 1
+  fi
+
+  # Read the file and search for the app ID
+  while read -r line; do
+    if [[ "$line" =~ \"path\" ]]; then
+      current_path=$(echo "$line" | sed -E 's/.*\"path\"[[:space:]]+\"([^\"]+)\".*/\1/')
+    fi
+    if [[ "$line" =~ \"$app_id\" ]]; then
+      game_path="$current_path"
+      break
+    fi
+  done < "$file_path"
+
+  # Check if the game path was found
+  if [[ -z "$game_path" ]]; then
+    return 1
+  fi
+
+  case "$app_id" in
+    "310360")
+      echo "$game_path/steamapps/common/Higurashi When They Cry"
+      ;;
+    "410890")
+      echo "$game_path/steamapps/common/Higurashi 02 - Watanagashi"
+      ;;
+    "472870")
+      echo "$game_path/steamapps/common/Higurashi 03 - Tatarigoroshi"
+      ;;
+    "526490")
+      echo "$game_path/steamapps/common/Higurashi 04 - Himatsubushi"
+      ;;
+    "577480")
+      echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch. 5 Meakashi"
+      ;;
+    "668350")
+      echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch.6 Tsumihoroboshi"
+      ;;
+    "1034940")
+      echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch.7 Minagoroshi"
+      ;;
+    "1243670")
+      echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch.8 Matsuribayashi"
+      ;;
+    "1941110")
+      echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Rei"
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+  return 0
+}
+
+# Function to get the app name based on the app ID
+get_app_name() {
+  local app_id=$1
+  case "$app_id" in
+    "310360") echo "HigurashiEp01.app" ;;
+    "410890") echo "HigurashiEp02.app" ;;
+    "472870") echo "HigurashiEp03.app" ;;
+    "526490") echo "HigurashiEp04.app" ;;
+    "577480") echo "HigurashiEp05.app" ;;
+    "668350") echo "HigurashiEp06.app" ;;
+    "1034940") echo "HigurashiEp07.app" ;;
+    "1243670") echo "HigurashiEp08.app" ;;
+    "1941110") echo "HigurashiEp09.app" ;;
+    *) return 1 ;;
+  esac
+  return 0
+}
+
+# Define the app ID
+APP_ID="668350" #App_ID for Tsumihoroboshi
+
+# Get the base destination path
+BASE_DESTINATION=$(find_game_path "$APP_ID" "$FILE_PATH")
+
+# Get the app name
+APP_NAME=$(get_app_name "$APP_ID")
+
+# Check if the app exists at the destination path
+if [[ -n "$BASE_DESTINATION" && ! -d "$BASE_DESTINATION/$APP_NAME" ]]; then
+  echo "경고: $APP_NAME 을 다음과 같은 경로에서 찾을 수 없습니다: $BASE_DESTINATION."
+  BASE_DESTINATION=""
+fi
+
+# If the BASE_DESTINATION is empty or the .app file doesn't exist, ask the user to drag the app file
+if [[ -z "$BASE_DESTINATION" || ! -d "$BASE_DESTINATION/$APP_NAME" ]]; then
+  echo "패치 인스톨러가 자동으로 게임 파일을 찾을 수 없습니다. $APP_NAME 을 패치 인스톨러 창으로 드래그 해주세요:"
+  read -r app_path
+  app_path=$(echo "$app_path" | sed 's/\\//g')
+  app_name=$(basename "$app_path")
+  if [[ $app_name == "$APP_NAME" ]]; then
+    DESTINATION="$app_path/Contents"
+  else
+    echo "드래그한 파일이 $APP_NAME 이 아닙니다. 패치 인스톨러를 다시 실행 후, 재시도 해주세요."
+    exit 1
+  fi
+else
+  DESTINATION="$BASE_DESTINATION/$APP_NAME/Contents"
+fi
+
+# Define the directory for steamgrid images
+GRID_IMAGES_SOURCE="/Volumes/Higu_Ch1_Kor/Data/Steamgrid"
 
 # Ensure trailing slash for rsync behavior consistency
 SOURCE="${SOURCE}/"
@@ -25,28 +136,14 @@ echo "주의: GOG판이나 MangaGamer판은 Compatibility Pack이 필요할 수 
 echo ""
 echo "인스톨러는 자동으로 Steamgrid 이미지를 새로운 배경, 스탠딩 CG와 한글 로고로 교체합니다."
 echo ""
+echo "한글패치는 다음과 같은 경로에 설치됩니다: $DESTINATION"
+echo ""
 echo "한글패치를 설치하려면 y 키를. 취소하려면 n 키를 눌러 주세요. (y/n)"
 
 # Wait for user confirmation
 read -r user_confirm
 
 if [[ $user_confirm == "y" || $user_confirm == "Y" ]]; then
-    # Check if HigurashiEp06.app exists
-    if [ ! -d "$BASE_DESTINATION/HigurashiEp06.app" ]; then
-        echo "패치 인스톨러가 자동으로 게임 파일을 찾을 수 없습니다. HigurashiEp06.app을 패치 인스톨러 창으로 드래그 해주세요:"
-        read -r app_path
-        app_path=$(echo "$app_path" | sed 's/\\//g')
-        app_name=$(basename "$app_path")
-        if [[ $app_name == "HigurashiEp06.app" ]]; then
-            DESTINATION="${app_path%/}/Contents" 
-        else
-            echo "드래그한 파일이 HigurashiEp06.app이 아닙니다. 패치 인스톨러를 다시 실행 후, 재시도 해주세요."
-            exit 1
-        fi
-    else
-        DESTINATION="$BASE_DESTINATION/HigurashiEp06.app/Contents/"
-    fi
-
     if [ -d "$SOURCE" ]; then
         rsync -av "$SOURCE" "$DESTINATION"
         echo "한글패치가 성공적으로 설치되었습니다."
