@@ -212,7 +212,7 @@ void main()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　それだけのことが伝えたくて、こんなにも長い物語が描かれるなら、竜騎士07という人間にはよっぽど文才がないに違いないですね…。",
-		   NULL, "고작 이 말을 전하려고 이렇게나 긴 이야기를 하다니, 용기사07이라는 사람에게는 글재주가 없는 게 틀림없네요. ", Line_Normal);
+		   NULL, "고작 이 말을 전하려고 이렇게나 긴 이야기를 쓰다니, 용기사07이라는 사람에게는 글재주가 없는 게 틀림없네요. ", Line_Normal);
 	ClearMessage();
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -232,14 +232,13 @@ void main()
 
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "０７ｔｈ　Ｅｘｐａｎｓｉｏｎ",
-		   NULL, "07th Expansion ", Line_ContinueAfterTyping);
+		   NULL, "07th Expansion\n", Line_ContinueAfterTyping);
 
 	if (GetGlobalFlag(GADVMode) == 0) { SetDrawingPointOfMessage( 0, 9 ); }
 
 	OutputLine(NULL, "竜騎士07",
-		   NULL, "용기사07 ", GetGlobalFlag(GLinemodeSp));
-	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
-	SetSpeedOfMessage( FALSE, 0 );
+		   NULL, "용기사07 ", Line_Normal);
+	ClearMessage();
 
 	DisableWindow();
 	CallScript( "&eye" );
