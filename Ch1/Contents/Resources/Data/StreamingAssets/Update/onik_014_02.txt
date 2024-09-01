@@ -4106,15 +4106,12 @@ void main()
 
 //「お、おいおい侮るなよ？＠　うちのお袋のスペシャルなディナーを見くびるなってんだ...！＠　そりゃあもー満貫全席状態で......すごいのなんの...、＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>케이이치</color>", NULL, Line_ContinueAfterTyping); }
-	//ModPlayVoiceLS(3, 1, "org/keiichi0026", 256, TRUE);
 	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100543", 256, TRUE);
 	OutputLine(NULL, "「お、おいおい侮るなよ？！",
 		   NULL, "\"어, 어이, 무시하지 마?! ", Line_WaitForInput);
-	//ModPlayVoiceLS(3, 1, "org/keiichi0027", 256, TRUE);
 	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100544", 256, TRUE);
 	OutputLine(NULL, "　うちのお袋のスペシャルなディナーを見くびるなってんだ…！！",
 		   NULL, "우리 어머니의 스페셜 디너를 얕보지 말라고...!! ", Line_WaitForInput);
-	//ModPlayVoiceLS(3, 1, "org/keiichi0028", 256, TRUE);
 	ModPlayVoiceLS(3, 1, "ps3/s01/01/120100545", 256, TRUE);
 	OutputLine(NULL, "　そりゃあもー満漢全席状態で……すごいのなんの…、」",
 		   NULL, "산해진미가 넘쳐서 식탁에 빈자리가 없을 정도야... 대단하다고...\" ", GetGlobalFlag(GLinemodeSp));
@@ -4360,7 +4357,8 @@ void main()
 		   NULL, "\"...거짓말 같은 거 아니...\" ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-//	DrawBustshot( 2, "re_si_hii_b1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(2, 2, "sprite/re2b_hig_okoru_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );}
 
 //「嘘だよッ！！！！＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
@@ -4378,7 +4376,8 @@ void main()
 		   NULL, "레나의 일갈에, 전신에 쭉 하고 소름이 돋는다..!! ", Line_Normal);
 	ClearMessage();
 
-//	DrawBustshot( 2, "re_si_him_b1", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(2, 2, "sprite/re2b_hig_muhyou_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );}
 
 //　チェーン越しに守られ、レナとの接点は扉の隙間のわずか１０数センチ＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -4684,6 +4683,7 @@ void main()
 	ClearMessage();
 
 	DisableWindow();
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(2, 2, "sprite/re2b_hig_muhyou_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );}
 	DrawScene("background/ma_g3_02", 200 );
 
 	PlayBGM( 2, "lsys15", 56, 0 );
@@ -4757,6 +4757,7 @@ void main()
 
 	DisableWindow();
 	DrawScene("scene/033a", 300 );
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(2, 2, "sprite/re2a_hig_def_a1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );}
 
 //「......なんでかなぁ＠　不思議だね＠だね？＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>레나</color>", NULL, Line_ContinueAfterTyping); }
@@ -4999,6 +5000,7 @@ void main()
 
 	DisableWindow();
 	DrawScene("black", 300 );
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(2, 2, "sprite/re2b_hig_def_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );}
 	StopSE( 4 );
 
 //「...............だから圭一くん＠............ここを開けて＠　レナと一緒にご飯食べよ＠　きっとおいしいから、...............ね...？￥
@@ -6826,10 +6828,9 @@ void main()
 		   NULL, "폭포와 같은 비에, 머리카락부터 뚝뚝 물방울이 흐르고 있었다... ", Line_Normal);
 	ClearMessage();
 	DisableWindow();
-//	DrawFilm( 2,  34, 34, 255, 255, 0, 0, FALSE );
 	DrawSceneWithMask("scene/104", "right", 0, 0, 300 );
-//	DrawBustshotWithFiltering( 2, "re_si_him_a1", "left", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 10, 300, TRUE );
-//print 1
+	ModSetLayerFilter(2, 256, "night");
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(2, 2, "sprite/re2b_hig_muhyou_b1_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 300, TRUE );}
 
 //　それは両手をだらりとさせ、ただ、立ち尽くしているという表現が似合っていた＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }

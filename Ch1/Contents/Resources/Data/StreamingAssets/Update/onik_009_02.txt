@@ -714,8 +714,9 @@ void main()
 	DisableWindow();
 	DrawScene("black", 500 );
 	DrawSceneWithMask("scene/103a", "down", 0, 0, 1300 );
-
-//	DrawBustshotWithFiltering( 1, "night/ta_si_wa_a1", "left", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(1, 9, "sprite/ta1_warai_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 0, FALSE );}
+	if (GetGlobalFlag(GHideCG)) {DrawSceneWithMask("background/y_kawa3", "down", 0, 0, 1300 );}
 
 //「若い人たちはそうは思わなかったみたいだけれど…＠お年寄りたちはオヤシロさまの祟りだと疑わなかったみたいね。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女性</color>", NULL, "<color=#f5e6d3>여자</color>", NULL, Line_ContinueAfterTyping); }
@@ -735,7 +736,8 @@ void main()
 		   NULL, "토미타케 씨의 일행인 여자가 그렇게 말하며 장난스럽게 웃었다. ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 8, "sprite/tomi1_warai_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );}
 
 //　合わせて富竹さんも笑ったので、俺もつられて笑うことにする￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -743,8 +745,8 @@ void main()
 		   NULL, "토미타케 씨도 웃어서, 나도 덩달아 따라 웃었다. ", Line_Normal);
 	ClearMessage();
 
-//	DisableWindow();
-//	DrawBustshot( 1, "night/ta_si_de_a1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(1, 9, "sprite/ta1_def_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );}
 
 //「…でも、…今ではどうかしらね＠結構いるんじゃないかしら＠若い人にも。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女性</color>", NULL, "<color=#f5e6d3>여자</color>", NULL, Line_ContinueAfterTyping); }
@@ -768,10 +770,8 @@ void main()
 		   NULL, "\"있다니... 뭐가 말인가요?\" ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-
-
-//	DisableWindow();
-//	DrawBustshot( 3, "night/tm_si_de_a1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );}
 
 //「信じてる人だよ＠…オヤシロさまの、祟り。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>토미타케</color>", NULL, Line_ContinueAfterTyping); }
@@ -824,7 +824,7 @@ void main()
 
 	DisableWindow();
 	DrawSceneWithMask("scene/103b", "down", 0, 0, 1300 );
-//	DrawBustshot( 3, "night/tm_si_ko_a1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 8, "sprite/tomi1_komaru_", "1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );}
 
 //「毎年…綿流しの日になるとね。!w1500/
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>토미타케</color>", NULL, Line_ContinueAfterTyping); }
@@ -888,19 +888,15 @@ void main()
 
 	//「さらに翌年＠綿流しの晩＠今度は神社の神主が原因不明の奇病で急死した＠奥さんはその晩の内に沼に入水自殺した。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>토미타케</color>", NULL, Line_ContinueAfterTyping); }
-	//ModPlayVoiceLS(3, 8, "org/tomitake0001", 256, TRUE);
 	ModPlayVoiceLS(3, 8, "ps3/s01/08/120800036", 256, TRUE);
 	OutputLine(NULL, "「さらに翌年。",
 		   NULL, "\"그리고 다음 해.", Line_WaitForInput);
-	//ModPlayVoiceLS(3, 8, "org/tomitake0002", 256, TRUE);
 	ModPlayVoiceLS(3, 8, "ps3/s01/08/120800037", 256, TRUE);
 	OutputLine(NULL, "綿流しの晩。",
 		   NULL, " 와타나가시 밤.", Line_WaitForInput);
-	//ModPlayVoiceLS(3, 8, "org/tomitake0003", 256, TRUE);
 	ModPlayVoiceLS(3, 8, "ps3/s01/08/120800038", 256, TRUE);
 	OutputLine(NULL, "今度は神社の神主が原因不明の奇病で急死した。",
 		   NULL, " 이번엔 신사의 신주가 원인 불명의 병으로 급사했어.", Line_WaitForInput);
-	//ModPlayVoiceLS(3, 8, "org/tomitake0004", 256, TRUE);
 	ModPlayVoiceLS(3, 8, "ps3/s01/08/120800039", 256, TRUE);
 	OutputLine(NULL, "奥さんはその晩の内に沼に入水自殺した。」",
 		   NULL, " 부인은 그날 밤에 늪에 투신자살했지.\"", GetGlobalFlag(GLinemodeSp));
@@ -964,8 +960,8 @@ void main()
 		   NULL, "그 연장선으로 생각해 보면... 혹시 이 주부도 뭔가 관계가 있지 않을까 생각하게 된다. ", Line_Normal);
 	ClearMessage();
 
-//	DisableWindow();
-//	DrawBustshot( 1, "night/ta_si_wa_a1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(1, 9, "sprite/ta1_warai_", "1", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 200, TRUE );}
 
 //「その通りよ。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f5e6d3>女性</color>", NULL, "<color=#f5e6d3>여자</color>", NULL, Line_ContinueAfterTyping); }
@@ -1004,9 +1000,8 @@ void main()
 		   NULL, "그 2년 전에 추락사한 댐 유치파 남자의 남동생 가족이야.\" ", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
-
-
-//	DrawBustshot( 3, "night/tm_si_de_a1", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(3, 8, "sprite/tomi1_def_", "0", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 20, 200, TRUE );}
 
 //「弟本人はまだ生きてるらしいね＠でもやはり……かなり気にしてね。近隣の町に引っ越してったらしいよ。￥
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#945c44>富竹</color>", NULL, "<color=#945c44>토미타케</color>", NULL, Line_ContinueAfterTyping); }
@@ -1020,8 +1015,7 @@ void main()
 
 	DisableWindow();
 	FadeOutBGM( 2, 1000, TRUE );
-	DrawBustshotWithFiltering(5, "black", "down", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 25, 1300, TRUE );
-
+	DrawSceneWithMask("black", "down", 0, 0, 1300 );
 
 
 //　…しばらくの間、開いた口を閉じることができなかった￥
