@@ -1854,7 +1854,9 @@ void main()
 	Wait( 15000 );
 	FadeOutBGM( 1, 1000, FALSE );
 	DrawScene("scene/009a", 1000 );
-	//ModPlayBGM( 0, "msys30", 56, 0, 0 );
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(2, 11, "sprite/oisi1_5_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(1, 7, "sprite/sato1_komaru_", "0", -160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 0, FALSE );}
+	if (GetGlobalFlag(GHideCG)) {DrawScene("background/mati_o1", 400 );}
 	ModPlayBGM( 3, "hgrs01", 70, 0, 0 );
 	ModPlayBGM( 0, "hgrs01", 70, 0, 1 );
 
@@ -1886,6 +1888,9 @@ void main()
 	OutputLine(NULL, "　大石はにやにやと笑いを浮かべたままだったが、混乱しているのは間違いなかった。",
 		   NULL, "오오이시는 아직 얼굴에 히죽거리는 웃음을 머금은 채였지만, 내 말이 혼란스러운 것만은 틀림없었다. ", Line_Normal);
 	ClearMessage();
+
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(2, 11, "sprite/oisi1_5_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );}
 
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 11, "ps3/s06/11/150700135", 256, TRUE);
@@ -1943,6 +1948,9 @@ void main()
 	OutputLine(NULL, "　ここまで言われては、刑事たちもさすがに動揺を隠せないようだった。",
 		   NULL, "내가 이렇게까지 말하자, 형사들도 역시 동요를 숨기지 못했다. ", Line_Normal);
 	ClearMessage();
+
+	if (GetGlobalFlag(GHideCG)) {DisableWindow();}
+	if (GetGlobalFlag(GHideCG)) {ModDrawCharacter(2, 11, "sprite/oisi1_4_", "2", 160, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );}
 
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#a59da9>大石</color>", NULL, "<color=#a59da9>오오이시</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(4, 11, "ps3/s06/11/150700139", 256, TRUE);
