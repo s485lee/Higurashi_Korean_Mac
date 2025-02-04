@@ -45,7 +45,7 @@ Retina 디스플레이를 지원하기 위한 라이브러리 파일이 포함�
 - 마운트한 DMG 이미지에서, 패치 인스톨러를 클릭해 열면 다음과 같은 창이 나옵니다. **그래도 열기**를 클릭해 패치 인스톨러를 실행해 주세요:<br />
 <img width="372" alt="Prompt 1" src="https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/68975ab2-f672-425a-8efe-33bb441cd630"> <br />
 - 그래도 열기 옵션이 보이지 않는 경우, 시스템 설정에서 **개인정보 보호 및 보안** 탭에서 보안에 있는 **그래도 열기 / Open Anyway**를 선택해 패치 인스톨러를 실행해 주세요:<br />
-<img width="827" alt="Prompt 2" src="https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/2cbec20d-51ac-450c-a7b7-975df9120dc2">
+<br /><img width="827" alt="Prompt 2" src="https://github.com/user-attachments/assets/94f42935-e81d-4c6c-83a0-7eb264ed4ec0"> <br />
 
 4. 패치 인스톨러의 안내에 따라 한글패치를 설치해 주세요: <br />
 <img width="1017" alt="Screenshot 2024-03-31 at 1 04 57 PM" src="https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/359871f8-3e4b-4b00-977a-95749536a27a"><br /> 
