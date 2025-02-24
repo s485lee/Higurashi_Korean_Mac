@@ -1,21 +1,82 @@
 #!/bin/bash
 
-# Define the source directory (inside mounted dmg volume)
-SOURCE="/Volumes/Higu_Ch7_Kor/Data/Contents"
-# Define the file location for the libraryfolders.vdf
-FILE_PATH="$HOME/Library/Application Support/Steam/config/libraryfolders.vdf"
+# Color Definitions
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
 
-# Function to find the installation path for a given app ID
+# Configuration
+APP_ID="1034940" #App_ID for Minagoroshi
+SOURCE="/Volumes/Higu_Ch7_Kor/Data/Contents"
+GRID_IMAGES_SOURCE="/Volumes/Higu_Ch7_Kor/Data/Steamgrid"
+STEAM_CONFIG_FILE="$HOME/Library/Application Support/Steam/config/libraryfolders.vdf"
+
+# Function to get chapter name
+get_chapter_name() {
+  case "$1" in
+    "310360") echo "오니카쿠시 편" ;;
+    "410890") echo "와타나가시 편" ;;
+    "472870") echo "타타리고로시 편" ;;
+    "526490") echo "히마츠부시 편" ;;
+    "577480") echo "메아카시 편" ;;
+    "668350") echo "츠미호로보시 편" ;;
+    "1034940") echo "미나고로시 편" ;;
+    "1243670") echo "마츠리바야시 편" ;;
+    "1941110") echo "쓰르라미 울 적에: 례" ;;
+    "2491040") echo "쓰르라미 울 적에: 봉+" ;;
+    *) return 1 ;;
+  esac
+}
+
+# Welcome Screen
+show_welcome() {
+  echo -e "${CYAN}"
+  echo "제작자: Montmorency (https://github.com/s485lee)"
+  echo ""
+  echo "사용 안내:"
+  echo "- Steam판: 인스톨러의 안내를 따라주세요."
+  echo "- GOG/MangaGamer판: 해당 판을 사용 중이라면, 인스톨러의 안내에 따라 게임 .app 파일을 인스톨러 창으로 드래그해 주세요. Compatibility Pack이 필요할 수 있으니, 자세한 내용은 07th-Mod 위키를 참고하세요."
+  echo -e "${NC}"
+}
+
+# UI Functions
+print_header() {
+  local chapter_name
+  chapter_name=$(get_chapter_name "$APP_ID")
+  clear
+  echo -e "${GREEN}================================================================"
+  echo " macOS용 쓰르라미 울 적에 한글패치 인스톨러: ${chapter_name}"
+  echo -e "================================================================${NC}"
+}
+
+section_header() {
+  echo -e "\n${BLUE}===[ $1 ]===${NC}"
+}
+
+print_footer() {
+  echo -e "\n${GREEN}=============================================="
+  echo "하우~☆! 오모치카에리~!"
+  echo "한글패치가 성공적으로 적용되었습니다."
+  echo "게임을 Steam에서 실행해 주세요. 니파~☆"
+  echo -e "==============================================${NC}"
+  echo -e "${YELLOW}\n종료하려면 아무 키나 누르세요...${NC}"
+  read -n 1 -s -r
+}
+
+# Function to find game path
 find_game_path() {
   local app_id=$1
   local file_path=$2
+  local game_path=""
+  local current_path=""
 
-  # Check if the file exists
   if [[ ! -f "$file_path" ]]; then
     return 1
   fi
 
-  # Read the file and search for the app ID
   while read -r line; do
     if [[ "$line" =~ \"path\" ]]; then
       current_path=$(echo "$line" | sed -E 's/.*\"path\"[[:space:]]+\"([^\"]+)\".*/\1/')
@@ -26,50 +87,29 @@ find_game_path() {
     fi
   done < "$file_path"
 
-  # Check if the game path was found
   if [[ -z "$game_path" ]]; then
     return 1
   fi
 
   case "$app_id" in
-    "310360")
-      echo "$game_path/steamapps/common/Higurashi When They Cry"
-      ;;
-    "410890")
-      echo "$game_path/steamapps/common/Higurashi 02 - Watanagashi"
-      ;;
-    "472870")
-      echo "$game_path/steamapps/common/Higurashi 03 - Tatarigoroshi"
-      ;;
-    "526490")
-      echo "$game_path/steamapps/common/Higurashi 04 - Himatsubushi"
-      ;;
-    "577480")
-      echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch. 5 Meakashi"
-      ;;
-    "668350")
-      echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch.6 Tsumihoroboshi"
-      ;;
-    "1034940")
-      echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch.7 Minagoroshi"
-      ;;
-    "1243670")
-      echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch.8 Matsuribayashi"
-      ;;
-    "1941110")
-      echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Rei"
-      ;;
-    *)
-      return 1
-      ;;
+    "310360") echo "$game_path/steamapps/common/Higurashi When They Cry" ;;
+    "410890") echo "$game_path/steamapps/common/Higurashi 02 - Watanagashi" ;;
+    "472870") echo "$game_path/steamapps/common/Higurashi 03 - Tatarigoroshi" ;;
+    "526490") echo "$game_path/steamapps/common/Higurashi 04 - Himatsubushi" ;;
+    "577480") echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch. 5 Meakashi" ;;
+    "668350") echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch.6 Tsumihoroboshi" ;;
+    "1034940") echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch.7 Minagoroshi" ;;
+    "1243670") echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Ch.8 Matsuribayashi" ;;
+    "1941110") echo "$game_path/steamapps/common/Higurashi When They Cry Hou - Rei" ;;
+    "2491040") echo "$game_path/steamapps/common/Higurashi When They Cry Hou+" ;;
+    *) return 1 ;;
   esac
   return 0
 }
 
-# Function to get the app name based on the app ID
+# Function to get app name 
 get_app_name() {
-  local app_id=$1
-  case "$app_id" in
+  case "$1" in
     "310360") echo "HigurashiEp01.app" ;;
     "410890") echo "HigurashiEp02.app" ;;
     "472870") echo "HigurashiEp03.app" ;;
@@ -79,99 +119,133 @@ get_app_name() {
     "1034940") echo "HigurashiEp07.app" ;;
     "1243670") echo "HigurashiEp08.app" ;;
     "1941110") echo "HigurashiEp09.app" ;;
+    "2491040") echo "HigurashiEp10.app" ;;
     *) return 1 ;;
   esac
   return 0
 }
 
-# Define the app ID
-APP_ID="1034940" #App_ID for Minagoroshi
+# Main execution
+print_header
+show_welcome
 
-# Get the base destination path
-BASE_DESTINATION=$(find_game_path "$APP_ID" "$FILE_PATH")
+section_header "Steam 확인"
+if [[ ! -f "$STEAM_CONFIG_FILE" ]]; then
+  echo -e "${RED}경고: Steam을 찾을 수 없습니다${NC}"
+else
+  echo -e "${GREEN}Steam 확인 성공${NC}"
+fi
 
-# Get the app name
+# Path detection logic
+section_header "게임 경로 확인"
+BASE_DESTINATION=$(find_game_path "$APP_ID" "$STEAM_CONFIG_FILE")
 APP_NAME=$(get_app_name "$APP_ID")
 
-# Check if the app exists at the destination path
 if [[ -n "$BASE_DESTINATION" && ! -d "$BASE_DESTINATION/$APP_NAME" ]]; then
-  echo "경고: $APP_NAME 을 다음과 같은 경로에서 찾을 수 없습니다: $BASE_DESTINATION."
+  echo -e "${YELLOW}경고: $APP_NAME 을 다음 경로에서 찾을 수 없습니다: $BASE_DESTINATION${NC}"
   BASE_DESTINATION=""
 fi
 
-# If the BASE_DESTINATION is empty or the .app file doesn't exist, ask the user to drag the app file
 if [[ -z "$BASE_DESTINATION" || ! -d "$BASE_DESTINATION/$APP_NAME" ]]; then
-  echo "패치 인스톨러가 자동으로 게임 파일을 찾을 수 없습니다. $APP_NAME 을 패치 인스톨러 창으로 드래그 해주세요:"
-  read -r app_path
-  app_path=$(echo "$app_path" | sed 's/\\//g')
-  app_name=$(basename "$app_path")
-  if [[ $app_name == "$APP_NAME" ]]; then
-    DESTINATION="$app_path/Contents"
-    echo "$APP_NAME 확인 성공."
-  else
-    echo "드래그한 파일이 $APP_NAME 이 아닙니다. 패치 인스톨러를 다시 실행 후, 재시도 해주세요."
-    read -p "Return 이나 Enter 키를 누르면 패치 인스톨러를 종료합니다..."
-    exit 1
-  fi
+  section_header "수동 경로 설정"
+  while true; do
+    echo -e "${YELLOW}패치 인스톨러가 자동으로 게임 파일을 찾을 수 없습니다.${NC}"
+    echo -e "${CYAN}$APP_NAME 을 패치 인스톨러 창으로 드래그 해주세요:${NC}"
+    read -r app_path
+    app_path=$(echo "$app_path" | sed 's/\\//g')
+    app_name=$(basename "$app_path")
+    
+    if [[ $app_name == "$APP_NAME" ]]; then
+      if [[ -d "$app_path/Contents" ]]; then
+        DESTINATION="$app_path/Contents"
+        echo -e "${GREEN}$APP_NAME 확인 성공!${NC}"
+        break
+      else
+        echo -e "${RED}경고: .app 파일이 손상되었습니다.${NC}"
+      fi
+    else
+      echo -e "${RED}잘못된 파일입니다. 다음 파일을 드래그 해주세요: ${CYAN}$APP_NAME${NC}"
+    fi
+  done
 else
   DESTINATION="$BASE_DESTINATION/$APP_NAME/Contents"
+  echo -e "${GREEN}게임 경로 확인 성공: ${DESTINATION}${NC}"
 fi
 
-# Define the directory for steamgrid images
-GRID_IMAGES_SOURCE="/Volumes/Higu_Ch7_Kor/Data/Steamgrid"
+echo -e "\n다음 경로에 한글패치를 설치합니다:\n${CYAN}${DESTINATION}${NC}"
 
-# Ensure trailing slash for rsync behavior consistency
-SOURCE="${SOURCE}/"
-GRID_IMAGES_SOURCE="${GRID_IMAGES_SOURCE}/"
-
-# Description of the operation
-echo "macOS용 쓰르라미 울 적에 한글패치 인스톨러"
-echo ""
-echo "인스톨러 제작자: Montmorency (https://github.com/s485lee/Higurashi_Korean_Mac)"
-echo "인스톨러 제작에 도움을 주신 분: Côte-Vertu"
-echo ""
-echo "macOS용 쓰르라미 울 적에 한글패치는 Steam판을 지원합니다."
-echo ""
-echo "GOG판이나 MangaGamer판이 설치된 경우, 인스톨러가 게임 .app 파일을 자동으로 찾을 수 없습니다. 게임 .app 파일을 필요한 경우, 인스톨러 창으로 드래그 해주세요."
-echo ""
-echo "주의: GOG판이나 MangaGamer판은 Compatibility Pack이 필요할 수 있습니다. 자세한 내용은 07th-Mod 위키를 참고하세요."
-echo ""
-echo "인스톨러는 자동으로 Steamgrid 이미지를 새로운 배경, 스탠딩 CG와 한글 로고로 교체합니다."
-echo ""
-echo "한글패치는 다음과 같은 경로에 설치됩니다: $DESTINATION"
-echo ""
-echo "한글패치를 설치하려면 y 키를. 취소하려면 n 키를 눌러 주세요. (y/n)"
-
-# Wait for user confirmation
-read -r user_confirm
+# Input validation loop
+while true; do
+    echo -en "${YELLOW}한글패치를 설치하시겠습니까? [y/n] ${NC}"
+    read -r user_confirm
+    case "$user_confirm" in
+        [yY]|[nN]) 
+            break
+            ;;
+        *)
+            echo -e "${RED}\n잘못된 입력입니다. y 또는 n 만 입력해주세요.${NC}"
+            sleep 1
+            ;;
+    esac
+done
 
 if [[ $user_confirm == "y" || $user_confirm == "Y" ]]; then
-    if [ -d "$SOURCE" ]; then
-        rsync -av "$SOURCE" "$DESTINATION"
-        echo "한글패치가 성공적으로 설치되었습니다."
-        
-        # New feature to install steamgrid images
-        USERDATA_DIR="$HOME/Library/Application Support/Steam/userdata/"
-        FOUND_USER_DIR=false # Flag to check if any user directory has been found
-        for USER_DIR in "$USERDATA_DIR"*/; do
-            FOUND_USER_DIR=true # Found at least one user directory
-            GRID_DESTINATION="${USER_DIR}config/grid/"
-            mkdir -p "$GRID_DESTINATION" # Ensure the destination directory exists
-            rsync -av "$GRID_IMAGES_SOURCE" "$GRID_DESTINATION"
-            echo "Steamgrid 이미지가 성공적으로 설치되었습니다."
-        done
-        
-        if [ "$FOUND_USER_DIR" = false ]; then
-            echo "Steam 사용자 데이터 폴더를 찾을 수 없거나 유효한 Steam 사용자 ID가 없습니다."
-        fi
-        echo "하우~☆! 오모치카에리~!."
-        echo "한글패치가 성공적으로 적용되었습니다. 게임을 Steam에서 실행해 주세요. 니파~☆"          
-        read -p "Return 이나 Enter 키를 눌러 패치 인스톨러를 종료할 까나, 까나...?"
-    else
-        echo "한글패치 파일을 찾을 수 없습니다."
-        read -p "Return 이나 Enter 키를 누르면 패치 인스톨러를 종료합니다..."
-    fi
+section_header "패치 설치 진행"
+
+# Calculate source size for progress
+total_kb=$(du -sk "$SOURCE" | awk '{print $1}')
+[[ $total_kb -eq 0 ]] && total_kb=1 # Prevent division by zero
+
+rsync -av "$SOURCE/" "$DESTINATION" > "$DESTINATION/Patch Install rsync.log" 2>&1 &
+pid=$!
+spin=('🕛' '🕐' '🕑' '🕒' '🕓' '🕔' '🕕' '🕖' '🕗' '🕘' '🕙' '🕚')
+i=0
+
+while kill -0 $pid 2>/dev/null; do
+    i=$(( (i+1) %12 ))
+    # Get current transferred size
+    current_kb=$(du -sk "$DESTINATION" 2>/dev/null | awk '{print $1}')
+    # Calculate percentage (capped at 99% during transfer)
+    percentage=$(( (current_kb * 100) / total_kb ))
+    (( percentage > 99 )) && percentage=99
+    echo -ne "\r${spin[$i]} ${BLUE}한글패치 설치 진행 중... ${percentage}%${NC}"
+    sleep 0.3
+done
+echo -ne "\r\033[K" 
+echo -e "✅ ${GREEN}한글패치 설치 완료 (100%)${NC}"
+
+# Steamgrid images installation with progress
+section_header "Steamgrid 이미지 설치"
+grid_total_kb=$(du -sk "$GRID_IMAGES_SOURCE" | awk '{print $1}')
+[[ $grid_total_kb -eq 0 ]] && grid_total_kb=1
+
+USERDATA_DIR="$HOME/Library/Application Support/Steam/userdata/"
+for USER_DIR in "$USERDATA_DIR"[0-9]*/; do
+    GRID_DESTINATION="${USER_DIR}config/grid/"
+    mkdir -p "$GRID_DESTINATION"
+    
+    rsync -av "$GRID_IMAGES_SOURCE/" "$GRID_DESTINATION" > "$DESTINATION/steamgrid_rsync.log" 2>&1 &
+    pid=$!
+    i=0
+    
+    while kill -0 $pid 2>/dev/null; do
+        i=$(( (i+1) %12 ))
+        current_grid_kb=$(du -sk "$GRID_DESTINATION" 2>/dev/null | awk '{print $1}')
+        grid_percentage=$(( (current_grid_kb * 100) / grid_total_kb ))
+        (( grid_percentage > 99 )) && grid_percentage=99
+        echo -ne "\r${spin[$i]} ${BLUE}Steamgrid 이미지 설치 중... ${grid_percentage}%${NC}"
+        sleep 0.3
+    done
+
+    # Clear the line and print the final message
+    echo -ne "\r\033[K"
+    echo -e "✅ ${GREEN}Steamgrid 이미지 설치 완료 (100%)${NC}"
+done
+
+print_footer
+
 else
-    echo "작업이 취소되었습니다."
-    read -p "Return 이나 Enter 키를 누르면 패치 인스톨러를 종료합니다..."
+  echo -e "${RED}작업이 취소되었습니다.${NC}"
+  echo -e "${YELLOW}종료하려면 아무 키나 누르세요...${NC}"
+  read -n 1 -s -r
 fi
