@@ -8,10 +8,19 @@ BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
+# Check if the required dmg file is mounted
+VOLUME_DMG="/Volumes/Higu_Ch3_Kor"
+if [[ ! -d "$VOLUME_DMG" ]]; then
+  echo -e "${RED}오류: 한글패치 dmg 파일이 마운트되어 있지 않습니다. dmg파일을 마운트한 후 다시 실행해주세요.${NC}"
+  echo -e "${YELLOW}종료하려면 아무 키나 누르세요...${NC}"
+  read -n 1 -s -r
+  exit 1
+fi
+
 # Configuration
 APP_ID="472870" #App_ID for Tatarigoroshi
-SOURCE="/Volumes/Higu_Ch3_Kor/Data/Contents"
-GRID_IMAGES_SOURCE="/Volumes/Higu_Ch3_Kor/Data/Steamgrid"
+SOURCE="$VOLUME_DMG/Data/Contents"
+GRID_IMAGES_SOURCE="$VOLUME_DMG/Data/Steamgrid"
 STEAM_CONFIG_FILE="$HOME/Library/Application Support/Steam/config/libraryfolders.vdf"
 
 # Function to get chapter name
