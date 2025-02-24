@@ -44,7 +44,7 @@ Retina 디스플레이를 지원하기 위한 라이브러리 파일이 포함�
 <br /><img width="827" alt="Prompt 2" src="https://github.com/user-attachments/assets/94f42935-e81d-4c6c-83a0-7eb264ed4ec0"> <br />
 
 3. 패치 인스톨러의 안내에 따라 한글패치를 설치해 주세요: <br />
-<img width="1017" alt="Screenshot 2024-03-31 at 1 04 57 PM" src="https://github.com/s485lee/Higurashi_Korean_Mac/assets/155126361/359871f8-3e4b-4b00-977a-95749536a27a"><br /> 
+<img width="1017" alt="Patch Installer Window" src="https://github.com/user-attachments/assets/ae861b94-c55d-4633-b507-7bba8fbcf2ad" /><br /> 
 
 
 # FAQ
